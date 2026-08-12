@@ -1516,7 +1516,7 @@ class FulsimRegress(Tk):
         except Exception as e:
             print(f"Error inserting axe execution method '{getattr(item, 'name', 'Unknown')}': {e}")
             return False
-        
+
     def selectItem(self, a):
         self.device_option_lbe['foreground'] = '#000'
         self.axe_execution_method_list.clear()
@@ -3254,7 +3254,7 @@ class FulsimRegress(Tk):
                 info = "P4 copying test " + str(target_path)
                 print(info)
                 self.updateOutputBox(info)
-                info = self.p4client.copyOnefolder(test_read.test_path, target_path, test_revision)
+                info = self.p4client.copyOnefolder(test_read.test_path, target_path, test_revision, True)
                 print(info)
                 self.updateOutputBox(info)
                 if self.util.has_files(target_path):
@@ -3776,13 +3776,13 @@ class FulsimRegress(Tk):
                         else:
                             self.updateOutputBox(info_str)
                             try:
-                                info_str = self.p4client.copyOnefolder(src_path, dest_path, self.best_test_revision)
+                                info_str = self.p4client.copyOnefolder(src_path, dest_path, self.best_test_revision, True)
                             except Exception as e:
                                 info_str = (f'Error copying file {src_path}: {e}')
                     elif self:
                         self.updateOutputBox(info_str)
                         try:
-                            info_str = self.p4client.copyOnefolder(src_path, dest_path, self.best_test_revision)
+                            info_str = self.p4client.copyOnefolder(src_path, dest_path, self.best_test_revision, True)
                         except Exception as e:
                             info_str = (f'Error copying file {src_path}: {e}')
                     print(info_str)
@@ -3836,7 +3836,7 @@ class FulsimRegress(Tk):
             self.updateOutputBox(info_str)
 
             self.copyOneTest(test_run)
-            test_run.fileResolve()
+            #test_run.fileResolve()
 
 
             status_str = "Copying tests: " + str(processed) + "/" + str(total)
@@ -3958,7 +3958,7 @@ class FulsimRegress(Tk):
                         str(self.src_path_or_testrevsion), str(self.regress_test_base))
 
 
-            if self.use_p4:
+            if self.use_p4 and test_run.gold_src_path != "" and test_run.gold_work_path != "":
                 self.p4client.copyOnefolder(test_run.gold_src_path,test_run.gold_work_path,self.p4_test_revision)
         print("gold_work_path by setupTestGoldFolder: ", test_run.gold_work_path)
     def configTestRun(self, testRun:Test.TestRun,testRead:Test.TestRead, testRunList, testConfig):
@@ -4155,7 +4155,7 @@ class FulsimRegress(Tk):
         #print("suite_aubload_option = ", suite_aubload_option)
         #print("default_aubload_option = ", default_aubload_option)
         #print("test_aubload_option = ", test_aubload_option)
-        
+
     def setupOneTest(self,testRead,testRunList):
 
         if  Path(testRead.yaml_path).is_file():
@@ -4360,7 +4360,7 @@ class FulsimRegress(Tk):
             html_report_name =  str(self.axe_execution_method_list[0].name).replace(" ","_") + "_" + self.regress_day_mark + "_regress_report.html"
         else:
             html_report_name = self.regress_name  +"_" + self.regress_day_mark + "_regress_report.html"
-        
+
         self.html_report_path = os.path.join(self.regress_result_base, html_report_name)
         self.updateObjectRegressStatus(self.total,self.total_done_list, self.regress_name) # windows required: make sure the html is created before use webbrowser to open it
         webbrowser.open(self.html_report_path, new=0, autoraise=True)

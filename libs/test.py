@@ -650,17 +650,7 @@ class TestRunner:
                 except:
                     print("Error while deleting folder ", folder_path)
         print("==> done")
-    def copyAxeFileResolverFile(self,testRun:TestRun):
-        if testRun.aubload_exe == None:
-            print("Skipped copying Axe Resovle files...")
-            return
-        binfolderpath = os.path.dirname(testRun.aubload_exe)
-        for file_name  in self.axe_resolve_files:
-            file_path = os.path.join(binfolderpath, file_name)
-            if Path(file_path).is_dir():
-                self.util.CopyOneFolder(file_path, testRun.test_run_path)
-            elif Path(file_path).is_file():
-                self.util.copyOneFile(file_path, testRun.test_run_path)
+
 
     def runCFG(self, testRun: TestRun):
         work_path = testRun.test_run_path
@@ -680,7 +670,7 @@ class TestRunner:
         fout = open(disp_out, "w")
         print("working path : ", work_path)
         print("disp_cmd: ", disp_cmd)
-        #self.copyAxeFileResolverFile(testRun)
+
         print("Running disp tool at", work_path, end='')
         # ferr = open(grits_compile_file, "w")
         disp_run = subprocess.run(disp_cmd, shell=True, stdout=fout, stderr=fout, timeout=20 * 40)  # 20 min
@@ -727,7 +717,7 @@ class TestRunner:
         if testRun.file_identifier != '':
             grits_cmd =  grits_cmd  +   " -FileIdentifier " + testRun.file_identifier
 
-        self.copyAxeFileResolverFile(testRun)
+
         print("Running grits at", work_path)
         print("grits_cmd: ", grits_cmd)
 
@@ -865,7 +855,7 @@ class TestRunner:
        # print("lily commandline:")
         testRun.test_result.lily_compile_status = "FAIL"
         fout = open(lily_compile_file,"w")
-        self.copyAxeFileResolverFile(testRun)
+
         lily_run = subprocess.run(lily_cmd,shell=True, stdout=fout, stderr=fout, timeout=20*40) #20 min
         fout.close()
         testRun.test_file_relative_path_list.append(testRun.test_result.lily_compile_file)
@@ -950,7 +940,7 @@ class TestRunner:
                     aub_paths.append(aub_path)
 
         os.chdir(work_path)
-        self.copyAxeFileResolverFile(testRun)
+
         print("Running AubLoad at", testRun.test_run_path, end='')
         if len(aub_paths) == 0:
             testRun.test_result.fulsim_compile_status = "FAIL"
