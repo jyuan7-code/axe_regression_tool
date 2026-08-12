@@ -1,0 +1,1110 @@
+{
+	"schemaVersion": "1.0",
+	"testListId": 394,
+	"testListPath": "VPG HW/Xe4/Emu_JGS_GT",
+	"testListSettingsUrl": "https://axeweb.intel.com/axe/tests/testlists/394/settings/executionmethods",
+	"executionMethods": [
+		{
+			"id": 4102,
+			"name": "Emulation_Compare 1x1x1x4",
+			"software": "XeSim_MAIN",
+			"platformSoftware": "Emu_JGS_GT_1x1x1",
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "XE4.XPC:1X1X1X4:A0",
+			"attributes": [
+				{
+					"name": "AxeClientTestLimit",
+					"value": "1"
+				},
+				{
+					"name": "BondOptions",
+					"value": "-hooks /nfs/site/disks/fm_atsgt_00013/kheiney/AxeRuns/scripts/hookEmuRunLog.py"
+				},
+				{
+					"name": "EmuRunOptions",
+					"value": "-save none -c 500000000000000000000 -nbqslot /prj/gfx/jgs/ip_hw/sv/gt_64/standard -dut gt -target emu_nodfx.noupf.goldenrpt.red1x1x4.default64  -context XPC_JGS -tcp '-tb=-mfe -mfedebug 3 -free_running_clock -page_fault 0 -cf modelconfig_Xe4_XPC_1tx2x2x12x4_red1x1x4_SKU_96GB_LMEM.xml' -netbatch_opts '--priority 21' -loadlimit=1800"
+				},
+				{
+					"name": "EmuRunPlugin",
+					"value": "/nfs/site/disks/fm_atsgt_00013/kheiney/AxeRuns/scripts/AxePlugin.pm"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": "-host 127.0.0.1 -crc:check -debug:forceconfig ignore -project:folder emu -log:debug -log:regdump false -control:polltimeout time=1200000 -control:tbxTimeout all=3000 -watchdog frame=7200 test=7200 /triage /nfs/fm/itools/em64t_SLES15/pkgs/ruby/3.1.2/bin/ruby /nfs/site/disks/fm_atsgt_00013/kheiney/AxeRuns/scripts/TriageELG/triageELG_DrGfx.rb"
+				}
+			],
+			"executionMethodHistoryId": 20422,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 242,
+					"status": "Error",
+					"excludeTestCi": false
+				}
+			],
+			"exitCodeTestListStatusRemap": [],
+			"deleted": false
+		},
+		{
+			"id": 4109,
+			"name": "Emulation_Compare 1x1x1x4 ZPRD",
+			"software": "XeSim_MAIN",
+			"platformSoftware": "Emu_JGS_GT_1x1x1",
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "XE4.XPC:1X1X1X4:A0",
+			"attributes": [
+				{
+					"name": "AxeClientTestLimit",
+					"value": "1"
+				},
+				{
+					"name": "BondOptions",
+					"value": "-hooks /nfs/site/disks/fm_atsgt_00013/kheiney/AxeRuns/scripts/hookEmuRunLog.py"
+				},
+				{
+					"name": "EmuRunOptions",
+					"value": "-c 500000000000000000000 -nbqslot /prj/gfx/jgs/ip_hw/sv/gt_64/standard -dut gt -target emu_nodfx.noupf.red1x1x1.default64 -context XPC_JGS -tcp '-tb=-mfe -mfedebug 3 -debug 0100 -free_running_clock -page_fault 0 -cf modelconfig_Xe4_XPC_1x1x1_SKU.xml' -netbatch_opts '--priority 25' -loadlimit=1800 -tardis_debug -tardis_debug_start 0 -tardis_debug_interval 50b -trk_do_files trkset_zemu.do -offline_trks"
+				},
+				{
+					"name": "EmuRunPlugin",
+					"value": "/nfs/site/disks/fm_atsgt_00013/kheiney/AxeRuns/scripts/AxePlugin.pm"
+				},
+				{
+					"name": "EmuRunResultPath",
+					"value": "/nfs/site/disks/fm_dg2_00003/AXE_Debug/"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": "-host 127.0.0.1 -crc:check -log:trace EmuMem.txt -debug:forceconfig ignore -project:folder emu -log:debug -log:regdump false -control:polltimeout time=1200000 -control:tbxTimeout all=3000 -watchdog frame=7200 test=7200 /triage /nfs/fm/itools/em64t_SLES15/pkgs/ruby/3.1.2/bin/ruby /nfs/site/disks/fm_atsgt_00013/kheiney/AxeRuns/scripts/TriageELG/triageELG_DrGfx.rb"
+				}
+			],
+			"executionMethodHistoryId": 19911,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 242,
+					"status": "Error",
+					"excludeTestCi": false
+				}
+			],
+			"exitCodeTestListStatusRemap": [],
+			"deleted": false
+		},
+		{
+			"id": 3918,
+			"name": "Emulation_Compare 1x1x4x4",
+			"software": "XeSim_MAIN",
+			"platformSoftware": "Emu_JGS_GT_1x1x4",
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "XE4.XPC:1X1X1X4:A0",
+			"attributes": [
+				{
+					"name": "AxeClientTestLimit",
+					"value": "1"
+				},
+				{
+					"name": "BondOptions",
+					"value": "-hooks /nfs/site/disks/fm_atsgt_00013/kheiney/AxeRuns/scripts/hookEmuRunLog.py"
+				},
+				{
+					"name": "EmuRunOptions",
+					"value": "-save none -c 500000000000000000000 -nbqslot /prj/gfx/jgs/ip_hw/sv/gt_64/standard -dut gt -target emu_nodfx.noupf.goldenrpt.red1x1x4.default64 -context XPC_JGS_SD -tcp '-tb=-mfe -mfedebug 3 -free_running_clock -page_fault 0 -cf  modelconfig_Xe4_XPC_1tx2x2x12x4_red1x1x4_SKU_96GB_LMEM.xml' -netbatch_opts '--priority 21' -loadlimit=1800"
+				},
+				{
+					"name": "EmuRunPlugin",
+					"value": "/nfs/site/disks/fm_atsgt_00013/kheiney/AxeRuns/scripts/AxePlugin.pm"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": "-host 127.0.0.1 -crc:check -debug:forceconfig ignore -project:folder emu -log:debug -log:regdump false -control:polltimeout time=1200000 -control:svaccessoptions DISABLE_ALL_SOFTWARE_CACHING=1 -control:tbxTimeout all=3000 -watchdog frame=7200 test=7200 /triage /nfs/fm/itools/em64t_SLES15/pkgs/ruby/3.1.2/bin/ruby /nfs/site/disks/fm_atsgt_00013/kheiney/AxeRuns/scripts/TriageELG/triageELG_DrGfx.rb"
+				}
+			],
+			"executionMethodHistoryId": 20421,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 242,
+					"status": "Error",
+					"excludeTestCi": false
+				}
+			],
+			"exitCodeTestListStatusRemap": [],
+			"deleted": false
+		},
+		{
+			"id": 4425,
+			"name": "Emulation_Compare 1x1x4x4 Guc Auth",
+			"software": "XeSim_MAIN",
+			"platformSoftware": "Emu_JGS_GT_1x1x4",
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "XE4.XPC:1X1X1X4:A0",
+			"attributes": [
+				{
+					"name": "AxeClientTestLimit",
+					"value": "1"
+				},
+				{
+					"name": "BondOptions",
+					"value": "-hooks /nfs/site/disks/fm_atsgt_00013/kheiney/AxeRuns/scripts/hookEmuRunLog.py"
+				},
+				{
+					"name": "EmuRunOptions",
+					"value": "-save none -c 500000000000000000000 -nbqslot /prj/gfx/jgs/ip_hw/sv/gt_64/standard -dut gt -target emu_nodfx.noupf.goldenrpt.red1x1x4.default64 -context XPC_JGS_SD -tcp '-tb=-mfe -mfedebug 3 -free_running_clock  -cf  modelconfig_Xe4_XPC_1tx2x2x12x4_red1x1x4_SKU_96GB_LMEM.xml' -netbatch_opts '--priority 21' -loadlimit=1800"
+				},
+				{
+					"name": "EmuRunPlugin",
+					"value": "/nfs/site/disks/fm_atsgt_00013/kheiney/AxeRuns/scripts/AxePlugin.pm"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": "-host 127.0.0.1 -crc:check -debug:forceconfig ignore -project:folder emu -log:debug -log:regdump false -control:polltimeout time=1200000 -control:tbxTimeout all=3000 -watchdog frame=7200 test=7200 /triage /nfs/fm/itools/em64t_SLES15/pkgs/ruby/3.1.2/bin/ruby /nfs/site/disks/fm_atsgt_00013/kheiney/AxeRuns/scripts/TriageELG/triageELG_DrGfx.rb"
+				}
+			],
+			"executionMethodHistoryId": 20423,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 242,
+					"status": "Error",
+					"excludeTestCi": false
+				}
+			],
+			"exitCodeTestListStatusRemap": [],
+			"deleted": false
+		},
+		{
+			"id": 3966,
+			"name": "Emulation_Compare 1x1x4x4 ZPRD",
+			"software": "XeSim_MAIN",
+			"platformSoftware": "Emu_JGS_GT_1x1x4",
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "XE4.XPC:1X1X1X4:A0",
+			"attributes": [
+				{
+					"name": "AxeClientTestLimit",
+					"value": "1"
+				},
+				{
+					"name": "BondOptions",
+					"value": "-hooks /nfs/site/disks/fm_atsgt_00013/kheiney/AxeRuns/scripts/hookEmuRunLog.py"
+				},
+				{
+					"name": "EmuRunOptions",
+					"value": "-c 500000000000000000000 -nbqslot /prj/gfx/jgs/ip_hw/sv/gt_64/standard -dut gt -target emu_nodfx.noupf.goldenrpt.red1x1x4.default64 -context XPC_JGS_SD -tcp '-tb=-mfe -mfedebug 2 -debug 0100 -free_running_clock -page_fault 0 -cf modelconfig_Xe4_XPC_1tx2x2x12x4_red1x1x4_SKU_96GB_LMEM.xml' -netbatch_opts '--priority 25' -loadlimit=1800 -tardis_debug -tardis_debug_start 0 -tardis_debug_interval 50b -trk_do_files trkset_zemu.do -offline_trks"
+				},
+				{
+					"name": "EmuRunPlugin",
+					"value": "/nfs/site/disks/fm_atsgt_00013/kheiney/AxeRuns/scripts/AxePlugin.pm"
+				},
+				{
+					"name": "EmuRunResultPath",
+					"value": "/nfs/site/disks/fm_dg2_00003/AXE_Debug/"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": "-host 127.0.0.1 -crc:check -log:trace EmuMem.txt -debug:forceconfig ignore -project:folder emu -log:debug -log:regdump false -control:polltimeout time=1200000 -control:svaccessoptions DISABLE_ALL_SOFTWARE_CACHING=1 -control:tbxTimeout all=3000 -watchdog frame=7200 test=7200 /triage /nfs/fm/itools/em64t_SLES15/pkgs/ruby/3.1.2/bin/ruby /nfs/site/disks/fm_atsgt_00013/kheiney/AxeRuns/scripts/TriageELG/triageELG_DrGfx.rb"
+				}
+			],
+			"executionMethodHistoryId": 20328,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 242,
+					"status": "Error",
+					"excludeTestCi": false
+				}
+			],
+			"exitCodeTestListStatusRemap": [],
+			"deleted": false
+		},
+		{
+			"id": 4032,
+			"name": "Emulation_Compare 2x2x12x4",
+			"software": "XeSim_MAIN",
+			"platformSoftware": "Emu_JGS_GT_2x2x12",
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "XE4.XPC:1X1X1X4:A0",
+			"attributes": [
+				{
+					"name": "AxeClientTestLimit",
+					"value": "1"
+				},
+				{
+					"name": "BondOptions",
+					"value": "-hooks /nfs/site/disks/fm_atsgt_00013/kheiney/AxeRuns/scripts/hookEmuRunLog.py"
+				},
+				{
+					"name": "EmuRunOptions",
+					"value": "-save none -c 500000000000000000000 -nbqslot /prj/gfx/jgs/ip_hw/sv/gt_64/standard -dut gt -target emu_nodfx.noupf.rpt.default64 -context XPC_JGS -tcp '-tb=-mfe -mfedebug 3 -free_running_clock -page_fault 0 -cf /nfs/site/disks/fm_dg2_00003/AXE_Debug/modelconfig_jgs_full.xml' -netbatch_opts '--priority 30' -loadlimit=1800"
+				},
+				{
+					"name": "EmuRunPlugin",
+					"value": "/nfs/site/disks/fm_atsgt_00013/kheiney/AxeRuns/scripts/AxePlugin.pm"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": "-host 127.0.0.1 -crc:check -debug:forceconfig ignore -project:folder emu -log:debug -log:regdump false -control:polltimeout time=1200000 -control:tbxTimeout all=3000 -watchdog frame=7200 test=7200 /triage /nfs/fm/itools/em64t_SLES15/pkgs/ruby/3.1.2/bin/ruby /nfs/site/disks/fm_atsgt_00013/kheiney/AxeRuns/scripts/TriageELG/triageELG_DrGfx.rb"
+				}
+			],
+			"executionMethodHistoryId": 19901,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 242,
+					"status": "Error",
+					"excludeTestCi": false
+				}
+			],
+			"exitCodeTestListStatusRemap": [],
+			"deleted": false
+		},
+		{
+			"id": 4038,
+			"name": "Emulation_Compare 2x2x4x4",
+			"software": "XeSim_MAIN",
+			"platformSoftware": "Emu_JGS_GT_1x1x4",
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "XE4.XPC:1X1X1X4:A0",
+			"attributes": [
+				{
+					"name": "AxeClientTestLimit",
+					"value": "1"
+				},
+				{
+					"name": "BondOptions",
+					"value": "-hooks /nfs/site/disks/fm_atsgt_00013/kheiney/AxeRuns/scripts/hookEmuRunLog.py"
+				},
+				{
+					"name": "EmuRunOptions",
+					"value": "-save none -c 500000000000000000000 -nbqslot /prj/gfx/jgs/ip_hw/sv/gt_64/standard -dut gt -target emu_nodfx.noupf.red1x1x4.default64 -context XPC_JGS -tcp '-tb=-mfe -mfedebug 3 -free_running_clock -page_fault 0 -cf /nfs/site/disks/fm_dg2_00003/AXE_Debug/modelconfig_Xe4_XPC_1tx2x4x8x4_red1x1x4_SKU_96GB_LMEM.xml' -netbatch_opts '--priority 21' -loadlimit=1800"
+				},
+				{
+					"name": "EmuRunPlugin",
+					"value": "/nfs/site/disks/fm_atsgt_00013/kheiney/AxeRuns/scripts/AxePlugin.pm"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": "-host 127.0.0.1 -crc:check -debug:forceconfig ignore -project:folder emu -log:debug -log:regdump false -control:polltimeout time=1200000 -control:tbxTimeout all=3000 -watchdog frame=7200 test=7200 /triage /nfs/fm/itools/em64t_SLES15/pkgs/ruby/3.1.2/bin/ruby /nfs/site/disks/fm_atsgt_00013/kheiney/AxeRuns/scripts/TriageELG/triageELG_DrGfx.rb"
+				}
+			],
+			"executionMethodHistoryId": 19903,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 242,
+					"status": "Error",
+					"excludeTestCi": false
+				}
+			],
+			"exitCodeTestListStatusRemap": [],
+			"deleted": false
+		},
+		{
+			"id": 4103,
+			"name": "Emulation_Lockup 1x1x1x4",
+			"software": "XeSim_MAIN",
+			"platformSoftware": "Emu_JGS_GT_1x1x1",
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "XE4.XPC:1X1X1X4:A0",
+			"attributes": [
+				{
+					"name": "AxeClientTestLimit",
+					"value": "1"
+				},
+				{
+					"name": "BondOptions",
+					"value": "-hooks /nfs/site/disks/fm_atsgt_00013/kheiney/AxeRuns/scripts/hookEmuRunLog.py"
+				},
+				{
+					"name": "EmuRunOptions",
+					"value": "-save none -c 500000000000000000000 -nbqslot /prj/gfx/jgs/ip_hw/sv/gt_64/standard -dut gt -target emu_nodfx.noupf.red1x1x1.default64 -context XPC_JGS -tcp '-tb=-mfe -mfedebug 3 -free_running_clock -page_fault 0 -cf modelconfig_Xe4_XPC_1tx2x2x12x4_red1x1x4_SKU_96GB_LMEM.xml' -netbatch_opts '--priority 21' -loadlimit=1800"
+				},
+				{
+					"name": "EmuRunPlugin",
+					"value": "/nfs/site/disks/fm_atsgt_00013/kheiney/AxeRuns/scripts/AxePlugin.pm"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": "-host 127.0.0.1 -lar:capture  -debug:forceconfig ignore -project:folder emu -log:debug -log:regdump false -control:polltimeout time=1200000 -control:tbxTimeout all=3000 -watchdog frame=7200 test=7200 /triage /nfs/fm/itools/em64t_SLES15/pkgs/ruby/3.1.2/bin/ruby /nfs/site/disks/fm_atsgt_00013/kheiney/AxeRuns/scripts/TriageELG/triageELG_DrGfx.rb"
+				}
+			],
+			"executionMethodHistoryId": 20402,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 242,
+					"status": "Error",
+					"excludeTestCi": false
+				}
+			],
+			"exitCodeTestListStatusRemap": [],
+			"deleted": false
+		},
+		{
+			"id": 3919,
+			"name": "Emulation_Lockup 1x1x4x4",
+			"software": "XeSim_MAIN",
+			"platformSoftware": "Emu_JGS_GT_1x1x4",
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "XE4.XPC:1X1X1X4:A0",
+			"attributes": [
+				{
+					"name": "AxeClientTestLimit",
+					"value": "1"
+				},
+				{
+					"name": "BondOptions",
+					"value": "-hooks /nfs/site/disks/fm_atsgt_00013/kheiney/AxeRuns/scripts/hookEmuRunLog.py"
+				},
+				{
+					"name": "EmuRunOptions",
+					"value": "-save none -c 500000000000000000000 -nbqslot /prj/gfx/jgs/ip_hw/sv/gt_64/standard -dut gt -target emu_nodfx.noupf.goldenrpt.red1x1x4.default64 -context XPC_JGS_SD -tcp '-tb=-mfe -mfedebug 3 -free_running_clock -page_fault 0 -cf  modelconfig_Xe4_XPC_1tx2x2x12x4_red1x1x4_SKU_96GB_LMEM.xml' -netbatch_opts '--priority 21' -loadlimit=1800"
+				},
+				{
+					"name": "EmuRunPlugin",
+					"value": "/nfs/site/disks/fm_atsgt_00013/kheiney/AxeRuns/scripts/AxePlugin.pm"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": "-host 127.0.0.1 -lar:capture  -debug:forceconfig ignore -project:folder emu -log:debug -log:regdump false -control:polltimeout time=1200000 -control:tbxTimeout all=3000 -watchdog frame=7200 test=7200 /triage /nfs/fm/itools/em64t_SLES15/pkgs/ruby/3.1.2/bin/ruby /nfs/site/disks/fm_atsgt_00013/kheiney/AxeRuns/scripts/TriageELG/triageELG_DrGfx.rb"
+				}
+			],
+			"executionMethodHistoryId": 20403,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 242,
+					"status": "Error",
+					"excludeTestCi": false
+				}
+			],
+			"exitCodeTestListStatusRemap": [],
+			"deleted": false
+		},
+		{
+			"id": 3967,
+			"name": "Emulation_Lockup 1x1x4x4 ZPRD",
+			"software": "XeSim_MAIN",
+			"platformSoftware": "Emu_JGS_GT_1x1x4",
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "XE4.XPC:1X1X1X4:A0",
+			"attributes": [
+				{
+					"name": "AxeClientTestLimit",
+					"value": "1"
+				},
+				{
+					"name": "BondOptions",
+					"value": "-hooks /nfs/site/disks/fm_atsgt_00013/kheiney/AxeRuns/scripts/hookEmuRunLog.py"
+				},
+				{
+					"name": "EmuRunOptions",
+					"value": "-c 500000000000000000000 -nbqslot /prj/gfx/jgs/ip_hw/sv/gt_64/standard -dut gt -target emu_nodfx.noupf.goldenrpt.red1x1x4.default64 -context XPC_JGS_SD -tcp '-tb=-mfe -mfedebug 2 -debug 0100 -free_running_clock -page_fault 0 -cf modelconfig_Xe4_XPC_1tx2x2x12x4_red1x1x4_SKU_96GB_LMEM.xml' -netbatch_opts '--priority 25' -loadlimit=1800 -tardis_debug -tardis_debug_start 0 -tardis_debug_interval 50b -trk_do_files trkset_zemu.do -offline_trks"
+				},
+				{
+					"name": "EmuRunPlugin",
+					"value": "/nfs/site/disks/fm_atsgt_00013/kheiney/AxeRuns/scripts/AxePlugin.pm"
+				},
+				{
+					"name": "EmuRunResultPath",
+					"value": "/nfs/site/disks/fm_dg2_00003/AXE_Debug/"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": "-host 127.0.0.1 -lar:capture -log:trace EmuMem.txt -debug:forceconfig ignore -project:folder emu -log:debug -log:regdump false -control:polltimeout time=1200000 -control:tbxTimeout all=3000 -watchdog frame=7200 test=7200 /triage /nfs/fm/itools/em64t_SLES15/pkgs/ruby/3.1.2/bin/ruby /nfs/site/disks/fm_atsgt_00013/kheiney/AxeRuns/scripts/TriageELG/triageELG_DrGfx.rb"
+				}
+			],
+			"executionMethodHistoryId": 20404,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 242,
+					"status": "Error",
+					"excludeTestCi": false
+				}
+			],
+			"exitCodeTestListStatusRemap": [],
+			"deleted": false
+		},
+		{
+			"id": 4033,
+			"name": "Emulation_Lockup 2x2x12x4",
+			"software": "XeSim_MAIN",
+			"platformSoftware": "Emu_JGS_GT_2x2x12",
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "XE4.XPC:1X1X1X4:A0",
+			"attributes": [
+				{
+					"name": "AxeClientTestLimit",
+					"value": "1"
+				},
+				{
+					"name": "BondOptions",
+					"value": "-hooks /nfs/site/disks/fm_atsgt_00013/kheiney/AxeRuns/scripts/hookEmuRunLog.py"
+				},
+				{
+					"name": "EmuRunOptions",
+					"value": "-save none -c 500000000000000000000 -nbqslot /prj/gfx/jgs/ip_hw/sv/gt_64/standard -dut gt -target emu_nodfx.noupf.rpt.default64 -context XPC_JGS -tcp '-tb=-mfe -mfedebug 3 -free_running_clock -page_fault 0 -cf /nfs/site/disks/fm_dg2_00003/AXE_Debug/modelconfig_jgs_full.xml' -netbatch_opts '--priority 30' -loadlimit=1800"
+				},
+				{
+					"name": "EmuRunPlugin",
+					"value": "/nfs/site/disks/fm_atsgt_00013/kheiney/AxeRuns/scripts/AxePlugin.pm"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": "-host 127.0.0.1 -lar:capture  -debug:forceconfig ignore -project:folder emu -log:debug -log:regdump false -control:polltimeout time=1200000 -control:tbxTimeout all=3000 -watchdog frame=7200 test=7200 /triage /nfs/fm/itools/em64t_SLES15/pkgs/ruby/3.1.2/bin/ruby /nfs/site/disks/fm_atsgt_00013/kheiney/AxeRuns/scripts/TriageELG/triageELG_DrGfx.rb"
+				}
+			],
+			"executionMethodHistoryId": 19902,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 242,
+					"status": "Error",
+					"excludeTestCi": false
+				}
+			],
+			"exitCodeTestListStatusRemap": [],
+			"deleted": false
+		},
+		{
+			"id": 4039,
+			"name": "Emulation_Lockup 2x2x4x4",
+			"software": "XeSim_MAIN",
+			"platformSoftware": "Emu_JGS_GT_1x1x4",
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "XE4.XPC:1X1X1X4:A0",
+			"attributes": [
+				{
+					"name": "AxeClientTestLimit",
+					"value": "1"
+				},
+				{
+					"name": "BondOptions",
+					"value": "-hooks /nfs/site/disks/fm_atsgt_00013/kheiney/AxeRuns/scripts/hookEmuRunLog.py"
+				},
+				{
+					"name": "EmuRunOptions",
+					"value": "-save none -c 500000000000000000000 -nbqslot /prj/gfx/jgs/ip_hw/sv/gt_64/standard -dut gt -target emu_nodfx.noupf.red1x1x4.default64 -context XPC_JGS -tcp '-tb=-mfe -mfedebug 3 -free_running_clock -page_fault 0 -cf /nfs/site/disks/fm_dg2_00003/AXE_Debug/modelconfig_Xe4_XPC_1tx2x4x8x4_red1x1x4_SKU_96GB_LMEM.xml' -netbatch_opts '--priority 21' -loadlimit=1800"
+				},
+				{
+					"name": "EmuRunPlugin",
+					"value": "/nfs/site/disks/fm_atsgt_00013/kheiney/AxeRuns/scripts/AxePlugin.pm"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": "-host 127.0.0.1 -lar:capture  -debug:forceconfig ignore -project:folder emu -log:debug -log:regdump false -control:polltimeout time=1200000 -control:tbxTimeout all=3000 -watchdog frame=7200 test=7200 /triage /nfs/fm/itools/em64t_SLES15/pkgs/ruby/3.1.2/bin/ruby /nfs/site/disks/fm_atsgt_00013/kheiney/AxeRuns/scripts/TriageELG/triageELG_DrGfx.rb"
+				}
+			],
+			"executionMethodHistoryId": 19904,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 242,
+					"status": "Error",
+					"excludeTestCi": false
+				}
+			],
+			"exitCodeTestListStatusRemap": [],
+			"deleted": false
+		},
+		{
+			"id": 4104,
+			"name": "Render 1x1x1x4",
+			"software": "XeSim_MAIN",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "XE4.XPC:1X1X1X4:A0",
+			"attributes": [
+				{
+					"name": "AubloadOptions",
+					"value": "-driverOnly +grits -DnumQueues=32"
+				},
+				{
+					"name": "BondOptions",
+					"value": ""
+				},
+				{
+					"name": "DeviceOption",
+					"value": ":devices/xe4hpc.1tx1x1x4x4.a0.fused_1x1x1x4.map.xml"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-enablefeature :tlbModernization -enablefeature :gcidMultipleOf64 -target pipeGT:emulation -DtargetType=pgt"
+				},
+				{
+					"name": "LilyCompileOptions",
+					"value": ""
+				},
+				{
+					"name": "LilyXOptions",
+					"value": ""
+				}
+			],
+			"executionMethodHistoryId": 19909,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 242,
+					"status": "Error",
+					"excludeTestCi": false
+				}
+			],
+			"exitCodeTestListStatusRemap": [],
+			"deleted": false
+		},
+		{
+			"id": 3916,
+			"name": "Render 1x1x4x4",
+			"software": "XeSim_MAIN",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "XE4.XPC:1X1X1X4:A0",
+			"attributes": [
+				{
+					"name": "AubloadOptions",
+					"value": "-driverOnly"
+				},
+				{
+					"name": "BondOptions",
+					"value": ""
+				},
+				{
+					"name": "DeviceOption",
+					"value": ":devices/xe4hpc.1tx2x2x12x4.a0.fused_1tx1x1x4x4.gt.rtl.bringup.map.xml"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target pipeGT:emulation -DtargetType=pgt  -enableFeature :messageChannel3 -enablefeature 14026909483 -enablefeature 14023522245"
+				},
+				{
+					"name": "LilyCompileOptions",
+					"value": ""
+				},
+				{
+					"name": "LilyXOptions",
+					"value": ""
+				}
+			],
+			"executionMethodHistoryId": 20346,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 242,
+					"status": "Error",
+					"excludeTestCi": false
+				}
+			],
+			"exitCodeTestListStatusRemap": [],
+			"deleted": false
+		},
+		{
+			"id": 4030,
+			"name": "Render 2x2x12x4",
+			"software": "XeSim_MAIN",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "XE4.XPC:1X1X1X4:A0",
+			"attributes": [
+				{
+					"name": "AubloadOptions",
+					"value": "-driverOnly"
+				},
+				{
+					"name": "BondOptions",
+					"value": ""
+				},
+				{
+					"name": "DeviceOption",
+					"value": ":devices/xe4hpc.1tx2x2x12x4.a0.gt.rtl.bringup.map.xml"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-enablefeature :tlbModernization -enablefeature :gcidMultipleOf64 -target=fulsim:pipeGT:emulation -DtargetType=fulsim"
+				},
+				{
+					"name": "LilyCompileOptions",
+					"value": ""
+				},
+				{
+					"name": "LilyXOptions",
+					"value": ""
+				}
+			],
+			"executionMethodHistoryId": 19899,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 242,
+					"status": "Error",
+					"excludeTestCi": false
+				}
+			],
+			"exitCodeTestListStatusRemap": [],
+			"deleted": false
+		},
+		{
+			"id": 4040,
+			"name": "Render 2x2x4x4",
+			"software": "XeSim_MAIN",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "XE4.XPC:1X1X1X4:A0",
+			"attributes": [
+				{
+					"name": "AubloadOptions",
+					"value": "-driverOnly"
+				},
+				{
+					"name": "BondOptions",
+					"value": ""
+				},
+				{
+					"name": "DeviceOption",
+					"value": ":devices/xe4hpc.1tx2x2x12x4.a0.fused_1tx2x2x4x4.gt.map.xml"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-enablefeature :tlbModernization -enablefeature :gcidMultipleOf64 -target=fulsim:pipeGT:emulation -DtargetType=fulsim"
+				},
+				{
+					"name": "LilyCompileOptions",
+					"value": ""
+				},
+				{
+					"name": "LilyXOptions",
+					"value": ""
+				}
+			],
+			"executionMethodHistoryId": 19905,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 242,
+					"status": "Error",
+					"excludeTestCi": false
+				}
+			],
+			"exitCodeTestListStatusRemap": [],
+			"deleted": false
+		},
+		{
+			"id": 4105,
+			"name": "Render_Fulsim 1x1x1x4",
+			"software": "XeSim_MAIN",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "XE4.XPC:1X1X1X4:A0",
+			"attributes": [
+				{
+					"name": "AubloadOptions",
+					"value": "-driverOnly +grits -DnumQueues=32"
+				},
+				{
+					"name": "BondOptions",
+					"value": ""
+				},
+				{
+					"name": "DeviceOption",
+					"value": ":devices/xe4hpc.1tx1x1x4x4.a0.fused_1x1x1x4.map.xml"
+				},
+				{
+					"name": "FulsimTbxOptions",
+					"value": ""
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-disablefeature bf16fp16Atomics -enablefeature :tlbModernization -target=fulsim:pipeGT:emulation -DtargetType=fulsim"
+				},
+				{
+					"name": "LilyCompileOptions",
+					"value": ""
+				},
+				{
+					"name": "LilyXOptions",
+					"value": "-silent"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": "-lar:capture -crc:make -control:polltimeout time=21600000 -debug:forceconfig Fulsim -log:regdump false"
+				}
+			],
+			"executionMethodHistoryId": 19910,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 242,
+					"status": "Error",
+					"excludeTestCi": false
+				}
+			],
+			"exitCodeTestListStatusRemap": [],
+			"deleted": false
+		},
+		{
+			"id": 4110,
+			"name": "Render_Fulsim 1x1x1x4 Dump",
+			"software": "XeSim_MAIN",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "XE4.XPC:1X1X1X4:A0",
+			"attributes": [
+				{
+					"name": "AubloadOptions",
+					"value": "-driverOnly +grits -DnumQueues=32"
+				},
+				{
+					"name": "BondOptions",
+					"value": ""
+				},
+				{
+					"name": "DeviceOption",
+					"value": ":devices/xe4hpc.1tx1x1x4x4.a0.fused_1x1x1x4.map.xml"
+				},
+				{
+					"name": "FulsimTbxOptions",
+					"value": "-d all -dtrace"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-disablefeature bf16fp16Atomics -enablefeature :tlbModernization -enablefeature :gcidMultipleOf64 -target=fulsim:pipeGT:emulation -DtargetType=fulsim"
+				},
+				{
+					"name": "LilyCompileOptions",
+					"value": ""
+				},
+				{
+					"name": "LilyXOptions",
+					"value": "-silent"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": "-lar:capture -crc:make -log:trace FsMem.txt -control:polltimeout time=21600000 -debug:forceconfig Fulsim -log:regdump false"
+				}
+			],
+			"executionMethodHistoryId": 19912,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 242,
+					"status": "Error",
+					"excludeTestCi": false
+				}
+			],
+			"exitCodeTestListStatusRemap": [],
+			"deleted": false
+		},
+		{
+			"id": 3917,
+			"name": "Render_Fulsim 1x1x4x4",
+			"software": "XeSim_MAIN",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "XE4.XPC:1X1X1X4:A0",
+			"attributes": [
+				{
+					"name": "AubloadOptions",
+					"value": "-driverOnly"
+				},
+				{
+					"name": "BondOptions",
+					"value": ""
+				},
+				{
+					"name": "DeviceOption",
+					"value": ":devices/xe4hpc.1tx2x2x12x4.a0.fused_1tx1x1x4x4.gt.rtl.bringup.map.xml"
+				},
+				{
+					"name": "FulsimTbxOptions",
+					"value": ""
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-enableFeature :messageChannel3 -enableFeature 14026909483 -enableFeature :gucLMSkeyRevocationSupport -target=fulsim:pipeGT:emulation -DtargetType=fulsim -attr CO_ATTR_NUM_VIRTUAL_FUNCTIONS 2"
+				},
+				{
+					"name": "LilyCompileOptions",
+					"value": ""
+				},
+				{
+					"name": "LilyXOptions",
+					"value": "-silent"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": "-lar:capture -crc:make -control:polltimeout time=21600000 -debug:forceconfig Fulsim -log:regdump false -control:svaccessoptions DISABLE_ALL_SOFTWARE_CACHING=1"
+				}
+			],
+			"executionMethodHistoryId": 20347,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 242,
+					"status": "Error",
+					"excludeTestCi": false
+				}
+			],
+			"exitCodeTestListStatusRemap": [],
+			"deleted": false
+		},
+		{
+			"id": 3968,
+			"name": "Render_Fulsim 1x1x4x4 Dump",
+			"software": "XeSim_MAIN",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "XE4.XPC:1X1X1X4:A0",
+			"attributes": [
+				{
+					"name": "AubloadOptions",
+					"value": "-driverOnly"
+				},
+				{
+					"name": "BondOptions",
+					"value": ""
+				},
+				{
+					"name": "DeviceOption",
+					"value": ":devices/xe4hpc.1tx2x2x12x4.a0.fused_1tx1x1x4x4.gt.rtl.bringup.map.xml"
+				},
+				{
+					"name": "FulsimTbxOptions",
+					"value": "-d all -dtrace"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-enablefeature 14026909483 -enablefeature 14023522245 -enableFeature :messageChannel3 -target=fulsim:pipeGT:emulation -DtargetType=fulsim"
+				},
+				{
+					"name": "LilyCompileOptions",
+					"value": ""
+				},
+				{
+					"name": "LilyXOptions",
+					"value": "-silent"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": "-lar:capture -crc:make -log:trace FsMem.txt -control:polltimeout time=21600000 -debug:forceconfig Fulsim -log:regdump false"
+				}
+			],
+			"executionMethodHistoryId": 20107,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 242,
+					"status": "Error",
+					"excludeTestCi": false
+				}
+			],
+			"exitCodeTestListStatusRemap": [],
+			"deleted": false
+		},
+		{
+			"id": 4031,
+			"name": "Render_Fulsim 2x2x12x4",
+			"software": "XeSim_MAIN",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "XE4.XPC:1X1X4X8:A0",
+			"attributes": [
+				{
+					"name": "AubloadOptions",
+					"value": "-driverOnly"
+				},
+				{
+					"name": "BondOptions",
+					"value": ""
+				},
+				{
+					"name": "DeviceOption",
+					"value": ":devices/xe4hpc.1tx2x2x12x4.a0.gt.rtl.bringup.map.xml"
+				},
+				{
+					"name": "FulsimTbxOptions",
+					"value": ""
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-disablefeature bf16fp16Atomics -include enable_gcid_safe_mode.gsf -enablefeature :tlbModernization -enablefeature :gcidMultipleOf64 -attr LIMIT_COPY_ENGINES 2 -target=fulsim:pipeGT:emulation -DtargetType=fulsim"
+				},
+				{
+					"name": "LilyCompileOptions",
+					"value": ""
+				},
+				{
+					"name": "LilyXOptions",
+					"value": "-silent"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": "-lar:capture -crc:make -control:polltimeout time=21600000 -debug:forceconfig Fulsim -log:regdump false"
+				}
+			],
+			"executionMethodHistoryId": 19900,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 242,
+					"status": "Error",
+					"excludeTestCi": false
+				}
+			],
+			"exitCodeTestListStatusRemap": [],
+			"deleted": false
+		},
+		{
+			"id": 4041,
+			"name": "Render_Fulsim 2x2x4x4",
+			"software": "XeSim_MAIN",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "XE4.XPC:1X1X1X4:A0",
+			"attributes": [
+				{
+					"name": "AubloadOptions",
+					"value": "-driverOnly"
+				},
+				{
+					"name": "BondOptions",
+					"value": ""
+				},
+				{
+					"name": "DeviceOption",
+					"value": ":devices/xe4hpc.1tx2x2x12x4.a0.fused_1tx2x2x4x4.gt.map.xml"
+				},
+				{
+					"name": "FulsimTbxOptions",
+					"value": ""
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-disablefeature bf16fp16Atomics -include enable_gcid_safe_mode.gsf -enablefeature :tlbModernization -enablefeature :gcidMultipleOf64 -target=fulsim:pipeGT:emulation -DtargetType=fulsim"
+				},
+				{
+					"name": "LilyCompileOptions",
+					"value": ""
+				},
+				{
+					"name": "LilyXOptions",
+					"value": "-silent"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": "-lar:capture -crc:make -control:polltimeout time=21600000 -debug:forceconfig Fulsim -log:regdump false"
+				}
+			],
+			"executionMethodHistoryId": 19906,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 242,
+					"status": "Error",
+					"excludeTestCi": false
+				}
+			],
+			"exitCodeTestListStatusRemap": [],
+			"deleted": false
+		}
+	]
+}

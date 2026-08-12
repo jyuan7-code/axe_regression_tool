@@ -1,0 +1,130 @@
+{
+	"schemaVersion": "1.0",
+	"testListId": 308,
+	"testListPath": "VPG HW/CLS/UTP_Emulation",
+	"testListSettingsUrl": "https://axeweb.intel.com/axe/tests/testlists/308/settings/executionmethods",
+	"executionMethods": [
+		{
+			"id": 1958,
+			"name": "RTL Render emu3d cls.2x6.a0",
+			"software": "Cobalt_CLS",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "CLS:2X6X8:A0",
+			"attributes": [
+				{
+					"name": "AubloadOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.gk.txt -synctime 43200 -driverOnly -project:folder emu -silent -noImgSave"
+				},
+				{
+					"name": "DeviceOption",
+					"value": ":devices/cls.1tx2x6x8.a0.map.xml"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=fulsim:pipeGT:emulation -wa resetType:flr -DtargetType=fulsim -commandLine :config/devicexml/elg.feature.gk.txt"
+				},
+				{
+					"name": "LilyCompileOptions",
+					"value": "/compile"
+				},
+				{
+					"name": "LilyXOptions",
+					"value": "/lilyx"
+				}
+			],
+			"executionMethodHistoryId": 10872,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 1959,
+			"name": "RTL Render_Fulsim cls.2x6.a0 emu3d",
+			"software": "Cobalt_CLS",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "CLS:2X6X8:A0",
+			"attributes": [
+				{
+					"name": "AubloadOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.gk.txt -synctime 43200 -driverOnly -project:folder emu -silent -noImgSave"
+				},
+				{
+					"name": "DeviceOption",
+					"value": ":devices/cls.1tx2x6x8.a0.map.xml"
+				},
+				{
+					"name": "FulsimTbxOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.gk.txt"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=fulsim:pipeGT:emulation -wa resetType:flr -DtargetType=fulsim -commandLine :config/devicexml/elg.feature.gk.txt"
+				},
+				{
+					"name": "LilyCompileOptions",
+					"value": "/compile"
+				},
+				{
+					"name": "LilyXOptions",
+					"value": "/lilyx"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": "/runtest -control:pciredirect gfx=1.0 -lar:capture -crc:make -watchdog frame=43200 test=43200 -control:reset none -control:imagesave noarchive -debug:forceconfig unified"
+				}
+			],
+			"executionMethodHistoryId": 10873,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		}
+	]
+}

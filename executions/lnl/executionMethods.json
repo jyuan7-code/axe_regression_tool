@@ -1,0 +1,4159 @@
+{
+	"schemaVersion": "1.0",
+	"testListId": 198,
+	"testListPath": "VPG HW/LNL/Cobalt CI",
+	"testListSettingsUrl": "https://axeweb.intel.com/axe/tests/testlists/198/settings/executionmethods",
+	"executionMethods": [
+		{
+			"id": 753,
+			"name": "ArchTarget Functional lnl.2x4.a0 Cobalt",
+			"software": "Cobalt_LNL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "LNL:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/lnl.1tx2x4x8.a0.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-commandLine :config/devicexml/lnl.feature.cobalt.txt"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=Fulsim:pipegt:emulation -DmodelDevice lnl.2x4x8.a0 -commandLine :config/devicexml/lnl.feature.cobalt.txt"
+				}
+			],
+			"executionMethodHistoryId": 11430,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 754,
+			"name": "ArchTarget Functional lnl.2x4.a0 RTL",
+			"software": "Cobalt_LNL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "LNL:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/lnl.1tx2x4x8.a0.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-commandLine :config/devicexml/lnl.feature.gk.txt"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=Fulsim:pipegt:emulation -DmodelDevice lnl.2x4x8.a0 -commandLine :config/devicexml/lnl.feature.gk.txt"
+				}
+			],
+			"executionMethodHistoryId": 6196,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 755,
+			"name": "ArchTarget Perf lnl.2x4.a0 Cobalt",
+			"software": "Cobalt_LNL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "LNL:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "AubloadOptions",
+					"value": "-commandLine :config/devicexml/lnl.feature.cobalt.txt -commandLine :config/devicexml/lnl.feature.perf.cobalt.txt -sim_mode performance -cb_cfg stats_enable true tg_cfg_filename TG_ArchTarget.txt tg_interval 100 -cb_cfg hang_detect_enable true"
+				},
+				{
+					"name": "BondOptions",
+					"value": "-hooks :./cobalt_scripts/ArchTarget/tgperf_hook.py"
+				},
+				{
+					"name": "DeviceOption",
+					"value": ":devices/lnl.1tx2x4x8.a0.map.xml"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=Fulsim:pipegt:emulation -DmodelDevice lnl.2x4x8.a0 -commandLine :config/devicexml/lnl.feature.cobalt.txt -commandLine :config/devicexml/lnl.feature.perf.cobalt.txt"
+				}
+			],
+			"executionMethodHistoryId": 6197,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 756,
+			"name": "ArchTarget Perf lnl.2x4.a0 RTL",
+			"software": "Cobalt_LNL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "LNL:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "AubloadOptions",
+					"value": "-commandLine :config/devicexml/lnl.feature.gk.txt -sim_mode performance -cb_cfg stats_enable true tg_cfg_filename TG_ArchTarget.txt tg_interval 100 -cb_cfg hang_detect_enable true"
+				},
+				{
+					"name": "BondOptions",
+					"value": "-hooks :./cobalt_scripts/ArchTarget/tgperf_hook.py"
+				},
+				{
+					"name": "DeviceOption",
+					"value": ":devices/lnl.1tx2x4x8.a0.map.xml"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=Fulsim:pipegt:emulation -DmodelDevice lnl.2x4x8.a0 -commandLine :config/devicexml/lnl.feature.gk.txt"
+				}
+			],
+			"executionMethodHistoryId": 6198,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 757,
+			"name": "ArchTarget Perf+MPU lnl.2x4.a0 Cobalt",
+			"software": "Cobalt_LNL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "LNL:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "AubloadOptions",
+					"value": "-commandLine :config/devicexml/lnl.feature.cobalt.txt -commandLine :config/devicexml/lnl.feature.perf.cobalt.txt -sim_mode perf_mpu  -cb_cfg stats_enable true tg_cfg_filename TG_ArchTarget.txt tg_interval 100 -cb_cfg hang_detect_enable true -enableFeature 222222444"
+				},
+				{
+					"name": "BondOptions",
+					"value": "-hooks :./cobalt_scripts/ArchTarget/tgperf_hook.py"
+				},
+				{
+					"name": "DeviceOption",
+					"value": ":devices/lnl.1tx2x4x8.a0.noAts.map.xml"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=Fulsim:pipegt:emulation -DmodelDevice lnl.2x4x8.a0 -commandLine :config/devicexml/lnl.feature.cobalt.txt -commandLine :config/devicexml/lnl.feature.perf.cobalt.txt"
+				}
+			],
+			"executionMethodHistoryId": 10464,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 1607,
+			"name": "ATDB CobaltKaolin Functional lnl.2x4.a0",
+			"software": "Cobalt_LNL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "LNL:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "AubloadOptions",
+					"value": "-synctime 3600 -karch dg3 -commandLine kaolin_aubload.txt -commandLine kaolin_capture_knobs.txt -commandLine :config/devicexml/lnl.feature.cobalt.kaolin.txt"
+				},
+				{
+					"name": "BondOptions",
+					"value": "-var kaolin:path=\"../../Kaolin/bin\""
+				},
+				{
+					"name": "DeviceOption",
+					"value": ":devices/lnl.1tx2x4x8.a0.noAts.map.xml"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=Fulsim:kaolin -DmodelDevice lnl.2x4x8.a0 -commandLine kaolin_grits.txt -commandLine :config/devicexml/lnl.feature.cobalt.kaolin.txt"
+				},
+				{
+					"name": "KaolinOptions",
+					"value": "-trace kout -cfg :../cfg/xe2_lnl_2x4x8.cfg -tgcfg :../tg/tg2stats.txt,:../tg/graphprof.txt,:../tg/tg2extstats.txt,:../tg/tg2intstats.txt -tgout kaolin_timegraph.txt -stat kaolin.stat -tginterval 1000"
+				},
+				{
+					"name": "TargetConfig",
+					"value": ":config/elg/LNL_platform_config.xml"
+				}
+			],
+			"executionMethodHistoryId": 12136,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Pass",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [],
+			"deleted": false
+		},
+		{
+			"id": 1605,
+			"name": "ATDB CobaltKaolin lnl.2x4.a0",
+			"software": "Cobalt_LNL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "LNL:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "AubloadOptions",
+					"value": "-synctime 3600 -karch dg3 -commandLine kaolin_aubload.txt -commandLine kaolin_capture_knobs.txt -commandLine :config/devicexml/lnl.feature.cobalt.kaolin.txt"
+				},
+				{
+					"name": "BondOptions",
+					"value": "-var kaolin:path=\"../../Kaolin/bin\" -hooks :../Kaolin/script/lib/hooks/tgperf_hook.py"
+				},
+				{
+					"name": "DeviceOption",
+					"value": ":devices/lnl.1tx2x4x8.a0.noAts.map.xml"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=Fulsim:kaolin -DmodelDevice lnl.2x4x8.a0 -commandLine kaolin_grits.txt -commandLine :config/devicexml/lnl.feature.cobalt.kaolin.txt"
+				},
+				{
+					"name": "KaolinOptions",
+					"value": "-trace kout -cfg :../cfg/xe2_lnl_2x4x8.cfg -tgcfg :../tg/tg2stats.txt,:../tg/graphprof.txt,:../tg/tg2extstats.txt,:../tg/tg2intstats.txt -tgout kaolin_timegraph.txt -stat kaolin.stat -tginterval 1000"
+				},
+				{
+					"name": "TargetConfig",
+					"value": ":config/elg/LNL_platform_config.xml"
+				}
+			],
+			"executionMethodHistoryId": 12257,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Pass",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [],
+			"deleted": false
+		},
+		{
+			"id": 1608,
+			"name": "ATDB N-1 CobaltKaolin Functional ptl.1x4.a0",
+			"software": "Cobalt_LNL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "PTL:1X4X8:A0",
+			"attributes": [
+				{
+					"name": "AubloadOptions",
+					"value": "-synctime 3600 -karch dg3 -commandLine kaolin_aubload.txt -commandLine kaolin_capture_knobs.txt -commandLine :config/devicexml/lnl.feature.cobalt.kaolin.txt"
+				},
+				{
+					"name": "BondOptions",
+					"value": "-var kaolin:path=\"../../Kaolin/bin\""
+				},
+				{
+					"name": "DeviceOption",
+					"value": ":devices/lnl.1tx2x4x8.a0.noAts.map.xml"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=Fulsim:kaolin -DmodelDevice ptl.1x4x8.a0 -commandLine kaolin_grits.txt -commandLine :config/devicexml/lnl.feature.cobalt.kaolin.txt"
+				},
+				{
+					"name": "KaolinOptions",
+					"value": "-trace kout -cfg :../cfg/xe3_ptl_1x4x8.cfg -tgcfg :../tg/tg2stats.txt,:../tg/graphprof.txt,:../tg/tg2extstats.txt,:../tg/tg2intstats.txt -tgout kaolin_timegraph.txt -stat kaolin.stat -tginterval 1000"
+				},
+				{
+					"name": "TargetConfig",
+					"value": ":config/elg/LNL_platform_config.xml"
+				}
+			],
+			"executionMethodHistoryId": 12138,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Pass",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [],
+			"deleted": false
+		},
+		{
+			"id": 1950,
+			"name": "ATDB N-1 CobaltKaolin Functional ptl.2x6.a0",
+			"software": "Cobalt_LNL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "PTL:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "AubloadOptions",
+					"value": "-synctime 3600 -karch dg3 -commandLine kaolin_aubload.txt -commandLine kaolin_capture_knobs.txt -commandLine :config/devicexml/lnl.feature.cobalt.kaolin.txt"
+				},
+				{
+					"name": "BondOptions",
+					"value": "-var kaolin:path=\"../../Kaolin/bin\""
+				},
+				{
+					"name": "DeviceOption",
+					"value": ":devices/lnl.1tx2x4x8.a0.noAts.map.xml"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=Fulsim:kaolin -DmodelDevice ptl.2x6x8.a0 -commandLine kaolin_grits.txt -commandLine :config/devicexml/lnl.feature.cobalt.kaolin.txt"
+				},
+				{
+					"name": "KaolinOptions",
+					"value": "-trace kout -cfg :../cfg/xe3_ptl_2x6x8.cfg -tgcfg :../tg/tg2stats.txt,:../tg/graphprof.txt,:../tg/tg2extstats.txt,:../tg/tg2intstats.txt -tgout kaolin_timegraph.txt -stat kaolin.stat -tginterval 1000"
+				},
+				{
+					"name": "TargetConfig",
+					"value": ":config/elg/LNL_platform_config.xml"
+				}
+			],
+			"executionMethodHistoryId": 12139,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Pass",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [],
+			"deleted": false
+		},
+		{
+			"id": 1606,
+			"name": "ATDB N-1 CobaltKaolin ptl.1x4.a0",
+			"software": "Cobalt_LNL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "PTL:1X4X8:A0",
+			"attributes": [
+				{
+					"name": "AubloadOptions",
+					"value": "-synctime 3600 -karch dg3 -commandLine kaolin_aubload.txt -commandLine kaolin_capture_knobs.txt -commandLine rasty_path_enabling_knobs.txt -commandLine :config/devicexml/lnl.feature.cobalt.kaolin.txt"
+				},
+				{
+					"name": "BondOptions",
+					"value": "-var kaolin:path=\"../../Kaolin/bin\" -hooks :../Kaolin/script/lib/hooks/microsPerf_hook.py"
+				},
+				{
+					"name": "DeviceOption",
+					"value": ":devices/lnl.1tx2x4x8.a0.noAts.map.xml"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=Fulsim:kaolin -DmodelDevice ptl.1x4x8.a0 -commandLine kaolin_grits.txt -commandLine :config/devicexml/lnl.feature.cobalt.kaolin.txt"
+				},
+				{
+					"name": "KaolinOptions",
+					"value": "-trace kout -cfg :../cfg/xe3_ptl_1x4x8.cfg -tgcfg :../tg/tg2stats.txt,:../tg/graphprof.txt,:../tg/tg2extstats.txt,:../tg/tg2intstats.txt -tgout kaolin_timegraph.txt -stat kaolin.stat -tginterval 1000"
+				},
+				{
+					"name": "TargetConfig",
+					"value": ":config/elg/LNL_platform_config.xml"
+				}
+			],
+			"executionMethodHistoryId": 12258,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Pass",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [],
+			"deleted": false
+		},
+		{
+			"id": 1951,
+			"name": "ATDB N-1 CobaltKaolin ptl.2x6.a0",
+			"software": "Cobalt_LNL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "PTL:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "AubloadOptions",
+					"value": "-synctime 3600 -karch dg3 -commandLine kaolin_aubload.txt -commandLine kaolin_capture_knobs.txt -commandLine rasty_path_enabling_knobs.txt -commandLine :config/devicexml/lnl.feature.cobalt.kaolin.txt"
+				},
+				{
+					"name": "BondOptions",
+					"value": "-var kaolin:path=\"../../Kaolin/bin\" -hooks :../Kaolin/script/lib/hooks/microsPerf_hook.py"
+				},
+				{
+					"name": "DeviceOption",
+					"value": ":devices/lnl.1tx2x4x8.a0.noAts.map.xml"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=Fulsim:kaolin -DmodelDevice ptl.2x6x8.a0 -commandLine kaolin_grits.txt -commandLine :config/devicexml/lnl.feature.cobalt.kaolin.txt"
+				},
+				{
+					"name": "KaolinOptions",
+					"value": "-trace kout -cfg :../cfg/xe3_ptl_2x6x8.cfg -tgcfg :../tg/tg2stats.txt,:../tg/graphprof.txt,:../tg/tg2extstats.txt,:../tg/tg2intstats.txt -tgout kaolin_timegraph.txt -stat kaolin.stat -tginterval 1000"
+				},
+				{
+					"name": "TargetConfig",
+					"value": ":config/elg/LNL_platform_config.xml"
+				}
+			],
+			"executionMethodHistoryId": 12259,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Pass",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [],
+			"deleted": false
+		},
+		{
+			"id": 1612,
+			"name": "ATDB N-1 RastyKaolin Functional ptl.1x4.a0",
+			"software": "Cobalt_LNL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "PTL:1X4X8:A0",
+			"attributes": [
+				{
+					"name": "AubloadOptions",
+					"value": "-synctime 3600 -karch dg3 -commandLine kaolin_aubload.txt -commandLine kaolin_capture_knobs.txt -commandLine rasty_path_enabling_knobs.txt"
+				},
+				{
+					"name": "BondOptions",
+					"value": "-var kaolin:path=\"../../Kaolin/bin\""
+				},
+				{
+					"name": "DeviceOption",
+					"value": ":devices/lnl.1tx2x4x8.a0.noAts.map.xml"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=Fulsim:kaolin -DmodelDevice ptl.1x4x8.a0 -commandLine kaolin_grits.txt"
+				},
+				{
+					"name": "KaolinOptions",
+					"value": "-trace kout -cfg :../cfg/xe3_ptl_1x4x8.cfg -tgcfg :../tg/tg2stats.txt,:../tg/graphprof.txt,:../tg/tg2extstats.txt,:../tg/tg2intstats.txt -tgout kaolin_timegraph.txt -stat kaolin.stat -tginterval 1000 -Eu.Detailed true"
+				},
+				{
+					"name": "TargetConfig",
+					"value": ":config/elg/LNL_platform_config.xml"
+				}
+			],
+			"executionMethodHistoryId": 12750,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Pass",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [],
+			"deleted": false
+		},
+		{
+			"id": 1952,
+			"name": "ATDB N-1 RastyKaolin Functional ptl.2x6.a0",
+			"software": "Cobalt_LNL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "PTL:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "AubloadOptions",
+					"value": "-synctime 3600 -karch dg3 -commandLine kaolin_aubload.txt -commandLine kaolin_capture_knobs.txt -commandLine rasty_path_enabling_knobs.txt"
+				},
+				{
+					"name": "BondOptions",
+					"value": "-var kaolin:path=\"../../Kaolin/bin\""
+				},
+				{
+					"name": "DeviceOption",
+					"value": ":devices/lnl.1tx2x4x8.a0.noAts.map.xml"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=Fulsim:kaolin -DmodelDevice ptl.2x6x8.a0 -commandLine kaolin_grits.txt"
+				},
+				{
+					"name": "KaolinOptions",
+					"value": "-trace kout -cfg :../cfg/xe3_ptl_2x6x8.cfg -tgcfg :../tg/tg2stats.txt,:../tg/graphprof.txt,:../tg/tg2extstats.txt,:../tg/tg2intstats.txt -tgout kaolin_timegraph.txt -stat kaolin.stat -tginterval 1000 -Eu.Detailed true"
+				},
+				{
+					"name": "TargetConfig",
+					"value": ":config/elg/LNL_platform_config.xml"
+				}
+			],
+			"executionMethodHistoryId": 12751,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Pass",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [],
+			"deleted": false
+		},
+		{
+			"id": 1610,
+			"name": "ATDB N-1 RastyKaolin ptl.1x4.a0",
+			"software": "Cobalt_LNL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "PTL:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "AubloadOptions",
+					"value": "-synctime 3600 -karch dg3 -commandLine kaolin_aubload.txt -commandLine kaolin_capture_knobs.txt -commandLine rasty_path_enabling_knobs.txt"
+				},
+				{
+					"name": "BondOptions",
+					"value": "-var kaolin:path=\"../../Kaolin/bin\" -hooks :../Kaolin/script/lib/hooks/microsPerf_hook.py"
+				},
+				{
+					"name": "DeviceOption",
+					"value": ":devices/lnl.1tx2x4x8.a0.noAts.map.xml"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=Fulsim:kaolin -DmodelDevice ptl.1x4x8.a0 -commandLine kaolin_grits.txt"
+				},
+				{
+					"name": "KaolinOptions",
+					"value": "-trace kout -cfg :../cfg/xe3_ptl_1x4x8.cfg -tgcfg :../tg/tg2stats.txt,:../tg/graphprof.txt,:../tg/tg2extstats.txt,:../tg/tg2intstats.txt -tgout kaolin_timegraph.txt -stat kaolin.stat -tginterval 1000 -Eu.Detailed true"
+				},
+				{
+					"name": "TargetConfig",
+					"value": ":config/elg/LNL_platform_config.xml"
+				}
+			],
+			"executionMethodHistoryId": 12752,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Pass",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [],
+			"deleted": false
+		},
+		{
+			"id": 1953,
+			"name": "ATDB N-1 RastyKaolin ptl.2x6.a0",
+			"software": "Cobalt_LNL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "PTL:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "AubloadOptions",
+					"value": "-synctime 3600 -karch dg3 -commandLine kaolin_aubload.txt -commandLine kaolin_capture_knobs.txt -commandLine rasty_path_enabling_knobs.txt"
+				},
+				{
+					"name": "BondOptions",
+					"value": "-var kaolin:path=\"../../Kaolin/bin\" -hooks :../Kaolin/script/lib/hooks/microsPerf_hook.py"
+				},
+				{
+					"name": "DeviceOption",
+					"value": ":devices/lnl.1tx2x4x8.a0.noAts.map.xml"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=Fulsim:kaolin -DmodelDevice ptl.2x6x8.a0 -commandLine kaolin_grits.txt"
+				},
+				{
+					"name": "KaolinOptions",
+					"value": "-trace kout -cfg :../cfg/xe3_ptl_2x6x8.cfg -tgcfg :../tg/tg2stats.txt,:../tg/graphprof.txt,:../tg/tg2extstats.txt,:../tg/tg2intstats.txt -tgout kaolin_timegraph.txt -stat kaolin.stat -tginterval 1000 -Eu.Detailed true"
+				},
+				{
+					"name": "TargetConfig",
+					"value": ":config/elg/LNL_platform_config.xml"
+				}
+			],
+			"executionMethodHistoryId": 12753,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Pass",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [],
+			"deleted": false
+		},
+		{
+			"id": 1611,
+			"name": "ATDB RastyKaolin Functional lnl.2x4.a0",
+			"software": "Cobalt_LNL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "LNL:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "AubloadOptions",
+					"value": "-synctime 3600 -karch dg3 -commandLine kaolin_aubload.txt -commandLine kaolin_capture_knobs.txt -commandLine rasty_path_enabling_knobs.txt"
+				},
+				{
+					"name": "BondOptions",
+					"value": "-var kaolin:path=\"../../Kaolin/bin\""
+				},
+				{
+					"name": "DeviceOption",
+					"value": ":devices/lnl.1tx2x4x8.a0.noAts.map.xml"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=Fulsim:kaolin -DmodelDevice lnl.2x4x8.a0 -commandLine kaolin_grits.txt"
+				},
+				{
+					"name": "KaolinOptions",
+					"value": "-trace kout -cfg :../cfg/xe2_lnl_2x4x8.cfg -tgcfg :../tg/tg2stats.txt,:../tg/graphprof.txt,:../tg/tg2extstats.txt,:../tg/tg2intstats.txt -tgout kaolin_timegraph.txt -stat kaolin.stat -tginterval 1000 -Eu.Detailed true"
+				},
+				{
+					"name": "TargetConfig",
+					"value": ":config/elg/LNL_platform_config.xml"
+				}
+			],
+			"executionMethodHistoryId": 12754,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Pass",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [],
+			"deleted": false
+		},
+		{
+			"id": 1609,
+			"name": "ATDB RastyKaolin lnl.2x4.a0",
+			"software": "Cobalt_LNL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "LNL:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "AubloadOptions",
+					"value": "-synctime 3600 -karch dg3 -commandLine kaolin_aubload.txt -commandLine kaolin_capture_knobs.txt -commandLine rasty_path_enabling_knobs.txt"
+				},
+				{
+					"name": "BondOptions",
+					"value": "-var kaolin:path=\"../../Kaolin/bin\" -hooks :../Kaolin/script/lib/hooks/microsPerf_hook.py"
+				},
+				{
+					"name": "DeviceOption",
+					"value": ":devices/lnl.1tx2x4x8.a0.noAts.map.xml"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=Fulsim:kaolin -DmodelDevice lnl.2x4x8.a0 -commandLine kaolin_grits.txt"
+				},
+				{
+					"name": "KaolinOptions",
+					"value": "-trace kout -cfg :../cfg/xe2_lnl_2x4x8.cfg -tgcfg :../tg/tg2stats.txt,:../tg/graphprof.txt,:../tg/tg2extstats.txt,:../tg/tg2intstats.txt -tgout kaolin_timegraph.txt -stat kaolin.stat -tginterval 1000 -Eu.Detailed true"
+				},
+				{
+					"name": "TargetConfig",
+					"value": ":config/elg/LNL_platform_config.xml"
+				}
+			],
+			"executionMethodHistoryId": 12824,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Pass",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [],
+			"deleted": false
+		},
+		{
+			"id": 955,
+			"name": "BullsEye  lnl.2x4.a0 Cobalt 3D",
+			"software": "Cobalt_LNL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "LNL:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/lnl.1tx2x4x8.a0.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-commandLine :config/devicexml/lnl.feature.cobalt.txt"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-commandLine :config/devicexml/lnl.feature.cobalt.txt"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": "-pre \"ruby /nfs/site/disks/sc6_cobalt_core_private/ashingad/LNL_Coverage/Scripts/preHookScript.rb\" -post \"ruby /nfs/site/disks/sc6_cobalt_core_private/ashingad/LNL_Coverage/Scripts/postHookScript.rb\" -covfile \"/test.cov\""
+				}
+			],
+			"executionMethodHistoryId": 6736,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 946,
+			"name": "BullsEye ArchTarget Functional lnl.2x4.a0 Cobalt",
+			"software": "Cobalt_LNL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "LNL:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/lnl.1tx2x4x8.a0.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-commandLine :config/devicexml/lnl.feature.cobalt.txt"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=Fulsim:pipegt:emulation -DmodelDevice lnl.2x4x8.a0 -commandLine :config/devicexml/lnl.feature.cobalt.txt"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": "-pre \"ruby /nfs/site/disks/sc6_cobalt_core_private/ashingad/LNL_Coverage/Scripts/preHookScript.rb\" -post \"ruby /nfs/site/disks/sc6_cobalt_core_private/ashingad/LNL_Coverage/Scripts/postHookScript.rb\" -covfile \"/test.cov\""
+				}
+			],
+			"executionMethodHistoryId": 6727,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 947,
+			"name": "BullsEye ArchTarget Functional lnl.2x4.a0 RTL",
+			"software": "Cobalt_LNL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "LNL:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/lnl.1tx2x4x8.a0.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-commandLine :config/devicexml/lnl.feature.gk.txt"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=Fulsim:pipegt:emulation -DmodelDevice lnl.2x4x8.a0 -commandLine :config/devicexml/lnl.feature.gk.txt"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": "-pre \"ruby /nfs/site/disks/sc6_cobalt_core_private/ashingad/LNL_Coverage/Scripts/preHookScript.rb\" -post \"ruby /nfs/site/disks/sc6_cobalt_core_private/ashingad/LNL_Coverage/Scripts/postHookScript.rb\" -covfile \"/test.cov\""
+				}
+			],
+			"executionMethodHistoryId": 6728,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 948,
+			"name": "BullsEye ArchTarget Perf lnl.2x4.a0 Cobalt",
+			"software": "Cobalt_LNL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "LNL:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "AubloadOptions",
+					"value": "-commandLine :config/devicexml/lnl.feature.cobalt.txt -commandLine :config/devicexml/lnl.feature.perf.cobalt.txt -sim_mode performance -cb_cfg stats_enable true tg_cfg_filename TG_ArchTarget.txt tg_interval 100 -cb_cfg hang_detect_enable true"
+				},
+				{
+					"name": "BondOptions",
+					"value": "-hooks :./cobalt_scripts/ArchTarget/tgperf_hook.py  /nfs/site/disks/sc6_cobalt_core_private/ashingad/LNL_Coverage/Scripts/RMBucketHookGlobal2.py"
+				},
+				{
+					"name": "DeviceOption",
+					"value": ":devices/lnl.1tx2x4x8.a0.map.xml"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=Fulsim:pipegt:emulation -DmodelDevice lnl.2x4x8.a0 -commandLine :config/devicexml/lnl.feature.cobalt.txt -commandLine :config/devicexml/lnl.feature.perf.cobalt.txt"
+				}
+			],
+			"executionMethodHistoryId": 6729,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 949,
+			"name": "BullsEye ArchTarget Perf lnl.2x4.a0 RTL",
+			"software": "Cobalt_LNL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "LNL:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "AubloadOptions",
+					"value": "-commandLine :config/devicexml/lnl.feature.gk.txt -sim_mode performance -cb_cfg stats_enable true tg_cfg_filename TG_ArchTarget.txt tg_interval 100 -cb_cfg hang_detect_enable true"
+				},
+				{
+					"name": "BondOptions",
+					"value": "-hooks :./cobalt_scripts/ArchTarget/tgperf_hook.py /nfs/site/disks/sc6_cobalt_core_private/ashingad/LNL_Coverage/Scripts/RMBucketHookGlobal2.py"
+				},
+				{
+					"name": "DeviceOption",
+					"value": ":devices/lnl.1tx2x4x8.a0.map.xml"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=Fulsim:pipegt:emulation -DmodelDevice lnl.2x4x8.a0 -commandLine :config/devicexml/lnl.feature.gk.txt"
+				}
+			],
+			"executionMethodHistoryId": 6730,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 950,
+			"name": "BullsEye ArchTarget Perf+MPU lnl.2x4.a0 Cobalt",
+			"software": "Cobalt_LNL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "LNL:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "AubloadOptions",
+					"value": "-commandLine :config/devicexml/lnl.feature.cobalt.txt -commandLine :config/devicexml/lnl.feature.perf.cobalt.txt -sim_mode perf_mpu  -cb_cfg stats_enable true tg_cfg_filename TG_ArchTarget.txt tg_interval 100 -cb_cfg hang_detect_enable true -enableFeature 222222444"
+				},
+				{
+					"name": "BondOptions",
+					"value": "-hooks :./cobalt_scripts/ArchTarget/tgperf_hook.py /nfs/site/disks/sc6_cobalt_core_private/ashingad/LNL_Coverage/Scripts/RMBucketHookGlobal2.py"
+				},
+				{
+					"name": "DeviceOption",
+					"value": ":devices/lnl.1tx2x4x8.a0.map.xml"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=Fulsim:pipegt:emulation -DmodelDevice lnl.2x4x8.a0 -commandLine :config/devicexml/lnl.feature.cobalt.txt -commandLine :config/devicexml/lnl.feature.perf.cobalt.txt"
+				}
+			],
+			"executionMethodHistoryId": 6731,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 951,
+			"name": "BullsEye Cobalt Perf Verification lnl.2x4.a0",
+			"software": "Cobalt_LNL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "LNL:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/lnl.1tx2x4x8.a0.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-commandLine :config/devicexml/lnl.feature.cobalt.gmd.txt"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-commandLine :config/devicexml/lnl.feature.cobalt.gmd.txt"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": "-pre \"ruby /nfs/site/disks/sc6_cobalt_core_private/ashingad/LNL_Coverage/Scripts/preHookScript.rb\" -post \"ruby /nfs/site/disks/sc6_cobalt_core_private/ashingad/LNL_Coverage/Scripts/postHookScript.rb\" -covfile \"/test.cov\" -perf -perftolerance 0.05"
+				}
+			],
+			"executionMethodHistoryId": 6732,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 952,
+			"name": "BullsEye Grits-LNL 2x4x8.A0 kaolin functional",
+			"software": "Cobalt_LNL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type lilyagent",
+			"productConfig": "LNL:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "AubloadOptions",
+					"value": "-synctime 3600  -kout kaolin -karch elg -enablefeature :kaolinObserverAndTraceRecording -enableDcGpgpuPrintMessage   -commandLine :config/devicexml/lnl.feature.cobalt.kaolin.txt"
+				},
+				{
+					"name": "BondOptions",
+					"value": "-var kaolin:path=\"../../Kaolin/bin\"  -hooks /nfs/site/disks/sc6_cobalt_core_private/ashingad/LNL_Coverage/Scripts/RMBucketHookGlobal2.py"
+				},
+				{
+					"name": "DeviceOption",
+					"value": "\"LNL:2x4x8:a0\""
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=Fulsim:pipegt:emulation -DmodelDevice lnl.2x4x8.a0   -commandLine :config/devicexml/lnl.feature.cobalt.kaolin.txt"
+				},
+				{
+					"name": "KaolinOptions",
+					"value": "-cfg :../cfg/xe2_lnl_2x4x8.cfg  -tgcfg :../tg/tg2stats.txt -tgout kaolin_timegraph.txt -stat kaolin.stat -tginterval 1000"
+				}
+			],
+			"executionMethodHistoryId": 12148,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 953,
+			"name": "BullsEye lnl.2x3.a0 Cobalt 3D",
+			"software": "Cobalt_LNL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "LNL:2X3X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/lnl.1tx2x3x8.a0.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-commandLine :config/devicexml/lnl.feature.cobalt.txt"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-commandLine :config/devicexml/lnl.feature.cobalt.txt"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": "-pre \"ruby /nfs/site/disks/sc6_cobalt_core_private/ashingad/LNL_Coverage/Scripts/preHookScript.rb\" -post \"ruby /nfs/site/disks/sc6_cobalt_core_private/ashingad/LNL_Coverage/Scripts/postHookScript.rb\" -covfile \"/test.cov\""
+				}
+			],
+			"executionMethodHistoryId": 6734,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 954,
+			"name": "BullsEye lnl.2x4.a0 Cobalt 2D",
+			"software": "Cobalt_LNL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "LNL:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/lnl.1tx2x4x8.a0.display.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": ""
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-commandLine :config/devicexml/lnl.feature.cobalt.2d.txt"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": "-pre \"ruby /nfs/site/disks/sc6_cobalt_core_private/ashingad/LNL_Coverage/Scripts/preHookScript.rb\" -post \"ruby /nfs/site/disks/sc6_cobalt_core_private/ashingad/LNL_Coverage/Scripts/postHookScript.rb\" -covfile \"/test.cov\""
+				}
+			],
+			"executionMethodHistoryId": 6735,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [],
+			"deleted": false
+		},
+		{
+			"id": 956,
+			"name": "BullsEye lnl.2x4.a0 Cobalt 3D VirtualMemoryHigh",
+			"software": "Cobalt_LNL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "LNL:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/lnl.1tx2x4x8.a0.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-commandLine :config/devicexml/lnl.feature.cobalt.txt"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-commandLine :config/devicexml/lnl.feature.cobalt.txt  -configOverride :bios/LNL_platform_config_64GB_GMD_Lo4GB_bios.xml"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": "-pre \"ruby /nfs/site/disks/sc6_cobalt_core_private/ashingad/LNL_Coverage/Scripts/preHookScript.rb\" -post \"ruby /nfs/site/disks/sc6_cobalt_core_private/ashingad/LNL_Coverage/Scripts/postHookScript.rb\" -covfile \"/test.cov\""
+				}
+			],
+			"executionMethodHistoryId": 6737,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 957,
+			"name": "BullsEye lnl.2x4.a0 fused Cobalt 3D",
+			"software": "Cobalt_LNL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "LNL:2X4X2:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/lnl.1tx2x4x2.a0.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-commandLine :config/devicexml/lnl.feature.cobalt.txt"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-commandLine :config/devicexml/lnl.feature.cobalt.txt"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": "-pre \"ruby /nfs/site/disks/sc6_cobalt_core_private/ashingad/LNL_Coverage/Scripts/preHookScript.rb\" -post \"ruby /nfs/site/disks/sc6_cobalt_core_private/ashingad/LNL_Coverage/Scripts/postHookScript.rb\" -covfile \"/test.cov\""
+				}
+			],
+			"executionMethodHistoryId": 6738,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 958,
+			"name": "BullsEye lnl.2x4.a0 Perf Cobalt",
+			"software": "Cobalt_LNL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "LNL:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/lnl.1tx2x4x8.a0.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-commandLine :config/devicexml/lnl.feature.cobalt.txt -commandLine :config/devicexml/lnl.feature.perf.cobalt.txt  -sim_mode performance"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-commandLine :config/devicexml/lnl.feature.cobalt.txt -commandLine :config/devicexml/lnl.feature.perf.cobalt.txt"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": "-pre \"ruby /nfs/site/disks/sc6_cobalt_core_private/ashingad/LNL_Coverage/Scripts/preHookScript.rb\" -post \"ruby /nfs/site/disks/sc6_cobalt_core_private/ashingad/LNL_Coverage/Scripts/postHookScript.rb\" -covfile \"/test.cov\""
+				}
+			],
+			"executionMethodHistoryId": 6739,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 959,
+			"name": "BullsEye lnl.2x4.a0 Perf+MFU Cobalt",
+			"software": "Cobalt_LNL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "LNL:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/lnl.1tx2x4x8.a0.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-commandLine :config/devicexml/lnl.feature.cobalt.txt -commandLine :config/devicexml/lnl.feature.perf.cobalt.txt -sim_mode perf_mfu"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-commandLine :config/devicexml/lnl.feature.cobalt.txt -commandLine :config/devicexml/lnl.feature.perf.cobalt.txt"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": "-pre \"ruby /nfs/site/disks/sc6_cobalt_core_private/ashingad/LNL_Coverage/Scripts/preHookScript.rb\" -post \"ruby /nfs/site/disks/sc6_cobalt_core_private/ashingad/LNL_Coverage/Scripts/postHookScript.rb\" -covfile \"/test.cov\""
+				}
+			],
+			"executionMethodHistoryId": 6740,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 960,
+			"name": "BullsEye lnl.2x4.a0 Perf+MPU Cobalt",
+			"software": "Cobalt_LNL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "LNL:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/lnl.1tx2x4x8.a0.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-commandLine :config/devicexml/lnl.feature.cobalt.txt -commandLine :config/devicexml/lnl.feature.perf.cobalt.txt -sim_mode perf_mpu"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-commandLine :config/devicexml/lnl.feature.cobalt.txt -commandLine :config/devicexml/lnl.feature.perf.cobalt.txt"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": "-pre \"ruby /nfs/site/disks/sc6_cobalt_core_private/ashingad/LNL_Coverage/Scripts/preHookScript.rb\" -post \"ruby /nfs/site/disks/sc6_cobalt_core_private/ashingad/LNL_Coverage/Scripts/postHookScript.rb\" -covfile \"/test.cov\""
+				}
+			],
+			"executionMethodHistoryId": 6741,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 961,
+			"name": "BullsEye lnl.2x4.a0 RTL 3D",
+			"software": "Cobalt_LNL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "LNL:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/lnl.1tx2x4x8.a0.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-commandLine :config/devicexml/lnl.feature.gk.txt"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-commandLine :config/devicexml/lnl.feature.gk.txt"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": "-pre \"ruby /nfs/site/disks/sc6_cobalt_core_private/ashingad/LNL_Coverage/Scripts/preHookScript.rb\" -post \"ruby /nfs/site/disks/sc6_cobalt_core_private/ashingad/LNL_Coverage/Scripts/postHookScript.rb\" -covfile \"/test.cov\""
+				}
+			],
+			"executionMethodHistoryId": 6742,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 962,
+			"name": "BullsEye lnl.2x4.a0 RTL 3D PTC",
+			"software": "Cobalt_LNL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "LNL:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/lnl.1tx2x4x8.a0.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-commandLine :config/devicexml/lnl.feature.gk.txt"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-commandLine :config/devicexml/lnl.feature.gk.txt"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": "-pre \"ruby /nfs/site/disks/sc6_cobalt_core_private/ashingad/LNL_Coverage/Scripts/preHookScript.rb\" -post \"ruby /nfs/site/disks/sc6_cobalt_core_private/ashingad/LNL_Coverage/Scripts/postHookScript.rb\" -covfile \"/test.cov\" -ptc"
+				}
+			],
+			"executionMethodHistoryId": 6743,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 101,
+					"status": "Warn",
+					"excludeTestCi": true
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 963,
+			"name": "BullsEye lnl.2x4.a0 UTP 3D",
+			"software": "Cobalt_LNL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "LNL:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/lnl.1tx2x4x8.a0.GD.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-commandLine :config/devicexml/lnl.feature.cobalt.txt"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-commandLine :config/devicexml/lnl.feature.cobalt.txt -target=Fulsim:pipegt:simulation -DtargetType=simulation"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": "-pre \"ruby /nfs/site/disks/sc6_cobalt_core_private/ashingad/LNL_Coverage/Scripts/preHookScript.rb\" -post \"ruby /nfs/site/disks/sc6_cobalt_core_private/ashingad/LNL_Coverage/Scripts/postHookScript.rb\" -covfile \"/test.cov\""
+				}
+			],
+			"executionMethodHistoryId": 6744,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 964,
+			"name": "BullsEye lnl.2x4.a0 UTP GMD",
+			"software": "Cobalt_LNL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "LNL:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/lnl.1tx2x4x8.a0.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-commandLine :config/devicexml/lnl.feature.cobalt.txt"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-commandLine :config/devicexml/lnl.feature.cobalt.txt -target=Fulsim:gtUncore:simulation -DtargetType=simulation"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": "-pre \"ruby /nfs/site/disks/sc6_cobalt_core_private/ashingad/LNL_Coverage/Scripts/preHookScript.rb\" -post \"ruby /nfs/site/disks/sc6_cobalt_core_private/ashingad/LNL_Coverage/Scripts/postHookScript.rb\" -covfile \"/test.cov\""
+				}
+			],
+			"executionMethodHistoryId": 6745,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 965,
+			"name": "BullsEye lnl.2x4.a0 UTP Media",
+			"software": "Cobalt_LNL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "LNL:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/lnl.1tx2x4x8.a0.media.large.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-commandLine :config/devicexml/lnl.feature.cobalt.media.txt"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-commandLine :config/devicexml/lnl.feature.cobalt.media.txt -target=Fulsim:superPipeMedia:simulation -DtargetType=simulation"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": "-pre \"ruby /nfs/site/disks/sc6_cobalt_core_private/ashingad/LNL_Coverage/Scripts/preHookScript.rb\" -post \"ruby /nfs/site/disks/sc6_cobalt_core_private/ashingad/LNL_Coverage/Scripts/postHookScript.rb\" -covfile \"/test.cov\""
+				}
+			],
+			"executionMethodHistoryId": 6746,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 966,
+			"name": "BullsEye lnl.4x4.a0 Cobalt 3D",
+			"software": "Cobalt_LNL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "LNL:4X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/lnl.1tx4x4x8.a0.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-commandLine :config/devicexml/lnl.feature.cobalt.txt"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-commandLine :config/devicexml/lnl.feature.cobalt.txt"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": "-pre \"ruby /nfs/site/disks/sc6_cobalt_core_private/ashingad/LNL_Coverage/Scripts/preHookScript.rb\" -post \"ruby /nfs/site/disks/sc6_cobalt_core_private/ashingad/LNL_Coverage/Scripts/postHookScript.rb\" -covfile \"/test.cov\""
+				}
+			],
+			"executionMethodHistoryId": 6747,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 967,
+			"name": "BullsEye lnl.8x4.a0 Cobalt 3D",
+			"software": "Cobalt_LNL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "LNL:8X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/lnl.1tx8x4x8.a0.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-commandLine :config/devicexml/lnl.feature.cobalt.txt"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-commandLine :config/devicexml/lnl.feature.cobalt.txt"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": "-pre \"ruby /nfs/site/disks/sc6_cobalt_core_private/ashingad/LNL_Coverage/Scripts/preHookScript.rb\" -post \"ruby /nfs/site/disks/sc6_cobalt_core_private/ashingad/LNL_Coverage/Scripts/postHookScript.rb\" -covfile \"/test.cov\""
+				}
+			],
+			"executionMethodHistoryId": 6748,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 968,
+			"name": "BullsEye Media Xe2 LPM Large Cobalt",
+			"software": "Cobalt_LNL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "LNL:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/lnl.1tx2x4x8.a0.media.large.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": ""
+				},
+				{
+					"name": "GritsOptions",
+					"value": ""
+				},
+				{
+					"name": "RunTestOptions",
+					"value": "-pre \"ruby /nfs/site/disks/sc6_cobalt_core_private/ashingad/LNL_Coverage/Scripts/preHookScript.rb\" -post \"ruby /nfs/site/disks/sc6_cobalt_core_private/ashingad/LNL_Coverage/Scripts/postHookScript.rb\" -covfile \"/test.cov\""
+				}
+			],
+			"executionMethodHistoryId": 6749,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 969,
+			"name": "BullsEye Media Xe2 LPM Mini Cobalt",
+			"software": "Cobalt_LNL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "LNL:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/lnl.1tx2x4x8.a0.media.mini.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": ""
+				},
+				{
+					"name": "GritsOptions",
+					"value": ""
+				},
+				{
+					"name": "RunTestOptions",
+					"value": "-pre \"ruby /nfs/site/disks/sc6_cobalt_core_private/ashingad/LNL_Coverage/Scripts/preHookScript.rb\" -post \"ruby /nfs/site/disks/sc6_cobalt_core_private/ashingad/LNL_Coverage/Scripts/postHookScript.rb\" -covfile \"/test.cov\""
+				}
+			],
+			"executionMethodHistoryId": 6750,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 970,
+			"name": "BullsEye Media Xe2 LPM SCMI Cobalt",
+			"software": "Cobalt_LNL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "LNL:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/lnl.1tx2x4x8.a0.media.scmi.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": ""
+				},
+				{
+					"name": "GritsOptions",
+					"value": ""
+				},
+				{
+					"name": "RunTestOptions",
+					"value": "-pre \"ruby /nfs/site/disks/sc6_cobalt_core_private/ashingad/LNL_Coverage/Scripts/preHookScript.rb\" -post \"ruby /nfs/site/disks/sc6_cobalt_core_private/ashingad/LNL_Coverage/Scripts/postHookScript.rb\" -covfile \"/test.cov\""
+				}
+			],
+			"executionMethodHistoryId": 6751,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 971,
+			"name": "BullsEye Media Xe2 LPM Small Cobalt",
+			"software": "Cobalt_LNL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "LNL:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/lnl.1tx2x4x8.a0.media.small.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": ""
+				},
+				{
+					"name": "GritsOptions",
+					"value": ""
+				},
+				{
+					"name": "RunTestOptions",
+					"value": "-pre \"ruby /nfs/site/disks/sc6_cobalt_core_private/ashingad/LNL_Coverage/Scripts/preHookScript.rb\" -post \"ruby /nfs/site/disks/sc6_cobalt_core_private/ashingad/LNL_Coverage/Scripts/postHookScript.rb\" -covfile \"/test.cov\""
+				}
+			],
+			"executionMethodHistoryId": 6752,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 972,
+			"name": "BullsEye Media Xe2 LPM Vdd Vep Cobalt",
+			"software": "Cobalt_LNL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "LNL:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/lnl.1tx2x4x8.a0.media.vddvep.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": ""
+				},
+				{
+					"name": "GritsOptions",
+					"value": ""
+				},
+				{
+					"name": "RunTestOptions",
+					"value": "-pre \"ruby /nfs/site/disks/sc6_cobalt_core_private/ashingad/LNL_Coverage/Scripts/preHookScript.rb\" -post \"ruby /nfs/site/disks/sc6_cobalt_core_private/ashingad/LNL_Coverage/Scripts/postHookScript.rb\" -covfile \"/test.cov\""
+				}
+			],
+			"executionMethodHistoryId": 6753,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 758,
+			"name": "Cobalt Perf Verification lnl.2x4.a0",
+			"software": "Cobalt_LNL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "LNL:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/lnl.1tx2x4x8.a0.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-commandLine :config/devicexml/lnl.feature.cobalt.gmd.txt"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-commandLine :config/devicexml/lnl.feature.cobalt.gmd.txt"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": "-perf -perftolerance 0.05"
+				}
+			],
+			"executionMethodHistoryId": 6200,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 920,
+			"name": "Grits-LNL 2x4x8.A0 kaolin functional",
+			"software": "Cobalt_LNL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type lilyagent",
+			"productConfig": "LNL:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "AubloadOptions",
+					"value": "-synctime 3600  -kout kaolin -karch elg -enablefeature :kaolinObserverAndTraceRecording -enableDcGpgpuPrintMessage  -commandLine :config/devicexml/lnl.feature.cobalt.kaolin.txt"
+				},
+				{
+					"name": "BondOptions",
+					"value": "-var kaolin:path=\"../../Kaolin/bin\""
+				},
+				{
+					"name": "DeviceOption",
+					"value": "\"LNL:2x4x8:a0\""
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=Fulsim:pipegt:emulation -DmodelDevice lnl.2x4x8.a0 -commandLine :config/devicexml/lnl.feature.cobalt.kaolin.txt"
+				},
+				{
+					"name": "KaolinOptions",
+					"value": "-cfg :../cfg/xe2_lnl_2x4x8.cfg  -tgcfg :../tg/tg2stats.txt -tgout kaolin_timegraph.txt -stat kaolin.stat -tginterval 1000"
+				}
+			],
+			"executionMethodHistoryId": 12149,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 903,
+			"name": "lnl.2x3.a0 Cobalt 3D",
+			"software": "Cobalt_LNL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "LNL:2X3X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/lnl.1tx2x3x8.a0.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-commandLine :config/devicexml/lnl.feature.cobalt.txt"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-commandLine :config/devicexml/lnl.feature.cobalt.txt"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				}
+			],
+			"executionMethodHistoryId": 6216,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 1266,
+			"name": "lnl.2x4 a0 Driver 3D",
+			"software": "Cobalt_LNL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "LNL:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/lnl.1tx2x4x8.a0.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-commandLine :config/devicexml/lnl.feature.3d.driver.txt"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-commandLine :config/devicexml/lnl.feature.3d.driver.txt"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				}
+			],
+			"executionMethodHistoryId": 8657,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 1268,
+			"name": "lnl.2x4 a0 MFU Driver 3D",
+			"software": "Cobalt_LNL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "LNL:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/lnl.1tx2x4x8.a0.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-commandLine :config/devicexml/lnl.feature.cobalt.txt -sim_mode perf_mfu"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-commandLine :config/devicexml/lnl.feature.3d.driver.txt"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				}
+			],
+			"executionMethodHistoryId": 8677,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 809,
+			"name": "lnl.2x4.a0 Cobalt 2D",
+			"software": "Cobalt_LNL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "LNL:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/lnl.1tx2x4x8.a0.display.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": ""
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-commandLine :config/devicexml/lnl.feature.cobalt.2d.txt"
+				}
+			],
+			"executionMethodHistoryId": 6202,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [],
+			"deleted": false
+		},
+		{
+			"id": 810,
+			"name": "lnl.2x4.a0 Cobalt 3D",
+			"software": "Cobalt_LNL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "LNL:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/lnl.1tx2x4x8.a0.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-commandLine :config/devicexml/lnl.feature.cobalt.txt"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-commandLine :config/devicexml/lnl.feature.cobalt.txt"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				}
+			],
+			"executionMethodHistoryId": 6203,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 851,
+			"name": "lnl.2x4.a0 Cobalt 3D VirtualMemoryHigh",
+			"software": "Cobalt_LNL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "LNL:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/lnl.1tx2x4x8.a0.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-commandLine :config/devicexml/lnl.feature.cobalt.txt"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-commandLine :config/devicexml/lnl.feature.cobalt.txt  -configOverride :bios/LNL_platform_config_64GB_GMD_Lo4GB_bios.xml"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				}
+			],
+			"executionMethodHistoryId": 6207,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 1012,
+			"name": "lnl.2x4.a0 Cobalt GMD SCMI",
+			"software": "Cobalt_LNL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "LNL:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/lnl.1tx2x4x8.a0.gmd.scmi.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-commandLine :config/devicexml/lnl.feature.cobalt.txt"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-commandLine :config/devicexml/lnl.feature.cobalt.txt"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				}
+			],
+			"executionMethodHistoryId": 7318,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 1193,
+			"name": "lnl.2x4.a0 freeze",
+			"software": "Cobalt_LNL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "LNL:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/lnl.1tx2x4x8.a0.freeze.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-topologyOverrides warn -featureOverrides warn"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-topologyOverrides warn -featureOverrides warn"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				}
+			],
+			"executionMethodHistoryId": 8047,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 904,
+			"name": "lnl.2x4.a0 fused Cobalt 3D",
+			"software": "Cobalt_LNL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "LNL:2X4X2:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/lnl.1tx2x4x2.a0.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-commandLine :config/devicexml/lnl.feature.cobalt.txt"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-commandLine :config/devicexml/lnl.feature.cobalt.txt"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				}
+			],
+			"executionMethodHistoryId": 6217,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 657,
+			"name": "lnl.2x4.a0 Perf Cobalt",
+			"software": "Cobalt_LNL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "LNL:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/lnl.1tx2x4x8.a0.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-commandLine :config/devicexml/lnl.feature.cobalt.txt -commandLine :config/devicexml/lnl.feature.perf.cobalt.txt  -sim_mode performance"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-commandLine :config/devicexml/lnl.feature.cobalt.txt -commandLine :config/devicexml/lnl.feature.perf.cobalt.txt"
+				}
+			],
+			"executionMethodHistoryId": 6194,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 880,
+			"name": "lnl.2x4.a0 Perf+MFU Cobalt",
+			"software": "Cobalt_LNL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "LNL:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/lnl.1tx2x4x8.a0.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-commandLine :config/devicexml/lnl.feature.cobalt.txt -commandLine :config/devicexml/lnl.feature.perf.cobalt.txt -sim_mode perf_mfu"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-commandLine :config/devicexml/lnl.feature.cobalt.txt -commandLine :config/devicexml/lnl.feature.perf.cobalt.txt"
+				}
+			],
+			"executionMethodHistoryId": 6209,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 759,
+			"name": "lnl.2x4.a0 Perf+MPU Cobalt",
+			"software": "Cobalt_LNL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "LNL:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/lnl.1tx2x4x8.a0.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-commandLine :config/devicexml/lnl.feature.cobalt.txt -commandLine :config/devicexml/lnl.feature.perf.cobalt.txt -sim_mode perf_mpu"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-commandLine :config/devicexml/lnl.feature.cobalt.txt -commandLine :config/devicexml/lnl.feature.perf.cobalt.txt"
+				}
+			],
+			"executionMethodHistoryId": 6201,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 899,
+			"name": "lnl.2x4.a0 RTL 3D",
+			"software": "Cobalt_LNL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "LNL:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/lnl.1tx2x4x8.a0.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-commandLine :config/devicexml/lnl.feature.gk.txt"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-commandLine :config/devicexml/lnl.feature.gk.txt"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				}
+			],
+			"executionMethodHistoryId": 6211,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 900,
+			"name": "lnl.2x4.a0 RTL 3D PTC",
+			"software": "Cobalt_LNL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "LNL:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/lnl.1tx2x4x8.a0.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-commandLine :config/devicexml/lnl.feature.gk.txt"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-commandLine :config/devicexml/lnl.feature.gk.txt"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": "-ptc"
+				}
+			],
+			"executionMethodHistoryId": 6311,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 101,
+					"status": "Warn",
+					"excludeTestCi": true
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 844,
+			"name": "lnl.2x4.a0 UTP 3D",
+			"software": "Cobalt_LNL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "LNL:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/lnl.1tx2x4x8.a0.GD.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-commandLine :config/devicexml/lnl.feature.cobalt.txt -enableFeature :mocsPATCacheabilityCoherencyUpdates"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-commandLine :config/devicexml/lnl.feature.cobalt.txt -target=Fulsim:pipegt:simulation -DtargetType=simulation"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				}
+			],
+			"executionMethodHistoryId": 8286,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 1142,
+			"name": "lnl.2x4.a0 UTP 3D BullSeye",
+			"software": "Cobalt_LNL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "LNL:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "AubloadOptions",
+					"value": "-commandLine :config/devicexml/lnl.feature.cobalt.txt -synctime 9000 -enableFeature :mocsPATCacheabilityCoherencyUpdates"
+				},
+				{
+					"name": "BondOptions",
+					"value": "-hooks /nfs/site/disks/xe2_gt_regress_extra_001/Xe2Coverage/RMBucketHookGlobal2.py"
+				},
+				{
+					"name": "DeviceOption",
+					"value": ":devices/lnl.1tx2x4x8.a0.GD.map.xml"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-commandLine :config/devicexml/lnl.feature.cobalt.txt -target=Fulsim:pipegt:simulation -DtargetType=simulation"
+				},
+				{
+					"name": "TargetConfig",
+					"value": ""
+				}
+			],
+			"executionMethodHistoryId": 8711,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 881,
+			"name": "lnl.2x4.a0 UTP GMD",
+			"software": "Cobalt_LNL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "LNL:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/lnl.1tx2x4x8.a0.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-commandLine :config/devicexml/lnl.feature.cobalt.txt -enableFeature :mocsPATCacheabilityCoherencyUpdates"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-commandLine :config/devicexml/lnl.feature.cobalt.txt -target=Fulsim:gtUncore:simulation -DtargetType=simulation"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				}
+			],
+			"executionMethodHistoryId": 8288,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 845,
+			"name": "lnl.2x4.a0 UTP Media",
+			"software": "Cobalt_LNL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "LNL:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/lnl.1tx2x4x8.a0.media.small.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-commandLine :config/devicexml/lnl.feature.cobalt.txt -enableFeature :mocsPATCacheabilityCoherencyUpdates"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-commandLine :config/devicexml/lnl.feature.cobalt.txt -target=Fulsim:superPipeMedia:simulation -DtargetType=simulation"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				}
+			],
+			"executionMethodHistoryId": 8287,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 902,
+			"name": "lnl.4x4.a0 Cobalt 3D",
+			"software": "Cobalt_LNL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "LNL:4X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/lnl.1tx4x4x8.a0.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-commandLine :config/devicexml/lnl.feature.cobalt.txt"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-commandLine :config/devicexml/lnl.feature.cobalt.txt"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				}
+			],
+			"executionMethodHistoryId": 6215,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 901,
+			"name": "lnl.8x4.a0 Cobalt 3D",
+			"software": "Cobalt_LNL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "LNL:8X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/lnl.1tx8x4x8.a0.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-commandLine :config/devicexml/lnl.feature.cobalt.txt"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-commandLine :config/devicexml/lnl.feature.cobalt.txt"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				}
+			],
+			"executionMethodHistoryId": 6214,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 2285,
+			"name": "Media UTP LPM SCMI Simulation",
+			"software": "Cobalt_LNL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "LNL:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/lnl.1tx2x4x8.a0.media.scmi.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": ""
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=Fulsim:superPipeMedia:simulation -DtargetType=simulation"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				}
+			],
+			"executionMethodHistoryId": 11691,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 1274,
+			"name": "Media Xe2 CPL Vdn Vep Cobalt",
+			"software": "Cobalt_LNL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "CPL:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/cpl.1tx2x4x8.a0.media.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": ""
+				},
+				{
+					"name": "GritsOptions",
+					"value": ""
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				}
+			],
+			"executionMethodHistoryId": 9241,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 926,
+			"name": "Media Xe2 LPM Large Cobalt",
+			"software": "Cobalt_LNL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "LNL:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/lnl.1tx2x4x8.a0.media.large.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": ""
+				},
+				{
+					"name": "GritsOptions",
+					"value": ""
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				}
+			],
+			"executionMethodHistoryId": 6440,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 1000,
+			"name": "Media Xe2 LPM Large RTL",
+			"software": "Cobalt_LNL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "LNL:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/lnl.1tx2x4x8.a0.media.large.gk.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": ""
+				},
+				{
+					"name": "GritsOptions",
+					"value": ""
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				}
+			],
+			"executionMethodHistoryId": 7279,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 932,
+			"name": "Media Xe2 LPM Mini Cobalt",
+			"software": "Cobalt_LNL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "LNL:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/lnl.1tx2x4x8.a0.media.mini.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": ""
+				},
+				{
+					"name": "GritsOptions",
+					"value": ""
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				}
+			],
+			"executionMethodHistoryId": 6491,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 927,
+			"name": "Media Xe2 LPM SCMI Cobalt",
+			"software": "Cobalt_LNL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "LNL:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/lnl.1tx2x4x8.a0.media.scmi.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": ""
+				},
+				{
+					"name": "GritsOptions",
+					"value": ""
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				}
+			],
+			"executionMethodHistoryId": 6441,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 997,
+			"name": "Media Xe2 LPM SCMI RTL",
+			"software": "Cobalt_LNL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "LNL:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/lnl.1tx2x4x8.a0.media.scmi.gk.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": ""
+				},
+				{
+					"name": "GritsOptions",
+					"value": ""
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				}
+			],
+			"executionMethodHistoryId": 7105,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 860,
+			"name": "Media Xe2 LPM Small Cobalt",
+			"software": "Cobalt_LNL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "LNL:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/lnl.1tx2x4x8.a0.media.small.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": ""
+				},
+				{
+					"name": "GritsOptions",
+					"value": ""
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				}
+			],
+			"executionMethodHistoryId": 6208,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 994,
+			"name": "Media Xe2 LPM Small RTL",
+			"software": "Cobalt_LNL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "LNL:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/lnl.1tx2x4x8.a0.media.small.gk.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": ""
+				},
+				{
+					"name": "GritsOptions",
+					"value": ""
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				}
+			],
+			"executionMethodHistoryId": 7066,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 1046,
+			"name": "Media Xe2 LPM Small RTL PTC",
+			"software": "Cobalt_LNL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "LNL:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/lnl.1tx2x4x8.a0.media.small.gk.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": ""
+				},
+				{
+					"name": "GritsOptions",
+					"value": ""
+				},
+				{
+					"name": "RunTestOptions",
+					"value": "-ptc"
+				}
+			],
+			"executionMethodHistoryId": 7554,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 101,
+					"status": "Warn",
+					"excludeTestCi": true
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 942,
+			"name": "Media Xe2 LPM Vdd Vep Cobalt",
+			"software": "Cobalt_LNL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "LNL:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/lnl.1tx2x4x8.a0.media.vddvep.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": ""
+				},
+				{
+					"name": "GritsOptions",
+					"value": ""
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				}
+			],
+			"executionMethodHistoryId": 6656,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 2995,
+			"name": "OACompare ATDB N-1 RastyKaolin ptl.2x6.a0",
+			"software": "Cobalt_LNL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "PTL:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "AubloadOptions",
+					"value": "-synctime 3600 -karch dg3 -commandLine kaolin_aubload.txt -commandLine kaolin_capture_knobs.txt -commandLine rasty_path_enabling_knobs.txt"
+				},
+				{
+					"name": "BondOptions",
+					"value": "-var kaolin:path=\"../../Kaolin/bin\" -hooks :../Kaolin/script/lib/hooks/microsPerf_hook.py -hooks /nfs/site/disks/sc6_xae_0839/ndboroum/BondHooks/Kaolin_Bond_Hook_TimeGraphPrint/tgPrint_hook_kaolin.py"
+				},
+				{
+					"name": "DeviceOption",
+					"value": ":devices/lnl.1tx2x4x8.a0.noAts.map.xml"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=Fulsim:kaolin -DmodelDevice ptl.2x6x8.a0 -commandLine kaolin_grits.txt -DnumClocks=300000 -DdesiredClocks=300000 -DnoOfClocks=300000 -DoaPerfEnableBackfillEvents=false"
+				},
+				{
+					"name": "KaolinOptions",
+					"value": "-trace kout -cfg :../cfg/xe3_ptl_2x6x8.cfg -tgcfg :../tg/tg2stats.txt,:../tg/graphprof.txt,:../tg/tg2extstats.txt,:../tg/tg2intstats.txt -tgout kaolin_timegraph.txt -stat kaolin.stat -tginterval 1000 -Eu.Detailed true"
+				},
+				{
+					"name": "TargetConfig",
+					"value": ":config/elg/LNL_platform_config.xml"
+				}
+			],
+			"executionMethodHistoryId": 14802,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Pass",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [],
+			"deleted": false
+		}
+	]
+}

@@ -1,0 +1,5106 @@
+{
+	"schemaVersion": "1.0",
+	"testListId": 164,
+	"testListPath": "VPG HW/ELG/Cobalt CI",
+	"testListSettingsUrl": "https://axeweb.intel.com/axe/tests/testlists/164/settings/executionmethods",
+	"executionMethods": [
+		{
+			"id": 562,
+			"name": "ArchTarget Functional elg.2x4.a0 RTL",
+			"software": "Cobalt_ELG",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "ELG:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":config/devicexml/elg.1tx2x4x8.device.config.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.gk.txt"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.gk.txt -target=Fulsim:cobaltPerformance -DmodelDevice elg.2x4x8.a0"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				},
+				{
+					"name": "TargetConfig",
+					"value": ":config/elg/ELG_platform_config_8GB_GMD_2x4_2L3Node.xml"
+				}
+			],
+			"executionMethodHistoryId": 6817,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 785,
+			"name": "ArchTarget Functional elg.7x4.a0 Cobalt",
+			"software": "Cobalt_ELG",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "ELG:7X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":config/devicexml/elg.1tx7x4x8.device.config.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.cobalt.3d.txt"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=Fulsim:cobaltPerformance -DmodelDevice elg.7x4x8.a0 -commandLine :config/devicexml/elg.feature.cobalt.3d.txt"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				},
+				{
+					"name": "TargetConfig",
+					"value": ":config/elg/ELG_platform_config_8GB_GMD_7x4_8L3Node.xml"
+				}
+			],
+			"executionMethodHistoryId": 6819,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 3267,
+			"name": "ArchTarget Perf+MFU elg.8x4.a0 Cobalt",
+			"software": "Cobalt_ELG",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "ELG:7X4X8:A0",
+			"attributes": [
+				{
+					"name": "AubloadOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.cobalt.3d.txt -commandLine :config/devicexml/elg.feature.perf.cobalt.txt  -sim_mode perf_mfu -cb_cfg stats_enable true tg_cfg_filename TG_ArchTarget.txt tg_interval 1000 -cb_cfg hang_detect_enable true -enableFeature 222222444"
+				},
+				{
+					"name": "BondOptions",
+					"value": "-hooks :./cobalt_scripts/ArchTarget/tgperf_hook.py"
+				},
+				{
+					"name": "DeviceOption",
+					"value": ":config/devicexml/elg.1tx8x4x8.gt.device.config.xml"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=Fulsim:cobaltPerformance -DmodelDevice elg.8x4x8.a0 -commandLine :config/devicexml/elg.feature.cobalt.3d.txt"
+				},
+				{
+					"name": "TargetConfig",
+					"value": ":config/elg/ELG_platform_config_8GB_GD_8x4_8L3Node.xml"
+				}
+			],
+			"executionMethodHistoryId": 15714,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 3268,
+			"name": "ArchTarget Perf+MFU elg.8x4.a0 Cobalt Functional",
+			"software": "Cobalt_ELG",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "ELG:7X4X8:A0",
+			"attributes": [
+				{
+					"name": "AubloadOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.cobalt.3d.txt -commandLine :config/devicexml/elg.feature.perf.cobalt.txt  -sim_mode perf_mfu -cb_cfg stats_enable true tg_cfg_filename TG_ArchTarget.txt tg_interval 1000 -cb_cfg hang_detect_enable true -enableFeature 222222444"
+				},
+				{
+					"name": "DeviceOption",
+					"value": ":config/devicexml/elg.1tx8x4x8.gt.device.config.xml"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=Fulsim:cobaltPerformance -DmodelDevice elg.8x4x8.a0 -commandLine :config/devicexml/elg.feature.cobalt.3d.txt"
+				},
+				{
+					"name": "TargetConfig",
+					"value": ":config/elg/ELG_platform_config_8GB_GD_8x4_8L3Node.xml"
+				}
+			],
+			"executionMethodHistoryId": 15715,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 565,
+			"name": "ArchTarget Perf+MPU elg.2x4.a0 Cobalt",
+			"software": "Cobalt_ELG",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "ELG:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "AubloadOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.cobalt.3d.txt -commandLine :config/devicexml/elg.feature.perf.cobalt.txt  -sim_mode perf_mpu  -cb_cfg stats_enable true tg_cfg_filename TG_ArchTarget.txt tg_interval 100 -cb_cfg hang_detect_enable true -enableFeature 222222444"
+				},
+				{
+					"name": "BondOptions",
+					"value": "-hooks :./cobalt_scripts/ArchTarget/tgperf_hook.py"
+				},
+				{
+					"name": "DeviceOption",
+					"value": ":config/devicexml/elg.1tx2x4x8.device.config.xml"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=Fulsim:cobaltPerformance -DmodelDevice elg.2x4x8.a0 -commandLine :config/devicexml/elg.feature.cobalt.3d.txt"
+				},
+				{
+					"name": "TargetConfig",
+					"value": ":config/elg/ELG_platform_config_8GB_GMD_2x4_2L3Node.xml"
+				}
+			],
+			"executionMethodHistoryId": 6821,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 2903,
+			"name": "ArchTarget Perf+MPU elg.5x4.a0 Cobalt",
+			"software": "Cobalt_ELG",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "ELG:5X4X8:A0",
+			"attributes": [
+				{
+					"name": "AubloadOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.cobalt.3d.txt -commandLine :config/devicexml/elg.feature.perf.cobalt.txt  -sim_mode perf_mpu -cb_cfg stats_enable true tg_cfg_filename TG_ArchTarget.txt tg_interval 100 -cb_cfg hang_detect_enable true -enableFeature 222222444"
+				},
+				{
+					"name": "BondOptions",
+					"value": "-hooks :./cobalt_scripts/ArchTarget/tgperf_hook.py"
+				},
+				{
+					"name": "DeviceOption",
+					"value": ":config/devicexml/elg.1tx5x4x8.device.config.xml"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=Fulsim:cobaltPerformance -DmodelDevice elg.5x4x8.a0 -commandLine :config/devicexml/elg.feature.cobalt.3d.txt"
+				},
+				{
+					"name": "TargetConfig",
+					"value": ":config/elg/ELG_platform_config_8GB_GMD_5x4_6L3Node.xml"
+				}
+			],
+			"executionMethodHistoryId": 15811,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 548,
+			"name": "ArchTarget Perf+MPU elg.7x4.a0 Cobalt",
+			"software": "Cobalt_ELG",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "ELG:7X4X8:A0",
+			"attributes": [
+				{
+					"name": "AubloadOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.cobalt.3d.txt -commandLine :config/devicexml/elg.feature.perf.cobalt.txt  -sim_mode perf_mpu -cb_cfg stats_enable true tg_cfg_filename TG_ArchTarget.txt tg_interval 100 -cb_cfg hang_detect_enable true -enableFeature 222222444"
+				},
+				{
+					"name": "BondOptions",
+					"value": "-hooks :./cobalt_scripts/ArchTarget/tgperf_hook.py"
+				},
+				{
+					"name": "DeviceOption",
+					"value": ":config/devicexml/elg.1tx7x4x8.device.config.xml"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=Fulsim:cobaltPerformance -DmodelDevice elg.7x4x8.a0 -commandLine :config/devicexml/elg.feature.cobalt.3d.txt"
+				},
+				{
+					"name": "TargetConfig",
+					"value": ":config/elg/ELG_platform_config_8GB_GMD_7x4_8L3Node.xml"
+				}
+			],
+			"executionMethodHistoryId": 6823,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 1589,
+			"name": "ATDB CobaltKaolin elg.10x4.a0",
+			"software": "Cobalt_ELG",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "ELG:10X4X8:A0",
+			"attributes": [
+				{
+					"name": "AubloadOptions",
+					"value": "-synctime 3600 -kout kout -karch dg3 -commandLine kaolin_aubload.txt -commandLine kaolin_capture_knobs.txt -commandLine :config/devicexml/elg.feature.cobalt.kaolin.txt -disableFeature :fixNumberOfThreadsInTGDescriptionAndRestriction"
+				},
+				{
+					"name": "BondOptions",
+					"value": "-var kaolin:path=\"../../Kaolin/bin\" -hooks :../Kaolin/script/lib/hooks/microsPerf_hook.py"
+				},
+				{
+					"name": "DeviceOption",
+					"value": "\"ELG:2x4x8:A0 sliceEnableMask 1\""
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=Fulsim:kaolin -DmodelDevice elg.10x4x8.a0 -commandLine kaolin_grits.txt -commandLine :config/devicexml/elg.feature.cobalt.kaolin.txt -disableFeature :fixNumberOfThreadsInTGDescriptionAndRestriction"
+				},
+				{
+					"name": "KaolinOptions",
+					"value": "-trace kout -cfg :../cfg/xe2_x4_10x4x8_8ch_l4.cfg -cfg :../cfg/archDB/xe2_archDB.cfg -tgcfg :../tg/tg2stats.txt,:../tg/graphprof.txt,:../tg/tg2extstats.txt,:../tg/tg2intstats.txt -tgout kaolin_timegraph.txt -stat kaolin.stat -tginterval 1000 -slowWarmup false -fastWarmup false"
+				},
+				{
+					"name": "TargetConfig",
+					"value": ":config/elg/ELG_platform_config.xml"
+				}
+			],
+			"executionMethodHistoryId": 12228,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Pass",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [],
+			"deleted": false
+		},
+		{
+			"id": 1540,
+			"name": "ATDB CobaltKaolin elg.2x4.a0",
+			"software": "Cobalt_ELG",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "ELG:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "AubloadOptions",
+					"value": "-synctime 3600 -kout kout -karch dg3 -commandLine kaolin_aubload.txt -commandLine kaolin_capture_knobs.txt -commandLine :config/devicexml/elg.feature.cobalt.kaolin.txt -disableFeature :fixNumberOfThreadsInTGDescriptionAndRestriction"
+				},
+				{
+					"name": "BondOptions",
+					"value": "-var kaolin:path=\"../../Kaolin/bin\" -hooks :../Kaolin/script/lib/hooks/microsPerf_hook.py"
+				},
+				{
+					"name": "DeviceOption",
+					"value": "\"ELG:2x4x8:A0 sliceEnableMask 1\""
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=Fulsim:kaolin -DmodelDevice elg.2x4x8.a0 -commandLine kaolin_grits.txt -commandLine :config/devicexml/elg.feature.cobalt.kaolin.txt -disableFeature :fixNumberOfThreadsInTGDescriptionAndRestriction"
+				},
+				{
+					"name": "KaolinOptions",
+					"value": "-trace kout -cfg :../cfg/xe2_emu_2x4x8_l4.cfg -tgcfg :../tg/tg2stats.txt,:../tg/graphprof.txt,:../tg/tg2extstats.txt,:../tg/tg2intstats.txt -tgout kaolin_timegraph.txt -stat kaolin.stat -tginterval 1000 -slowWarmup false -fastWarmup false"
+				},
+				{
+					"name": "TargetConfig",
+					"value": ":config/elg/ELG_platform_config.xml"
+				}
+			],
+			"executionMethodHistoryId": 12229,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Pass",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [],
+			"deleted": false
+		},
+		{
+			"id": 1585,
+			"name": "ATDB CobaltKaolin elg.5x4.a0",
+			"software": "Cobalt_ELG",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "ELG:7X4X8:A0",
+			"attributes": [
+				{
+					"name": "AubloadOptions",
+					"value": "-synctime 3600 -kout kout -karch dg3 -commandLine kaolin_aubload.txt -commandLine kaolin_capture_knobs.txt -commandLine :config/devicexml/elg.feature.cobalt.kaolin.txt -disableFeature :fixNumberOfThreadsInTGDescriptionAndRestriction"
+				},
+				{
+					"name": "BondOptions",
+					"value": "-var kaolin:path=\"../../Kaolin/bin\" -hooks :../Kaolin/script/lib/hooks/microsPerf_hook.py"
+				},
+				{
+					"name": "DeviceOption",
+					"value": "\"ELG:2x4x8:A0 sliceEnableMask 1\""
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=Fulsim:kaolin -DmodelDevice elg.5x4x8.a0 -commandLine kaolin_grits.txt -commandLine :config/devicexml/elg.feature.cobalt.kaolin.txt -disableFeature :fixNumberOfThreadsInTGDescriptionAndRestriction"
+				},
+				{
+					"name": "KaolinOptions",
+					"value": "-trace kout -cfg :../cfg/xe2_x2_5x4x8_4ch_l4.cfg -cfg :../cfg/archDB/xe2_archDB.cfg -tgcfg :../tg/tg2stats.txt,:../tg/graphprof.txt,:../tg/tg2extstats.txt,:../tg/tg2intstats.txt -tgout kaolin_timegraph.txt -stat kaolin.stat -tginterval 1000 -slowWarmup false -fastWarmup false"
+				},
+				{
+					"name": "TargetConfig",
+					"value": ":config/elg/ELG_platform_config.xml"
+				}
+			],
+			"executionMethodHistoryId": 12230,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Pass",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [],
+			"deleted": false
+		},
+		{
+			"id": 1548,
+			"name": "ATDB CobaltKaolin elg.7x4.a0",
+			"software": "Cobalt_ELG",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "ELG:7X4X8:A0",
+			"attributes": [
+				{
+					"name": "AubloadOptions",
+					"value": "-synctime 3600 -kout kout -karch dg3 -commandLine kaolin_aubload.txt -commandLine kaolin_capture_knobs.txt -commandLine :config/devicexml/elg.feature.cobalt.kaolin.txt -disableFeature :fixNumberOfThreadsInTGDescriptionAndRestriction"
+				},
+				{
+					"name": "BondOptions",
+					"value": "-var kaolin:path=\"../../Kaolin/bin\" -hooks :../Kaolin/script/lib/hooks/microsPerf_hook.py"
+				},
+				{
+					"name": "DeviceOption",
+					"value": "\"ELG:2x4x8:A0 sliceEnableMask 1\""
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=Fulsim:kaolin -DmodelDevice elg.7x4x8.a0 -commandLine kaolin_grits.txt -commandLine :config/devicexml/elg.feature.cobalt.kaolin.txt -disableFeature :fixNumberOfThreadsInTGDescriptionAndRestriction"
+				},
+				{
+					"name": "KaolinOptions",
+					"value": "-trace kout -cfg :../cfg/xe2_x3_7x4x8_6ch_l4.cfg -cfg :../cfg/archDB/xe2_archDB.cfg -tgcfg :../tg/tg2stats.txt,:../tg/graphprof.txt,:../tg/tg2extstats.txt,:../tg/tg2intstats.txt -tgout kaolin_timegraph.txt -stat kaolin.stat -tginterval 1000 -slowWarmup false -fastWarmup false"
+				},
+				{
+					"name": "TargetConfig",
+					"value": ":config/elg/ELG_platform_config.xml"
+				}
+			],
+			"executionMethodHistoryId": 12231,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Pass",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [],
+			"deleted": false
+		},
+		{
+			"id": 1590,
+			"name": "ATDB CobaltKaolin Functional elg.10x4.a0",
+			"software": "Cobalt_ELG",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "ELG:10X4X8:A0",
+			"attributes": [
+				{
+					"name": "AubloadOptions",
+					"value": "-synctime 3600 -kout kout -karch dg3 -commandLine kaolin_aubload.txt -commandLine kaolin_capture_knobs.txt -commandLine :config/devicexml/elg.feature.cobalt.kaolin.txt -disableFeature :fixNumberOfThreadsInTGDescriptionAndRestriction"
+				},
+				{
+					"name": "BondOptions",
+					"value": "-var kaolin:path=\"../../Kaolin/bin\""
+				},
+				{
+					"name": "DeviceOption",
+					"value": "\"ELG:2x4x8:A0 sliceEnableMask 1\""
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=Fulsim:kaolin -DmodelDevice elg.10x4x8.a0 -commandLine kaolin_grits.txt -commandLine :config/devicexml/elg.feature.cobalt.kaolin.txt -disableFeature :fixNumberOfThreadsInTGDescriptionAndRestriction"
+				},
+				{
+					"name": "KaolinOptions",
+					"value": "-trace kout -cfg :../cfg/xe2_x4_10x4x8_8ch_l4.cfg -cfg :../cfg/archDB/xe2_archDB.cfg -tgcfg :../tg/tg2stats.txt,:../tg/graphprof.txt,:../tg/tg2extstats.txt,:../tg/tg2intstats.txt -tgout kaolin_timegraph.txt -stat kaolin.stat -tginterval 1000 -slowWarmup false -fastWarmup false"
+				},
+				{
+					"name": "TargetConfig",
+					"value": ":config/elg/ELG_platform_config.xml"
+				}
+			],
+			"executionMethodHistoryId": 12115,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Pass",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [],
+			"deleted": false
+		},
+		{
+			"id": 1546,
+			"name": "ATDB CobaltKaolin Functional elg.2x4.a0",
+			"software": "Cobalt_ELG",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "ELG:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "AubloadOptions",
+					"value": "-synctime 3600 -kout kout -karch dg3 -commandLine kaolin_aubload.txt -commandLine kaolin_capture_knobs.txt -commandLine :config/devicexml/elg.feature.cobalt.kaolin.txt -disableFeature :fixNumberOfThreadsInTGDescriptionAndRestriction"
+				},
+				{
+					"name": "BondOptions",
+					"value": "-var kaolin:path=\"../../Kaolin/bin\""
+				},
+				{
+					"name": "DeviceOption",
+					"value": "\"ELG:2x4x8:A0 sliceEnableMask 1\""
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=Fulsim:kaolin -DmodelDevice elg.2x4x8.a0 -commandLine kaolin_grits.txt -commandLine :config/devicexml/elg.feature.cobalt.kaolin.txt -disableFeature :fixNumberOfThreadsInTGDescriptionAndRestriction"
+				},
+				{
+					"name": "KaolinOptions",
+					"value": "-trace kout -cfg :../cfg/xe2_emu_2x4x8_l4.cfg -tgcfg :../tg/tg2stats.txt,:../tg/graphprof.txt,:../tg/tg2extstats.txt,:../tg/tg2intstats.txt -tgout kaolin_timegraph.txt -stat kaolin.stat -tginterval 1000 -slowWarmup false -fastWarmup false"
+				},
+				{
+					"name": "TargetConfig",
+					"value": ":config/elg/ELG_platform_config.xml"
+				}
+			],
+			"executionMethodHistoryId": 12116,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Pass",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [],
+			"deleted": false
+		},
+		{
+			"id": 1586,
+			"name": "ATDB CobaltKaolin Functional elg.5x4.a0",
+			"software": "Cobalt_ELG",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "ELG:5X4X8:A0",
+			"attributes": [
+				{
+					"name": "AubloadOptions",
+					"value": "-synctime 3600 -kout kout -karch dg3 -commandLine kaolin_aubload.txt -commandLine kaolin_capture_knobs.txt -commandLine :config/devicexml/elg.feature.cobalt.kaolin.txt -disableFeature :fixNumberOfThreadsInTGDescriptionAndRestriction"
+				},
+				{
+					"name": "BondOptions",
+					"value": "-var kaolin:path=\"../../Kaolin/bin\""
+				},
+				{
+					"name": "DeviceOption",
+					"value": "\"ELG:2x4x8:A0 sliceEnableMask 1\""
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=Fulsim:kaolin -DmodelDevice elg.7x4x8.a0 -commandLine kaolin_grits.txt -commandLine :config/devicexml/elg.feature.cobalt.kaolin.txt -disableFeature :fixNumberOfThreadsInTGDescriptionAndRestriction"
+				},
+				{
+					"name": "KaolinOptions",
+					"value": "-trace kout -cfg :../cfg/xe2_x2_5x4x8_4ch_l4.cfg -cfg :../cfg/archDB/xe2_archDB.cfg -tgcfg :../tg/tg2stats.txt,:../tg/graphprof.txt,:../tg/tg2extstats.txt,:../tg/tg2intstats.txt -tgout kaolin_timegraph.txt -stat kaolin.stat -tginterval 1000 -slowWarmup false -fastWarmup false"
+				},
+				{
+					"name": "TargetConfig",
+					"value": ":config/elg/ELG_platform_config.xml"
+				}
+			],
+			"executionMethodHistoryId": 12117,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Pass",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [],
+			"deleted": false
+		},
+		{
+			"id": 1549,
+			"name": "ATDB CobaltKaolin Functional elg.7x4.a0",
+			"software": "Cobalt_ELG",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "ELG:7X4X8:A0",
+			"attributes": [
+				{
+					"name": "AubloadOptions",
+					"value": "-synctime 3600 -kout kout -karch dg3  -commandLine kaolin_aubload.txt -commandLine kaolin_capture_knobs.txt -commandLine :config/devicexml/elg.feature.cobalt.kaolin.txt -disableFeature :fixNumberOfThreadsInTGDescriptionAndRestriction"
+				},
+				{
+					"name": "BondOptions",
+					"value": "-var kaolin:path=\"../../Kaolin/bin\""
+				},
+				{
+					"name": "DeviceOption",
+					"value": "\"ELG:2x4x8:A0 sliceEnableMask 1\""
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=Fulsim:kaolin -DmodelDevice elg.7x4x8.a0 -commandLine kaolin_grits.txt -commandLine :config/devicexml/elg.feature.cobalt.kaolin.txt -disableFeature :fixNumberOfThreadsInTGDescriptionAndRestriction"
+				},
+				{
+					"name": "KaolinOptions",
+					"value": "-trace kout -cfg :../cfg/xe2_x3_7x4x8_6ch_l4.cfg -cfg :../cfg/archDB/xe2_archDB.cfg -tgcfg :../tg/tg2stats.txt,:../tg/graphprof.txt,:../tg/tg2extstats.txt,:../tg/tg2intstats.txt -tgout kaolin_timegraph.txt -stat kaolin.stat -tginterval 1000 -slowWarmup false -fastWarmup false"
+				},
+				{
+					"name": "TargetConfig",
+					"value": ":config/elg/ELG_platform_config.xml"
+				}
+			],
+			"executionMethodHistoryId": 12118,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Pass",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [],
+			"deleted": false
+		},
+		{
+			"id": 2183,
+			"name": "ATDB N-1 CobaltKaolin cls.10x6.a0",
+			"software": "Cobalt_ELG",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "CLS:10X6X8:A0",
+			"attributes": [
+				{
+					"name": "AubloadOptions",
+					"value": "-synctime 3600 -kout kout -karch dg3 -commandLine kaolin_aubload.txt -commandLine kaolin_capture_knobs.txt -commandLine :config/devicexml/elg.feature.cobalt.kaolin.txt -disableFeature :fixNumberOfThreadsInTGDescriptionAndRestriction"
+				},
+				{
+					"name": "BondOptions",
+					"value": "-var kaolin:path=\"../../Kaolin/bin\" -hooks :../Kaolin/script/lib/hooks/microsPerf_hook.py"
+				},
+				{
+					"name": "DeviceOption",
+					"value": "\"ELG:2x4x8:A0 sliceEnableMask 1\""
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=Fulsim:kaolin -DmodelDevice cls.10x6x8.a0 -commandLine kaolin_grits.txt -commandLine :config/devicexml/elg.feature.cobalt.kaolin.txt -disableFeature :fixNumberOfThreadsInTGDescriptionAndRestriction"
+				},
+				{
+					"name": "KaolinOptions",
+					"value": "-trace kout -cfg :../cfg/xe3_x4_10x6x8_l4.cfg -cfg :../cfg/archDB/xe2_archDB.cfg -tgcfg :../tg/tg2stats.txt,:../tg/graphprof.txt,:../tg/tg2extstats.txt,:../tg/tg2intstats.txt -tgout kaolin_timegraph.txt -stat kaolin.stat -tginterval 1000 -slowWarmup false -fastWarmup false"
+				},
+				{
+					"name": "TargetConfig",
+					"value": ":config/elg/ELG_platform_config.xml"
+				}
+			],
+			"executionMethodHistoryId": 12232,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Pass",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [],
+			"deleted": false
+		},
+		{
+			"id": 2184,
+			"name": "ATDB N-1 CobaltKaolin cls.4x6.a0",
+			"software": "Cobalt_ELG",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "CLS:4X6X8:A0",
+			"attributes": [
+				{
+					"name": "AubloadOptions",
+					"value": "-synctime 3600 -kout kout -karch dg3 -commandLine kaolin_aubload.txt -commandLine kaolin_capture_knobs.txt -commandLine :config/devicexml/elg.feature.cobalt.kaolin.txt -disableFeature :fixNumberOfThreadsInTGDescriptionAndRestriction"
+				},
+				{
+					"name": "BondOptions",
+					"value": "-var kaolin:path=\"../../Kaolin/bin\" -hooks :../Kaolin/script/lib/hooks/microsPerf_hook.py"
+				},
+				{
+					"name": "DeviceOption",
+					"value": "\"ELG:2x4x8:A0 sliceEnableMask 1\""
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=Fulsim:kaolin -DmodelDevice cls.4x6x8.a0 -commandLine kaolin_grits.txt -commandLine :config/devicexml/elg.feature.cobalt.kaolin.txt -disableFeature :fixNumberOfThreadsInTGDescriptionAndRestriction"
+				},
+				{
+					"name": "KaolinOptions",
+					"value": "-trace kout -cfg :../cfg/xe3_x2_4x6x8.cfg -cfg :../cfg/archDB/xe2_archDB.cfg -tgcfg :../tg/tg2stats.txt,:../tg/graphprof.txt,:../tg/tg2extstats.txt,:../tg/tg2intstats.txt -tgout kaolin_timegraph.txt -stat kaolin.stat -tginterval 1000 -slowWarmup false -fastWarmup false"
+				},
+				{
+					"name": "TargetConfig",
+					"value": ":config/elg/ELG_platform_config.xml"
+				}
+			],
+			"executionMethodHistoryId": 12233,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Pass",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [],
+			"deleted": false
+		},
+		{
+			"id": 2712,
+			"name": "ATDB N-1 CobaltKaolin xe3p.4x6.a0",
+			"software": "Cobalt_ELG",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "CLS:4X6X8:A0",
+			"attributes": [
+				{
+					"name": "AubloadOptions",
+					"value": "-synctime 3600 -kout kout -karch dg3 -commandLine kaolin_aubload.txt -commandLine kaolin_capture_knobs.txt -commandLine :config/devicexml/elg.feature.cobalt.kaolin.txt -disableFeature :fixNumberOfThreadsInTGDescriptionAndRestriction"
+				},
+				{
+					"name": "BondOptions",
+					"value": "-var kaolin:path=\"../../Kaolin/bin\" -hooks :../Kaolin/script/lib/hooks/microsPerf_hook.py"
+				},
+				{
+					"name": "DeviceOption",
+					"value": "\"ELG:2x4x8:A0 sliceEnableMask 1\""
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=Fulsim:kaolin -DmodelDevice xe3phpg.4x6x8.a0 -commandLine kaolin_grits.txt -commandLine :config/devicexml/elg.feature.cobalt.kaolin.txt -disableFeature :fixNumberOfThreadsInTGDescriptionAndRestriction"
+				},
+				{
+					"name": "KaolinOptions",
+					"value": "-trace kout -cfg :../cfg/xe3p_x2_4x8x8.cfg -cfg :../cfg/archDB/xe2_archDB.cfg -tgcfg :../tg/tg2stats.txt,:../tg/graphprof.txt,:../tg/tg2extstats.txt,:../tg/tg2intstats.txt -tgout kaolin_timegraph.txt -stat kaolin.stat -tginterval 1000 -slowWarmup false -fastWarmup false"
+				},
+				{
+					"name": "TargetConfig",
+					"value": ":config/elg/ELG_platform_config.xml"
+				}
+			],
+			"executionMethodHistoryId": 13671,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Pass",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [],
+			"deleted": false
+		},
+		{
+			"id": 2181,
+			"name": "ATDB N-1 RastyKaolin cls.10x6.a0",
+			"software": "Cobalt_ELG",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "CLS:10X6X8:A0",
+			"attributes": [
+				{
+					"name": "AubloadOptions",
+					"value": "-synctime 3600 -commandLine kaolin_aubload.txt -commandLine kaolin_capture_knobs.txt -commandLine rasty_path_enabling_knobs.txt -commandLine :config/devicexml/elg.feature.rasty.kaolin.txt -disableFeature :fixNumberOfThreadsInTGDescriptionAndRestriction"
+				},
+				{
+					"name": "BondOptions",
+					"value": "-var kaolin:path=\"../../Kaolin/bin\" -hooks :../Kaolin/script/lib/hooks/microsPerf_hook.py"
+				},
+				{
+					"name": "DeviceOption",
+					"value": "\"ELG:2x4x8:A0\""
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=Fulsim:kaolin -DmodelDevice cls.10x6x8.a0 -commandLine kaolin_grits.txt -disableFeature :fixNumberOfThreadsInTGDescriptionAndRestriction -wa rendertargetptewriteback"
+				},
+				{
+					"name": "KaolinOptions",
+					"value": "-trace kout -cfg :../cfg/xe3_x4_10x6x8_l4.cfg -cfg :../cfg/archDB/xe2_archDB.cfg -tgcfg :../tg/tg2stats.txt,:../tg/graphprof.txt,:../tg/tg2extstats.txt,:../tg/tg2intstats.txt -tgout kaolin_timegraph.txt -stat kaolin.stat -tginterval 1000 -slowWarmup false -fastWarmup false -Eu.Detailed true"
+				},
+				{
+					"name": "TargetConfig",
+					"value": ":config/elg/ELG_platform_config.xml"
+				}
+			],
+			"executionMethodHistoryId": 12755,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Pass",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [],
+			"deleted": false
+		},
+		{
+			"id": 2182,
+			"name": "ATDB N-1 RastyKaolin cls.4x6.a0",
+			"software": "Cobalt_ELG",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "CLS:4X6X8:A0",
+			"attributes": [
+				{
+					"name": "AubloadOptions",
+					"value": "-synctime 3600 -commandLine kaolin_aubload.txt -commandLine kaolin_capture_knobs.txt -commandLine rasty_path_enabling_knobs.txt -commandLine :config/devicexml/elg.feature.rasty.kaolin.txt -disableFeature :fixNumberOfThreadsInTGDescriptionAndRestriction"
+				},
+				{
+					"name": "BondOptions",
+					"value": "-var kaolin:path=\"../../Kaolin/bin\" -hooks :../Kaolin/script/lib/hooks/microsPerf_hook.py"
+				},
+				{
+					"name": "DeviceOption",
+					"value": "\"ELG:2x4x8:A0\""
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=Fulsim:kaolin -DmodelDevice cls.4x6x8.a0 -commandLine kaolin_grits.txt -disableFeature :fixNumberOfThreadsInTGDescriptionAndRestriction -wa rendertargetptewriteback"
+				},
+				{
+					"name": "KaolinOptions",
+					"value": "-trace kout -cfg :../cfg/xe3_x2_4x6x8.cfg -cfg :../cfg/archDB/xe2_archDB.cfg -tgcfg :../tg/tg2stats.txt,:../tg/graphprof.txt,:../tg/tg2extstats.txt,:../tg/tg2intstats.txt -tgout kaolin_timegraph.txt -stat kaolin.stat -tginterval 1000 -slowWarmup false -fastWarmup false -Eu.Detailed true"
+				},
+				{
+					"name": "TargetConfig",
+					"value": ":config/elg/ELG_platform_config.xml"
+				}
+			],
+			"executionMethodHistoryId": 12756,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Pass",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [],
+			"deleted": false
+		},
+		{
+			"id": 2713,
+			"name": "ATDB N-1 RastyKaolin xe3p.4x8.a0",
+			"software": "Cobalt_ELG",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "CLS:4X6X8:A0",
+			"attributes": [
+				{
+					"name": "AubloadOptions",
+					"value": "-synctime 3600 -commandLine kaolin_aubload.txt -commandLine kaolin_capture_knobs.txt -commandLine rasty_path_enabling_knobs.txt -commandLine :config/devicexml/elg.feature.rasty.kaolin.txt -disableFeature :fixNumberOfThreadsInTGDescriptionAndRestriction"
+				},
+				{
+					"name": "BondOptions",
+					"value": "-var kaolin:path=\"../../Kaolin/bin\" -hooks :../Kaolin/script/lib/hooks/microsPerf_hook.py"
+				},
+				{
+					"name": "DeviceOption",
+					"value": "\"ELG:2x4x8:A0\""
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=Fulsim:kaolin -DmodelDevice xe3phpg.4x8x8.a0 -commandLine kaolin_grits.txt -disableFeature :fixNumberOfThreadsInTGDescriptionAndRestriction -wa rendertargetptewriteback"
+				},
+				{
+					"name": "KaolinOptions",
+					"value": "-trace kout -cfg :../cfg/xe3p_x2_4x8x8.cfg -cfg :../cfg/archDB/xe2_archDB.cfg -tgcfg :../tg/tg2stats.txt,:../tg/graphprof.txt,:../tg/tg2extstats.txt,:../tg/tg2intstats.txt -tgout kaolin_timegraph.txt -stat kaolin.stat -tginterval 1000 -slowWarmup false -fastWarmup false -Eu.Detailed true"
+				},
+				{
+					"name": "TargetConfig",
+					"value": ":config/elg/ELG_platform_config.xml"
+				}
+			],
+			"executionMethodHistoryId": 13948,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Pass",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [],
+			"deleted": false
+		},
+		{
+			"id": 2796,
+			"name": "ATDB N-1 RastyKaolin xe3p.5x6.a0",
+			"software": "Cobalt_ELG",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "CLS:4X6X8:A0",
+			"attributes": [
+				{
+					"name": "AubloadOptions",
+					"value": "-synctime 3600 -commandLine kaolin_aubload.txt -commandLine kaolin_capture_knobs.txt -commandLine rasty_path_enabling_knobs.txt -commandLine :config/devicexml/elg.feature.rasty.kaolin.txt -disableFeature :fixNumberOfThreadsInTGDescriptionAndRestriction"
+				},
+				{
+					"name": "BondOptions",
+					"value": "-var kaolin:path=\"../../Kaolin/bin\" -hooks :../Kaolin/script/lib/hooks/microsPerf_hook.py"
+				},
+				{
+					"name": "DeviceOption",
+					"value": "\"ELG:2x4x8:A0\""
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=Fulsim:kaolin -DmodelDevice xe3phpg.5x6x8.a0 -commandLine kaolin_grits.txt -disableFeature :fixNumberOfThreadsInTGDescriptionAndRestriction -wa rendertargetptewriteback"
+				},
+				{
+					"name": "KaolinOptions",
+					"value": "-trace kout -cfg :../cfg/xe3p_x2_5x6x8.cfg -cfg :../cfg/archDB/xe2_archDB.cfg -tgcfg :../tg/tg2stats.txt,:../tg/graphprof.txt,:../tg/tg2extstats.txt,:../tg/tg2intstats.txt -tgout kaolin_timegraph.txt -stat kaolin.stat -tginterval 1000 -slowWarmup false -fastWarmup false -Eu.Detailed true"
+				},
+				{
+					"name": "TargetConfig",
+					"value": ":config/elg/ELG_platform_config.xml"
+				}
+			],
+			"executionMethodHistoryId": 13947,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Pass",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [],
+			"deleted": false
+		},
+		{
+			"id": 1591,
+			"name": "ATDB RastyKaolin elg.10x4.a0",
+			"software": "Cobalt_ELG",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "ELG:10X4X8:A0",
+			"attributes": [
+				{
+					"name": "AubloadOptions",
+					"value": "-synctime 3600 -commandLine kaolin_aubload.txt -commandLine kaolin_capture_knobs.txt -commandLine rasty_path_enabling_knobs.txt  -commandLine :config/devicexml/elg.feature.rasty.kaolin.txt -disableFeature :fixNumberOfThreadsInTGDescriptionAndRestriction"
+				},
+				{
+					"name": "BondOptions",
+					"value": "-var kaolin:path=\"../../Kaolin/bin\" -hooks :../Kaolin/script/lib/hooks/microsPerf_hook.py"
+				},
+				{
+					"name": "DeviceOption",
+					"value": "\"ELG:2x4x8:A0\""
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=Fulsim:kaolin -DmodelDevice elg.10x4x8.a0 -commandLine kaolin_grits.txt -disableFeature :fixNumberOfThreadsInTGDescriptionAndRestriction"
+				},
+				{
+					"name": "KaolinOptions",
+					"value": "-trace kout -cfg :../cfg/xe2_x4_10x4x8_8ch_l4.cfg -cfg :../cfg/archDB/xe2_archDB.cfg -tgcfg :../tg/tg2stats.txt,:../tg/graphprof.txt,:../tg/tg2extstats.txt,:../tg/tg2intstats.txt -tgout kaolin_timegraph.txt -stat kaolin.stat -tginterval 1000 -slowWarmup false -fastWarmup false -Eu.Detailed true"
+				},
+				{
+					"name": "TargetConfig",
+					"value": ":config/elg/ELG_platform_config.xml"
+				}
+			],
+			"executionMethodHistoryId": 12757,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Pass",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [],
+			"deleted": false
+		},
+		{
+			"id": 1541,
+			"name": "ATDB RastyKaolin elg.2x4.a0",
+			"software": "Cobalt_ELG",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "ELG:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "AubloadOptions",
+					"value": "-synctime 3600 -commandLine kaolin_aubload.txt -commandLine kaolin_capture_knobs.txt -commandLine rasty_path_enabling_knobs.txt -commandLine :config/devicexml/elg.feature.rasty.kaolin.txt -disableFeature :fixNumberOfThreadsInTGDescriptionAndRestriction"
+				},
+				{
+					"name": "BondOptions",
+					"value": "-var kaolin:path=\"../../Kaolin/bin\" -hooks :../Kaolin/script/lib/hooks/microsPerf_hook.py"
+				},
+				{
+					"name": "DeviceOption",
+					"value": "\"ELG:2x4x8:A0\""
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=Fulsim:kaolin -DmodelDevice elg.2x4x8.a0 -commandLine kaolin_grits.txt -disableFeature :fixNumberOfThreadsInTGDescriptionAndRestriction"
+				},
+				{
+					"name": "KaolinOptions",
+					"value": "-trace kout -cfg :../cfg/xe2_emu_2x4x8_l4.cfg -tgcfg :../tg/tg2stats.txt,:../tg/graphprof.txt,:../tg/tg2extstats.txt,:../tg/tg2intstats.txt -tgout kaolin_timegraph.txt -stat kaolin.stat -tginterval 1000 -slowWarmup false -fastWarmup false -Eu.Detailed true"
+				},
+				{
+					"name": "TargetConfig",
+					"value": ":config/elg/ELG_platform_config.xml"
+				}
+			],
+			"executionMethodHistoryId": 12758,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Pass",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [],
+			"deleted": false
+		},
+		{
+			"id": 1587,
+			"name": "ATDB RastyKaolin elg.5x4.a0",
+			"software": "Cobalt_ELG",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "ELG:5X4X8:A0",
+			"attributes": [
+				{
+					"name": "AubloadOptions",
+					"value": "-synctime 3600 -commandLine kaolin_aubload.txt -commandLine kaolin_capture_knobs.txt -commandLine rasty_path_enabling_knobs.txt -commandLine :config/devicexml/elg.feature.rasty.kaolin.txt -disableFeature :fixNumberOfThreadsInTGDescriptionAndRestriction"
+				},
+				{
+					"name": "BondOptions",
+					"value": "-var kaolin:path=\"../../Kaolin/bin\" -hooks :../Kaolin/script/lib/hooks/microsPerf_hook.py"
+				},
+				{
+					"name": "DeviceOption",
+					"value": "\"ELG:2x4x8:A0\""
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=Fulsim:kaolin -DmodelDevice elg.5x4x8.a0 -commandLine kaolin_grits.txt -disableFeature :fixNumberOfThreadsInTGDescriptionAndRestriction"
+				},
+				{
+					"name": "KaolinOptions",
+					"value": "-trace kout -cfg :../cfg/xe2_x2_5x4x8_4ch_l4.cfg -cfg :../cfg/archDB/xe2_archDB.cfg -tgcfg :../tg/tg2stats.txt,:../tg/graphprof.txt,:../tg/tg2extstats.txt,:../tg/tg2intstats.txt -tgout kaolin_timegraph.txt -stat kaolin.stat -tginterval 1000 -slowWarmup false -fastWarmup false -Eu.Detailed true"
+				},
+				{
+					"name": "TargetConfig",
+					"value": ":config/elg/ELG_platform_config.xml"
+				}
+			],
+			"executionMethodHistoryId": 12759,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Pass",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [],
+			"deleted": false
+		},
+		{
+			"id": 1550,
+			"name": "ATDB RastyKaolin elg.7x4.a0",
+			"software": "Cobalt_ELG",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "ELG:7X4X8:A0",
+			"attributes": [
+				{
+					"name": "AubloadOptions",
+					"value": "-synctime 3600 -commandLine kaolin_aubload.txt -commandLine kaolin_capture_knobs.txt -commandLine rasty_path_enabling_knobs.txt -commandLine :config/devicexml/elg.feature.rasty.kaolin.txt -disableFeature :fixNumberOfThreadsInTGDescriptionAndRestriction"
+				},
+				{
+					"name": "BondOptions",
+					"value": "-var kaolin:path=\"../../Kaolin/bin\" -hooks :../Kaolin/script/lib/hooks/microsPerf_hook.py"
+				},
+				{
+					"name": "DeviceOption",
+					"value": "\"ELG:2x4x8:A0\""
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=Fulsim:kaolin -DmodelDevice elg.7x4x8.a0 -commandLine kaolin_grits.txt -disableFeature :fixNumberOfThreadsInTGDescriptionAndRestriction"
+				},
+				{
+					"name": "KaolinOptions",
+					"value": "-trace kout -cfg :../cfg/xe2_x3_7x4x8_6ch_l4.cfg -cfg :../cfg/archDB/xe2_archDB.cfg -tgcfg :../tg/tg2stats.txt,:../tg/graphprof.txt,:../tg/tg2extstats.txt,:../tg/tg2intstats.txt -tgout kaolin_timegraph.txt -stat kaolin.stat -tginterval 1000 -slowWarmup false -fastWarmup false -Eu.Detailed true"
+				},
+				{
+					"name": "TargetConfig",
+					"value": ":config/elg/ELG_platform_config.xml"
+				}
+			],
+			"executionMethodHistoryId": 12760,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Pass",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [],
+			"deleted": false
+		},
+		{
+			"id": 1592,
+			"name": "ATDB RastyKaolin Functional elg.10x4.a0",
+			"software": "Cobalt_ELG",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "ELG:10X4X8:A0",
+			"attributes": [
+				{
+					"name": "AubloadOptions",
+					"value": "-synctime 3600 -commandLine kaolin_aubload.txt -commandLine kaolin_capture_knobs.txt -commandLine rasty_path_enabling_knobs.txt  -commandLine :config/devicexml/elg.feature.rasty.kaolin.txt -disableFeature :fixNumberOfThreadsInTGDescriptionAndRestriction"
+				},
+				{
+					"name": "BondOptions",
+					"value": "-var kaolin:path=\"../../Kaolin/bin\""
+				},
+				{
+					"name": "DeviceOption",
+					"value": "\"ELG:2x4x8:A0\""
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=Fulsim:kaolin -DmodelDevice elg.10x4x8.a0 -commandLine kaolin_grits.txt -disableFeature :fixNumberOfThreadsInTGDescriptionAndRestriction"
+				},
+				{
+					"name": "KaolinOptions",
+					"value": "-trace kout -cfg :../cfg/xe2_x4_10x4x8_8ch_l4.cfg -cfg :../cfg/archDB/xe2_archDB.cfg -tgcfg :../tg/tg2stats.txt,:../tg/graphprof.txt,:../tg/tg2extstats.txt,:../tg/tg2intstats.txt -tgout kaolin_timegraph.txt -stat kaolin.stat -tginterval 1000 -slowWarmup false -fastWarmup false -Eu.Detailed true"
+				},
+				{
+					"name": "TargetConfig",
+					"value": ":config/elg/ELG_platform_config.xml"
+				}
+			],
+			"executionMethodHistoryId": 12761,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Pass",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [],
+			"deleted": false
+		},
+		{
+			"id": 1547,
+			"name": "ATDB RastyKaolin Functional elg.2x4.a0",
+			"software": "Cobalt_ELG",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "ELG:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "AubloadOptions",
+					"value": "-synctime 3600 -commandLine kaolin_aubload.txt -commandLine kaolin_capture_knobs.txt -commandLine rasty_path_enabling_knobs.txt -commandLine :config/devicexml/elg.feature.rasty.kaolin.txt -disableFeature :fixNumberOfThreadsInTGDescriptionAndRestriction"
+				},
+				{
+					"name": "BondOptions",
+					"value": "-var kaolin:path=\"../../Kaolin/bin\""
+				},
+				{
+					"name": "DeviceOption",
+					"value": "\"ELG:2x4x8:A0\""
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=Fulsim:kaolin -DmodelDevice elg.2x4x8.a0 -commandLine kaolin_grits.txt -disableFeature :fixNumberOfThreadsInTGDescriptionAndRestriction"
+				},
+				{
+					"name": "KaolinOptions",
+					"value": "-trace kout -cfg :../cfg/xe2_emu_2x4x8_l4.cfg -tgcfg :../tg/tg2stats.txt,:../tg/graphprof.txt,:../tg/tg2extstats.txt,:../tg/tg2intstats.txt -tgout kaolin_timegraph.txt -stat kaolin.stat -tginterval 1000 -slowWarmup false -fastWarmup false -Eu.Detailed true"
+				},
+				{
+					"name": "TargetConfig",
+					"value": ":config/elg/ELG_platform_config.xml"
+				}
+			],
+			"executionMethodHistoryId": 12762,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Pass",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [],
+			"deleted": false
+		},
+		{
+			"id": 1588,
+			"name": "ATDB RastyKaolin Functional elg.5x4.a0",
+			"software": "Cobalt_ELG",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "ELG:5X4X8:A0",
+			"attributes": [
+				{
+					"name": "AubloadOptions",
+					"value": "-synctime 3600 -commandLine kaolin_aubload.txt -commandLine kaolin_capture_knobs.txt -commandLine rasty_path_enabling_knobs.txt -commandLine kaolin_aubload.txt -commandLine kaolin_capture_knobs.txt -commandLine rasty_path_enabling_knobs.txt -commandLine :config/devicexml/elg.feature.rasty.kaolin.txt -disableFeature :fixNumberOfThreadsInTGDescriptionAndRestriction"
+				},
+				{
+					"name": "BondOptions",
+					"value": "-var kaolin:path=\"../../Kaolin/bin\""
+				},
+				{
+					"name": "DeviceOption",
+					"value": "\"ELG:2x4x8:A0\""
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=Fulsim:kaolin -DmodelDevice elg.5x4x8.a0 -commandLine kaolin_grits.txt -disableFeature :fixNumberOfThreadsInTGDescriptionAndRestriction"
+				},
+				{
+					"name": "KaolinOptions",
+					"value": "-trace kout -cfg :../cfg/xe2_x2_5x4x8_4ch_l4.cfg -cfg :../cfg/archDB/xe2_archDB.cfg -tgcfg :../tg/tg2stats.txt,:../tg/graphprof.txt,:../tg/tg2extstats.txt,:../tg/tg2intstats.txt -tgout kaolin_timegraph.txt -stat kaolin.stat -tginterval 1000 -slowWarmup false -fastWarmup false -Eu.Detailed true"
+				},
+				{
+					"name": "TargetConfig",
+					"value": ":config/elg/ELG_platform_config.xml"
+				}
+			],
+			"executionMethodHistoryId": 12763,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Pass",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [],
+			"deleted": false
+		},
+		{
+			"id": 1551,
+			"name": "ATDB RastyKaolin Functional elg.7x4.a0",
+			"software": "Cobalt_ELG",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "ELG:7X4X8:A0",
+			"attributes": [
+				{
+					"name": "AubloadOptions",
+					"value": "-synctime 3600 -commandLine kaolin_aubload.txt -commandLine kaolin_capture_knobs.txt -commandLine rasty_path_enabling_knobs.txt -commandLine :config/devicexml/elg.feature.rasty.kaolin.txt -disableFeature :fixNumberOfThreadsInTGDescriptionAndRestriction"
+				},
+				{
+					"name": "BondOptions",
+					"value": "-var kaolin:path=\"../../Kaolin/bin\""
+				},
+				{
+					"name": "DeviceOption",
+					"value": "\"ELG:2x4x8:A0\""
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=Fulsim:kaolin -DmodelDevice elg.7x4x8.a0 -commandLine kaolin_grits.txt -disableFeature :fixNumberOfThreadsInTGDescriptionAndRestriction"
+				},
+				{
+					"name": "KaolinOptions",
+					"value": "-trace kout -cfg :../cfg/xe2_x3_7x4x8_6ch_l4.cfg -cfg :../cfg/archDB/xe2_archDB.cfg -tgcfg :../tg/tg2stats.txt,:../tg/graphprof.txt,:../tg/tg2extstats.txt,:../tg/tg2intstats.txt -tgout kaolin_timegraph.txt -stat kaolin.stat -tginterval 1000 -slowWarmup false -fastWarmup false -Eu.Detailed true"
+				},
+				{
+					"name": "TargetConfig",
+					"value": ":config/elg/ELG_platform_config.xml"
+				}
+			],
+			"executionMethodHistoryId": 12764,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Pass",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [],
+			"deleted": false
+		},
+		{
+			"id": 621,
+			"name": "Cobalt Perf Verification elg.2x4.a0",
+			"software": "Cobalt_ELG",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "ELG:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":config/devicexml/elg.1tx2x4x8.device.config.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.cobalt.3d.txt"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.cobalt.3d.txt"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": "-perf -perftolerance 0.05"
+				},
+				{
+					"name": "TargetConfig",
+					"value": ":config/elg/ELG_platform_config_8GB_GMD_2x4_2L3Node.xml"
+				}
+			],
+			"executionMethodHistoryId": 4705,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 622,
+			"name": "Cobalt Perf Verification elg.7x4.a0",
+			"software": "Cobalt_ELG",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "ELG:7X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":config/devicexml/elg.1tx7x4x8.device.config.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.cobalt.3d.txt -cb_cfg hang_detect_enable true"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.cobalt.3d.txt"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": "-perf -perftolerance 0.05"
+				},
+				{
+					"name": "TargetConfig",
+					"value": ":config/elg/ELG_platform_config_8GB_GMD_7x4_8L3Node.xml"
+				}
+			],
+			"executionMethodHistoryId": 4962,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 857,
+			"name": "Cobalt stats elg.2x4.a0",
+			"software": "Cobalt_ELG",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "ELG:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "AubloadOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.cobalt.3d.txt -commandLine :config/devicexml/elg.feature.perf.cobalt.txt -sim_mode perf_mfu -cb_cfg stats_enable true tg_cfg_filename timegraph.txt tg_interval 100 -cb_cfg hang_detect_enable true"
+				},
+				{
+					"name": "BondOptions",
+					"value": "-hooks :./cobalt_scripts/ArchTarget/tgperf_hook.py"
+				},
+				{
+					"name": "DeviceOption",
+					"value": ":config/devicexml/elg.1tx2x4x8.device.config.xml"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=Fulsim:pipegt:emulation -DmodelDevice elg.2x4x8.a0 -commandLine :config/devicexml/elg.feature.cobalt.3d.txt"
+				},
+				{
+					"name": "TargetConfig",
+					"value": ":config/elg/ELG_platform_config_8GB_GMD_2x4_2L3Node.xml"
+				}
+			],
+			"executionMethodHistoryId": 5650,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 897,
+			"name": "ELG 2x4 Grits P1 ArchTarget with Kaolin",
+			"software": "Cobalt_ELG",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type lilyagent",
+			"productConfig": "ELG:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "AubloadOptions",
+					"value": "-synctime 3600 -kout kaolin -karch elg -enablefeature :kaolinObserverAndTraceRecording -enableDcGpgpuPrintMessage  -commandLine :config/devicexml/elg.feature.cobalt.kaolin.txt"
+				},
+				{
+					"name": "BondOptions",
+					"value": "-var kaolin:path=\"../../Kaolin/bin\" -hooks :../Kaolin/script/lib/hooks/tgperf_hook.py"
+				},
+				{
+					"name": "DeviceOption",
+					"value": "\"ELG:2x4x8:A0 sliceEnableMask 1\""
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=Fulsim:kaolin -DmodelDevice elg.2x4x8.a0  -commandLine :config/devicexml/elg.feature.cobalt.kaolin.txt"
+				},
+				{
+					"name": "KaolinOptions",
+					"value": "-cfg :../cfg/xe2_emu_2x4x8_l4.cfg -tgcfg :../tg/tg2stats.txt,:../tg/graphprof.txt,:../tg/tg2extstats.txt,:../tg/tg2intstats.txt -tgout kaolin_timegraph.txt -stat kaolin.stat -tginterval 1000  -slowWarmup false -fastWarmup false"
+				},
+				{
+					"name": "TargetConfig",
+					"value": ":config/elg/ELG_platform_config.xml"
+				}
+			],
+			"executionMethodHistoryId": 12240,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [],
+			"deleted": false
+		},
+		{
+			"id": 906,
+			"name": "ELG 7x4 Grits P1 Arch Target With Kaolin",
+			"software": "Cobalt_ELG",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type lilyagent",
+			"productConfig": "ELG:7X4X8:A0",
+			"attributes": [
+				{
+					"name": "AubloadOptions",
+					"value": "-synctime 3600 -kout kaolin -karch elg -enablefeature :kaolinObserverAndTraceRecording -enableDcGpgpuPrintMessage -commandLine :config/devicexml/elg.feature.cobalt.kaolin.txt"
+				},
+				{
+					"name": "BondOptions",
+					"value": "-var kaolin:path=\"../../Kaolin/bin\" -hooks :../Kaolin/script/lib/hooks/tgperf_hook.py"
+				},
+				{
+					"name": "DeviceOption",
+					"value": "\"ELG:2x4x8:A0 sliceEnableMask 1\""
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=Fulsim:kaolin -DmodelDevice elg.7x4x8.a0  -commandLine :config/devicexml/elg.feature.cobalt.kaolin.txt"
+				},
+				{
+					"name": "KaolinOptions",
+					"value": "-cfg :../cfg/xe2_x3_7x4x8_6ch_l4.cfg -cfg :../cfg/archDB/xe2_archDB.cfg -tgcfg :../tg/tg2stats.txt,:../tg/graphprof.txt,:../tg/tg2extstats.txt,:../tg/tg2intstats.txt -tgout kaolin_timegraph.txt -stat kaolin.stat -tginterval 1000  -slowWarmup false -fastWarmup false"
+				},
+				{
+					"name": "TargetConfig",
+					"value": ":config/elg/ELG_platform_config.xml"
+				}
+			],
+			"executionMethodHistoryId": 12241,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [],
+			"deleted": false
+		},
+		{
+			"id": 540,
+			"name": "elg.10x4.a0 Cobalt 3D",
+			"software": "Cobalt_ELG",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "ELG:10X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":config/devicexml/elg.1tx10x4x8.device.config.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.cobalt.3d.txt"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.cobalt.3d.txt"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				},
+				{
+					"name": "TargetConfig",
+					"value": ":config/elg/ELG_platform_config_8GB_GMD_10x4_10L3Node.xml"
+				}
+			],
+			"executionMethodHistoryId": 4701,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 738,
+			"name": "elg.10x4.a0 Cobalt Compute",
+			"software": "Cobalt_ELG",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "ELG:10X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":config/devicexml/elg.1tx10x4x8.compute.device.config.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.cobalt.3d.txt"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.cobalt.3d.txt"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				},
+				{
+					"name": "TargetConfig",
+					"value": ":config/elg/ELG_platform_config_8GB_GMD_10x4_10L3Node.xml"
+				}
+			],
+			"executionMethodHistoryId": 4763,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 878,
+			"name": "elg.10x4.a0 Cobalt downbin",
+			"software": "Cobalt_ELG",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "ELG:10X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":config/devicexml/elg.1tx10x4x8.device.config.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.cobalt.3d.txt"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.cobalt.3d.txt"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				},
+				{
+					"name": "TargetConfig",
+					"value": ""
+				}
+			],
+			"executionMethodHistoryId": 5891,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 541,
+			"name": "elg.10x4.a0 RTL 3D",
+			"software": "Cobalt_ELG",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "ELG:10X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":config/devicexml/elg.1tx10x4x8.device.config.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.gk.txt"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.gk.txt"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				},
+				{
+					"name": "TargetConfig",
+					"value": ":config/elg/ELG_platform_config_8GB_GMD_10x4_10L3Node.xml"
+				}
+			],
+			"executionMethodHistoryId": 4620,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 480,
+			"name": "elg.2x2.a0 Cobalt 3D",
+			"software": "Cobalt_ELG",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "ELG:2X2X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":config/devicexml/elg.2x2x8.rtl.gfx.device.config.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.cobalt.3d.txt"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.cobalt.3d.txt"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				},
+				{
+					"name": "TargetConfig",
+					"value": ":config/elg/ELG_platform_config_8GB_GD_2x2_2L3Node.xml"
+				}
+			],
+			"executionMethodHistoryId": 5847,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 666,
+			"name": "elg.2x2.a0 gmd RTL 3D",
+			"software": "Cobalt_ELG",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "ELG:2X2X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":config/devicexml/elg.1tx2x2x8.gmd.device.config.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.gk.txt"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.gk.txt"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				},
+				{
+					"name": "TargetConfig",
+					"value": ":config/elg/ELG_platform_config_8GB.xml"
+				}
+			],
+			"executionMethodHistoryId": 4621,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 495,
+			"name": "elg.2x2.a0 RTL 3D",
+			"software": "Cobalt_ELG",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "ELG:2X2X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":config/devicexml/elg.2x2x8.rtl.gfx.device.config.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.gk.txt"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.gk.txt"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				},
+				{
+					"name": "TargetConfig",
+					"value": ":config/elg/ELG_platform_config_8GB_GD_2x2_2L3Node.xml"
+				}
+			],
+			"executionMethodHistoryId": 5848,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 1888,
+			"name": "elg.2x2x8.a0 UTP sc6 Bullseye",
+			"software": "Cobalt_ELG",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "ELG:2X2X8:A0",
+			"attributes": [
+				{
+					"name": "AubloadOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.cobalt.3d.txt -synctime 9000"
+				},
+				{
+					"name": "BondOptions",
+					"value": "-hooks /nfs/site/disks/xe2_gt_regress_extra_001/Xe2Coverage/RMBucketHookGlobal2.py"
+				},
+				{
+					"name": "DeviceOption",
+					"value": ":config/devicexml/elg.2x2x8.rtl.gfx.device.config.xml"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=Fulsim:pipegt:simulation -DtargetType=simulation -commandLine :config/devicexml/elg.feature.cobalt.3d.txt"
+				},
+				{
+					"name": "TargetConfig",
+					"value": ":config/elg/ELG_platform_config_8GB_GD_2x2_2L3Node.xml"
+				}
+			],
+			"executionMethodHistoryId": 10596,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Pass",
+					"excludeTestCi": false
+				}
+			],
+			"exitCodeTestListStatusRemap": [],
+			"deleted": false
+		},
+		{
+			"id": 943,
+			"name": "elg.2x4.a0 AUBS Cobalt MT UTP",
+			"software": "Cobalt_ELG",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "ELG:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":config/devicexml/elg.1tx2x4x8.device.config.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.cobalt.aubcapture.3d.txt -sim_mode perf_mfu  -cb_cfg hang_detect_enable true hang_analysis_period 1000000 hang_threshold 1 hang_activation_threshold 5000 hang_max_hang_cycles 1 heart_beat_enable true -cb_cfg multithread_mode tbb max_worker_threads 8 -enableDcGpgpuPrintMessage"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.cobalt.aubcapture.3d.txt"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				},
+				{
+					"name": "TargetConfig",
+					"value": ":config/elg/ELG_platform_config_8GB_GMD.xml"
+				}
+			],
+			"executionMethodHistoryId": 11694,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 1234,
+			"name": "elg.2x4.a0 AUBS IMM Cobalt",
+			"software": "Cobalt_ELG",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "ELG:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":config/devicexml/elg.1tx2x4x8.device.config.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.cobalt.aubcapture.3d.txt -enableDcGpgpuPrintMessage"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.cobalt.aubcapture.3d.txt"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				},
+				{
+					"name": "TargetConfig",
+					"value": ""
+				}
+			],
+			"executionMethodHistoryId": 8592,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 828,
+			"name": "elg.2x4.a0 AUBS MFU+MT Cobalt",
+			"software": "Cobalt_ELG",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "ELG:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":config/devicexml/elg.1tx2x4x8.device.config.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.cobalt.aubcapture.3d.txt -sim_mode perf_mfu  -cb_cfg hang_detect_enable true hang_analysis_period 1000000 hang_threshold 100 hang_activation_threshold 5000 hang_max_hang_cycles 100 heart_beat_enable true -cb_cfg multithread_mode tbb max_worker_threads 6 -enableDcGpgpuPrintMessage"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.cobalt.aubcapture.3d.txt"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				},
+				{
+					"name": "TargetConfig",
+					"value": ""
+				}
+			],
+			"executionMethodHistoryId": 8697,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 566,
+			"name": "elg.2x4.a0 Cobalt 3D",
+			"software": "Cobalt_ELG",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "ELG:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":config/devicexml/elg.1tx2x4x8.device.config.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.cobalt.3d.txt -regaccess :config/devicexml/elg.gt.reginit"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.cobalt.3d.txt"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				},
+				{
+					"name": "TargetConfig",
+					"value": ":config/elg/ELG_platform_config_8GB_GMD_2x4_2L3Node.xml"
+				}
+			],
+			"executionMethodHistoryId": 7425,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 811,
+			"name": "elg.2x4.a0 Cobalt 3D VirtualMemoryHigh",
+			"software": "Cobalt_ELG",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "ELG:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":config/devicexml/elg.1tx2x4x8.device.config.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.cobalt.3d.txt"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.cobalt.3d.txt"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				},
+				{
+					"name": "TargetConfig",
+					"value": ":config/elg/ELG_platform_config_32GB.xml"
+				}
+			],
+			"executionMethodHistoryId": 6104,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 729,
+			"name": "elg.2x4.a0 Perf+MFU Cobalt",
+			"software": "Cobalt_ELG",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "ELG:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":config/devicexml/elg.1tx2x4x8.device.config.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.cobalt.3d.txt -sim_mode perf_mfu  -cb_cfg hang_detect_enable true hang_analysis_period 100000 hang_threshold 40 hang_activation_threshold 1000 hang_max_hang_cycles 1"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.cobalt.3d.txt"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				},
+				{
+					"name": "TargetConfig",
+					"value": ":config/elg/ELG_platform_config_8GB_GMD_2x4_2L3Node.xml"
+				}
+			],
+			"executionMethodHistoryId": 8193,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 568,
+			"name": "elg.2x4.a0 Perf+MPU Cobalt",
+			"software": "Cobalt_ELG",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "ELG:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":config/devicexml/elg.1tx2x4x8.device.config.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.cobalt.3d.txt -sim_mode perf_mpu  -cb_cfg hang_detect_enable true hang_analysis_period 100000 hang_threshold 40 hang_activation_threshold 1000 hang_max_hang_cycles 1"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.cobalt.3d.txt"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				},
+				{
+					"name": "TargetConfig",
+					"value": ":config/elg/ELG_platform_config_8GB_GMD_2x4_2L3Node.xml"
+				}
+			],
+			"executionMethodHistoryId": 8194,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 569,
+			"name": "elg.2x4.a0 Perf+MT Cobalt",
+			"software": "Cobalt_ELG",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "ELG:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":config/devicexml/elg.1tx2x4x8.device.config.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.cobalt.3d.txt -sim_mode perf_mfu -cb_cfg multithread_mode tbb -cb_cfg hang_detect_enable true"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.cobalt.3d.txt"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				},
+				{
+					"name": "TargetConfig",
+					"value": ":config/elg/ELG_platform_config_8GB_GMD_2x4_2L3Node.xml"
+				}
+			],
+			"executionMethodHistoryId": 8195,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 570,
+			"name": "elg.2x4.a0 RTL 3D",
+			"software": "Cobalt_ELG",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "ELG:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":config/devicexml/elg.1tx2x4x8.device.config.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.gk.txt"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.gk.txt"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				},
+				{
+					"name": "TargetConfig",
+					"value": ":config/elg/ELG_platform_config_8GB_GMD_2x4_2L3Node.xml"
+				}
+			],
+			"executionMethodHistoryId": 4623,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 894,
+			"name": "elg.2x4.a0 RTL 3D PTC",
+			"software": "Cobalt_ELG",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "ELG:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":config/devicexml/elg.1tx2x4x8.device.config.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.gk.txt -dfile :config/devicexml/ELG_PTCTrackers.txt"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.gk.txt"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": "-ptc"
+				},
+				{
+					"name": "TargetConfig",
+					"value": ":config/elg/ELG_platform_config_8GB_GMD_2x4_2L3Node.xml"
+				}
+			],
+			"executionMethodHistoryId": 6598,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 101,
+					"status": "Warn",
+					"excludeTestCi": true
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 513,
+			"name": "elg.5x4.a0 Cobalt 3D",
+			"software": "Cobalt_ELG",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "ELG:5X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":config/devicexml/elg.1tx5x4x8.device.config.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.cobalt.3d.txt"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.cobalt.3d.txt"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				},
+				{
+					"name": "TargetConfig",
+					"value": ":config/elg/ELG_platform_config_8GB_GMD_5x4_6L3Node.xml"
+				}
+			],
+			"executionMethodHistoryId": 4703,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 895,
+			"name": "elg.5x4.a0 Cobalt downbin",
+			"software": "Cobalt_ELG",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "ELG:5X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":config/devicexml/elg.1tx5x4x8.device.config.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.cobalt.3d.txt"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.cobalt.3d.txt"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				},
+				{
+					"name": "TargetConfig",
+					"value": ""
+				}
+			],
+			"executionMethodHistoryId": 6106,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 3137,
+			"name": "elg.5x4.a0 Fused 2x4p1x2 1CSS Cobalt 3D",
+			"software": "Cobalt_ELG",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "ELG:5X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":config/devicexml/elg.1tx5x4x8.a0_fused_2x4p1x2_1CSS.device.config.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.cobalt.3d.txt"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.cobalt.3d.txt"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				},
+				{
+					"name": "TargetConfig",
+					"value": ":config/elg/ELG_platform_config_8GB_GMD_5x4_6L3Node.xml"
+				}
+			],
+			"executionMethodHistoryId": 15186,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 3136,
+			"name": "elg.5x4.a0 Fused 2x4p1x2 2CSS Cobalt 3D",
+			"software": "Cobalt_ELG",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "ELG:5X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":config/devicexml/elg.1tx5x4x8.a0_fused_2x4p1x2_2CSS.device.config.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.cobalt.3d.txt"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.cobalt.3d.txt"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				},
+				{
+					"name": "TargetConfig",
+					"value": ":config/elg/ELG_platform_config_8GB_GMD_5x4_6L3Node.xml"
+				}
+			],
+			"executionMethodHistoryId": 15187,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 3134,
+			"name": "elg.5x4.a0 Fused 3x4 1CSS Cobalt 3D",
+			"software": "Cobalt_ELG",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "ELG:5X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":config/devicexml/elg.1tx5x4x8.a0_fused_3x4_1CSS.device.config.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.cobalt.3d.txt"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.cobalt.3d.txt"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				},
+				{
+					"name": "TargetConfig",
+					"value": ":config/elg/ELG_platform_config_8GB_GMD_5x4_6L3Node.xml"
+				}
+			],
+			"executionMethodHistoryId": 15188,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 3135,
+			"name": "elg.5x4.a0 Fused 3x4 2CSS Cobalt 3D",
+			"software": "Cobalt_ELG",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "ELG:5X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":config/devicexml/elg.1tx5x4x8.a0_fused_3x4_2CSS.device.config.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.cobalt.3d.txt"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.cobalt.3d.txt"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				},
+				{
+					"name": "TargetConfig",
+					"value": ":config/elg/ELG_platform_config_8GB_GMD_5x4_6L3Node.xml"
+				}
+			],
+			"executionMethodHistoryId": 15189,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 516,
+			"name": "elg.5x4.a0 RTL 3D",
+			"software": "Cobalt_ELG",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "ELG:5X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":config/devicexml/elg.1tx5x4x8.device.config.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.gk.txt"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.gk.txt"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				},
+				{
+					"name": "TargetConfig",
+					"value": ":config/elg/ELG_platform_config_8GB_GMD_5x4_6L3Node.xml"
+				}
+			],
+			"executionMethodHistoryId": 4624,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 641,
+			"name": "elg.7x4.a0 Cobalt 2D",
+			"software": "Cobalt_ELG",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "ELG:7X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":config/devicexml/elg.1tx7x4x8.device.config.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.cobalt.3d.txt"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.cobalt.3d.txt"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				},
+				{
+					"name": "TargetConfig",
+					"value": ":config/elg/ELG_platform_config_8GB_GMD_7x4_8L3Node.xml"
+				}
+			],
+			"executionMethodHistoryId": 4771,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 514,
+			"name": "elg.7x4.a0 Cobalt 3D",
+			"software": "Cobalt_ELG",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "ELG:7X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":config/devicexml/elg.1tx7x4x8.device.config.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.cobalt.3d.txt"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.cobalt.3d.txt"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				},
+				{
+					"name": "TargetConfig",
+					"value": ":config/elg/ELG_platform_config_8GB_GMD_7x4_8L3Node.xml"
+				}
+			],
+			"executionMethodHistoryId": 4704,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 896,
+			"name": "elg.7x4.a0 Cobalt downbin",
+			"software": "Cobalt_ELG",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "ELG:7X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":config/devicexml/elg.1tx7x4x8.device.config.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.cobalt.3d.txt"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.cobalt.3d.txt"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				},
+				{
+					"name": "TargetConfig",
+					"value": ""
+				}
+			],
+			"executionMethodHistoryId": 6107,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 1008,
+			"name": "elg.7x4.a0 Perf+MFU Cobalt",
+			"software": "Cobalt_ELG",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "ELG:7X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":config/devicexml/elg.1tx7x4x8.device.config.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.cobalt.3d.txt -sim_mode perf_mfu  -cb_cfg hang_detect_enable true hang_analysis_period 100000 hang_threshold 40 hang_activation_threshold 1000 hang_max_hang_cycles 1"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.cobalt.3d.txt"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				},
+				{
+					"name": "TargetConfig",
+					"value": ":config/elg/ELG_platform_config_8GB_GM_7x4_8L3Node.xml"
+				}
+			],
+			"executionMethodHistoryId": 8196,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 1007,
+			"name": "elg.7x4.a0 Perf+MPU Cobalt",
+			"software": "Cobalt_ELG",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "ELG:7X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":config/devicexml/elg.1tx7x4x8.device.config.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.cobalt.3d.txt -sim_mode perf_mpu  -cb_cfg hang_detect_enable true hang_analysis_period 100000 hang_threshold 40 hang_activation_threshold 1000 hang_max_hang_cycles 1"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.cobalt.3d.txt"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				},
+				{
+					"name": "TargetConfig",
+					"value": ":config/elg/ELG_platform_config_8GB_GM_7x4_8L3Node.xml"
+				}
+			],
+			"executionMethodHistoryId": 8197,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 531,
+			"name": "elg.7x4.a0 RTL 3D",
+			"software": "Cobalt_ELG",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "ELG:7X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":config/devicexml/elg.1tx7x4x8.device.config.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.gk.txt"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.gk.txt"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				},
+				{
+					"name": "TargetConfig",
+					"value": ":config/elg/ELG_platform_config_8GB_GMD_7x4_8L3Node.xml"
+				}
+			],
+			"executionMethodHistoryId": 4625,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 2990,
+			"name": "elg.8x4.a0 Cobalt 3D",
+			"software": "Cobalt_ELG",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "ELG:7X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":config/devicexml/elg.1tx8x4x8.gt.device.config.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.cobalt.3d.txt"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.cobalt.3d.txt"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				},
+				{
+					"name": "TargetConfig",
+					"value": ":config/elg/ELG_platform_config_8GB_GD_8x4_8L3Node.xml"
+				}
+			],
+			"executionMethodHistoryId": 14746,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 3172,
+			"name": "elg.8x4.a0 Cobalt 3D Media Display",
+			"software": "Cobalt_ELG",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "ELG:7X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":config/devicexml/elg.1tx8x4x8.gmd.device.config.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.cobalt.3d.txt"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.cobalt.3d.txt"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				},
+				{
+					"name": "TargetConfig",
+					"value": ":config/elg/ELG_platform_config_8GB_GD_8x4_8L3Node.xml"
+				}
+			],
+			"executionMethodHistoryId": 15314,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 1074,
+			"name": "Grits-ELG Rasty Xe2 7x4 ArchTarget",
+			"software": "Cobalt_ELG",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type lilyagent",
+			"productConfig": "ELG:7X4X8:A0",
+			"attributes": [
+				{
+					"name": "AubloadOptions",
+					"value": "-synctime 3600 -enableDcGpgpuPrintMessage -enablefeature 999997155 999997156 999997157 999997173 -enablefeature :kaolinObserverAndTraceRecording"
+				},
+				{
+					"name": "BondOptions",
+					"value": "-var kaolin:path=\"../../Kaolin/bin\" -hooks :../Kaolin/script/lib/hooks/tgperf_hook.py"
+				},
+				{
+					"name": "DeviceOption",
+					"value": "\"ELG:2x4x8:A0\""
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=Fulsim:kaolin -DmodelDevice elg.7x4x8.a0 -DdisableOAPerf=true"
+				},
+				{
+					"name": "KaolinOptions",
+					"value": "-trace kout -cfg :../cfg/xe2_x3_7x4x8_6ch_l4.cfg -cfg :../cfg/archDB/xe2_archDB.cfg -tgcfg :../tg/tg2stats.txt,:../tg/graphprof.txt,:../tg/tg2extstats.txt,:../tg/tg2intstats.txt -tgout kaolin_timegraph.txt -stat kaolin.stat -tginterval 1000 -slowWarmup false -fastWarmup false"
+				},
+				{
+					"name": "TargetConfig",
+					"value": ":config/elg/ELG_platform_config.xml"
+				}
+			],
+			"executionMethodHistoryId": 12242,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Pass",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [],
+			"deleted": false
+		},
+		{
+			"id": 842,
+			"name": "Grits-ELG.2x4x8.A0 Kaolin Functional",
+			"software": "Cobalt_ELG",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type lilyagent",
+			"productConfig": "ELG:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "AubloadOptions",
+					"value": "-synctime 3600 -cb_cfg stats_enable true -kout kaolin -karch elg -enablefeature :kaolinObserverAndTraceRecording -enableDcGpgpuPrintMessage"
+				},
+				{
+					"name": "BondOptions",
+					"value": "-var kaolin:path=\"../../Kaolin/bin\""
+				},
+				{
+					"name": "DeviceOption",
+					"value": "\"ELG:2x4x8:A0 sliceEnableMask 1\""
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=Fulsim:pipegt:emulation -DmodelDevice elg.2x4x8.a0"
+				},
+				{
+					"name": "KaolinOptions",
+					"value": "-cfg :../cfg/xe2_emu_2x4x8_l4.cfg -tgcfg :../tg/tg2stats.txt -tgout kaolin_timegraph.txt -stat kaolin.stat -tginterval 1000"
+				}
+			],
+			"executionMethodHistoryId": 12134,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 2281,
+			"name": "Media UTP PM Simulation",
+			"software": "Cobalt_ELG",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "ELG:3X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":config/devicexml/elg.x2.media.device.config.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.gk.media.txt"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.gk.media.txt -target=Fulsim:superPipeMedia:simulation -DtargetType=simulation"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				},
+				{
+					"name": "TargetConfig",
+					"value": ":config/elg/ELG_platform_config_8GB_Media_1L3Node.xml"
+				}
+			],
+			"executionMethodHistoryId": 11695,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 538,
+			"name": "Media Xe2 Cobalt",
+			"software": "Cobalt_ELG",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "ELG:3X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":config/devicexml/elg.x3.media.device.config.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.cobalt.media.txt"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.cobalt.media.txt"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				},
+				{
+					"name": "TargetConfig",
+					"value": ":config/elg/ELG_platform_config_8GB_Media_1L3Node.xml"
+				}
+			],
+			"executionMethodHistoryId": 10938,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 539,
+			"name": "Media Xe2 RTL",
+			"software": "Cobalt_ELG",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "ELG:3X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":config/devicexml/elg.x3.media.device.config.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.gk.media.txt"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.gk.media.txt"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				},
+				{
+					"name": "TargetConfig",
+					"value": ":config/elg/ELG_platform_config_8GB_Media_1L3Node.xml"
+				}
+			],
+			"executionMethodHistoryId": 10939,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 1979,
+			"name": "Media Xe2 X2 RTL",
+			"software": "Cobalt_ELG",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "ELG:3X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":config/devicexml/elg.x2.media.device.config.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.gk.media.txt"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.gk.media.txt"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				},
+				{
+					"name": "TargetConfig",
+					"value": ":config/elg/ELG_platform_config_8GB_Media_1L3Node.xml"
+				}
+			],
+			"executionMethodHistoryId": 10937,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 3351,
+			"name": "OAVal XeSim elg.5x4.a0",
+			"software": "Cobalt_ELG",
+			"platformSoftware": "AxeAgent",
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "ELG:5X4X8:A0",
+			"attributes": [
+				{
+					"name": "AubloadOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.gk.txt -synctime 60 -mmRegionAlloc bottomUp -gttrand 0 -synctime 1200 -sim_mode perf_mpu -cb_cfg stats_enable true tg_cfg_filename TG_ArchTarget.txt tg_interval 1000 -attr OA.OAtimerReportEnable true"
+				},
+				{
+					"name": "BondOptions",
+					"value": ""
+				},
+				{
+					"name": "DeviceOption",
+					"value": ":config/devicexml/elg.1tx5x4x8.device.config.xml"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-lily -target=cobaltPerformance -wa l3GlobalInvalidationBeforeSaveToFile -wa l3GlobalInvalidationBeforeMemoryPoll -commandLine :config/devicexml/elg.feature.gk.txt -DmodelDevice elg.5x4x8.a0 -DenableOAPerf=true"
+				},
+				{
+					"name": "TargetConfig",
+					"value": ":config/elg/ELG_platform_config.xml"
+				}
+			],
+			"executionMethodHistoryId": 16049,
+			"exitCodeExecutionStatusRemap": [],
+			"exitCodeTestListStatusRemap": [],
+			"deleted": false
+		},
+		{
+			"id": 909,
+			"name": "Rasty-ELG.2x4x8.A0 Kaolin Functional",
+			"software": "Cobalt_ELG",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type lilyagent",
+			"productConfig": "ELG:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "AubloadOptions",
+					"value": "-synctime 3600 -enableFeature 999997155 999997156 999997157 -enableFeature 999997173 -enablefeature :kaolinObserverAndTraceRecording -enableDcGpgpuPrintMessage"
+				},
+				{
+					"name": "BondOptions",
+					"value": "-var kaolin:path=\"../../Kaolin/bin\""
+				},
+				{
+					"name": "DeviceOption",
+					"value": "\"ELG:2x4x8:A0 \""
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=Fulsim:pipegt:emulation -DmodelDevice elg.2x4x8.a0"
+				},
+				{
+					"name": "KaolinOptions",
+					"value": "-trace kout  -cfg :../cfg/xe2_emu_2x4x8_l4.cfg -tgcfg :../tg/tg2stats.txt -tgout kaolin_timegraph.txt -stat kaolin.stat -tginterval 1000"
+				}
+			],
+			"executionMethodHistoryId": 12135,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 499,
+			"name": "UTP sim3d cobalt elg.2x2.a0",
+			"software": "Cobalt_ELG",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "ELG:2X2X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":config/devicexml/elg.2x2x8.rtl.gfx.device.config.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.cobalt.3d.txt -synctime 7200"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.cobalt.3d.txt -target=Fulsim:pipegt:simulation -DtargetType=simulation"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": "-nogold"
+				},
+				{
+					"name": "TargetConfig",
+					"value": ":config/elg/ELG_platform_config_8GB_GD_2x2_2L3Node.xml"
+				}
+			],
+			"executionMethodHistoryId": 6853,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 905,
+			"name": "UTP sim3d cobalt elg.2x2.a0 PERF + MFU",
+			"software": "Cobalt_ELG",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "ELG:2X2X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":config/devicexml/elg.2x2x8.rtl.gfx.device.config.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.cobalt.3d.txt -synctime 7200 -sim_mode perf_mfu  -cb_cfg hang_detect_enable true hang_analysis_period 100000 hang_threshold 40 hang_activation_threshold 1000 hang_max_hang_cycles 1"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.cobalt.3d.txt -target=Fulsim:pipegt:simulation -DtargetType=simulation"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": "-nogold"
+				},
+				{
+					"name": "TargetConfig",
+					"value": ":config/elg/ELG_platform_config_8GB_GD_2x2_2L3Node.xml"
+				}
+			],
+			"executionMethodHistoryId": 6854,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 1009,
+			"name": "UTP sim3d cobalt elg.7x4.a0 PERF + MFU",
+			"software": "Cobalt_ELG",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "ELG:7X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":config/devicexml/elg.1tx7x4x8.gt.device.config.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.cobalt.3d.txt -synctime 7200 -sim_mode perf_mfu  -cb_cfg hang_detect_enable true hang_analysis_period 100000 hang_threshold 40 hang_activation_threshold 1000 hang_max_hang_cycles 1"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.cobalt.3d.txt -target=Fulsim:pipegt:simulation -DtargetType=simulation"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": "-nogold"
+				},
+				{
+					"name": "TargetConfig",
+					"value": ":config/elg/ELG_platform_config_8GB_GM_7x4_8L3Node.xml"
+				}
+			],
+			"executionMethodHistoryId": 7282,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 3076,
+			"name": "UTP sim3d cobalt elg.8x4.a0",
+			"software": "Cobalt_ELG",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "ELG:7X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":config/devicexml/elg.1tx8x4x8.gt.device.config.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.cobalt.3d.txt -synctime 7200"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.cobalt.3d.txt -target=Fulsim:pipegt:simulation -DtargetType=simulation"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": "-nogold"
+				},
+				{
+					"name": "TargetConfig",
+					"value": ":config/elg/ELG_platform_config_8GB_GD_8x4_8L3Node.xml"
+				}
+			],
+			"executionMethodHistoryId": 15019,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 597,
+			"name": "UTP sim3d RTL elg.10x4.a0",
+			"software": "Cobalt_ELG",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "ELG:10X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":config/devicexml/elg.1tx10x4x8.device.config.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.gk.txt -synctime 7200"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=Fulsim:pipegt:simulation -DtargetType=simulation -commandLine :config/devicexml/elg.feature.gk.txt"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": "-nogold"
+				},
+				{
+					"name": "TargetConfig",
+					"value": ":config/elg/ELG_platform_config_8GB_GMD_10x4_10L3Node.xml"
+				}
+			],
+			"executionMethodHistoryId": 7331,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 510,
+			"name": "UTP sim3d RTL elg.2x2.a0",
+			"software": "Cobalt_ELG",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "ELG:2X2X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":config/devicexml/elg.2x2x8.rtl.gfx.device.config.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.gk.txt -synctime 7200"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=Fulsim:pipegt:simulation -DtargetType=simulation -commandLine :config/devicexml/elg.feature.gk.txt"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": "-nogold"
+				},
+				{
+					"name": "TargetConfig",
+					"value": ":config/elg/ELG_platform_config_8GB_GD_2x2_2L3Node.xml"
+				}
+			],
+			"executionMethodHistoryId": 6855,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 1347,
+			"name": "UTP sim3d RTL elg.2x2.a0 - Cobalt_ELG_IGC",
+			"software": "Cobalt_ELG_IGC",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "ELG:2X2X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":config/devicexml/elg.2x2x8.rtl.gfx.device.config.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.gk.txt -synctime 7200"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=Fulsim:pipegt:simulation -DtargetType=simulation -commandLine :config/devicexml/elg.feature.gk.txt"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": "-nogold"
+				},
+				{
+					"name": "TargetConfig",
+					"value": ":config/elg/ELG_platform_config_8GB_GD_2x2_2L3Node.xml"
+				}
+			],
+			"executionMethodHistoryId": 8991,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 629,
+			"name": "UTP sim3d RTL elg.2x4.a0",
+			"software": "Cobalt_ELG",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "ELG:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":config/devicexml/elg.1tx2x4x8.gt.device.config.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.gk.txt -synctime 7200"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.gk.txt -target=Fulsim:pipegt:simulation -DtargetType=simulation"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": "-nogold"
+				},
+				{
+					"name": "TargetConfig",
+					"value": ":config/elg/ELG_platform_config_8GB_GMD_2x4_2L3Node.xml"
+				}
+			],
+			"executionMethodHistoryId": 7319,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 527,
+			"name": "UTP sim3d RTL elg.7x4.a0",
+			"software": "Cobalt_ELG",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "ELG:7X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":config/devicexml/elg.1tx7x4x8.gt.device.config.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.gk.txt -synctime 7200"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=Fulsim:pipegt:simulation -DtargetType=simulation -commandLine :config/devicexml/elg.feature.gk.txt"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": "-nogold"
+				},
+				{
+					"name": "TargetConfig",
+					"value": ":config/elg/ELG_platform_config_8GB_GMD_7x4_8L3Node.xml"
+				}
+			],
+			"executionMethodHistoryId": 7324,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 874,
+			"name": "UTP simgmd RTL elg.10x4.a0",
+			"software": "Cobalt_ELG",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "ELG:10X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":config/devicexml/elg.1tx10x4x8.device.config.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.gk.txt -synctime 7200"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.gk.txt -target=Fulsim:gtUncore:simulation -DtargetType=simulation"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": "-nogold"
+				},
+				{
+					"name": "TargetConfig",
+					"value": ":config/elg/ELG_platform_config_8GB_GMD_10x4_10L3Node.xml"
+				}
+			],
+			"executionMethodHistoryId": 6857,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 690,
+			"name": "UTP simgmd RTL elg.2x4.a0",
+			"software": "Cobalt_ELG",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "ELG:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":config/devicexml/elg.1tx2x4x8.device.config.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.gk.txt -synctime 7200"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.gk.txt -target=Fulsim:gtUncore:simulation -DtargetType=simulation"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": "-nogold"
+				},
+				{
+					"name": "TargetConfig",
+					"value": ":config/elg/ELG_platform_config_8GB_GMD_2x4_2L3Node.xml"
+				}
+			],
+			"executionMethodHistoryId": 8147,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 873,
+			"name": "UTP simgmd RTL elg.7x4.a0",
+			"software": "Cobalt_ELG",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "ELG:7X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":config/devicexml/elg.1tx7x4x8.device.config.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.gk.txt -synctime 7200"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.gk.txt -target=Fulsim:gtUncore:simulation -DtargetType=simulation"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": "-nogold"
+				},
+				{
+					"name": "TargetConfig",
+					"value": ":config/elg/ELG_platform_config_8GB_GMD_7x4_8L3Node.xml"
+				}
+			],
+			"executionMethodHistoryId": 8148,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 876,
+			"name": "UTP simmedia RTL elg.10x4.a0",
+			"software": "Cobalt_ELG",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "ELG:10X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":config/devicexml/elg.x3.media.device.config.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.gk.media.txt -synctime 7200"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=Fulsim:superPipeMedia:simulation -DtargetType=fulsim -commandLine :config/devicexml/elg.feature.gk.media.txt"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": "-nogold"
+				},
+				{
+					"name": "TargetConfig",
+					"value": ":config/elg/ELG_platform_config_8GB_Media_1L3Node.xml"
+				}
+			],
+			"executionMethodHistoryId": 10942,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 645,
+			"name": "UTP simmedia RTL elg.2x4.a0",
+			"software": "Cobalt_ELG",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "ELG:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":config/devicexml/elg.x3.media.device.config.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.gk.media.txt -synctime 7200"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=Fulsim:superPipeMedia:simulation -DtargetType=fulsim -commandLine :config/devicexml/elg.feature.gk.media.txt"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": "-nogold"
+				},
+				{
+					"name": "TargetConfig",
+					"value": ":config/elg/ELG_platform_config_8GB_Media_1L3Node.xml"
+				}
+			],
+			"executionMethodHistoryId": 10940,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 875,
+			"name": "UTP simmedia RTL elg.7x4.a0",
+			"software": "Cobalt_ELG",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "ELG:7X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":config/devicexml/elg.x3.media.device.config.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-commandLine :config/devicexml/elg.feature.gk.media.txt -synctime 7200"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=Fulsim:superPipeMedia:simulation -DtargetType=fulsim -commandLine :config/devicexml/elg.feature.gk.media.txt"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": "-nogold"
+				},
+				{
+					"name": "TargetConfig",
+					"value": ":config/elg/ELG_platform_config_8GB_Media_1L3Node.xml"
+				}
+			],
+			"executionMethodHistoryId": 10941,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		}
+	]
+}

@@ -1,0 +1,5532 @@
+{
+	"schemaVersion": "1.0",
+	"testListId": 279,
+	"testListPath": "VPG HW/PTL/Cobalt CI",
+	"testListSettingsUrl": "https://axeweb.intel.com/axe/tests/testlists/279/settings/executionmethods",
+	"executionMethods": [
+		{
+			"id": 1912,
+			"name": "2D Display LPD ptl.2x4x8.a0 Cobalt",
+			"software": "Cobalt_PTL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "PTL:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/ptl.1tx2x4x8.a0.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-commandLine :config/devicexml/lnl.feature.cobalt.2d.txt"
+				},
+				{
+					"name": "GfxPlatformOptions",
+					"value": "-commandLine :config/devicexml/lnl.feature.cobalt.2d.txt"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-wa \"skipscloutofvblankrandomization\" -wa \"uselegacycdclockdefaultbehaviour\" -include disableATS.gsf -include disableGritsWarnings.gsf"
+				}
+			],
+			"executionMethodHistoryId": 12571,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 2756,
+			"name": "2D Display LPD_XS WCL.1x4x8.a0 Fused 1x2 Cobalt",
+			"software": "Cobalt_PTL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "PTL:1X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/wcl.1tx1x2x8.a0.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": ""
+				},
+				{
+					"name": "GfxPlatformOptions",
+					"value": ""
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-wa \"skipscloutofvblankrandomization\" -wa \"uselegacycdclockdefaultbehaviour\" -include disableATS.gsf -include disableGritsWarnings.gsf"
+				}
+			],
+			"executionMethodHistoryId": 13753,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 3317,
+			"name": "3D XeSim NVLS.1x2x8.a0 Cobalt_map",
+			"software": "Cobalt_PTL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "PTL:1X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/nvlS.1tx1x2x8.a0.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": ""
+				},
+				{
+					"name": "GritsOptions",
+					"value": ""
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				}
+			],
+			"executionMethodHistoryId": 15940,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 3318,
+			"name": "3D XeSim NVLU 1x4x8.a0 Cobalt_map",
+			"software": "Cobalt_PTL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "PTL:1X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/nvlU.1tx1x4x8.a0.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": ""
+				},
+				{
+					"name": "GritsOptions",
+					"value": ""
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				}
+			],
+			"executionMethodHistoryId": 15941,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 1670,
+			"name": "3D XeSim ptl.1x4x8.a0 Cobalt_map",
+			"software": "Cobalt_PTL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "PTL:1X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/ptl.1tx1x4x8.a0.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": ""
+				},
+				{
+					"name": "GritsOptions",
+					"value": ""
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				}
+			],
+			"executionMethodHistoryId": 10876,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 2302,
+			"name": "3D XeSim ptl.1x4x8.a0 Driver_map",
+			"software": "Cobalt_PTL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "PTL:1X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/ptl.1tx1x4x8.a0.gmd.driver.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": ""
+				},
+				{
+					"name": "GritsOptions",
+					"value": ""
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				}
+			],
+			"executionMethodHistoryId": 11724,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 2000,
+			"name": "3D XeSim ptl.1x4x8.a0 Fused 1x2 Cobalt_map",
+			"software": "Cobalt_PTL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "PTL:1X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/ptl.1tx1x4x8.a0.fused_1x2.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": ""
+				},
+				{
+					"name": "GritsOptions",
+					"value": ""
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				}
+			],
+			"executionMethodHistoryId": 11393,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 2001,
+			"name": "3D XeSim ptl.1x4x8.a0 Fused 1x3 Cobalt_map",
+			"software": "Cobalt_PTL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "PTL:1X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/ptl.1tx1x4x8.a0.fused_1x3.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": ""
+				},
+				{
+					"name": "GritsOptions",
+					"value": ""
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				}
+			],
+			"executionMethodHistoryId": 11394,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 2304,
+			"name": "3D XeSim ptl.1x4x8.a0 Perf_MFU Driver_map",
+			"software": "Cobalt_PTL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "PTL:1X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/ptl.1tx1x4x8.a0.gmd.driver.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-sim_mode perf_mfu  -cb_cfg hang_detect_enable true hang_analysis_period 100000 hang_threshold 40 hang_activation_threshold 1000 hang_max_hang_cycles 1 -enableDcGpgpuPrintMessage"
+				},
+				{
+					"name": "GritsOptions",
+					"value": ""
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				}
+			],
+			"executionMethodHistoryId": 11726,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 2352,
+			"name": "3D XeSim ptl.1x4x8.a0 Perf_MFU MultiThread Driver_map",
+			"software": "Cobalt_PTL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "PTL:1X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/ptl.1tx1x4x8.a0.gmd.driver.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-sim_mode perf_mfu  -cb_cfg hang_detect_enable true hang_analysis_period 100000 hang_threshold 40 hang_activation_threshold 1000 hang_max_hang_cycles 1 -enableDcGpgpuPrintMessage -cb_cfg multithread_mode tbb max_worker_threads 8"
+				},
+				{
+					"name": "GritsOptions",
+					"value": ""
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				}
+			],
+			"executionMethodHistoryId": 11975,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 2340,
+			"name": "3D XeSim ptl.1x4x8.a0 Perf_Xesim_MPU Driver_map",
+			"software": "Cobalt_PTL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "PTL:1X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/ptl.1tx1x4x8.a0.gmd.driver.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-sim_mode perf_mpu   -cb_cfg hang_detect_enable true hang_analysis_period 100000 hang_threshold 40 hang_activation_threshold 1000 hang_max_hang_cycles 1 -enableDcGpgpuPrintMessage"
+				},
+				{
+					"name": "GritsOptions",
+					"value": ""
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				}
+			],
+			"executionMethodHistoryId": 13387,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 2003,
+			"name": "3D XeSim ptl.1x4x8.a0 Rtl_map GMD",
+			"software": "Cobalt_PTL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "PTL:1X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/ptl.1tx1x4x8.a0.gmd.rtl.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": ""
+				},
+				{
+					"name": "GritsOptions",
+					"value": ""
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				}
+			],
+			"executionMethodHistoryId": 11084,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 1461,
+			"name": "3D XeSim ptl.2x4x8.a0 Cobalt_map",
+			"software": "Cobalt_PTL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "PTL:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/ptl.1tx2x4x8.a0.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": ""
+				},
+				{
+					"name": "GritsOptions",
+					"value": ""
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				}
+			],
+			"executionMethodHistoryId": 10983,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 1661,
+			"name": "3D XeSim ptl.2x4x8.a0 Rtl_map GD",
+			"software": "Cobalt_PTL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "PTL:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/ptl.1tx2x4x8.a0.gd.rtl.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": ""
+				},
+				{
+					"name": "GritsOptions",
+					"value": ""
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				}
+			],
+			"executionMethodHistoryId": 10987,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 1985,
+			"name": "3D XeSim ptl.2x4x8.a0 Rtl_map GMD",
+			"software": "Cobalt_PTL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "PTL:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/ptl.1tx2x4x8.a0.gmd.rtl.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": ""
+				},
+				{
+					"name": "GritsOptions",
+					"value": ""
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				}
+			],
+			"executionMethodHistoryId": 11001,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 1906,
+			"name": "3D XeSim ptl.2x6x8.a0 Cobalt_map",
+			"software": "Cobalt_PTL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "PTL:2X6X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/ptl.1tx2x6x8.a0.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": ""
+				},
+				{
+					"name": "GritsOptions",
+					"value": ""
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				}
+			],
+			"executionMethodHistoryId": 10878,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 2484,
+			"name": "3D XeSim ptl.2x6x8.a0 Cobalt_map Dump",
+			"software": "Cobalt_PTL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "PTL:2X6X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/ptl.1tx2x6x8.a0.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": ""
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-dshader -dstreamer"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				}
+			],
+			"executionMethodHistoryId": 12805,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 2455,
+			"name": "3D XeSim ptl.2x6x8.a0 Cobalt_map Test POR",
+			"software": "Cobalt_PTL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "PTL:2X6X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/ptl.1tx2x6x8.a0.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-featureOverrides error -topologyOverrides error"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-featureOverrides error -topologyOverrides error"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				}
+			],
+			"executionMethodHistoryId": 12651,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 2303,
+			"name": "3D XeSim ptl.2x6x8.a0 Driver_map",
+			"software": "Cobalt_PTL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "PTL:2X6X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/ptl.1tx2x6x8.a0.gmd.driver.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": ""
+				},
+				{
+					"name": "GritsOptions",
+					"value": ""
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				}
+			],
+			"executionMethodHistoryId": 11725,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 2307,
+			"name": "3D XeSim ptl.2x6x8.a0 Driver_map MFU",
+			"software": "Cobalt_PTL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "PTL:2X6X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/ptl.1tx2x6x8.a0.gmd.driver.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-sim_mode perf_mfu  -cb_cfg hang_detect_enable true hang_analysis_period 100000 hang_threshold 40 hang_activation_threshold 1000 hang_max_hang_cycles 1 -enableDcGpgpuPrintMessage"
+				},
+				{
+					"name": "GritsOptions",
+					"value": ""
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				}
+			],
+			"executionMethodHistoryId": 11729,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 2353,
+			"name": "3D XeSim ptl.2x6x8.a0 Driver_map MFU MultiThreaded",
+			"software": "Cobalt_PTL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "PTL:2X6X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/ptl.1tx2x6x8.a0.gmd.driver.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-sim_mode perf_mfu  -cb_cfg hang_detect_enable true hang_analysis_period 100000 hang_threshold 40 hang_activation_threshold 1000 hang_max_hang_cycles 1 -enableDcGpgpuPrintMessage  -cb_cfg multithread_mode tbb max_worker_threads 8"
+				},
+				{
+					"name": "GritsOptions",
+					"value": ""
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				}
+			],
+			"executionMethodHistoryId": 11976,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 2769,
+			"name": "3D XeSim ptl.2x6x8.a0 Driver_map MFU MultiThreaded 4 Threads",
+			"software": "Cobalt_PTL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "PTL:2X6X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/ptl.1tx2x6x8.a0.gmd.driver.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-sim_mode perf_mfu  -cb_cfg hang_detect_enable true hang_analysis_period 100000 hang_threshold 40 hang_activation_threshold 1000 hang_max_hang_cycles 1 -enableDcGpgpuPrintMessage  -cb_cfg multithread_mode tbb max_worker_threads 4"
+				},
+				{
+					"name": "GritsOptions",
+					"value": ""
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				}
+			],
+			"executionMethodHistoryId": 13807,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 2341,
+			"name": "3D XeSim ptl.2x6x8.a0 Driver_map Xesim_MPU",
+			"software": "Cobalt_PTL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "PTL:2X6X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/ptl.1tx2x6x8.a0.gmd.driver.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-sim_mode perf_mpu -cb_cfg hang_detect_enable true hang_analysis_period 100000 hang_threshold 40 hang_activation_threshold 1000 hang_max_hang_cycles 1 -enableDcGpgpuPrintMessage"
+				},
+				{
+					"name": "GritsOptions",
+					"value": ""
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				}
+			],
+			"executionMethodHistoryId": 13388,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 2346,
+			"name": "3D XeSim ptl.2x6x8.a0 EU_XeSim Cobalt_map",
+			"software": "Cobalt_PTL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "PTL:2X6X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/ptl.1tx2x6x8.a0.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-attr EU.XESIM 1"
+				},
+				{
+					"name": "GritsOptions",
+					"value": ""
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				}
+			],
+			"executionMethodHistoryId": 11915,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 2347,
+			"name": "3D XeSim ptl.2x6x8.a0 EU_XeSim Driver_map MFU",
+			"software": "Cobalt_PTL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "PTL:2X6X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/ptl.1tx2x6x8.a0.gmd.driver.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-attr EU.XESIM 1 -sim_mode perf_mfu  -cb_cfg hang_detect_enable true hang_analysis_period 100000 hang_threshold 40 hang_activation_threshold 1000 hang_max_hang_cycles 10 -enableDcGpgpuPrintMessage"
+				},
+				{
+					"name": "GritsOptions",
+					"value": ""
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				}
+			],
+			"executionMethodHistoryId": 13988,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 2603,
+			"name": "3D XeSim ptl.2x6x8.a0 Fused 0p6 Cobalt_map",
+			"software": "Cobalt_PTL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "PTL:2X6X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/ptl.1tx2x6x8.a0.fused_0p6.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": ""
+				},
+				{
+					"name": "GritsOptions",
+					"value": ""
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				}
+			],
+			"executionMethodHistoryId": 13179,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 2083,
+			"name": "3D XeSim ptl.2x6x8.a0 Fused 1x4 1Node Cobalt_map",
+			"software": "Cobalt_PTL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "PTL:2X6X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/ptl.1tx2x6x8.a0.fused_1x4_1Node.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": ""
+				},
+				{
+					"name": "GritsOptions",
+					"value": ""
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				}
+			],
+			"executionMethodHistoryId": 11396,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 2082,
+			"name": "3D XeSim ptl.2x6x8.a0 Fused 1x4 2Node Cobalt_map",
+			"software": "Cobalt_PTL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "PTL:2X6X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/ptl.1tx2x6x8.a0.fused_1x4_2Node.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": ""
+				},
+				{
+					"name": "GritsOptions",
+					"value": ""
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				}
+			],
+			"executionMethodHistoryId": 11397,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 1998,
+			"name": "3D XeSim ptl.2x6x8.a0 Fused 4p4 Cobalt_map",
+			"software": "Cobalt_PTL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "PTL:2X6X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/ptl.1tx2x6x8.a0.fused_4p4.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": ""
+				},
+				{
+					"name": "GritsOptions",
+					"value": ""
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				}
+			],
+			"executionMethodHistoryId": 11398,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 1997,
+			"name": "3D XeSim ptl.2x6x8.a0 Fused 5p5 Cobalt_map",
+			"software": "Cobalt_PTL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "PTL:2X6X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/ptl.1tx2x6x8.a0.fused_5p5.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": ""
+				},
+				{
+					"name": "GritsOptions",
+					"value": ""
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				}
+			],
+			"executionMethodHistoryId": 11399,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 1996,
+			"name": "3D XeSim ptl.2x6x8.a0 Fused 5p6 Cobalt_map",
+			"software": "Cobalt_PTL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "PTL:2X6X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/ptl.1tx2x6x8.a0.fused_5p6.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": ""
+				},
+				{
+					"name": "GritsOptions",
+					"value": ""
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				}
+			],
+			"executionMethodHistoryId": 11400,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 1999,
+			"name": "3D XeSim ptl.2x6x8.a0 Fused 6p0 Cobalt_map",
+			"software": "Cobalt_PTL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "PTL:2X6X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/ptl.1tx2x6x8.a0.fused_6p0.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": ""
+				},
+				{
+					"name": "GritsOptions",
+					"value": ""
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				}
+			],
+			"executionMethodHistoryId": 11401,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 1991,
+			"name": "3D XeSim ptl.2x6x8.a0 PTC Rtl_map GD",
+			"software": "Cobalt_PTL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "PTL:2X6X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/ptl.1tx2x6x8.a0.gd.rtl.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-dfile :config/devicexml/ELG_PTCTrackers.txt"
+				},
+				{
+					"name": "GritsOptions",
+					"value": ""
+				},
+				{
+					"name": "RunTestOptions",
+					"value": "-ptc"
+				}
+			],
+			"executionMethodHistoryId": 11073,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 1905,
+			"name": "3D XeSim ptl.2x6x8.a0 Rtl_map GD",
+			"software": "Cobalt_PTL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "PTL:2X6X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/ptl.1tx2x6x8.a0.gd.rtl.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": ""
+				},
+				{
+					"name": "GritsOptions",
+					"value": ""
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				}
+			],
+			"executionMethodHistoryId": 10877,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 2171,
+			"name": "3D XeSim ptl.4x6x8.a0 Cobalt_map",
+			"software": "Cobalt_PTL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "PTL:4X6X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/ptl.1tx4x6x8.a0.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": ""
+				},
+				{
+					"name": "GritsOptions",
+					"value": ""
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				}
+			],
+			"executionMethodHistoryId": 11419,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 2535,
+			"name": "3D XeSim WCL.1x2x8.a0 Cobalt_map",
+			"software": "Cobalt_PTL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "PTL:1X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/wcl.1tx1x2x8.a0.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": ""
+				},
+				{
+					"name": "GritsOptions",
+					"value": ""
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				}
+			],
+			"executionMethodHistoryId": 13803,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 1956,
+			"name": "ATDB 3D XeSim ptl.1x4x8.a0 Cobalt_map Perf_MFU",
+			"software": "Cobalt_PTL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "PTL:1X4X8:A0",
+			"attributes": [
+				{
+					"name": "AubloadOptions",
+					"value": "-attr EU.XESIM 1 -sim_mode perf_mfu -cb_cfg multithread_mode tbb max_worker_threads 8 hang_detect_enable true hang_analysis_period 100000 hang_threshold 10 hang_activation_threshold 1000 hang_max_hang_cycles 10 stats_enable true tg_cfg_filename TG_ArchTarget.txt -enableDcGpgpuPrintMessage -commandLine :config/devicexml/xe3.lpg.feature.xesim.atdb.txt"
+				},
+				{
+					"name": "BondOptions",
+					"value": "-hooks :./cobalt_scripts/ArchTarget/micros_perf_hook.py"
+				},
+				{
+					"name": "DeviceOption",
+					"value": ":devices/ptl.1tx1x4x8.a0.map.xml"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=cobaltPerformance -DmodelDevice ptl.1x4x8.a0 -commandLine kaolin_grits.txt -DdesiredClocks=200000"
+				}
+			],
+			"executionMethodHistoryId": 13854,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Pass",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [],
+			"deleted": false
+		},
+		{
+			"id": 2328,
+			"name": "ATDB 3D XeSim ptl.1x4x8.a0 Cobalt_map Perf_Xesim_MPU",
+			"software": "Cobalt_PTL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "PTL:1X4X8:A0",
+			"attributes": [
+				{
+					"name": "AubloadOptions",
+					"value": "-attr EU.XESIM 1 -sim_mode perf_mpu -cb_cfg multithread_mode tbb max_worker_threads 8 hang_detect_enable true hang_analysis_period 100000 hang_threshold 10 hang_activation_threshold 1000 hang_max_hang_cycles 10 stats_enable true tg_cfg_filename TG_ArchTarget.txt -enableDcGpgpuPrintMessage -commandLine :config/devicexml/xe3.lpg.feature.xesim.atdb.txt"
+				},
+				{
+					"name": "BondOptions",
+					"value": "-hooks :./cobalt_scripts/ArchTarget/micros_perf_hook.py"
+				},
+				{
+					"name": "DeviceOption",
+					"value": ":devices/ptl.1tx1x4x8.a0.map.xml"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=cobaltPerformance -DmodelDevice ptl.1x4x8.a0 -commandLine kaolin_grits.txt -DdesiredClocks=200000"
+				}
+			],
+			"executionMethodHistoryId": 13855,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Pass",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [],
+			"deleted": false
+		},
+		{
+			"id": 1957,
+			"name": "ATDB 3D XeSim ptl.2x6x8.a0 Cobalt_map Perf_MFU",
+			"software": "Cobalt_PTL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "PTL:2X6X8:A0",
+			"attributes": [
+				{
+					"name": "AubloadOptions",
+					"value": "-attr EU.XESIM 1 -sim_mode perf_mfu -cb_cfg multithread_mode tbb max_worker_threads 8 hang_detect_enable true hang_analysis_period 100000 hang_threshold 10 hang_activation_threshold 1000 hang_max_hang_cycles 10 stats_enable true tg_cfg_filename TG_ArchTarget.txt -enableDcGpgpuPrintMessage -commandLine :config/devicexml/xe3.lpg.feature.xesim.atdb.txt"
+				},
+				{
+					"name": "AxeClientTestLimit",
+					"value": ""
+				},
+				{
+					"name": "BondOptions",
+					"value": "-hooks :./cobalt_scripts/ArchTarget/micros_perf_hook.py"
+				},
+				{
+					"name": "DeviceOption",
+					"value": ":devices/ptl.1tx2x6x8.a0.map.xml"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=cobaltPerformance -DmodelDevice ptl.2x6x8.a0 -commandLine kaolin_grits.txt -DdesiredClocks=200000"
+				}
+			],
+			"executionMethodHistoryId": 13856,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Pass",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [],
+			"deleted": false
+		},
+		{
+			"id": 2770,
+			"name": "ATDB 3D XeSim ptl.2x6x8.a0 Cobalt_map Perf_MFU 4 Threads",
+			"software": "Cobalt_PTL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "PTL:2X6X8:A0",
+			"attributes": [
+				{
+					"name": "AubloadOptions",
+					"value": "-attr EU.XESIM 1 -sim_mode perf_mfu -cb_cfg multithread_mode tbb max_worker_threads 4 hang_detect_enable true hang_analysis_period 100000 hang_threshold 10 hang_activation_threshold 1000 hang_max_hang_cycles 10 stats_enable true tg_cfg_filename TG_ArchTarget.txt -enableDcGpgpuPrintMessage -commandLine :config/devicexml/xe3.lpg.feature.xesim.atdb.txt"
+				},
+				{
+					"name": "AxeClientTestLimit",
+					"value": ""
+				},
+				{
+					"name": "BondOptions",
+					"value": "-hooks :./cobalt_scripts/ArchTarget/micros_perf_hook.py"
+				},
+				{
+					"name": "DeviceOption",
+					"value": ":devices/ptl.1tx2x6x8.a0.map.xml"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=cobaltPerformance -DmodelDevice ptl.2x6x8.a0 -commandLine kaolin_grits.txt -DdesiredClocks=200000"
+				}
+			],
+			"executionMethodHistoryId": 13857,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Pass",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [],
+			"deleted": false
+		},
+		{
+			"id": 2329,
+			"name": "ATDB 3D XeSim ptl.2x6x8.a0 Cobalt_map Perf_Xesim_MPU",
+			"software": "Cobalt_PTL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "PTL:2X6X8:A0",
+			"attributes": [
+				{
+					"name": "AubloadOptions",
+					"value": "-attr EU.XESIM 1 -sim_mode perf_mpu -cb_cfg multithread_mode tbb max_worker_threads 8 hang_detect_enable true hang_analysis_period 100000 hang_threshold 10 hang_activation_threshold 1000 hang_max_hang_cycles 10 stats_enable true tg_cfg_filename TG_ArchTarget.txt -enableDcGpgpuPrintMessage -commandLine :config/devicexml/xe3.lpg.feature.xesim.atdb.txt"
+				},
+				{
+					"name": "BondOptions",
+					"value": "-hooks :./cobalt_scripts/ArchTarget/micros_perf_hook.py"
+				},
+				{
+					"name": "DeviceOption",
+					"value": ":devices/ptl.1tx2x6x8.a0.map.xml"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=cobaltPerformance -DmodelDevice ptl.2x6x8.a0 -commandLine kaolin_grits.txt -DdesiredClocks=200000"
+				}
+			],
+			"executionMethodHistoryId": 13858,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Pass",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [],
+			"deleted": false
+		},
+		{
+			"id": 2530,
+			"name": "ATDB 3D XeSim ptl.2x6x8.a0 Cobalt_map Perf_Xesim_MPU EU DTM",
+			"software": "Cobalt_PTL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "PTL:2X6X8:A0",
+			"attributes": [
+				{
+					"name": "AubloadOptions",
+					"value": "-attr EU.XESIM 2 -sim_mode perf_mpu -cb_cfg multithread_mode tbb max_worker_threads 8 hang_detect_enable true hang_analysis_period 100000 hang_threshold 10 hang_activation_threshold 1000 hang_max_hang_cycles 10 stats_enable true tg_cfg_filename TG_ArchTarget.txt -enableDcGpgpuPrintMessage -commandLine :config/devicexml/xe3.lpg.feature.xesim.atdb.txt"
+				},
+				{
+					"name": "BondOptions",
+					"value": "-hooks :./cobalt_scripts/ArchTarget/micros_perf_hook.py"
+				},
+				{
+					"name": "DeviceOption",
+					"value": ":devices/ptl.1tx2x6x8.a0.map.xml"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=cobaltPerformance -DmodelDevice ptl.2x6x8.a0 -commandLine kaolin_grits.txt -DdesiredClocks=200000"
+				}
+			],
+			"executionMethodHistoryId": 13859,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Pass",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [],
+			"deleted": false
+		},
+		{
+			"id": 2451,
+			"name": "ATDB 3D XeSim ptl.2x6x8.a0 Cobalt_map Perf_Xesim_MPU Functional",
+			"software": "Cobalt_PTL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "PTL:2X6X8:A0",
+			"attributes": [
+				{
+					"name": "AubloadOptions",
+					"value": "-attr EU.XESIM 1 -sim_mode perf_mpu -cb_cfg multithread_mode tbb max_worker_threads 8 hang_detect_enable true hang_analysis_period 100000 hang_threshold 10 hang_activation_threshold 1000 hang_max_hang_cycles 10 stats_enable true tg_cfg_filename TG_ArchTarget.txt -enableDcGpgpuPrintMessage -commandLine :config/devicexml/xe3.lpg.feature.xesim.atdb.txt"
+				},
+				{
+					"name": "DeviceOption",
+					"value": ":devices/ptl.1tx2x6x8.a0.map.xml"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=cobaltPerformance -DmodelDevice ptl.2x6x8.a0 -commandLine kaolin_grits.txt -DdesiredClocks=200000"
+				}
+			],
+			"executionMethodHistoryId": 13860,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Pass",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [],
+			"deleted": false
+		},
+		{
+			"id": 2957,
+			"name": "ATDB 3D XeSim wcl.1x2x8.a0 Cobalt_map Perf_Xesim_MFU EU DTM",
+			"software": "Cobalt_PTL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "WCL:1X2X8:A0",
+			"attributes": [
+				{
+					"name": "AubloadOptions",
+					"value": "-attr EU.XESIM 2 -sim_mode perf_mfu -cb_cfg multithread_mode tbb max_worker_threads 8 hang_detect_enable true hang_analysis_period 100000 hang_threshold 10 hang_activation_threshold 1000 hang_max_hang_cycles 10 stats_enable true tg_cfg_filename TG_ArchTarget.txt -enableDcGpgpuPrintMessage -commandLine :config/devicexml/xe3.lpg.feature.xesim.atdb.txt"
+				},
+				{
+					"name": "BondOptions",
+					"value": "-hooks :./cobalt_scripts/ArchTarget/micros_perf_hook.py"
+				},
+				{
+					"name": "DeviceOption",
+					"value": ":devices/wcl.1tx1x2x8.a0.map.xml"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=cobaltPerformance -DmodelDevice wcl.1x2x8.a0 -commandLine kaolin_grits.txt -DdesiredClocks=200000"
+				}
+			],
+			"executionMethodHistoryId": 14619,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Pass",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [],
+			"deleted": false
+		},
+		{
+			"id": 2904,
+			"name": "ATDB 3D XeSim wcl.1x2x8.a0 Cobalt_map Perf_Xesim_MPU EU DTM",
+			"software": "Cobalt_PTL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "WCL:1X2X8:A0",
+			"attributes": [
+				{
+					"name": "AubloadOptions",
+					"value": "-attr EU.XESIM 2 -sim_mode perf_mpu -cb_cfg multithread_mode tbb max_worker_threads 8 hang_detect_enable true hang_analysis_period 100000 hang_threshold 10 hang_activation_threshold 1000 hang_max_hang_cycles 10 stats_enable true tg_cfg_filename TG_ArchTarget.txt -enableDcGpgpuPrintMessage -commandLine :config/devicexml/xe3.lpg.feature.xesim.atdb.txt"
+				},
+				{
+					"name": "BondOptions",
+					"value": "-hooks :./cobalt_scripts/ArchTarget/micros_perf_hook.py"
+				},
+				{
+					"name": "DeviceOption",
+					"value": ":devices/wcl.1tx1x2x8.a0.map.xml"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=cobaltPerformance -DmodelDevice wcl.1x2x8.a0 -commandLine kaolin_grits.txt -DdesiredClocks=200000"
+				}
+			],
+			"executionMethodHistoryId": 14462,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Pass",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [],
+			"deleted": false
+		},
+		{
+			"id": 1812,
+			"name": "ATDB Cobalt Capture Kaolin Functional ptl.1x4.a0",
+			"software": "Cobalt_PTL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "PTL:1X4X8:A0",
+			"attributes": [
+				{
+					"name": "AubloadOptions",
+					"value": "-synctime 3600 -karch dg3 -commandLine kaolin_aubload.txt -commandLine :config/devicexml/lnl.feature.cobalt.kaolin.txt"
+				},
+				{
+					"name": "DeviceOption",
+					"value": ":devices/ptl.1tx1x4x8.a0.map.xml"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=Fulsim:kaolin -DmodelDevice ptl.1x4x8.a0 -commandLine kaolin_grits.txt"
+				},
+				{
+					"name": "TargetConfig",
+					"value": ":config/elg/LNL_platform_config.xml"
+				}
+			],
+			"executionMethodHistoryId": 11785,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Pass",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [],
+			"deleted": false
+		},
+		{
+			"id": 1942,
+			"name": "ATDB Cobalt Capture Kaolin Functional ptl.2x6.a0",
+			"software": "Cobalt_PTL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "PTL:2X6X8:A0",
+			"attributes": [
+				{
+					"name": "AubloadOptions",
+					"value": "-synctime 3600 -karch dg3 -commandLine kaolin_aubload.txt -commandLine :config/devicexml/lnl.feature.cobalt.kaolin.txt"
+				},
+				{
+					"name": "DeviceOption",
+					"value": ":devices/ptl.1tx2x6x8.a0.map.xml"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=Fulsim:kaolin -DmodelDevice ptl.2x6x8.a0 -commandLine kaolin_grits.txt"
+				},
+				{
+					"name": "TargetConfig",
+					"value": ":config/elg/LNL_platform_config.xml"
+				}
+			],
+			"executionMethodHistoryId": 11786,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Pass",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [],
+			"deleted": false
+		},
+		{
+			"id": 1645,
+			"name": "ATDB Rasty Capture Kaolin Functional ptl.1x4.a0",
+			"software": "Cobalt_PTL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "PTL:1X4X8:A0",
+			"attributes": [
+				{
+					"name": "AubloadOptions",
+					"value": "-synctime 3600 -karch dg3 -commandLine kaolin_aubload.txt -commandLine kaolin_capture_knobs.txt -commandLine rasty_path_enabling_knobs.txt -commandLine :config/devicexml/lnl.feature.cobalt.kaolin.txt"
+				},
+				{
+					"name": "BondOptions",
+					"value": "-var kaolin:path=\"../../Kaolin/bin\""
+				},
+				{
+					"name": "DeviceOption",
+					"value": ":devices/ptl.1tx1x4x8.a0.map.xml"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=Fulsim:kaolin -DmodelDevice ptl.1x4x8.a0 -commandLine kaolin_grits.txt"
+				},
+				{
+					"name": "KaolinOptions",
+					"value": "-trace kout -cfg :../cfg/xe3_ptl_1x4x8.cfg -tgcfg :../tg/tg2stats.txt,:../tg/graphprof.txt,:../tg/tg2extstats.txt,:../tg/tg2intstats.txt -tgout kaolin_timegraph.txt -stat kaolin.stat -tginterval 1000 -Eu.Detailed true"
+				},
+				{
+					"name": "TargetConfig",
+					"value": ":config/elg/LNL_platform_config.xml"
+				}
+			],
+			"executionMethodHistoryId": 12518,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Pass",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [],
+			"deleted": false
+		},
+		{
+			"id": 1943,
+			"name": "ATDB Rasty Capture Kaolin Functional ptl.2x6.a0",
+			"software": "Cobalt_PTL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "PTL:2X6X8:A0",
+			"attributes": [
+				{
+					"name": "AubloadOptions",
+					"value": "-synctime 3600 -karch dg3 -commandLine kaolin_aubload.txt -commandLine kaolin_capture_knobs.txt -commandLine rasty_path_enabling_knobs.txt -commandLine :config/devicexml/lnl.feature.cobalt.kaolin.txt"
+				},
+				{
+					"name": "BondOptions",
+					"value": "-var kaolin:path=\"../../Kaolin/bin\""
+				},
+				{
+					"name": "DeviceOption",
+					"value": ":devices/ptl.1tx2x6x8.a0.map.xml"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=Fulsim:kaolin -DmodelDevice ptl.2x6x8.a0 -commandLine kaolin_grits.txt"
+				},
+				{
+					"name": "KaolinOptions",
+					"value": "-trace kout -cfg :../cfg/xe3_ptl_2x6x8.cfg -tgcfg :../tg/tg2stats.txt,:../tg/graphprof.txt,:../tg/tg2extstats.txt,:../tg/tg2intstats.txt -tgout kaolin_timegraph.txt -stat kaolin.stat -tginterval 1000 -Eu.Detailed true"
+				},
+				{
+					"name": "TargetConfig",
+					"value": ":config/elg/LNL_platform_config.xml"
+				}
+			],
+			"executionMethodHistoryId": 12519,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Pass",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [],
+			"deleted": false
+		},
+		{
+			"id": 1643,
+			"name": "ATDB Rasty Capture Kaolin ptl.1x4.a0",
+			"software": "Cobalt_PTL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "PTL:1X4X8:A0",
+			"attributes": [
+				{
+					"name": "AubloadOptions",
+					"value": "-synctime 3600 -karch dg3 -commandLine kaolin_aubload.txt -commandLine kaolin_capture_knobs.txt -commandLine rasty_path_enabling_knobs.txt -commandLine :config/devicexml/lnl.feature.cobalt.kaolin.txt"
+				},
+				{
+					"name": "BondOptions",
+					"value": "-var kaolin:path=\"../Kaolin/bin\" -hooks :Kaolin/script/lib/hooks/tgperf_hook.py"
+				},
+				{
+					"name": "DeviceOption",
+					"value": ":devices/ptl.1tx1x4x8.a0.map.xml"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=Fulsim:kaolin -DmodelDevice ptl.1x4x8.a0 -commandLine kaolin_grits.txt"
+				},
+				{
+					"name": "KaolinOptions",
+					"value": "-trace kout -cfg :../cfg/xe3_ptl_1x4x8.cfg -tgcfg :../tg/tg2stats.txt,:../tg/graphprof.txt,:../tg/tg2extstats.txt,:../tg/tg2intstats.txt -tgout kaolin_timegraph.txt -stat kaolin.stat -tginterval 1000 -Eu.Detailed true"
+				},
+				{
+					"name": "TargetConfig",
+					"value": ":config/elg/LNL_platform_config.xml"
+				}
+			],
+			"executionMethodHistoryId": 12549,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Pass",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [],
+			"deleted": false
+		},
+		{
+			"id": 1944,
+			"name": "ATDB Rasty Capture Kaolin ptl.2x6.a0",
+			"software": "Cobalt_PTL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "PTL:2X6X8:A0",
+			"attributes": [
+				{
+					"name": "AubloadOptions",
+					"value": "-synctime 3600 -karch dg3 -commandLine kaolin_aubload.txt -commandLine kaolin_capture_knobs.txt -commandLine rasty_path_enabling_knobs.txt -commandLine :config/devicexml/lnl.feature.cobalt.kaolin.txt"
+				},
+				{
+					"name": "BondOptions",
+					"value": "-var kaolin:path=\"../Kaolin/bin\" -hooks :Kaolin/script/lib/hooks/tgperf_hook.py"
+				},
+				{
+					"name": "DeviceOption",
+					"value": ":devices/ptl.1tx2x6x8.a0.map.xml"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=Fulsim:kaolin -DmodelDevice ptl.2x6x8.a0 -commandLine kaolin_grits.txt"
+				},
+				{
+					"name": "KaolinOptions",
+					"value": "-trace kout -cfg :../cfg/xe3_ptl_2x6x8.cfg -tgcfg :../tg/tg2stats.txt,:../tg/graphprof.txt,:../tg/tg2extstats.txt,:../tg/tg2intstats.txt -tgout kaolin_timegraph.txt -stat kaolin.stat -tginterval 1000 -Eu.Detailed true"
+				},
+				{
+					"name": "TargetConfig",
+					"value": ":config/elg/LNL_platform_config.xml"
+				}
+			],
+			"executionMethodHistoryId": 12550,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Pass",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [],
+			"deleted": false
+		},
+		{
+			"id": 2409,
+			"name": "AUB 3D XeSim ptl.2x6x8.a0 Driver_map MFU MultiThreaded",
+			"software": "Cobalt_PTL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "PTL:2X6X8:A0",
+			"attributes": [
+				{
+					"name": "AxeClientTestLimit",
+					"value": ""
+				},
+				{
+					"name": "DeviceOption",
+					"value": ":devices/ptl.1tx2x6x8.a0.gmd.driver.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-attr EU.XESIM 1  -sim_mode perf_mfu  -cb_cfg heart_beat_enable true hang_detect_enable true hang_analysis_period 100000 hang_threshold 40 hang_activation_threshold 1000 hang_max_hang_cycles 100 -enableDcGpgpuPrintMessage  -cb_cfg multithread_mode tbb max_worker_threads 8 -enableFeature 22010517956 -enableFeature punitC6WorkPointWorkaround -enableFeature :EnRC6ExitOnIncompleteR6Entry -enableFeature :simicsRc6Enable -disableFeature :gamLnlSupportAts -disableFeature 2207445712"
+				},
+				{
+					"name": "GritsOptions",
+					"value": ""
+				},
+				{
+					"name": "RunTestOptions",
+					"value": "-perf -perftolerance=0.06"
+				}
+			],
+			"executionMethodHistoryId": 14040,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 2581,
+			"name": "AUB 3D XeSim ptl.2x6x8.a0 Driver_map MPU MultiThreaded",
+			"software": "Cobalt_PTL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "PTL:2X6X8:A0",
+			"attributes": [
+				{
+					"name": "AxeClientTestLimit",
+					"value": ""
+				},
+				{
+					"name": "DeviceOption",
+					"value": ":devices/ptl.1tx2x6x8.a0.gmd.driver.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-sim_mode perf_mpu -attr EU.XESIM 1 -cb_cfg heart_beat_enable true hang_detect_enable true hang_analysis_period 100000 hang_threshold 40 hang_activation_threshold 1000 hang_max_hang_cycles 100 -enableDcGpgpuPrintMessage  -cb_cfg multithread_mode tbb max_worker_threads 8 -enableFeature 22010517956 -enableFeature punitC6WorkPointWorkaround -enableFeature :EnRC6ExitOnIncompleteR6Entry -enableFeature :simicsRc6Enable -disableFeature :gamLnlSupportAts -disableFeature 2207445712"
+				},
+				{
+					"name": "GritsOptions",
+					"value": ""
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				}
+			],
+			"executionMethodHistoryId": 13520,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 2149,
+			"name": "Bullseye 3D XeSim ptl.1x4x8.a0 Cobalt_map",
+			"software": "Cobalt_PTL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "PTL:1X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/ptl.1tx1x4x8.a0.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": ""
+				},
+				{
+					"name": "GritsOptions",
+					"value": ""
+				},
+				{
+					"name": "RunTestOptions",
+					"value": "-pre \"ruby /nfs/site/disks/cobalt_bullseye_001/skhire/PTL_Coverage/Scripts/preHookScript.rb\" -post \"ruby /nfs/site/disks/cobalt_bullseye_001/skhire/PTL_Coverage/Scripts/postHookScript.rb\" -covfile \"/test.cov\""
+				}
+			],
+			"executionMethodHistoryId": 11361,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 2150,
+			"name": "Bullseye 3D XeSim ptl.1x4x8.a0 Fused 1x2 Cobalt_map",
+			"software": "Cobalt_PTL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "PTL:1X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/ptl.1tx1x4x8_fused_1x2.a0.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": ""
+				},
+				{
+					"name": "GritsOptions",
+					"value": ""
+				},
+				{
+					"name": "RunTestOptions",
+					"value": "-pre \"ruby /nfs/site/disks/cobalt_bullseye_001/skhire/PTL_Coverage/Scripts/preHookScript.rb\" -post \"ruby /nfs/site/disks/cobalt_bullseye_001/skhire/PTL_Coverage/Scripts/postHookScript.rb\" -covfile \"/test.cov\""
+				}
+			],
+			"executionMethodHistoryId": 11362,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 2151,
+			"name": "Bullseye 3D XeSim ptl.1x4x8.a0 Fused 1x3 Cobalt_map",
+			"software": "Cobalt_PTL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "PTL:1X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/ptl.1tx1x4x8_fused_1x3.a0.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": ""
+				},
+				{
+					"name": "GritsOptions",
+					"value": ""
+				},
+				{
+					"name": "RunTestOptions",
+					"value": "-pre \"ruby /nfs/site/disks/cobalt_bullseye_001/skhire/PTL_Coverage/Scripts/preHookScript.rb\" -post \"ruby /nfs/site/disks/cobalt_bullseye_001/skhire/PTL_Coverage/Scripts/postHookScript.rb\" -covfile \"/test.cov\""
+				}
+			],
+			"executionMethodHistoryId": 11363,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 2152,
+			"name": "Bullseye 3D XeSim ptl.1x4x8.a0 Fused 1x4 Cobalt_map",
+			"software": "Cobalt_PTL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "PTL:1X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/ptl.1tx1x4x8_fused_1x4.a0.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": ""
+				},
+				{
+					"name": "GritsOptions",
+					"value": ""
+				},
+				{
+					"name": "RunTestOptions",
+					"value": "-pre \"ruby /nfs/site/disks/cobalt_bullseye_001/skhire/PTL_Coverage/Scripts/preHookScript.rb\" -post \"ruby /nfs/site/disks/cobalt_bullseye_001/skhire/PTL_Coverage/Scripts/postHookScript.rb\" -covfile \"/test.cov\""
+				}
+			],
+			"executionMethodHistoryId": 11364,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 2153,
+			"name": "Bullseye 3D XeSim ptl.1x4x8.a0 Rtl_map GMD",
+			"software": "Cobalt_PTL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "PTL:1X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/ptl.1tx1x4x8.a0.gmd.rtl.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": ""
+				},
+				{
+					"name": "GritsOptions",
+					"value": ""
+				},
+				{
+					"name": "RunTestOptions",
+					"value": "-pre \"ruby /nfs/site/disks/cobalt_bullseye_001/skhire/PTL_Coverage/Scripts/preHookScript.rb\" -post \"ruby /nfs/site/disks/cobalt_bullseye_001/skhire/PTL_Coverage/Scripts/postHookScript.rb\" -covfile \"/test.cov\""
+				}
+			],
+			"executionMethodHistoryId": 11365,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 2154,
+			"name": "Bullseye 3D XeSim ptl.2x6x8.a0 Cobalt_map",
+			"software": "Cobalt_PTL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "PTL:2X6X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/ptl.1tx2x6x8.a0.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": ""
+				},
+				{
+					"name": "GritsOptions",
+					"value": ""
+				},
+				{
+					"name": "RunTestOptions",
+					"value": "-pre \"ruby /nfs/site/disks/cobalt_bullseye_001/skhire/PTL_Coverage/Scripts/preHookScript.rb\" -post \"ruby /nfs/site/disks/cobalt_bullseye_001/skhire/PTL_Coverage/Scripts/postHookScript.rb\" -covfile \"/test.cov\""
+				}
+			],
+			"executionMethodHistoryId": 11366,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 2602,
+			"name": "Bullseye 3D XeSim ptl.2x6x8.a0 Fused 0p6 Cobalt_map",
+			"software": "Cobalt_PTL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "PTL:2X6X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/ptl.1tx2x6x8_fused_0p6.a0.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": ""
+				},
+				{
+					"name": "GritsOptions",
+					"value": ""
+				},
+				{
+					"name": "RunTestOptions",
+					"value": "-pre \"ruby /nfs/site/disks/cobalt_bullseye_001/skhire/PTL_Coverage/Scripts/preHookScript.rb\" -post \"ruby /nfs/site/disks/cobalt_bullseye_001/skhire/PTL_Coverage/Scripts/postHookScript.rb\" -covfile \"/test.cov\""
+				}
+			],
+			"executionMethodHistoryId": 13178,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 2155,
+			"name": "Bullseye 3D XeSim ptl.2x6x8.a0 Fused 1x4 1Node Cobalt_map",
+			"software": "Cobalt_PTL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "PTL:2X6X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/ptl.1tx2x6x8_fused_1x4_1Node.a0.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": ""
+				},
+				{
+					"name": "GritsOptions",
+					"value": ""
+				},
+				{
+					"name": "RunTestOptions",
+					"value": "-pre \"ruby /nfs/site/disks/cobalt_bullseye_001/skhire/PTL_Coverage/Scripts/preHookScript.rb\" -post \"ruby /nfs/site/disks/cobalt_bullseye_001/skhire/PTL_Coverage/Scripts/postHookScript.rb\" -covfile \"/test.cov\""
+				}
+			],
+			"executionMethodHistoryId": 11367,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 2156,
+			"name": "Bullseye 3D XeSim ptl.2x6x8.a0 Fused 1x4 2Node Cobalt_map",
+			"software": "Cobalt_PTL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "PTL:2X6X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/ptl.1tx2x6x8_fused_1x4_2Node.a0.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": ""
+				},
+				{
+					"name": "GritsOptions",
+					"value": ""
+				},
+				{
+					"name": "RunTestOptions",
+					"value": "-pre \"ruby /nfs/site/disks/cobalt_bullseye_001/skhire/PTL_Coverage/Scripts/preHookScript.rb\" -post \"ruby /nfs/site/disks/cobalt_bullseye_001/skhire/PTL_Coverage/Scripts/postHookScript.rb\" -covfile \"/test.cov\""
+				}
+			],
+			"executionMethodHistoryId": 11368,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 2157,
+			"name": "Bullseye 3D XeSim ptl.2x6x8.a0 Fused 4p4 Cobalt_map",
+			"software": "Cobalt_PTL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "PTL:2X6X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/ptl.1tx2x6x8_fused_4p4.a0.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": ""
+				},
+				{
+					"name": "GritsOptions",
+					"value": ""
+				},
+				{
+					"name": "RunTestOptions",
+					"value": "-pre \"ruby /nfs/site/disks/cobalt_bullseye_001/skhire/PTL_Coverage/Scripts/preHookScript.rb\" -post \"ruby /nfs/site/disks/cobalt_bullseye_001/skhire/PTL_Coverage/Scripts/postHookScript.rb\" -covfile \"/test.cov\""
+				}
+			],
+			"executionMethodHistoryId": 11369,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 2158,
+			"name": "Bullseye 3D XeSim ptl.2x6x8.a0 Fused 5p5 Cobalt_map",
+			"software": "Cobalt_PTL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "PTL:2X6X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/ptl.1tx2x6x8_fused_5p5.a0.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": ""
+				},
+				{
+					"name": "GritsOptions",
+					"value": ""
+				},
+				{
+					"name": "RunTestOptions",
+					"value": "-pre \"ruby /nfs/site/disks/cobalt_bullseye_001/skhire/PTL_Coverage/Scripts/preHookScript.rb\" -post \"ruby /nfs/site/disks/cobalt_bullseye_001/skhire/PTL_Coverage/Scripts/postHookScript.rb\" -covfile \"/test.cov\""
+				}
+			],
+			"executionMethodHistoryId": 11370,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 2159,
+			"name": "Bullseye 3D XeSim ptl.2x6x8.a0 Fused 5p6 Cobalt_map",
+			"software": "Cobalt_PTL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "PTL:2X6X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/ptl.1tx2x6x8_fused_5p6.a0.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": ""
+				},
+				{
+					"name": "GritsOptions",
+					"value": ""
+				},
+				{
+					"name": "RunTestOptions",
+					"value": "-pre \"ruby /nfs/site/disks/cobalt_bullseye_001/skhire/PTL_Coverage/Scripts/preHookScript.rb\" -post \"ruby /nfs/site/disks/cobalt_bullseye_001/skhire/PTL_Coverage/Scripts/postHookScript.rb\" -covfile \"/test.cov\""
+				}
+			],
+			"executionMethodHistoryId": 11371,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 2160,
+			"name": "Bullseye 3D XeSim ptl.2x6x8.a0 Fused 6p0 Cobalt_map",
+			"software": "Cobalt_PTL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "PTL:2X6X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/ptl.1tx2x6x8_fused_6p0.a0.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": ""
+				},
+				{
+					"name": "GritsOptions",
+					"value": ""
+				},
+				{
+					"name": "RunTestOptions",
+					"value": "-pre \"ruby /nfs/site/disks/cobalt_bullseye_001/skhire/PTL_Coverage/Scripts/preHookScript.rb\" -post \"ruby /nfs/site/disks/cobalt_bullseye_001/skhire/PTL_Coverage/Scripts/postHookScript.rb\" -covfile \"/test.cov\""
+				}
+			],
+			"executionMethodHistoryId": 11372,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 2161,
+			"name": "Bullseye 3D XeSim ptl.2x6x8.a0 Fused 6p6 Cobalt_map",
+			"software": "Cobalt_PTL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "PTL:2X6X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/ptl.1tx2x6x8_fused_6p6.a0.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": ""
+				},
+				{
+					"name": "GritsOptions",
+					"value": ""
+				},
+				{
+					"name": "RunTestOptions",
+					"value": "-pre \"ruby /nfs/site/disks/cobalt_bullseye_001/skhire/PTL_Coverage/Scripts/preHookScript.rb\" -post \"ruby /nfs/site/disks/cobalt_bullseye_001/skhire/PTL_Coverage/Scripts/postHookScript.rb\" -covfile \"/test.cov\""
+				}
+			],
+			"executionMethodHistoryId": 11373,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 2162,
+			"name": "Bullseye 3D XeSim ptl.2x6x8.a0 PTC Rtl_map GD",
+			"software": "Cobalt_PTL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "PTL:2X6X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/ptl.1tx2x6x8.a0.gd.rtl.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-dfile :config/devicexml/ELG_PTCTrackers.txt"
+				},
+				{
+					"name": "GritsOptions",
+					"value": ""
+				},
+				{
+					"name": "RunTestOptions",
+					"value": "-ptc -pre \"ruby /nfs/site/disks/cobalt_bullseye_001/skhire/PTL_Coverage/Scripts/preHookScript.rb\" -post \"ruby /nfs/site/disks/cobalt_bullseye_001/skhire/PTL_Coverage/Scripts/postHookScript.rb\" -covfile \"/test.cov\""
+				}
+			],
+			"executionMethodHistoryId": 11374,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 2163,
+			"name": "Bullseye 3D XeSim ptl.2x6x8.a0 Rtl_map GD",
+			"software": "Cobalt_PTL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "PTL:2X6X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/ptl.1tx2x6x8.a0.gd.rtl.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": ""
+				},
+				{
+					"name": "GritsOptions",
+					"value": ""
+				},
+				{
+					"name": "RunTestOptions",
+					"value": "-pre \"ruby /nfs/site/disks/cobalt_bullseye_001/skhire/PTL_Coverage/Scripts/preHookScript.rb\" -post \"ruby /nfs/site/disks/cobalt_bullseye_001/skhire/PTL_Coverage/Scripts/postHookScript.rb\" -covfile \"/test.cov\""
+				}
+			],
+			"executionMethodHistoryId": 11375,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 1568,
+			"name": "Bullseye Media Xe3 LPM Cobalt",
+			"software": "Cobalt_PTL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "PTL:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/ptl.1tx2x4x8.a0.media.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": ""
+				},
+				{
+					"name": "GritsOptions",
+					"value": ""
+				},
+				{
+					"name": "RunTestOptions",
+					"value": "-pre \"ruby /nfs/site/disks/cobalt_bullseye_001/skhire/PTL_Coverage/Scripts/preHookScript.rb\" -post \"ruby /nfs/site/disks/cobalt_bullseye_001/skhire/PTL_Coverage/Scripts/postHookScript.rb\" -covfile \"/test.cov\""
+				}
+			],
+			"executionMethodHistoryId": 11353,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 1569,
+			"name": "Bullseye ptl.2x4x8.a0 Cobalt 3D",
+			"software": "Cobalt_PTL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "PTL:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/ptl.1tx2x4x8.a0.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": ""
+				},
+				{
+					"name": "GritsOptions",
+					"value": ""
+				},
+				{
+					"name": "RunTestOptions",
+					"value": "-pre \"ruby /nfs/site/disks/cobalt_bullseye_001/skhire/PTL_Coverage/Scripts/preHookScript.rb\" -post \"ruby /nfs/site/disks/cobalt_bullseye_001/skhire/PTL_Coverage/Scripts/postHookScript.rb\" -covfile \"/test.cov\""
+				}
+			],
+			"executionMethodHistoryId": 11354,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 2164,
+			"name": "Bullseye UTP PTL RTL 2X6X8.A0 3D Bullseye",
+			"software": "Cobalt_PTL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "PTL:2X6X8:A0",
+			"attributes": [
+				{
+					"name": "BondOptions",
+					"value": "-hooks /nfs/site/disks/xe2_gt_regress_extra_001/LNLCoverage/RMBucketHookGlobal2.py"
+				},
+				{
+					"name": "DeviceOption",
+					"value": ":devices/ptl.1tx2x6x8.a0.gd.rtl.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-commandLine :config/devicexml/lnl.feature.cobalt.txt"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-commandLine :config/devicexml/lnl.feature.cobalt.txt -target=Fulsim:pipegt:simulation -DtargetType=simulation"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": "-pre \"ruby /nfs/site/disks/cobalt_bullseye_001/skhire/PTL_Coverage/Scripts/preHookScript.rb\" -post \"ruby /nfs/site/disks/cobalt_bullseye_001/skhire/PTL_Coverage/Scripts/postHookScript.rb\" -covfile \"/test.cov\""
+				}
+			],
+			"executionMethodHistoryId": 11376,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Pass",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [],
+			"deleted": false
+		},
+		{
+			"id": 2165,
+			"name": "Bullseye UTP PTL RTL 2X6X8.A0 SIM3D",
+			"software": "Cobalt_PTL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "PTL:2X6X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/ptl.1tx2x6x8.a0.gd.rtl.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-commandLine :config/devicexml/lnl.feature.cobalt.txt"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-commandLine :config/devicexml/lnl.feature.cobalt.txt -target=Fulsim:pipegt:simulation -DtargetType=simulation"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": "-pre \"ruby /nfs/site/disks/cobalt_bullseye_001/skhire/PTL_Coverage/Scripts/preHookScript.rb\" -post \"ruby /nfs/site/disks/cobalt_bullseye_001/skhire/PTL_Coverage/Scripts/postHookScript.rb\" -covfile \"/test.cov\""
+				}
+			],
+			"executionMethodHistoryId": 11377,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 2166,
+			"name": "Bullseye UTP PTL RTL 2X6X8.A0 SIMGMD",
+			"software": "Cobalt_PTL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "PTL:2X6X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/ptl.1tx2x6x8.a0.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-commandLine :config/devicexml/lnl.feature.cobalt.txt"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-commandLine :config/devicexml/lnl.feature.cobalt.txt -target=Fulsim:gtUncore:simulation -DtargetType=simulation"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": "-pre \"ruby /nfs/site/disks/cobalt_bullseye_001/skhire/PTL_Coverage/Scripts/preHookScript.rb\" -post \"ruby /nfs/site/disks/cobalt_bullseye_001/skhire/PTL_Coverage/Scripts/postHookScript.rb\" -covfile \"/test.cov\""
+				}
+			],
+			"executionMethodHistoryId": 11378,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 2167,
+			"name": "Bullseye UTP PTL RTL 2X6X8.A0 SIMMEDIA",
+			"software": "Cobalt_PTL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "PTL:2X6X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/ptl.1tx2x4x8.a0.media.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": ""
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=Fulsim:superPipeMedia:simulation -DtargetType=simulation"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": "-pre \"ruby /nfs/site/disks/cobalt_bullseye_001/skhire/PTL_Coverage/Scripts/preHookScript.rb\" -post \"ruby /nfs/site/disks/cobalt_bullseye_001/skhire/PTL_Coverage/Scripts/postHookScript.rb\" -covfile \"/test.cov\""
+				}
+			],
+			"executionMethodHistoryId": 11479,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 2774,
+			"name": "Media UTP WCL Simulation",
+			"software": "Cobalt_PTL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "WCL:1X2X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": "devices/wcl.1tx1x2x8.a0.media.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-mmdbg"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=Fulsim:superPipeMedia:simulation -DtargetType=simulation"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				}
+			],
+			"executionMethodHistoryId": 13848,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 2556,
+			"name": "Media UTP Xe3_LP 1SCMI222 Simulation",
+			"software": "Cobalt_PTL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "PTL:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/ptl.1tx2x4x8.a0.media_1scmi_222.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-mmdbg"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=Fulsim:superPipeMedia:simulation -DtargetType=simulation"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				}
+			],
+			"executionMethodHistoryId": 12991,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 2557,
+			"name": "Media UTP Xe3_LP 2SCMI422 Simulation",
+			"software": "Cobalt_PTL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "PTL:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/ptl.1tx2x4x8.a0.media_2scmi_422.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-mmdbg"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=Fulsim:superPipeMedia:simulation -DtargetType=simulation"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				}
+			],
+			"executionMethodHistoryId": 12992,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 2269,
+			"name": "Media UTP Xe3_LP Emulation",
+			"software": "Cobalt_PTL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "PTL:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "AubloadOptions",
+					"value": "-synctime 43200 -driverOnly -silent -noImgSave -commandLine :config/devicexml/lnl.feature.cobalt.txt"
+				},
+				{
+					"name": "DeviceOption",
+					"value": ":devices/ptl.1tx2x4x8.a0.media.map.xml"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=fulsim:pipeGT:emulation -wa resetType:flr -DtargetType=fulsim -commandLine :config/devicexml/lnl.feature.cobalt.txt"
+				},
+				{
+					"name": "LilyCompileOptions",
+					"value": "/compile /bond"
+				},
+				{
+					"name": "LilyXOptions",
+					"value": "/lilyx"
+				}
+			],
+			"executionMethodHistoryId": 11910,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 2239,
+			"name": "Media UTP Xe3_LP Emulation Fulsim-TBX",
+			"software": "Cobalt_PTL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type lilyagent",
+			"productConfig": "PTL:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "AubloadOptions",
+					"value": "-synctime 43200 -driverOnly -silent -noImgSave -commandLine :config/devicexml/lnl.feature.cobalt.txt"
+				},
+				{
+					"name": "DeviceOption",
+					"value": ":devices/ptl.1tx2x4x8.a0.media.map.xml"
+				},
+				{
+					"name": "FulsimTbxOptions",
+					"value": "-commandLine :config/devicexml/lnl.feature.cobalt.txt"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target fulsim:superPipeMedia:emulation -wa resetType:flr -DtargetType=fulsim -commandLine :config/devicexml/lnl.feature.cobalt.txt"
+				},
+				{
+					"name": "LilyCompileOptions",
+					"value": "/compile /bond"
+				},
+				{
+					"name": "LilyXOptions",
+					"value": "/lilyx"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": "/runtest -lar:capture -crc:make -watchdog frame=43200 test=43200 -control:reset none -control:imagesave noarchive -debug:forceconfig unified"
+				}
+			],
+			"executionMethodHistoryId": 11909,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 2172,
+			"name": "Media UTP Xe3_LP Simulation",
+			"software": "Cobalt_PTL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "PTL:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/ptl.1tx2x4x8.a0.media.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-mmdbg"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=Fulsim:superPipeMedia:simulation -DtargetType=simulation"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				}
+			],
+			"executionMethodHistoryId": 12526,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 2568,
+			"name": "Media Xe3 LPM 1SCMI222 Cobalt",
+			"software": "Cobalt_PTL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "PTL:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/ptl.1tx2x4x8.a0.media_1scmi_222.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": ""
+				},
+				{
+					"name": "GritsOptions",
+					"value": ""
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				}
+			],
+			"executionMethodHistoryId": 13036,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 2237,
+			"name": "Media Xe3 LPM 844 Val",
+			"software": "Cobalt_PTL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "PTL:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/ptl.1tx2x4x8.a0.media_4scmi_844.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-enableFeature :xe3MediaConfigScalability -enableFeature :scmiFor2vd2ve2sfc"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-enableFeature :xe3MediaConfigScalability -enableFeature :scmiFor2vd2ve2sfc"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				}
+			],
+			"executionMethodHistoryId": 11612,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 1424,
+			"name": "Media Xe3 LPM Cobalt",
+			"software": "Cobalt_PTL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "PTL:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/ptl.1tx2x4x8.a0.media.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": ""
+				},
+				{
+					"name": "GritsOptions",
+					"value": ""
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				}
+			],
+			"executionMethodHistoryId": 9182,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 2599,
+			"name": "Media Xe3 LPM Cobalt Dev",
+			"software": "Cobalt_PTL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "PTL:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/ptl.1tx2x4x8.a0.cobalt.media.dev.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": ""
+				},
+				{
+					"name": "GritsOptions",
+					"value": ""
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				}
+			],
+			"executionMethodHistoryId": 13164,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 1795,
+			"name": "Media Xe3 LPM RTL PTC",
+			"software": "Cobalt_PTL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "PTL:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/ptl.1tx2x4x8.a0.media.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": ""
+				},
+				{
+					"name": "GritsOptions",
+					"value": ""
+				},
+				{
+					"name": "RunTestOptions",
+					"value": "-ptc"
+				}
+			],
+			"executionMethodHistoryId": 10225,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 101,
+					"status": "Warn",
+					"excludeTestCi": true
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 2569,
+			"name": "Media Xe3_LPM 2SCMI422 Cobalt",
+			"software": "Cobalt_PTL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "PTL:2X4X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/ptl.1tx2x4x8.a0.media_2scmi_422.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": ""
+				},
+				{
+					"name": "GritsOptions",
+					"value": ""
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				}
+			],
+			"executionMethodHistoryId": 13110,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 2306,
+			"name": "UTP PTL 1X4X8.A0 SIM3D Driver_map  MFU",
+			"software": "Cobalt_PTL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "PTL:2X6X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/ptl.1tx1x4x8.a0.gmd.driver.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-sim_mode perf_mfu  -cb_cfg hang_detect_enable true hang_analysis_period 100000 hang_threshold 40 hang_activation_threshold 1000 hang_max_hang_cycles 1 -enableDcGpgpuPrintMessage"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=Fulsim:pipegt:simulation -DtargetType=simulation"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				}
+			],
+			"executionMethodHistoryId": 11904,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 2354,
+			"name": "UTP PTL 1X4X8.A0 SIM3D Driver_map  MFU MultiThreaded",
+			"software": "Cobalt_PTL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "PTL:2X6X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/ptl.1tx1x4x8.a0.gmd.driver.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-sim_mode perf_mfu  -cb_cfg hang_detect_enable true hang_analysis_period 100000 hang_threshold 40 hang_activation_threshold 1000 hang_max_hang_cycles 1 -enableDcGpgpuPrintMessage -cb_cfg multithread_mode tbb max_worker_threads 8"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=Fulsim:pipegt:simulation -DtargetType=simulation"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				}
+			],
+			"executionMethodHistoryId": 11977,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 2342,
+			"name": "UTP PTL 1X4X8.A0 SIM3D Driver_map Xesim_MPU",
+			"software": "Cobalt_PTL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "PTL:2X6X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/ptl.1tx1x4x8.a0.gmd.driver.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-sim_mode perf_mpu   -cb_cfg hang_detect_enable true hang_analysis_period 100000 hang_threshold 40 hang_activation_threshold 1000 hang_max_hang_cycles 1 -enableDcGpgpuPrintMessage"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=Fulsim:pipegt:simulation -DtargetType=simulation"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				}
+			],
+			"executionMethodHistoryId": 13394,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 2305,
+			"name": "UTP PTL Driver 1X4X8.A0 SIM3D",
+			"software": "Cobalt_PTL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "PTL:2X6X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/ptl.1tx1x4x8.a0.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": ""
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=Fulsim:pipegt:simulation -DtargetType=simulation"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				}
+			],
+			"executionMethodHistoryId": 11727,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 1925,
+			"name": "UTP PTL RTL 2X6X8.A0 3D Bullseye",
+			"software": "Cobalt_PTL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "PTL:2X6X8:A0",
+			"attributes": [
+				{
+					"name": "AubloadOptions",
+					"value": "-commandLine :config/devicexml/lnl.feature.cobalt.txt"
+				},
+				{
+					"name": "BondOptions",
+					"value": "-hooks /nfs/site/disks/xe2_gt_regress_extra_001/LNLCoverage/RMBucketHookGlobal2.py"
+				},
+				{
+					"name": "DeviceOption",
+					"value": ":devices/ptl.1tx2x6x8.a0.gd.rtl.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-commandLine :config/devicexml/lnl.feature.cobalt.txt"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-commandLine :config/devicexml/lnl.feature.cobalt.txt -target=Fulsim:pipegt:simulation -DtargetType=simulation"
+				}
+			],
+			"executionMethodHistoryId": 11481,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Pass",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [],
+			"deleted": false
+		},
+		{
+			"id": 2349,
+			"name": "UTP PTL RTL 2X6X8.A0 PM SIM3D",
+			"software": "Cobalt_PTL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "PTL:2X6X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/ptl.1tx2x6x8.a0.gd.rtl.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-cb_cfg stats_enable true"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=Fulsim:pipegt:simulation -DtargetType=simulation"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				},
+				{
+					"name": "TargetConfig",
+					"value": ""
+				}
+			],
+			"executionMethodHistoryId": 13619,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 2350,
+			"name": "UTP PTL RTL 2X6X8.A0 PM SIMGMD",
+			"software": "Cobalt_PTL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "PTL:2X6X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/ptl.1tx2x6x8.a0.gmd.rtl.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-cb_cfg stats_enable true"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=Fulsim:gtUncore:simulation -DtargetType=simulation"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				}
+			],
+			"executionMethodHistoryId": 13620,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 2351,
+			"name": "UTP PTL RTL 2X6X8.A0 PM SIMMEDIA",
+			"software": "Cobalt_PTL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "PTL:2X6X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/ptl.1tx2x4x8.a0.media.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-cb_cfg stats_enable true"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-DtargetType=simulation"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				}
+			],
+			"executionMethodHistoryId": 13622,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 1707,
+			"name": "UTP PTL RTL 2X6X8.A0 SIM3D",
+			"software": "Cobalt_PTL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "PTL:2X6X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/ptl.1tx2x6x8.a0.gd.rtl.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": ""
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=Fulsim:pipegt:simulation -DtargetType=simulation"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				}
+			],
+			"executionMethodHistoryId": 13621,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 2309,
+			"name": "UTP PTL RTL 2X6X8.A0 SIM3D Driver_Map IMM",
+			"software": "Cobalt_PTL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "PTL:2X6X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/ptl.1tx2x6x8.a0.gmd.driver.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": ""
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=Fulsim:pipegt:simulation -DtargetType=simulation"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				}
+			],
+			"executionMethodHistoryId": 11731,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 2308,
+			"name": "UTP PTL RTL 2X6X8.A0 SIM3D Driver_Map MFU",
+			"software": "Cobalt_PTL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "PTL:2X6X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/ptl.1tx2x6x8.a0.gmd.driver.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-sim_mode perf_mfu  -cb_cfg hang_detect_enable true hang_analysis_period 100000 hang_threshold 40 hang_activation_threshold 1000 hang_max_hang_cycles 1 -enableDcGpgpuPrintMessage"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=Fulsim:pipegt:simulation -DtargetType=simulation"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				}
+			],
+			"executionMethodHistoryId": 11730,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 2355,
+			"name": "UTP PTL RTL 2X6X8.A0 SIM3D Driver_Map MFU MultiThreaded",
+			"software": "Cobalt_PTL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "PTL:2X6X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/ptl.1tx2x6x8.a0.gmd.driver.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-sim_mode perf_mfu  -cb_cfg hang_detect_enable true hang_analysis_period 100000 hang_threshold 40 hang_activation_threshold 1000 hang_max_hang_cycles 1 -enableDcGpgpuPrintMessage -cb_cfg multithread_mode tbb max_worker_threads 8"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=Fulsim:pipegt:simulation -DtargetType=simulation"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				}
+			],
+			"executionMethodHistoryId": 11978,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 2343,
+			"name": "UTP PTL RTL 2X6X8.A0 SIM3D Driver_Map Xesim_MPU",
+			"software": "Cobalt_PTL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "PTL:2X6X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/ptl.1tx2x6x8.a0.gmd.driver.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-sim_mode perf_mpu  -cb_cfg hang_detect_enable true hang_analysis_period 100000 hang_threshold 40 hang_activation_threshold 1000 hang_max_hang_cycles 1 -enableDcGpgpuPrintMessage"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=Fulsim:pipegt:simulation -DtargetType=simulation"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				}
+			],
+			"executionMethodHistoryId": 13395,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 1709,
+			"name": "UTP PTL RTL 2X6X8.A0 SIMGMD",
+			"software": "Cobalt_PTL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "PTL:2X6X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/ptl.1tx2x6x8.a0.gmd.rtl.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": ""
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=Fulsim:gtUncore:simulation -DtargetType=simulation"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				}
+			],
+			"executionMethodHistoryId": 13624,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 1708,
+			"name": "UTP PTL RTL 2X6X8.A0 SIMMEDIA",
+			"software": "Cobalt_PTL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "PTL:2X6X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/ptl.1tx2x4x8.a0.media.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": ""
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=Fulsim:superPipeMedia:simulation -DtargetType=simulation"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				}
+			],
+			"executionMethodHistoryId": 13623,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 3278,
+			"name": "UTP WCL RTL 1X2X8.A0 PM SIM3D",
+			"software": "Cobalt_PTL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "WCL:1X2X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": "\":devices/wcl.1tx1x2x8.a0.gt.rtl.map.xml vdBoxEnableMask 0x0 veBoxEnableMask 0x0 L3HashModeSelect 2  L3HashModeSelect 2\""
+				},
+				{
+					"name": "FulsimOptions",
+					"value": ""
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=Fulsim:pipegt:simulation -DtargetType=simulation"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				},
+				{
+					"name": "TargetConfig",
+					"value": ""
+				}
+			],
+			"executionMethodHistoryId": 15750,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 2986,
+			"name": "UTP WCL RTL 1X2X8.A0 SIM3D",
+			"software": "Cobalt_PTL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "WCL:1X2X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": "\":devices/wcl.1tx1x2x8.a0.gt.rtl.map.xml vdBoxEnableMask 0x0 veBoxEnableMask 0x0 L3HashModeSelect 2  L3HashModeSelect 2\""
+				},
+				{
+					"name": "FulsimOptions",
+					"value": ""
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=Fulsim:pipegt:simulation -DtargetType=simulation"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": ""
+				}
+			],
+			"executionMethodHistoryId": 14711,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 2579,
+			"name": "Xecore TB ptl.2x6x8.a0 Cobalt_map",
+			"software": "Cobalt_PTL",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type lilyagent",
+			"productConfig": "PTL:2X6X8:A0",
+			"attributes": [
+				{
+					"name": "AubloadOptions",
+					"value": "-d all -sim_mode perf_mfu -cb_cfg  hang_detect_enable true hang_analysis_period 100000 hang_threshold 10 hang_activation_threshold 1000 hang_max_hang_cycles 1 -enableDcGpgpuPrintMessage"
+				},
+				{
+					"name": "BondOptions",
+					"value": "-hooks :./cobalt_scripts/XeCoreTB/xecoretb_hook.py"
+				},
+				{
+					"name": "DeviceOption",
+					"value": ":devices/ptl.1tx2x6x8.a0.map.xml"
+				},
+				{
+					"name": "GritsOptions",
+					"value": ""
+				}
+			],
+			"executionMethodHistoryId": 13080,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		}
+	]
+}

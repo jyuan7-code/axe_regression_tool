@@ -1,0 +1,426 @@
+{
+	"schemaVersion": "1.0",
+	"testListId": 390,
+	"testListPath": "VPG HW/Xe4/UTP_Compute",
+	"testListSettingsUrl": "https://axeweb.intel.com/axe/tests/testlists/390/settings/executionmethods",
+	"executionMethods": [
+		{
+			"id": 4219,
+			"name": "Xe4_XPC 1x1x4x4 RenderFulsim",
+			"software": "XeSim_MAIN",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "XE4.XPC:1X1X1X4:A0",
+			"attributes": [
+				{
+					"name": "AubloadOptions",
+					"value": "-driveronly"
+				},
+				{
+					"name": "BondOptions",
+					"value": ""
+				},
+				{
+					"name": "DeviceOption",
+					"value": ":devices/xe4hpc.1tx2x2x12x4.a0.fused_1tx1x1x4x4.gt.rtl.bringup.map.xml"
+				},
+				{
+					"name": "FulsimTbxOptions",
+					"value": ""
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=Fulsim:pipegt:simulation -DtargetType=simulation -enableFeature :messageChannel3"
+				},
+				{
+					"name": "LilyCompileOptions",
+					"value": ""
+				},
+				{
+					"name": "LilyXOptions",
+					"value": "-silent"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": "-lar:capture -crc:make -debug:forceconfig Fulsim -log:regdump false"
+				}
+			],
+			"executionMethodHistoryId": 20529,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				}
+			],
+			"exitCodeTestListStatusRemap": [],
+			"deleted": false
+		},
+		{
+			"id": 4220,
+			"name": "Xe4_XPC 1x1x4x4 RenderFulsimCompare",
+			"software": "XeSim_MAIN",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "XE4.XPC:1X1X1X4:A0",
+			"attributes": [
+				{
+					"name": "BondOptions",
+					"value": ""
+				},
+				{
+					"name": "DeviceOption",
+					"value": ":devices/xe4hpc.1tx2x2x12x4.a0.fused_1tx1x1x4x4.gt.rtl.bringup.map.xml"
+				},
+				{
+					"name": "FulsimTbxOptions",
+					"value": "-sim_mode perf_mfu"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": "-crc:check -debug:forceconfig Fulsim -log:regdump false"
+				}
+			],
+			"executionMethodHistoryId": 19890,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				}
+			],
+			"exitCodeTestListStatusRemap": [],
+			"deleted": false
+		},
+		{
+			"id": 4221,
+			"name": "Xe4_XPC 1x1x4x4 RenderFulsimCompare2",
+			"software": "XeSim_MAIN",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "XE4.XPC:1X1X1X4:A0",
+			"attributes": [
+				{
+					"name": "BondOptions",
+					"value": ""
+				},
+				{
+					"name": "DeviceOption",
+					"value": ":devices/xe4hpc.1tx2x2x12x4.a0.fused_1tx1x1x4x4.gt.rtl.bringup.map.xml"
+				},
+				{
+					"name": "FulsimTbxOptions",
+					"value": ""
+				},
+				{
+					"name": "RunTestOptions",
+					"value": "-crc:check -debug:forceconfig Fulsim -log:regdump false"
+				}
+			],
+			"executionMethodHistoryId": 19891,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				}
+			],
+			"exitCodeTestListStatusRemap": [],
+			"deleted": false
+		},
+		{
+			"id": 3901,
+			"name": "Xe4_XPC 1x1x4x4 SimCompute",
+			"software": "XeSim_MAIN",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "XE4.XPC:1X1X1X4:A0",
+			"attributes": [
+				{
+					"name": "AubloadOptions",
+					"value": "-swsbcheck fatal"
+				},
+				{
+					"name": "BondOptions",
+					"value": ""
+				},
+				{
+					"name": "DeviceOption",
+					"value": ":devices/xe4hpc.1tx2x2x12x4.a0.fused_1tx1x1x4x4.gt.rtl.bringup.map.xml"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=Fulsim:pipegt:simulation -DtargetType=simulation -enableFeature :messageChannel3"
+				}
+			],
+			"executionMethodHistoryId": 20013,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				}
+			],
+			"exitCodeTestListStatusRemap": [],
+			"deleted": false
+		},
+		{
+			"id": 4140,
+			"name": "Xe4_XPC 1x1x4x4 SimCompute RandSeed",
+			"software": "XeSim_MAIN",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "XE4.XPC:1X1X1X4:A0",
+			"attributes": [
+				{
+					"name": "AubloadOptions",
+					"value": "-swsbcheck fatal"
+				},
+				{
+					"name": "BondOptions",
+					"value": "-hooks /nfs/site/disks/fm_atsgt_00013/kheiney/AxeRuns/scripts/hookRandSeedSim.py"
+				},
+				{
+					"name": "DeviceOption",
+					"value": ":devices/xe4hpc.1tx2x2x12x4.a0.fused_1tx1x1x4x4.gt.rtl.bringup.map.xml"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=Fulsim:pipegt:simulation -DtargetType=simulation -enableFeature :messageChannel3"
+				}
+			],
+			"executionMethodHistoryId": 20395,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				}
+			],
+			"exitCodeTestListStatusRemap": [],
+			"deleted": false
+		},
+		{
+			"id": 4157,
+			"name": "Xe4_XPC 1x1x4x4 SimLily",
+			"software": "XeSim_MAIN",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "XE4.XPC:1X1X1X4:A0",
+			"attributes": [
+				{
+					"name": "AubloadOptions",
+					"value": "-driveronly"
+				},
+				{
+					"name": "BondOptions",
+					"value": ""
+				},
+				{
+					"name": "DeviceOption",
+					"value": ":devices/xe4hpc.1tx2x2x12x4.a0.fused_1tx1x1x4x4.gt.rtl.bringup.map.xml"
+				},
+				{
+					"name": "FulsimTbxOptions",
+					"value": ""
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=Fulsim:pipegt:simulation -DtargetType=simulation -enableFeature :messageChannel3 -enablefeature 14026909483 -enablefeature 14023522245"
+				},
+				{
+					"name": "LilyCompileOptions",
+					"value": "-silent"
+				},
+				{
+					"name": "LilyXOptions",
+					"value": ""
+				},
+				{
+					"name": "RunTestOptions",
+					"value": "-lar:capture -crc:make -control:polltimeout time=600000 -debug:forceconfig Fulsim -log:regdump false"
+				}
+			],
+			"executionMethodHistoryId": 20081,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				}
+			],
+			"exitCodeTestListStatusRemap": [],
+			"deleted": false
+		},
+		{
+			"id": 4373,
+			"name": "Xe4_XPC 1x1x4x4 SimLily Lockup",
+			"software": "XeSim_MAIN",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "XE4.XPC:1X1X1X4:A0",
+			"attributes": [
+				{
+					"name": "AubloadOptions",
+					"value": "-driveronly"
+				},
+				{
+					"name": "BondOptions",
+					"value": ""
+				},
+				{
+					"name": "DeviceOption",
+					"value": ":devices/xe4hpc.1tx2x2x12x4.a0.fused_1tx1x1x4x4.gt.rtl.bringup.map.xml"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=Fulsim:pipegt:simulation -DtargetType=simulation -enableFeature :messageChannel3 -enablefeature 14026909483 -enablefeature 14023522245"
+				},
+				{
+					"name": "LilyCompileOptions",
+					"value": "-silent"
+				},
+				{
+					"name": "LilyXOptions",
+					"value": ""
+				}
+			],
+			"executionMethodHistoryId": 20082,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				}
+			],
+			"exitCodeTestListStatusRemap": [],
+			"deleted": false
+		},
+		{
+			"id": 4077,
+			"name": "Xe4_XPC 2x2x12x4 SimCompute",
+			"software": "XeSim_MAIN",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "XE4.XPC:1X1X1X4:A0",
+			"attributes": [
+				{
+					"name": "AubloadOptions",
+					"value": "-swsbcheck fatal"
+				},
+				{
+					"name": "BondOptions",
+					"value": ""
+				},
+				{
+					"name": "DeviceOption",
+					"value": ":devices/xe4hpc.1tx2x2x12x4.a0.gt.rtl.bringup.map.xml"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=Fulsim:pipegt:simulation -DtargetType=simulation -enableFeature :messageChannel3"
+				}
+			],
+			"executionMethodHistoryId": 20396,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				}
+			],
+			"exitCodeTestListStatusRemap": [],
+			"deleted": false
+		},
+		{
+			"id": 4427,
+			"name": "Xe4_XPC 2x2x12x4 SimCompute RandSeed",
+			"software": "XeSim_MAIN",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "XE4.XPC:1X1X1X4:A0",
+			"attributes": [
+				{
+					"name": "AubloadOptions",
+					"value": "-swsbcheck fatal"
+				},
+				{
+					"name": "BondOptions",
+					"value": "-hooks /nfs/site/disks/fm_atsgt_00013/kheiney/AxeRuns/scripts/hookRandSeedSim.py"
+				},
+				{
+					"name": "DeviceOption",
+					"value": ":devices/xe4hpc.1tx2x2x12x4.a0.gt.rtl.bringup.map.xml"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=Fulsim:pipegt:simulation -DtargetType=simulation -enableFeature :messageChannel3"
+				}
+			],
+			"executionMethodHistoryId": 20397,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				}
+			],
+			"exitCodeTestListStatusRemap": [],
+			"deleted": false
+		}
+	]
+}

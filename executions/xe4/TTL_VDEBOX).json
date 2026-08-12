@@ -1,0 +1,180 @@
+{
+	"schemaVersion": "1.0",
+	"testListId": 413,
+	"testListPath": "VPG HW/Xe4/TTL_VDEBOX",
+	"testListSettingsUrl": "https://axeweb.intel.com/axe/tests/testlists/413/settings/executionmethods",
+	"executionMethods": [
+		{
+			"id": 4215,
+			"name": "Emulation_Compare",
+			"software": "XeSim_MAIN",
+			"platformSoftware": "Emu_TTL_VDEBOX",
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "XE4.LPG:2X6X8:A0",
+			"attributes": [
+				{
+					"name": "AxeClientTestLimit",
+					"value": "1"
+				},
+				{
+					"name": "EmuRunOptions",
+					"value": "-save none -c 5000000000000000 -nbqslot /prj/gfx/nvl/media/vdebox/sv/standard -dut vdebox -target emulation_grpt_tc -context XE4_LPM_V1_1SCMI111 -tcp '-tb=-free_running_clock -cf /nfs/site/disks/fm_tglgt_00067/sankarshan/nvlax_repo_modelconfig/nvlax_repo_modelconfig.xml'"
+				},
+				{
+					"name": "EmuRunPlugin",
+					"value": "/nfs/site/disks/fm_iclgt_00064/Axe/Production/Emulation/AxePlugin.pm"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": "-host 127.0.0.1 -crc:check -debug:forceconfig ignore -project:folder emu -log:debug -log:svaccess redirect=false -control:imagesave noarchive -control:polltimeout time=1200000000000"
+				}
+			],
+			"executionMethodHistoryId": 20285,
+			"exitCodeExecutionStatusRemap": [],
+			"exitCodeTestListStatusRemap": [],
+			"deleted": false
+		},
+		{
+			"id": 4216,
+			"name": "Emulation_Lockup",
+			"software": "XeSim_MAIN",
+			"platformSoftware": "Emu_TTL_VDEBOX",
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "XE4.LPG:2X6X8:A0",
+			"attributes": [
+				{
+					"name": "AxeClientTestLimit",
+					"value": "1"
+				},
+				{
+					"name": "EmuRunOptions",
+					"value": "-save none -c 5000000000000000 -nbqslot /prj/gfx/nvl/media/vdebox/sv/standard -dut vdebox -target emulation_grpt_tc -context XE4_LPM_V1_1SCMI111 -tcp '-tb=-free_running_clock -cf /nfs/site/disks/fm_tglgt_00067/sankarshan/nvlax_repo_modelconfig/nvlax_repo_modelconfig.xml'"
+				},
+				{
+					"name": "EmuRunPlugin",
+					"value": "/nfs/site/disks/fm_iclgt_00064/Axe/Production/Emulation/AxePlugin.pm"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": "-host 127.0.0.1 -debug:forceconfig ignore -project:folder emu -log:debug -log:svaccess redirect=false -control:imagesave noarchive -control:polltimeout time=12000000000000 -log:svaccess loglevel=DEBUG3"
+				}
+			],
+			"executionMethodHistoryId": 20286,
+			"exitCodeExecutionStatusRemap": [],
+			"exitCodeTestListStatusRemap": [],
+			"deleted": false
+		},
+		{
+			"id": 4213,
+			"name": "Render_Fulsim",
+			"software": "XeSim_MAIN",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "XE3PV2.LPG:2X6X8:A0",
+			"attributes": [
+				{
+					"name": "AubloadOptions",
+					"value": "-initsurf -synctime 7200 -enableFeature :xefiSupport -silent -noImgSave"
+				},
+				{
+					"name": "DeviceOption",
+					"value": ":devices/xe4LP.media.noATS.map.xml"
+				},
+				{
+					"name": "FulsimTbxOptions",
+					"value": ""
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-DpavpEnable=false -virtual64 -DrandomizeCacheability=true -wa nofencing -pgi=/nfs/site/disks/xe3_clips_storage/include"
+				},
+				{
+					"name": "LilyCompileOptions",
+					"value": "/compile /bond"
+				},
+				{
+					"name": "LilyXOptions",
+					"value": "/lilyx"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": "/runtest -lar:capture -crc:make -control:imagesave noarchive -debug:forceconfig ignore -log:debug"
+				}
+			],
+			"executionMethodHistoryId": 20287,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 242,
+					"status": "Error",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [],
+			"deleted": false
+		},
+		{
+			"id": 4214,
+			"name": "Rendermill",
+			"software": "XeSim_MAIN",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "XE4.LPG:2X6X8:A0",
+			"attributes": [
+				{
+					"name": "AubloadOptions",
+					"value": "-initsurf -synctime 7200 -enableFeature :xefiSupport -silent -noImgSave"
+				},
+				{
+					"name": "DeviceOption",
+					"value": ":devices/xe4LP.media.noATS.map.xml"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-DpavpEnable=false -virtual64 -DrandomizeCacheability=true -wa nofencing -pgi=/nfs/site/disks/xe3_clips_storage/include"
+				},
+				{
+					"name": "LilyCompileOptions",
+					"value": "/compile /bond"
+				},
+				{
+					"name": "LilyXOptions",
+					"value": "/lilyx"
+				}
+			],
+			"executionMethodHistoryId": 20288,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 242,
+					"status": "Error",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [],
+			"deleted": false
+		}
+	]
+}

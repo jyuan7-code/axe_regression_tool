@@ -1,0 +1,270 @@
+{
+	"schemaVersion": "1.0",
+	"testListId": 388,
+	"testListPath": "VPG HW/Xe3P_V2/NVLAX_Emu_Media",
+	"testListSettingsUrl": "https://axeweb.intel.com/axe/tests/testlists/388/settings/executionmethods",
+	"executionMethods": [
+		{
+			"id": 3832,
+			"name": "Compare",
+			"software": "XeSim_XE3P_V2",
+			"platformSoftware": "NVLAX_EMU_MEDIA",
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "XE3PV2.LPG:2X6X8:A0",
+			"attributes": [
+				{
+					"name": "AxeClientTestLimit",
+					"value": "1"
+				},
+				{
+					"name": "EmuRunOptions",
+					"value": "-c 500000000000000000000 -nbqslot /prj/gfx/nvl/media/pipesm/sv/standard -dut sm -target emulation_tc_sipdfx_grpt_upf -context MEDIA_LPM_2SCMI322_SD -tcp '-tb=-mfe -mfm -sync 4 -mfedebug 3 -free_running_clock -cf /nfs/site/disks/xe3p_media_release_009/nvlax_mainmedia/xe3p_nvlax_mainmedia_common-25ww10d/src/units/tb_main/LPM/ModelFrontEnd/modelconfig.xml'"
+				},
+				{
+					"name": "EmuRunPlugin",
+					"value": "/nfs/site/disks/fm_iclgt_00064/Axe/Production/Emulation/AxePlugin.pm"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": "-crc:check -debug:forceconfig ignore -project:folder emu -log:debug -control:imagesave noarchive -control:polltimeout time=120000000 -watchdog frame=3300 test=5100 /bond -hooks /nfs/site/disks/fm_atsgt_00013/kheiney/AxeRuns/scripts/hookEmuRunLog.py /triage /nfs/fm/itools/em64t_SLES11/pkgs/ruby/2.6.0/bin/ruby /nfs/site/disks/fm_atsgt_00013/kheiney/AxeRuns/scripts/TriageELG/triageELG_DrGfx.rb"
+				}
+			],
+			"executionMethodHistoryId": 18580,
+			"exitCodeExecutionStatusRemap": [],
+			"exitCodeTestListStatusRemap": [],
+			"deleted": false
+		},
+		{
+			"id": 3878,
+			"name": "Compare Dump",
+			"software": "XeSim_XE3P_V2",
+			"platformSoftware": "NVLAX_EMU_MEDIA",
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "XE3PV2.LPG:2X6X8:A0",
+			"attributes": [
+				{
+					"name": "AxeClientTestLimit",
+					"value": "1"
+				},
+				{
+					"name": "EmuRunOptions",
+					"value": "-c 500000000000000000000 -nbqslot /prj/gfx/nvl/media/pipesm/sv/interactive -dut sm -target emulation_tc_sipdfx_grpt_upf -context MEDIA_LPM_2SCMI322_SD -tcp '-tb=-mfe -mfm -sync 4 -mfedebug 3 -free_running_clock -cf /nfs/site/disks/xe3p_cls_emu/aman/NVL_AX/NVLAX23march_with_52c/src/units/tb_main/LPM/ModelFrontEnd/modelconfig.xml' -debug -tardis_debug -tardis_debug_start 0 -tardis_debug_interval 500000000 -trk_do_files /nfs/site/disks/xe3p_cls_emu/aman/NVL_AX/NVLAX23march_with_52c/bld/sm/MEDIA_LPM_2SCMI322_SD.emulation_tc_sipdfx_grpt_upf/emubuild.2.8.11/zse3/trkset_zemu.do"
+				},
+				{
+					"name": "EmuRunPlugin",
+					"value": "/nfs/site/disks/fm_iclgt_00064/Axe/Production/Emulation/AxePlugin.pm"
+				},
+				{
+					"name": "EmuRunResultPath",
+					"value": "/nfs/site/disks/fm_tglgt_00067/aanuragx/Axe_Captures"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": "-crc:check -debug:forceconfig ignore -project:folder emu -log:debug -control:imagesave noarchive -control:polltimeout time=1200000 -watchdog frame=3300 test=5100 /bond -hooks /nfs/site/disks/fm_atsgt_00013/kheiney/AxeRuns/scripts/hookEmuRunLog.py /triage /nfs/fm/itools/em64t_SLES11/pkgs/ruby/2.6.0/bin/ruby /nfs/site/disks/fm_atsgt_00013/kheiney/AxeRuns/scripts/TriageELG/triageELG_DrGfx.rb"
+				}
+			],
+			"executionMethodHistoryId": 18654,
+			"exitCodeExecutionStatusRemap": [],
+			"exitCodeTestListStatusRemap": [],
+			"deleted": false
+		},
+		{
+			"id": 3833,
+			"name": "Lockup",
+			"software": "XeSim_XE3P_V2",
+			"platformSoftware": "NVLAX_EMU_MEDIA",
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "XE3PV2.LPG:2X6X8:A0",
+			"attributes": [
+				{
+					"name": "AxeClientTestLimit",
+					"value": "1"
+				},
+				{
+					"name": "EmuRunOptions",
+					"value": "-c 500000000000000000000 -nbqslot /prj/gfx/nvl/media/pipesm/sv/standard -dut sm -target emulation_tc_sipdfx_grpt_upf -context MEDIA_LPM_2SCMI322_SD -tcp '-tb=-mfe -mfm -sync 4 -mfedebug 3 -free_running_clock -cf /nfs/site/disks/xe3p_media_release_009/nvlax_mainmedia/xe3p_nvlax_mainmedia_common-25ww10d/src/units/tb_main/LPM/ModelFrontEnd/modelconfig.xml'"
+				},
+				{
+					"name": "EmuRunPlugin",
+					"value": "/nfs/site/disks/fm_iclgt_00064/Axe/Production/Emulation/AxePlugin.pm"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": "-lar:capture -debug:forceconfig ignore -project:folder emu -log:debug -control:imagesave noarchive -control:polltimeout time=120000000 -watchdog frame=3300 test=5100 /bond -hooks /nfs/site/disks/fm_atsgt_00013/kheiney/AxeRuns/scripts/hookEmuRunLog.py /triage /nfs/fm/itools/em64t_SLES11/pkgs/ruby/2.6.0/bin/ruby /nfs/site/disks/fm_atsgt_00013/kheiney/AxeRuns/scripts/TriageELG/triageELG_DrGfx.rb"
+				}
+			],
+			"executionMethodHistoryId": 18581,
+			"exitCodeExecutionStatusRemap": [],
+			"exitCodeTestListStatusRemap": [],
+			"deleted": false
+		},
+		{
+			"id": 3879,
+			"name": "Lockup Dump",
+			"software": "XeSim_XE3P_V2",
+			"platformSoftware": "NVLAX_EMU_MEDIA",
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "XE3PV2.LPG:2X6X8:A0",
+			"attributes": [
+				{
+					"name": "AxeClientTestLimit",
+					"value": "1"
+				},
+				{
+					"name": "EmuRunOptions",
+					"value": "-c 500000000000000000000 -nbqslot /prj/gfx/nvl/media/pipesm/sv/interactive -dut sm -target emulation_tc_sipdfx_grpt_upf -context MEDIA_LPM_2SCMI322_SD -tcp '-tb=-mfe -mfm -sync 4 -mfedebug 3 -free_running_clock -cf /nfs/site/disks/xe3p_cls_emu/aman/NVL_AX/NVLAX23march_with_52c/src/units/tb_main/LPM/ModelFrontEnd/modelconfig.xml' -debug -tardis_debug -tardis_debug_start 0 -tardis_debug_interval 500000000 -trk_do_files /nfs/site/disks/xe3p_cls_emu/aman/NVL_AX/NVLAX23march_with_52c/bld/sm/MEDIA_LPM_2SCMI322_SD.emulation_tc_sipdfx_grpt_upf/emubuild.2.8.11/zse3/trkset_zemu.do"
+				},
+				{
+					"name": "EmuRunPlugin",
+					"value": "/nfs/site/disks/fm_iclgt_00064/Axe/Production/Emulation/AxePlugin.pm"
+				},
+				{
+					"name": "EmuRunResultPath",
+					"value": "/nfs/site/disks/fm_tglgt_00067/aanuragx/Axe_Captures"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": "-lar:capture -debug:forceconfig ignore -project:folder emu -log:debug -control:imagesave noarchive -control:polltimeout time=1200000 -watchdog frame=3300 test=5100 /bond -hooks /nfs/site/disks/fm_atsgt_00013/kheiney/AxeRuns/scripts/hookEmuRunLog.py /triage /nfs/fm/itools/em64t_SLES11/pkgs/ruby/2.6.0/bin/ruby /nfs/site/disks/fm_atsgt_00013/kheiney/AxeRuns/scripts/TriageELG/triageELG_DrGfx.rb"
+				}
+			],
+			"executionMethodHistoryId": 18655,
+			"exitCodeExecutionStatusRemap": [],
+			"exitCodeTestListStatusRemap": [],
+			"deleted": false
+		},
+		{
+			"id": 3831,
+			"name": "Render",
+			"software": "XeSim_XE3P_V2",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "XE3PV2.LPG:2X6X8:A0",
+			"attributes": [
+				{
+					"name": "AubloadOptions",
+					"value": "-synctime 43200 -driverOnly -silent -noImgSave"
+				},
+				{
+					"name": "DeviceOption",
+					"value": ":devices/nvlax.media.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-enableFeature :xefiSupport -veboxmode 8"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=fulsim:pipeGT:emulation -wa nofencing -DtargetType=fulsim -DskipGritsFeatureCheck=true -DgscSRIOVOptimization=true"
+				},
+				{
+					"name": "LilyCompileOptions",
+					"value": "/compile /bond"
+				},
+				{
+					"name": "LilyXOptions",
+					"value": "/lilyx"
+				}
+			],
+			"executionMethodHistoryId": 18339,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 3830,
+			"name": "Render_Fulsim",
+			"software": "XeSim_XE3P_V2",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "XE3PV2.LPG:2X6X8:A0",
+			"attributes": [
+				{
+					"name": "AubloadOptions",
+					"value": "-synctime 43200 -silent -noImgSave"
+				},
+				{
+					"name": "DeviceOption",
+					"value": ":devices/nvlax.media.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-veboxmode 8"
+				},
+				{
+					"name": "FulsimTbxOptions",
+					"value": "-veboxmode 8"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target fulsim:superPipeMedia:emulation -wa nofencing -DtargetType=fulsim -DskipGritsFeatureCheck=true -DgscSRIOVOptimization=true"
+				},
+				{
+					"name": "LilyCompileOptions",
+					"value": "/compile /bond"
+				},
+				{
+					"name": "LilyXOptions",
+					"value": "/lilyx"
+				},
+				{
+					"name": "RunTestOptions",
+					"value": "/runtest -lar:capture -crc:make -watchdog frame=43200 test=43200 -control:reset none -control:imagesave noarchive -debug:forceconfig unified"
+				}
+			],
+			"executionMethodHistoryId": 18338,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		}
+	]
+}
