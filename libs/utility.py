@@ -1315,24 +1315,40 @@ class Utility:
         Returns:
         bool: True if the directory contains files, False otherwise.
         """
+        # Validate input
+        if not directory_path or not isinstance(directory_path, (str, bytes, os.PathLike)):
+            print("Invalid directory path provided.")
+            return False
+
         try:
-            # List all entries in the directory
-            entries = os.listdir(directory_path)
+            # Resolve the absolute path and normalize it
+            directory_path = os.path.realpath(directory_path)
 
-            # Check if any entry is a file
-            for entry in entries:
-                entry_path = os.path.join(directory_path, entry)
-                if os.path.isfile(entry_path):
-                    return True
+            # Check if the path exists and is a directory
+            if not os.path.exists(directory_path):
+                print(f"The directory '{directory_path}' does not exist.")
+                return False
 
-            # If no files are found, return False
-            return False
+            if not os.path.isdir(directory_path):
+                print(f"The path '{directory_path}' is not a directory.")
+                return False
 
-        except FileNotFoundError:
-            print(f"The directory '{directory_path}' does not exist.")
-            return False
+            # Use os.scandir() for better performance over os.listdir()
+            # It avoids extra os.stat() calls and returns DirEntry objects
+            with os.scandir(directory_path) as entries:
+                # Use next() with a generator for early exit on first file found
+                return any(entry.is_file() for entry in entries)
+
         except PermissionError:
             print(f"Permission denied to access the directory '{directory_path}'.")
+            return False
+        except OSError as e:
+            # Catch broader OS-related errors (e.g., broken symlinks, I/O errors)
+            print(f"An OS error occurred while accessing '{directory_path}': {e}")
+            return False
+        except Exception as e:
+            # Catch any unexpected errors to prevent crashes
+            print(f"An unexpected error occurred: {e}")
             return False
 
     def get_os_info(self):
