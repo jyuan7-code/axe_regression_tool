@@ -1744,7 +1744,8 @@ class FulsimRegress(Tk):
 
         print("Copying include folders ....")
         t1 = time.time()
-        self.copyRequiredFolders()
+        if not self.use_p4:
+            self.copyRequiredFolders(False)
         print("Copy Include folders time: ", self.util.convertSecToHourMinSec(time.time() - t1))
 
         print("Copying tests ....")
@@ -3250,6 +3251,7 @@ class FulsimRegress(Tk):
 
 
         if self.use_p4:
+            self.p4client.createRepopath(test_read.test_path, target_path, test_revision)
             if not p4checkedoutdone:
                 info = "P4 copying test " + str(target_path)
                 print(info)
@@ -3287,7 +3289,8 @@ class FulsimRegress(Tk):
 
         if test_read.type == 'cfg':
             self.AddDisplayToolsPath()
-            self.copyRequiredFolders(False)
+            if not self.use_p4:
+                self.copyRequiredFolders(False)
 
 
 
@@ -3836,7 +3839,8 @@ class FulsimRegress(Tk):
             self.updateOutputBox(info_str)
 
             self.copyOneTest(test_run)
-            #test_run.fileResolve()
+            if not self.use_p4:
+                test_run.fileResolve()
 
 
             status_str = "Copying tests: " + str(processed) + "/" + str(total)
