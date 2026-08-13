@@ -717,6 +717,11 @@ class TestRunner:
         if testRun.file_identifier != '':
             grits_cmd =  grits_cmd  +   " -FileIdentifier " + testRun.file_identifier
 
+        #create grits commandline file
+        commandline_file = "grits_commandline.txt"
+        commandline_file_path = Path(os.path.join(work_path, commandline_file))
+        self.write_string_to_file(commandline_file_path, grits_cmd)
+        testRun.test_file_relative_path_list.append(commandline_file_path)
 
         print("Running grits at", work_path)
         print("grits_cmd: ", grits_cmd)
@@ -973,6 +978,12 @@ class TestRunner:
             Path("fdve").mkdir(parents=True, exist_ok=True)
 
         print("aub_cmd: ", aub_cmd)
+
+        # create grits commandline file
+        commandline_file = "aubload_commandline.txt"
+        commandline_file_path = Path(os.path.join(work_path, commandline_file))
+        self.write_string_to_file(commandline_file_path, aub_cmd)
+        testRun.test_file_relative_path_list.append(commandline_file_path)
 
         if testRun.test_result.grits_compile_status == "FAIL":
             testRun.test_result.fulsim_compile_status = "N/A"
@@ -1262,6 +1273,15 @@ class TestRunner:
             else:
                 testRun.test_result.checker_mismatch.append("Mismatch: "  + 'meld' + "  "+ str(file1_path) + "  " + str(file2_path))
 
+    def write_string_to_file(self, file_path, content, encoding='utf-8'):
+        """Write string to file with specified encoding."""
+        try:
+            with open(file_path, 'w', encoding=encoding) as f:
+                f.write(content)
+            return True
+        except Exception as e:
+            print(f"Error writing to file: {e}")
+            return False
 
 class YamlTestRunner(TestRunner):
     pass
