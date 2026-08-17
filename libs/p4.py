@@ -203,6 +203,7 @@ class P4Wrapper:
     def createRepopath(self,folderPath, targetPath,revision):
         print("P4 createRepopath start ...")
         repopath = os.path.join(targetPath, "repopath.txt")
+        os.makedirs(os.path.dirname(repopath), exist_ok=True)
         with open(repopath, 'w') as f:
             fPath = str(folderPath).replace("\\", "/")
             p4path = "P4PATH=\"" + str(self.port) + fPath
