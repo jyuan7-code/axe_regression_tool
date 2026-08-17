@@ -1744,7 +1744,8 @@ class FulsimRegress(Tk):
 
         print("Copying include folders ....")
         t1 = time.time()
-        self.copyRequiredFolders()
+        if not self.use_p4:
+            self.copyRequiredFolders()
         print("Copy Include folders time: ", self.util.convertSecToHourMinSec(time.time() - t1))
 
         print("Copying tests ....")
@@ -3287,8 +3288,8 @@ class FulsimRegress(Tk):
 
         if test_read.type == 'cfg':
             self.AddDisplayToolsPath()
-            self.copyRequiredFolders(False)
-
+            if not self.use_p4:
+                self.copyRequiredFolders(False)
 
 
         test_read.yaml_path = test_read.yaml_path.replace("\\", "/")
