@@ -200,20 +200,23 @@ class P4Wrapper:
 
         print(" ==>done ")
         return cmd
+    def createRepopath(self,folderPath, targetPath,revision):
+        print("P4 createRepopath start ...")
+        repopath = os.path.join(targetPath, "repopath.txt")
+        os.makedirs(os.path.dirname(repopath), exist_ok=True)
+        with open(repopath, 'w') as f:
+            fPath = str(folderPath).replace("\\", "/")
+            p4path = "P4PATH=\"" + str(self.port) + fPath
+            if (revision != 0 and revision != '0'):
+                p4path = p4path + "@" + str(revision)
+            p4path = p4path + "\""
+            print("write to repopath.txt: " + p4path)
+            f.write(p4path)
+
     def copyOnefolder(self, folderPath, targetPath, revision, createRepoPath=False):
         #create repopath.txt
         #e.g P4PATH="ssl:p4proxy-vpg-sc1.devtools.intel.com:5110//gen12_fulsim_test_depot/tests/BCS/basic/bcs_vfumd_regaccess_lrr@335631"
         os.makedirs(targetPath, exist_ok=True)
-        if( createRepoPath):
-            repopath = os.path.join(targetPath, "repopath.txt")
-            with open(repopath, 'w') as f:
-                fPath = str(folderPath).replace("\\", "/")
-                p4path ="P4PATH=\"" + str(self.port) + fPath
-                if(revision != 0 and revision != '0'):
-                    p4path = p4path + "@" + str(revision)
-                p4path = p4path + "\""
-                print("write to repopath.txt: " + p4path)
-                f.write(p4path)
 
         info =""
         #print("self.is_win_os:", self.is_win_os)
