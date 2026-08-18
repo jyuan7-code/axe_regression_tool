@@ -3251,12 +3251,11 @@ class FulsimRegress(Tk):
 
 
         if self.use_p4:
-            self.p4client.createRepopath(test_read.test_path, target_path, test_revision)
             if not p4checkedoutdone:
                 info = "P4 copying test " + str(target_path)
                 print(info)
                 self.updateOutputBox(info)
-                info = self.p4client.copyOnefolder(test_read.test_path, target_path, test_revision, True)
+                info = self.p4client.copyOnefolder(test_read.test_path, target_path, test_revision)
                 print(info)
                 self.updateOutputBox(info)
                 if self.util.has_files(target_path):
@@ -3778,13 +3777,13 @@ class FulsimRegress(Tk):
                         else:
                             self.updateOutputBox(info_str)
                             try:
-                                info_str = self.p4client.copyOnefolder(src_path, dest_path, self.best_test_revision, True)
+                                info_str = self.p4client.copyOnefolder(src_path, dest_path, self.best_test_revision)
                             except Exception as e:
                                 info_str = (f'Error copying file {src_path}: {e}')
                     elif self:
                         self.updateOutputBox(info_str)
                         try:
-                            info_str = self.p4client.copyOnefolder(src_path, dest_path, self.best_test_revision, True)
+                            info_str = self.p4client.copyOnefolder(src_path, dest_path, self.best_test_revision)
                         except Exception as e:
                             info_str = (f'Error copying file {src_path}: {e}')
                     print(info_str)
@@ -3868,6 +3867,10 @@ class FulsimRegress(Tk):
             print(" ==> done")
         else:
             print(" ==> skipped")
+
+        if self.use_p4:
+            self.p4client.createRepopath(testRun.p4test_src_path, testRun.test_run_path, testRun.test_revision)
+
         if self.run_compare and testRun.has_gold:
             print("copying test gold files: " + str(testRun.gold_src_path) + " to " + str(testRun.gold_work_path), end='')
             if self.use_p4:
@@ -3998,6 +4001,7 @@ class FulsimRegress(Tk):
         test_run.cfg_name = testRead.cfg_name
         test_run.test_src_file_paths = testRead.test_src_file_paths
         test_run.test_file_relative_path_list = testRead.test_file_relative_path_list
+        test_run.test_revision = testRead.test_revision
 
         if test_confg != None:
             test_run.config_id = test_confg.Name
