@@ -213,6 +213,25 @@ class P4Wrapper:
             print("write to repopath.txt: " + p4path)
             f.write(p4path)
 
+    def getHeadChangeRevision(self, folderPath):
+        p4_path = '"' + str(os.path.join(folderPath, "...")) + '"'
+        cmd = self.p4_exe + ' fstat -m 1 -T headChange ' + p4_path
+        cmd = cmd.replace("\\", "/")
+        result = os.popen(cmd)
+        print("print the head change revision ...")
+        allines = result.readlines()
+        revision = None
+        for line in allines:
+            print(line)
+            search_result = re.search(r'(\d+)', line)
+            if search_result:
+                revision = search_result.group(1)
+                break
+        result.close()
+        return revision
+
+
+
     def copyOnefolder(self, folderPath, targetPath, revision, createRepoPath=False):
         #create repopath.txt
         #e.g P4PATH="ssl:p4proxy-vpg-sc1.devtools.intel.com:5110//gen12_fulsim_test_depot/tests/BCS/basic/bcs_vfumd_regaccess_lrr@335631"

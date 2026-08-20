@@ -1744,8 +1744,8 @@ class FulsimRegress(Tk):
 
         print("Copying include folders ....")
         t1 = time.time()
-        if not self.use_p4:
-            self.copyRequiredFolders(False)
+        #if not self.use_p4:
+            #self.copyRequiredFolders(False)
         print("Copy Include folders time: ", self.util.convertSecToHourMinSec(time.time() - t1))
 
         print("Copying tests ....")
@@ -3212,9 +3212,7 @@ class FulsimRegress(Tk):
         if test_revision == None:
             test_revision = 0
 
-        if int(self.best_test_revision) < int(test_revision) and int(test_revision) !=0:
-            self.best_test_revision = test_revision
-        test_read.jason_name = re.sub(r"@(\d+)","@"+ str( self.best_test_revision), test_read.jason_name)
+
 
         test_read.unit_name = unit_name
         test_read.test_name = test_name
@@ -3256,6 +3254,10 @@ class FulsimRegress(Tk):
                 print(info)
                 self.updateOutputBox(info)
                 info = self.p4client.copyOnefolder(test_read.test_path, target_path, test_revision)
+                if test_revision == 0 or test_revision == '0':
+                    # update test rewvision with headChange reversion
+                    test_read.test_revision = self.p4client.getHeadChangeRevision(test_read.test_path)
+                    test_read.jason_name = re.sub(r"@(\d+)", "@" + str(test_read.test_revision), test_read.jason_name)
                 print(info)
                 self.updateOutputBox(info)
                 if self.util.has_files(target_path):
@@ -3288,8 +3290,8 @@ class FulsimRegress(Tk):
 
         if test_read.type == 'cfg':
             self.AddDisplayToolsPath()
-            if not self.use_p4:
-                self.copyRequiredFolders(False)
+            #if not self.use_p4:
+                #self.copyRequiredFolders(False)
 
 
         test_read.yaml_path = test_read.yaml_path.replace("\\", "/")
@@ -3837,8 +3839,8 @@ class FulsimRegress(Tk):
             self.updateOutputBox(info_str)
 
             self.copyOneTest(test_run)
-            if not self.use_p4:
-                test_run.fileResolve()
+            #if not self.use_p4:
+                #test_run.fileResolve()
 
 
             status_str = "Copying tests: " + str(processed) + "/" + str(total)
@@ -3870,11 +3872,14 @@ class FulsimRegress(Tk):
 
         if self.use_p4:
             self.p4client.createRepopath(testRun.p4test_src_path, testRun.test_run_path, testRun.test_revision)
+        else:
+            self.createRepopath(testRun.test_src_path,testRun.test_run_path)
 
         if self.run_compare and testRun.has_gold:
             print("copying test gold files: " + str(testRun.gold_src_path) + " to " + str(testRun.gold_work_path), end='')
             if self.use_p4:
                 info = self.p4client.copyOnefolder(testRun.gold_src_path,testRun.gold_work_path,testRun.test_revision)
+
                 self.updateOutputBox(info)
             else:
                 target_path = os.path.dirname(testRun.gold_work_path)
@@ -3966,6 +3971,7 @@ class FulsimRegress(Tk):
 
             if self.use_p4 and test_run.gold_src_path != "" and test_run.gold_work_path != "":
                 self.p4client.copyOnefolder(test_run.gold_src_path,test_run.gold_work_path,self.p4_test_revision)
+
         print("gold_work_path by setupTestGoldFolder: ", test_run.gold_work_path)
     def configTestRun(self, testRun:Test.TestRun,testRead:Test.TestRead, testRunList, testConfig):
         test_run = testRun
@@ -4580,13 +4586,20 @@ class FulsimRegress(Tk):
         print("the status process is done")
         return
 
-
-
     def confirm(self):
         ans = askyesno(title="Cobalt Regression Tool", message='Do You Want To Exit ?')
         if ans:
             FulsimRegress.destroy(self)
 
+    def createRepopath(self, folderPath, targetPath):
+        print("create local  createRepopath start ...")
+        repopath = os.path.join(targetPath, "repopath.txt")
+        os.makedirs(os.path.dirname(repopath), exist_ok=True)
+        with open(repopath, 'w') as f:
+            fPath = str(folderPath).replace("\\", "/")
+            fPath = "local=\"" + fPath + "\""
+            print("write to repopath.txt: " + fPath)
+            f.write(fPath)
 
 def main():
     fulsim_regress = FulsimRegress()
