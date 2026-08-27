@@ -223,7 +223,7 @@ class P4Wrapper:
         result = os.popen(cmd)
         print("print the head change revision ...")
         allines = result.readlines()
-        revision = None
+        revision = 0
         for line in allines:
             print(line)
             search_result = re.search(r'(\d+)', line)

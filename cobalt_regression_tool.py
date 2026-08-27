@@ -3254,10 +3254,7 @@ class FulsimRegress(Tk):
                 print(info)
                 self.updateOutputBox(info)
                 info = self.p4client.copyOnefolder(test_read.test_path, target_path, test_revision)
-                if test_revision == 0 or test_revision == '0':
-                    # update test rewvision with headChange reversion
-                    test_read.test_revision = self.p4client.getHeadChangeRevision(test_read.test_path)
-                    test_read.jason_name = re.sub(r"@(\d+)", "@" + str(test_read.test_revision), test_read.jason_name)
+
                 print(info)
                 self.updateOutputBox(info)
                 if self.util.has_files(target_path):
@@ -3287,6 +3284,10 @@ class FulsimRegress(Tk):
             test_read.test_src_file_paths = self.util.GetAllFilePathsFromCurrentDir(Path(test_src_path))
             test_read.test_file_relative_path_list = self.util.GetAllFileRelativePathsFromDir(Path(test_src_path))
 
+        if test_revision == 0 or test_revision == '0':
+            # update test rewvision with headChange reversion
+            test_read.test_revision = self.p4client.getHeadChangeRevision(test_read.p4_test_path)
+            test_read.jason_name = re.sub(r"@(\d+)", "@" + str(test_read.test_revision), test_read.jason_name)
 
         if test_read.type == 'cfg':
             self.AddDisplayToolsPath()
