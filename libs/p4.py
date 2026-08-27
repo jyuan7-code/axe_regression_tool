@@ -204,6 +204,8 @@ class P4Wrapper:
         print("P4 createRepopath start ...")
         repopath = os.path.join(targetPath, "repopath.txt")
         os.makedirs(os.path.dirname(repopath), exist_ok=True)
+        if Path(repopath).is_file():
+            return repopath
         with open(repopath, 'w') as f:
             fPath = str(folderPath).replace("\\", "/")
             p4path = "P4PATH=\"" + str(self.port) + fPath
@@ -212,6 +214,7 @@ class P4Wrapper:
             p4path = p4path + "\""
             print("write to repopath.txt: " + p4path)
             f.write(p4path)
+        return repopath
 
     def getHeadChangeRevision(self, folderPath):
         p4_path = '"' + str(os.path.join(folderPath, "...")) + '"'

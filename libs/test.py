@@ -203,6 +203,7 @@ class TestRun:
         self.test_src_file_paths = list()
         self.gsf_src_path=""
         self.cfg_src_path=""
+        self.repopath_path =""
         self.yaml_src_path=""
         self.path_src_path=''
         self.axe_execution_method = None

@@ -3871,9 +3871,11 @@ class FulsimRegress(Tk):
             print(" ==> skipped")
 
         if self.use_p4:
-            self.p4client.createRepopath(testRun.p4test_src_path, testRun.test_run_path, testRun.test_revision)
+            testRun.repopath_path = self.p4client.createRepopath(testRun.p4test_src_path, testRun.test_run_path, testRun.test_revision)
+            testRun.test_src_file_paths.append(testRun.repopath_path)
         else:
-            self.createRepopath(testRun.test_src_path,testRun.test_run_path)
+            testRun.repopath_path = self.createRepopath(testRun.test_src_path,testRun.test_run_path)
+            testRun.test_src_file_paths.append(testRun.repopath_path)
 
         if self.run_compare and testRun.has_gold:
             print("copying test gold files: " + str(testRun.gold_src_path) + " to " + str(testRun.gold_work_path), end='')
@@ -4059,9 +4061,6 @@ class FulsimRegress(Tk):
         if self.goldnize == 'yes':
             self.setupTestGoldenizedFolder(test_run)
 
-
-
-
         if test_confg != None and test_confg.CommandLine != None and test_confg.CommandLine != "":
             test_grits_option = test_run.getGritsOption(test_confg.CommandLine)
             test_auload_option = test_run.getAubLoadOption(test_confg.CommandLine)
@@ -4079,6 +4078,8 @@ class FulsimRegress(Tk):
         self.CheckRequiredFolder(test_run.path_src_path, test_run.test_required_folders)
         self.CheckRequiredFolder(test_run.path_src_path, self.required_folders, False)
         test_run.test_required_files = self.CheckRequiredFiles(test_run.gsf_src_path)
+        for file in test_run.test_required_files:
+            print("required file: ", file)
         config_index = 0
         for axeConfig in self.axe_execution_method_list:
             test_run = copy.deepcopy(test_run)
@@ -4594,13 +4595,15 @@ class FulsimRegress(Tk):
     def createRepopath(self, folderPath, targetPath):
         print("create local  createRepopath start ...")
         repopath = os.path.join(targetPath, "repopath.txt")
+        if Path(repopath).is_file():
+            return repopath
         os.makedirs(os.path.dirname(repopath), exist_ok=True)
         with open(repopath, 'w') as f:
             fPath = str(folderPath).replace("\\", "/")
             fPath = "local=\"" + fPath + "\""
             print("write to repopath.txt: " + fPath)
             f.write(fPath)
-
+        return repopath
 def main():
     fulsim_regress = FulsimRegress()
     fulsim_regress.protocol("WM_DELETE_WINDOW",fulsim_regress.confirm)
