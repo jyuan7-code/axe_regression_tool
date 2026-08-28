@@ -4,6 +4,7 @@ import os
 import stat
 from pathlib import Path
 import re
+import html
 import libs.test as Test
 import libs.HTML as HTML
 #import HTML
@@ -18,6 +19,222 @@ class Utility:
         self.is_win_os = False
         if re.search("windows", platform.system(), re.IGNORECASE):
             self.is_win_os = True
+
+    def getHtmlReportStyle(self):
+        """Shared CSS for regression HTML reports, restyles the legacy bgcolor-based tables into badges/cards."""
+        return """
+<style>
+  :root {
+    --bg: #f2f4f9; --card-bg: #ffffff; --text: #1f2937; --muted: #6b7280;
+    --border: #e6e8f0; --accent: #4f46e5; --accent-dark: #3730a3;
+    --pass-bg: #a7f3c9; --pass-text: #065f36; --fail-bg: #fbb8b8; --fail-text: #7f1414;
+    --warn-bg: #fde388; --warn-text: #6b3d05; --neutral-bg: #f8f9fc;
+    --shadow: 0 2px 6px rgba(31,41,55,0.06), 0 1px 2px rgba(31,41,55,0.08);
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    padding: 24px; background: var(--bg); color: var(--text);
+    font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  }
+  .report-container { max-width: 1500px; margin: 0 auto; }
+  .hero {
+    background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+    color: #fff; border-radius: 14px; padding: 26px 30px; margin-bottom: 20px;
+    box-shadow: var(--shadow);
+  }
+  .hero h1 { margin: 0 0 6px 0; font-size: 24px; font-weight: 700; letter-spacing: .2px; text-align: left; }
+  .hero .subtitle { margin: 0; font-size: 14px; opacity: .92; text-align: left; }
+  .card {
+    background: var(--card-bg); border-radius: 12px; padding: 16px 20px 20px;
+    margin-bottom: 18px; box-shadow: var(--shadow); border: 1px solid var(--border);
+  }
+  .card h3 {
+    margin: 0 0 12px 0; padding-bottom: 8px; font-size: 15px; color: var(--accent-dark);
+    border-bottom: 2px solid var(--border); letter-spacing: .2px; text-align: left;
+  }
+  table {
+    border-collapse: separate !important; border-spacing: 0; width: 100%;
+    background: var(--card-bg); border-radius: 10px; overflow: hidden;
+    border: 1px solid var(--border) !important; font-size: 13px;
+  }
+  table th, table td { padding: 9px 12px !important; border: none !important; border-bottom: 1px solid var(--border) !important; }
+  table th {
+    background: #eef1fc; color: var(--accent-dark); text-transform: uppercase;
+    font-size: 11px; letter-spacing: .4px; font-weight: 700;
+  }
+  table tr:last-child td { border-bottom: none !important; }
+  table tbody tr:hover td, table tr:hover td { background: #f5f6ff; }
+  a { color: var(--accent); text-decoration: none; font-weight: 600; }
+  a:hover { text-decoration: underline; }
+
+  /* recolor legacy inline bgcolor attributes into modern badge-style cells (status columns) */
+  td[bgcolor="lime"] { background: var(--pass-bg) !important; color: var(--pass-text) !important; font-weight: 700; border-radius: 6px; }
+  td[bgcolor="red"] { background: var(--fail-bg) !important; color: var(--fail-text) !important; font-weight: 700; border-radius: 6px; }
+  td[bgcolor="yellow"] { background: var(--warn-bg) !important; color: var(--warn-text) !important; font-weight: 700; border-radius: 6px; }
+  td[bgcolor="white"] { background: var(--neutral-bg) !important; }
+
+  /* Summary block keeps the original lighter, pastel color scheme */
+  .summary-block td[bgcolor="lime"] { background: #d1fae5 !important; color: #047857 !important; }
+  .summary-block td[bgcolor="red"] { background: #fee2e2 !important; color: #b91c1c !important; }
+  .summary-block td[bgcolor="yellow"] { background: #fef3c7 !important; color: #92400e !important; }
+
+  /* collapsible sections (Regression Settings / Cobalt CI Config), collapsed by default */
+  details.collapsible { padding: 16px 20px 20px; }
+  details.collapsible[open] { padding-bottom: 20px; }
+  details.collapsible summary {
+    cursor: pointer; display: flex; align-items: center; justify-content: space-between;
+    list-style: none; font-size: 15px; font-weight: 700; color: var(--accent-dark);
+    padding-bottom: 8px; border-bottom: 2px solid var(--border); text-align: left;
+  }
+  details.collapsible[open] summary { margin-bottom: 12px; }
+  details.collapsible summary::marker { content: ""; display: none; }
+  details.collapsible summary::-webkit-details-marker { display: none; }
+  /* arrow lives on the title itself (not as a sibling flex item) so space-between only
+     distributes space between the title and the folder buttons, keeping the title flush left */
+  .card-title::before {
+    content: "\\25B6"; display: inline-block; margin-right: 8px; font-size: 10px;
+    color: var(--muted); transition: transform .15s ease;
+  }
+  details.collapsible[open] .card-title::before { transform: rotate(90deg); }
+  .card-title { display: flex; align-items: center; text-align: left; flex: 0 1 auto; }
+  .card-actions { display: flex; gap: 8px; }
+  .folder-btn {
+    font-size: 12px; font-weight: 600; padding: 5px 12px; border-radius: 999px;
+    background: #eef1fc; color: var(--accent-dark); border: 1px solid #dfe3fb;
+    transition: background .15s ease, color .15s ease, box-shadow .15s ease;
+  }
+  .folder-btn:hover { background: var(--accent); color: #fff; text-decoration: none; box-shadow: var(--shadow); }
+</style>
+"""
+
+    def writeCompareReportHtml(self, filePath, mismatchLines):
+        """Render gold-compare result lines as a colorized report: Match=green, Mismatch=red.
+        Each parsable line is an expandable row showing the compared file name, collapsed by
+        default; expanding it reveals the full compare command (tool + both file paths), and a
+        'Copy Compare Command' button copies that full command to the clipboard."""
+        rows = ''
+        for line in mismatchLines:
+            line = str(line)
+            css_class = 'neutral'
+            status_label = ''
+            if line.startswith('Match:'):
+                css_class = 'match'
+                status_label = 'Match'
+            elif line.startswith('Mismatch:'):
+                css_class = 'mismatch'
+                status_label = 'Mismatch'
+
+            tool, file1, file2 = self._parseCompareLine(line)
+            if tool and file1 and file2:
+                file_name = os.path.basename(file2) or os.path.basename(file1)
+                display_text = html.escape((status_label + ': ' + file_name) if status_label else file_name)
+                copy_cmd = '"%s" "%s" "%s"' % (tool, file1, file2)
+                copy_btn = ('<button type="button" class="folder-btn copy-compare" '
+                            'onclick="copyCompareCmd(this, event)" data-copy-cmd="' + html.escape(copy_cmd) +
+                            '">Copy Compare Command</button>')
+                rows += ('<details class="compare-line ' + css_class + '">'
+                          '<summary><span class="compare-text">' + display_text + '</span>' + copy_btn + '</summary>'
+                          '<div class="compare-command">' + html.escape(copy_cmd) + '</div>'
+                          '</details>\n')
+            else:
+                rows += ('<div class="compare-line ' + css_class + '">'
+                          '<span class="compare-text">' + html.escape(line) + '</span></div>\n')
+        if not mismatchLines:
+            rows = '<div class="compare-line neutral">No comparison entries.</div>\n'
+
+        with open(filePath, 'w') as f:
+            f.write('<!DOCTYPE html>\n<html><head><meta charset="utf-8">'
+                    '<meta name="viewport" content="width=device-width, initial-scale=1">')
+            f.write(self.getHtmlReportStyle())
+            f.write("""
+<style>
+  .compare-line {
+    display: flex; align-items: center; justify-content: space-between; gap: 14px;
+    font-family: Consolas, "Courier New", monospace; font-size: 13px; padding: 8px 12px;
+    margin-bottom: 6px; border-radius: 6px;
+  }
+  details.compare-line { display: block; padding: 8px 12px; }
+  details.compare-line summary {
+    display: flex; align-items: center; justify-content: space-between; gap: 14px;
+    cursor: pointer; list-style: none;
+  }
+  details.compare-line summary::marker { content: ""; display: none; }
+  details.compare-line summary::-webkit-details-marker { display: none; }
+  .compare-text::before {
+    content: "\\25B6"; display: inline-block; margin-right: 8px; font-size: 10px;
+    color: var(--muted); transition: transform .15s ease;
+  }
+  details.compare-line[open] .compare-text::before { transform: rotate(90deg); }
+  .compare-command {
+    margin-top: 8px; padding: 8px 10px; background: rgba(255,255,255,.55); border-radius: 6px;
+    white-space: pre-wrap; word-break: break-all; font-size: 12.5px;
+  }
+  .compare-text { white-space: pre-wrap; word-break: break-all; flex: 1 1 auto; }
+  .compare-line .copy-compare { flex: 0 0 auto; white-space: nowrap; cursor: pointer; font: inherit; border: 1px solid #dfe3fb; }
+  .compare-line.match { background: #d1fae5; color: #047857; border-left: 4px solid #10b981; font-weight: 600; }
+  .compare-line.mismatch { background: #fee2e2; color: #b91c1c; border-left: 4px solid #ef4444; font-weight: 700; }
+  .compare-line.neutral { background: #f3f4f6; color: #374151; border-left: 4px solid #9ca3af; }
+</style>
+<script>
+function copyCompareCmd(btn, evt) {
+  if (evt) { evt.preventDefault(); evt.stopPropagation(); }
+  var cmd = btn.getAttribute('data-copy-cmd');
+  var restore = function() {
+    var original = btn.textContent;
+    btn.textContent = 'Copied!';
+    setTimeout(function () { btn.textContent = original; }, 1200);
+  };
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(cmd).then(restore, restore);
+  } else {
+    var ta = document.createElement('textarea');
+    ta.value = cmd;
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand('copy'); } catch (e) { /* clipboard unavailable */ }
+    document.body.removeChild(ta);
+    restore();
+  }
+}
+</script>
+""")
+            f.write('</head><body><div class="report-container">')
+            f.write('<div class="hero"><h1>Gold Compare Report</h1></div>')
+            f.write('<div class="card">')
+            f.write(rows)
+            f.write('</div></div></body></html>')
+
+    def _parseCompareLine(self, line):
+        """Split a 'Match/Mismatch: <tool>  <file1>  <file2>' line (double-space delimited) into its parts."""
+        try:
+            _, rest = line.split(':', 1)
+            fields = [f.strip() for f in rest.split('  ') if f.strip() != '']
+            if len(fields) >= 3:
+                tool = fields[0].strip('"')
+                return tool, fields[1], fields[2]
+        except Exception:
+            pass
+        return None, None, None
+
+    def _toFileUri(self, path, isDir=True):
+        """Best-effort conversion of a local path to a clickable file:// URI, empty string on failure."""
+        path = str(path).strip()
+        if not path:
+            return ''
+        try:
+            p = Path(path)
+            if not p.is_absolute():
+                p = Path(os.path.abspath(path))
+            uri = p.as_uri()
+            if isDir and not uri.endswith('/'):
+                uri += '/'  # trailing slash so browsers open it as a folder listing, not a download
+            return uri
+        except Exception:
+            return ''
+
     def deleteOneFolder(self, dirPath):
         try:
             shutil.rmtree(dirPath)
@@ -369,11 +586,16 @@ class Utility:
         summary__htmlcode = str(summary_table)
 
         with open(filePath, 'w') as f:
-            f.write(header)
-            f.write('<br>')
-            f.write(total_time_header)
+            f.write('<!DOCTYPE html>\n<html><head><meta charset="utf-8">'
+                    '<meta name="viewport" content="width=device-width, initial-scale=1">')
+            f.write(self.getHtmlReportStyle())
+            f.write('</head><body><div class="report-container">')
+            f.write('<div class="hero"><h1>' + title + '</h1><p class="subtitle">Total Run Time: '
+                    + str(self.convertSecToHourMinSec(runTime)) + '</p></div>')
+            f.write('<div class="card summary-block">')
             f.write(summary_header)
             f.write(summary__htmlcode)
+            f.write('</div></div></body></html>')
 
     def hasGoldnizedData(self, testlist):
         results = [False, 0]
@@ -390,11 +612,10 @@ class Utility:
 
     def writeDataNaxeConfigToHtmlFile(self, title, filePath, summary, testDoneList, cmodel=False, isgraphic=False,
                             regressSetting:AxeExecution.RegressSetting=None, axeExecutioncConfiglist:list=None):
-        webhead = '<head> <meta http-equiv="refresh" content="10"> </head>'
-        header = '<h1 align="center">' + title + '</h1>'
+        header = '<h1>' + title + '</h1>'
         total_time = summary["regress_time"]
         total_time_string = self.convertSecToHourMinSec(total_time)
-        total_time_header = '<h2 align="center">' + "Total Run Time: " + total_time_string + '</h2>'
+        total_time_header = '<p class="subtitle">' + "Total Run Time: " + total_time_string + '</p>'
         lines_space = 5
         gold_result = self.hasGoldnizedData(testDoneList)
         has_gold = gold_result[0]
@@ -408,7 +629,17 @@ class Utility:
             need_axeconfig_col = True
         if regressSetting != None:
             regress_tile = regressSetting.name
-            regress_header = '<h3 align="left">' + regress_tile + '</h3>'
+            folder_buttons = ''
+            tests_uri = self._toFileUri(getattr(regressSetting, 'test_base_path', ''))
+            results_uri = self._toFileUri(getattr(regressSetting, 'result_base_path', ''))
+            if tests_uri:
+                folder_buttons += ('<a class="folder-btn" href="' + tests_uri + '" target="_blank" '
+                                   'onclick="event.stopPropagation()" title="Open tests folder">Tests Folder</a>')
+            if results_uri:
+                folder_buttons += ('<a class="folder-btn" href="' + results_uri + '" target="_blank" '
+                                   'onclick="event.stopPropagation()" title="Open results folder">Results Folder</a>')
+            regress_header = ('<summary><span class="card-title">' + regress_tile + '</span>'
+                               '<span class="card-actions">' + folder_buttons + '</span></summary>')
             regress_table = HTML.Table()
 
             regress_aubload_path_name = "Aubload Path: "
@@ -485,8 +716,7 @@ class Utility:
         axe_htmlcode_list = list()
         for  axeExecutioncConfig in axeExecutioncConfiglist:
             axe_tile = axeExecutioncConfig.name
-            axe_header = '<h3 align="left">' + 'Cobalt CI Config: ' + axe_tile + '</h3>'
-            axe_htmlcode_list.append(axe_header)
+            axe_header = '<summary><span class="card-title">Cobalt CI Config: ' + axe_tile + '</span></summary>'
             axe_table = HTML.Table()
 
             axe_exe_type_name = "Axe Execution Type: "
@@ -536,7 +766,7 @@ class Utility:
                 axe_table.rows.append([runtest_option_name_cell, runtest_option_cell])
 
             axe_htmlcode = str(axe_table)
-            axe_htmlcode_list.append(axe_htmlcode)
+            axe_htmlcode_list.append((axe_header, axe_htmlcode))
         # sumary
         summary_tile = "Summary"
         summary_header = '<h3 align="left">' + summary_tile + '</h3>'
@@ -779,41 +1009,52 @@ class Utility:
         detail_htmlcode = str(detail_table)
         try:
             with open(filePath, 'w') as f:
+                f.write('<!DOCTYPE html>\n<html><head><meta charset="utf-8">')
                 if done_pct != 100:
-                    f.write(webhead)
+                    f.write('<meta http-equiv="refresh" content="10">')
+                f.write('<meta name="viewport" content="width=device-width, initial-scale=1">')
+                f.write(self.getHtmlReportStyle())
+                f.write('</head><body><div class="report-container">')
+                f.write('<div class="hero">')
                 f.write(header)
-                f.write('<br>')
                 f.write(total_time_header)
-                # add blank lines
-                for i in range(lines_space):
-                    f.write('<br>')
+                f.write('</div>')
                 if regressSetting != None:
+                    f.write('<details class="collapsible card">')
                     f.write(regress_header)
                     f.write(regress_htmlcode)
+                    f.write('</details>')
 
-                for axe_htmlcode in axe_htmlcode_list:
+                for axe_header, axe_htmlcode in axe_htmlcode_list:
+                    f.write('<details class="collapsible card">')
+                    f.write(axe_header)
                     f.write(axe_htmlcode)
+                    f.write('</details>')
 
+                f.write('<div class="card summary-block">')
                 f.write(summary_header)
                 f.write(summary_htmlcode)
-                for i in range(2):
-                    f.write('<br>')
+                f.write('</div>')
                 if invalid_tests > 0:
+                    f.write('<div class="card">')
                     f.write(invalid_header)
                     f.write(invalid_htmlcode)
+                    f.write('</div>')
+                f.write('<div class="card">')
                 f.write(detail_header)
                 f.write(detail_htmlcode)
+                f.write('</div>')
+                f.write('</div></body></html>')
             return ("write to file successfuly:" + str(filePath))
         except Exception as e:
             print(e)
             return e
 
     def writeDataToHtmlFile(self, title, filePath, summary, testDoneList, cmodel=False, isgraphic=False,regressSetting:AxeExecution.RegressSetting=None, axeExecutioncConfig:AxeExecution.ExecutionMethod=None):
-        webhead ='<head> <meta http-equiv="refresh" content="10"> </head>'
-        header = '<h1 align="center">' + title + '</h1>'
+        header = '<h1>' + title + '</h1>'
         total_time = summary["regress_time"]
         total_time_string = self.convertSecToHourMinSec(total_time)
-        total_time_header = '<h2 align="center">' + "Total Run Time: "+ total_time_string + '</h2>'
+        total_time_header = '<p class="subtitle">' + "Total Run Time: "+ total_time_string + '</p>'
         lines_space = 5
         gold_result = self.hasGoldnizedData(testDoneList)
         has_gold = gold_result[0]
@@ -1088,31 +1329,42 @@ class Utility:
 
         detail_htmlcode = str(detail_table)
         with open(filePath, 'w') as f:
+            f.write('<!DOCTYPE html>\n<html><head><meta charset="utf-8">')
             if done_pct != 100:
-                f.write(webhead)
+                f.write('<meta http-equiv="refresh" content="10">')
+            f.write('<meta name="viewport" content="width=device-width, initial-scale=1">')
+            f.write(self.getHtmlReportStyle())
+            f.write('</head><body><div class="report-container">')
+            f.write('<div class="hero">')
             f.write(header)
-            f.write('<br>')
             f.write(total_time_header)
-            # add blank lines
-            for i in range(lines_space):
-                f.write('<br>')
+            f.write('</div>')
             if regressSetting != None:
+                f.write('<div class="card">')
                 f.write(regress_header)
                 f.write(regress_htmlcode)
+                f.write('</div>')
 
             if axeExecutioncConfig != None:
+                f.write('<div class="card">')
                 f.write(axe_header)
                 f.write(axe_htmlcode)
-                
+                f.write('</div>')
+
+            f.write('<div class="card summary-block">')
             f.write(summary_header)
             f.write(summary_htmlcode)
-            for i in range(2):
-                f.write('<br>')
+            f.write('</div>')
             if invalid_tests > 0:
+                f.write('<div class="card">')
                 f.write(invalid_header)
                 f.write(invalid_htmlcode)
+                f.write('</div>')
+            f.write('<div class="card">')
             f.write(detail_header)
             f.write(detail_htmlcode)
+            f.write('</div>')
+            f.write('</div></body></html>')
 
     def readTestFromList(self,listFilePath):
         test_suite_list = list()
@@ -1315,40 +1567,24 @@ class Utility:
         Returns:
         bool: True if the directory contains files, False otherwise.
         """
-        # Validate input
-        if not directory_path or not isinstance(directory_path, (str, bytes, os.PathLike)):
-            print("Invalid directory path provided.")
+        try:
+            # List all entries in the directory
+            entries = os.listdir(directory_path)
+
+            # Check if any entry is a file
+            for entry in entries:
+                entry_path = os.path.join(directory_path, entry)
+                if os.path.isfile(entry_path):
+                    return True
+
+            # If no files are found, return False
             return False
 
-        try:
-            # Resolve the absolute path and normalize it
-            directory_path = os.path.realpath(directory_path)
-
-            # Check if the path exists and is a directory
-            if not os.path.exists(directory_path):
-                print(f"The directory '{directory_path}' does not exist.")
-                return False
-
-            if not os.path.isdir(directory_path):
-                print(f"The path '{directory_path}' is not a directory.")
-                return False
-
-            # Use os.scandir() for better performance over os.listdir()
-            # It avoids extra os.stat() calls and returns DirEntry objects
-            with os.scandir(directory_path) as entries:
-                # Use next() with a generator for early exit on first file found
-                return any(entry.is_file() for entry in entries)
-
+        except FileNotFoundError:
+            print(f"The directory '{directory_path}' does not exist.")
+            return False
         except PermissionError:
             print(f"Permission denied to access the directory '{directory_path}'.")
-            return False
-        except OSError as e:
-            # Catch broader OS-related errors (e.g., broken symlinks, I/O errors)
-            print(f"An OS error occurred while accessing '{directory_path}': {e}")
-            return False
-        except Exception as e:
-            # Catch any unexpected errors to prevent crashes
-            print(f"An unexpected error occurred: {e}")
             return False
 
     def get_os_info(self):

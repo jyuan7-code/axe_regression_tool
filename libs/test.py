@@ -1053,10 +1053,10 @@ class TestRunner:
             print(" ==> skipped")
             return
         if testRun.file_identifier != '':
-            compile_file = "compare_result" + "_" + testRun.file_identifier + testRun.time_stamp + ".txt"
+            compile_file = "compare_result" + "_" + testRun.file_identifier + testRun.time_stamp + ".html"
 
         else:
-            compile_file = "compare_result"  + testRun.time_stamp + ".txt"
+            compile_file = "compare_result"  + testRun.time_stamp + ".html"
         testRun.test_result.compare_file = os.path.normpath(os.path.join(work_path, compile_file))
         utility = Util.Utility()
         testRun.test_result.compare_status = "PASS"
@@ -1128,9 +1128,7 @@ class TestRunner:
                 else:
                     pass
     
-        with open(testRun.test_result.compare_file,'w') as f:
-            for mismatch in testRun.test_result.checker_mismatch:
-                f.write(mismatch+"\n")
+        utility.writeCompareReportHtml(testRun.test_result.compare_file, testRun.test_result.checker_mismatch)
 
         testRun.test_file_relative_path_list.append(testRun.test_result.compare_file)
         print(' ==>', testRun.test_result.compare_status)

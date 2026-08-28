@@ -1725,6 +1725,8 @@ class FulsimRegress(Tk):
         self.regress_settings.additional_grits_options = self.grits_option
         self.regress_settings.grits_path = self.grits_path
         self.regress_settings.aubload_path = self.aubload_path
+        self.regress_settings.test_base_path = self.regress_test_base
+        self.regress_settings.result_base_path = self.regress_result_base
 
         self.regress_settings.start_time = datetime.datetime.now().strftime("%H:%M %b %d %Y")
         self.regress_settings.end_time =''
@@ -4079,8 +4081,6 @@ class FulsimRegress(Tk):
         self.CheckRequiredFolder(test_run.path_src_path, test_run.test_required_folders)
         self.CheckRequiredFolder(test_run.path_src_path, self.required_folders, False)
         test_run.test_required_files = self.CheckRequiredFiles(test_run.gsf_src_path)
-        for file in test_run.test_required_files:
-            print("required file: ", file)
         config_index = 0
         for axeConfig in self.axe_execution_method_list:
             test_run = copy.deepcopy(test_run)
@@ -4587,6 +4587,8 @@ class FulsimRegress(Tk):
             time.sleep(1)
         print("the status process is done")
         return
+
+
 
     def confirm(self):
         ans = askyesno(title="Cobalt Regression Tool", message='Do You Want To Exit ?')

@@ -24,6 +24,8 @@ class ExecutionMethod:
 class RegressSetting:
     def __init__(self):
         self.name ="Regression Settings"
+        self.test_base_path = ""
+        self.result_base_path = ""
         self.aubload_path = ""
         self.grits_path = ""
         self.additional_grits_options = ""
