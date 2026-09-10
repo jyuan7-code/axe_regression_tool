@@ -2129,7 +2129,8 @@ class FulsimRegress(Tk):
         for axe_config in self.axe_execution_method_list:
             axe_config_line =axe_config_line+ "'"+ axe_config.name +"'" + ","
         f.write(axe_config_line + "\n")
-        f.write("TestListFilePath:" + self.test_list_file_path +"\n")
+        if self.test_list_file_path !=None:
+            f.write("TestListFilePath:" + self.test_list_file_path +"\n")
         f.write("TestExclusiveListFilePath:" + self.exclusive_test_list_file_path + "\n")
         f.write("SingleTestPath:" + self.full_path_tests + "\n")
         f.write("UnitNames:" + self.unit_names + "\n")
@@ -2290,6 +2291,7 @@ class FulsimRegress(Tk):
                 search_result = re.search(r"GritsReleaseVersion:(.*)", str(line))
                 if search_result:
                     self.grits_version_load = search_result.group(1)
+
 
                 search_result = re.search(r"TestSource:(.*)", str(line))
                 if search_result:
@@ -3121,7 +3123,8 @@ class FulsimRegress(Tk):
         self.perRunReset()
 
         if self.stop_regress:
-
+            defaultbg = self.cget("background")
+            self.countdown_timer.config(text="", width=10, background=defaultbg, anchor=W)
             messagebox.showinfo("Sorry !", self.regress_name + " regression is stopped")
             self.resetRegression()
             self.focessRegressonDone()
@@ -3137,7 +3140,6 @@ class FulsimRegress(Tk):
         self.processRun_start_time = time.time()
         self.countdown_timer.config(text="")
         self.update_idletasks()
-
         self.run_cancel_button.config(text='Start', command=self.runGuiRegress, state="normal")
         self.stop_regress = False
         self.done_regress = False
