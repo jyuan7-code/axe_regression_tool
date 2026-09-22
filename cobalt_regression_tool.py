@@ -2129,10 +2129,11 @@ class FulsimRegress(Tk):
         for axe_config in self.axe_execution_method_list:
             axe_config_line =axe_config_line+ "'"+ axe_config.name +"'" + ","
         f.write(axe_config_line + "\n")
-        if self.test_list_file_path !=None:
+        if self.test_list_file_path != None:
             f.write("TestListFilePath:" + self.test_list_file_path +"\n")
-        f.write("TestExclusiveListFilePath:" + self.exclusive_test_list_file_path + "\n")
-        f.write("SingleTestPath:" + self.full_path_tests + "\n")
+        if self.exclusive_test_list_file_path != None:
+            f.write("TestExclusiveListFilePath:" + self.exclusive_test_list_file_path + "\n")
+        #f.write("SingleTestPath:" + self.full_path_tests + "\n")
         f.write("UnitNames:" + self.unit_names + "\n")
         f.write("UnitTestNames:" + self.json_tests + "\n")
         f.write("OfficalAubLoad:" + str(self.offical_aubload.get()) +"\n")
@@ -4589,8 +4590,6 @@ class FulsimRegress(Tk):
             time.sleep(1)
         print("the status process is done")
         return
-
-
 
     def confirm(self):
         ans = askyesno(title="Cobalt Regression Tool", message='Do You Want To Exit ?')
