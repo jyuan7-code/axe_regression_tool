@@ -221,8 +221,45 @@ class FulsimRegress(Tk):
         self.p4_branches = ""
 
         self.setGui()
+        self.processRun_start_time = time.time()
+        self.updateRunTime()
 
-        #self.checkSystemRam()
+        if cmdline_run:
+            self.loadConfigureFile(self.config_file)
+            self.runGuiRegress()
+
+    def parseCmdline(self):
+        parser = argparse.ArgumentParser(
+            description="Parse command line arguments",
+            exit_on_error=False  # Prevents sys.exit() on argument errors (Python 3.9+)
+        )
+        parser.add_argument('--filepath', type=str, required=True,
+                            help='Path to the configuration file')
+
+        try:
+            args = parser.parse_args()
+            self.config_file = args.filepath
+
+            # Check if file exists and is accessible
+            if Path(self.config_file).is_file():
+                print(f"Configuration file found: {self.config_file}")
+                return True
+            else:
+                print(f"Error: Configuration file not found: {self.config_file}")
+                return False
+
+        except argparse.ArgumentError as e:
+            print(f"Argument parsing error: {e}")
+            return False
+        except SystemExit:
+            # argparse calls sys.exit() on error, catch it to prevent script crash
+            print("Error: Invalid command line arguments")
+            parser.print_help()
+            return False
+        except Exception as e:
+            print(f"Unexpected error while parsing command line: {e}")
+            return False
+
 
 
     def linuxMemoryUsage(self):
@@ -469,6 +506,10 @@ class FulsimRegress(Tk):
         self.output_info.insert("end",txt)
         self.output_info.grid(row=0, column=1)
 
+        # Make sure countdown labels are properly positioned
+        self.countdown_label.grid(row=0, column=4, sticky=W, padx=5)
+        self.countdown_timer.grid(row=0, column=5, sticky=W, padx=5)
+
 
     def setActionGui(self):
         ttk.Button(self.action_frame, text="Save Configuration",
@@ -540,7 +581,7 @@ class FulsimRegress(Tk):
 
     def passWordIsOk(self, userId, passWord):
         if self.is_win_os:
-            return self.release_tool.checkPassword(self.entry_project_name.get(),userId,passWord)
+            return self.release_tool.check_password(self.entry_project_name.get(),userId,passWord)
         else:
             return self.p4client.checkWindowsPassWordInlinux(passWord)
 
@@ -570,7 +611,7 @@ class FulsimRegress(Tk):
                             self.entry_use_p4.set(False)
                         return False
                     self.windows_password = self.getWindowsPassword("Password is not correct, please try again")
-        self.release_tool.getUserInfo(self.user_id,self.windows_password)
+        self.release_tool.get_user_info(self.user_id,self.windows_password)
         return True
     def updateAubLoadPathGui(self):
         if self.offical_aubload.get():
@@ -596,9 +637,9 @@ class FulsimRegress(Tk):
                 self.aubload_release_set = self.grits_release_set
             else:
                 if self.is_win_os:
-                    self.aubload_release_set = self.release_tool.getWindowsReleaseSet(self.entry_project_name.get())
+                    self.aubload_release_set = self.release_tool.get_windows_release_set(self.entry_project_name.get())
                 else:
-                    self.aubload_release_set = self.release_tool.getLinuxReleaseSet(self.entry_project_name.get())
+                    self.aubload_release_set = self.release_tool.get_linux_release_set(self.entry_project_name.get())
 
 
             total_release = len(self.aubload_release_set)
@@ -623,7 +664,7 @@ class FulsimRegress(Tk):
             if self.is_win_os:
                 if not self.checkWindowPasswordReady():
                     return
-            self.release_tool.getUserInfo(self.user_id,self.windows_password)
+            self.release_tool.get_user_info(self.user_id,self.windows_password)
             self.grits_path_lable.grid_forget()
             self.entry_grits_path.grid_forget()
             self.grits_or_lable.grid_forget()
@@ -638,7 +679,7 @@ class FulsimRegress(Tk):
                 self.grits_release_set = self.aubload_release_set
             else:
                 if self.is_win_os:
-                    temp_list = self.release_tool.getWindowsReleaseSet(self.entry_project_name.get())
+                    temp_list = self.release_tool.get_windows_release_set(self.entry_project_name.get())
                     i = 0
                     for one_release_name in temp_list:
                         i = i + 1
