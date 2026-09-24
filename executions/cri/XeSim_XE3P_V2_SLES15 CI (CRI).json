@@ -3431,6 +3431,51 @@
 			"deleted": false
 		},
 		{
+			"id": 4706,
+			"name": "UTP XE3PV2 LPG RTL SIM3D",
+			"software": "XeSim_XE3P_V2_SLES15",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "XE3PV2.LPG:2X6X8:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/xe3pLPG.1x2x8.a0.gt.map.xml"
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=Fulsim:pipegt:simulation -DtargetType=simulation"
+				}
+			],
+			"executionMethodHistoryId": 21168,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
 			"id": 3951,
 			"name": "UTP Xe4 XPC 1x1x4X4.a0 SafeMode",
 			"software": "XeSim_XE3P_V2_SLES15",

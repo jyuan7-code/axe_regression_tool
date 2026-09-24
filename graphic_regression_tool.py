@@ -11,6 +11,7 @@ import tkinter as tk
 import tkinter.filedialog
 from tkinter import *
 from tkinter import ttk
+import argparse
 #VNC does not have  PTL module installed
 if re.search("windows", platform.system(), re.IGNORECASE):
     from PIL import Image,ImageTk
@@ -90,6 +91,10 @@ class FulsimRegress(Tk):
         super(FulsimRegress, self).__init__()
         self.script_name = os.path.basename(sys.argv[0])
         self.util = Util.Utility()
+        self.config_file = None
+        cmdline_run = self.parseCmdline()
+
+
         self.release_tool = fulsimrelease.FulsimRelease()
         self.user_id = getpass.getuser()
         self.p4client = P4.P4Wrapper(self.user_id,True)
@@ -439,7 +444,7 @@ class FulsimRegress(Tk):
             self.intel_icon = ImageTk.PhotoImage(resized_image)
             self.iconphoto(True, self.intel_icon)
         # Gui
-        self.title("Cobalt Graphic Test Regression Tool, V4.378 by jin.yuan@intel.com 2024. Welcome:  " + str(self.user_id ) + " !")
+        self.title("Cobalt Graphic Test Regression Tool, V4.4 by jin.yuan@intel.com 2024. Welcome:  " + str(self.user_id ) + " !")
         #self.iconphoto(True, self.intel_icon)
         self.minsize(500,600)
         if self.is_win_os:
@@ -792,17 +797,20 @@ class FulsimRegress(Tk):
         #ttk.Radiobutton(report_frame, text="no", value="no", variable=self.entry_realtime_report,).grid(row=0, column=2)
         clean_up_frame.grid(row=rf_row, column=1)
         rf_row += 1
-        ttk.Label(countdown_randomseed_frame, text="     Delay Hours:", width= 25, anchor=W).grid(row=rf_row, column=0)
-        ttk.Label(countdown_randomseed_frame, text=" ", width= 10, anchor=W).grid(row=rf_row, column=1)
-        ttk.Label(countdown_randomseed_frame, text=" ", width= 5, anchor=W).grid(row=rf_row, column=3)
-        self.entry_delay_hours = ttk.Entry(countdown_randomseed_frame, width=10)
-        self.entry_delay_hours.grid(row=rf_row, column=2)
+        ttk.Label(countdown_randomseed_frame, text="Num Of Random Seeds:", width=28, anchor=W).grid(row=0, column=0)
+        self.entry_random_times = ttk.Entry(countdown_randomseed_frame, width=10)
+        self.entry_random_times.grid(row=0, column=1)
 
-       
-        self.countdown_label = ttk.Label(countdown_randomseed_frame, text="", width=25, anchor=E)
-        self.countdown_timer = ttk.Label(countdown_randomseed_frame, text="", width=15, anchor=W)
-        self.countdown_label.grid(row=rf_row, column=4, sticky = W)
-        self.countdown_timer.grid(row=rf_row, column=5, sticky=W)
+        ttk.Label(countdown_randomseed_frame, text="Delay Hours:", width=20, anchor=CENTER).grid(row=0, column=2)
+        self.entry_delay_hours = ttk.Entry(countdown_randomseed_frame, width=5)
+        self.entry_delay_hours.grid(row=0, column=3)
+
+        # Create countdown labels with proper initial configuration
+        self.countdown_label = ttk.Label(countdown_randomseed_frame, text="Idling time:", width=20, anchor=E)
+        self.countdown_timer = ttk.Label(countdown_randomseed_frame, text="", width=10, anchor=W)
+
+        self.countdown_label.grid(row=0, column=4, sticky=W, padx=5)
+        self.countdown_timer.grid(row=0, column=5, sticky=W, padx=5)
 
         countdown_randomseed_frame.grid(row=rf_row, column=0, columnspan=3)
         #countdown_randomseed_frame.pack(fill="x")
@@ -1200,7 +1208,7 @@ class FulsimRegress(Tk):
             if self.offical_aubload.get() or  self.offical_grits.get():
                 if not self.checkWindowPasswordReady():
                     return
-                self.aubload_release_set = self.grits_release_set = self.release_tool.getWindowsReleaseSet(self.entry_project_name.get())
+                self.aubload_release_set = self.grits_release_set = self.release_tool.get_windows_release_set(self.entry_project_name.get())
                 if self.offical_aubload.get():
                     self.aubload_release_cbox['values'] = self.aubload_release_set
                     if len(self.aubload_release_set):
@@ -1211,7 +1219,7 @@ class FulsimRegress(Tk):
                         self.grits_release_cbox.current(0)
         else:
             if self.offical_aubload.get() or  self.offical_grits.get():
-                self.aubload_release_set = self.grits_release_set = self.release_tool.getLinuxReleaseSet(self.entry_project_name.get())
+                self.aubload_release_set = self.grits_release_set = self.release_tool.get_linux_release_set(self.entry_project_name.get())
                 if self.offical_aubload.get():
                     self.aubload_release_cbox['values'] = self.aubload_release_set
                     if len(self.aubload_release_set):
@@ -1281,14 +1289,23 @@ class FulsimRegress(Tk):
                                                                                                                                                column=num_col)
 
         num_col = num_col + 1
-        ttk.Radiobutton(self.project_option_frame, text="NVL/Xe3p_V2", value="xe3p_v2", variable=self.entry_project_name, command=self.getReleaseSet).grid(row=0,
+        ttk.Radiobutton(self.project_option_frame, text="NVL/Xe3p_V2", value="nvl", variable=self.entry_project_name, command=self.getReleaseSet).grid(row=0,
                                                                                                                                                column=num_col)
         num_col = num_col + 1
         ttk.Radiobutton(self.project_option_frame, text="FCS", value="fcs", variable=self.entry_project_name,
                         command=self.getReleaseSet).grid(row=0, column=num_col)
         num_col = num_col + 1
-        ttk.Radiobutton(self.project_option_frame, text="CRI/Xe4", value="xe4", variable=self.entry_project_name,
+        ttk.Radiobutton(self.project_option_frame, text="CRI", value="cri", variable=self.entry_project_name,
                         command=self.getReleaseSet).grid(row=0,column=num_col)
+        self.project_option_frame.grid(row=num_row, column=1)
+
+        num_col = num_col + 1
+        ttk.Radiobutton(self.project_option_frame, text="TTL/Xe4", value="ttl", variable=self.entry_project_name,
+                        command=self.getReleaseSet).grid(row=0, column=num_col)
+        self.project_option_frame.grid(row=num_row, column=1)
+        num_col = num_col + 1
+        ttk.Radiobutton(self.project_option_frame, text="HML/Xe4_v2", value="hml", variable=self.entry_project_name,
+                        command=self.getReleaseSet).grid(row=0, column=num_col)
         self.project_option_frame.grid(row=num_row, column=1)
         num_row = num_row + 1
 
@@ -1321,11 +1338,22 @@ class FulsimRegress(Tk):
         self.project_frame.pack(fill="x")
     def safeInsert(self, item):
         try:
-            self.device_cbox.insert("", "end", "'" + item.name + "'", text=item.name)
-        except:
-            print("Duplicated axe execution method : ", item.name)
-        finally:
-            return
+            # Check if item already exists
+            item_id = "'" + item.name + "'"
+            if self.device_cbox.exists(item_id):
+                print(f"Duplicated axe execution method: {item.name}")
+                return False
+
+            self.device_cbox.insert("", "end", item_id, text=item.name)
+            return True
+
+        except AttributeError as e:
+            print(f"Item missing 'name' attribute: {e}")
+            return False
+        except Exception as e:
+            print(f"Error inserting axe execution method '{getattr(item, 'name', 'Unknown')}': {e}")
+            return False
+
     def selectItem(self, a):
         self.device_option_lbe['foreground'] = '#000'
         self.axe_execution_method_list.clear()
@@ -1338,6 +1366,7 @@ class FulsimRegress(Tk):
                 record = item['text']
                 print(record)
                 axe_execution_method = self.axe_execution.getExecutionMethod(record, self.device_options_set)
+                print("test_software:", axe_execution_method.test_software)
                 print("agent type:", axe_execution_method.agent_type)
                 print("grits options:", axe_execution_method.grits_options)
                 print("fulsim options", axe_execution_method.fulsim_options)
@@ -1533,6 +1562,8 @@ class FulsimRegress(Tk):
         self.regress_settings.additional_grits_options = self.grits_option
         self.regress_settings.grits_path = self.grits_path
         self.regress_settings.aubload_path = self.aubload_path
+        self.regress_settings.test_base_path = self.regress_test_base
+        self.regress_settings.result_base_path = self.regress_result_base
 
         self.regress_settings.start_time = datetime.datetime.now().strftime("%H:%M %b %d %Y")
         self.regress_settings.end_time =''
@@ -1552,8 +1583,8 @@ class FulsimRegress(Tk):
 
         print("Copying include folders ....")
         t1 = time.time()
-        if self.if_copy_required_folder == 'yes':
-            self.copyRequiredFolders()
+        #if not self.use_p4:
+            #self.copyRequiredFolders(False)
         print("Copy Include folders time: ", self.util.convertSecToHourMinSec(time.time() - t1))
 
         print("Copying tests ....")
@@ -1754,44 +1785,55 @@ class FulsimRegress(Tk):
             return True
 
     def start_countdown_timer(self):
-
-        #while self.delay_second > 0:
         if self.delay_second > 0:
             self.delay_second -= 1
-            #print(self.delay_second )
-            if self.delay_second < 0:
-                self.delay_second = 0
+            time_display = str(self.convert_seconds_left_to_time(self.delay_second))
+            print("Regress start in: " + time_display, end='\r')
 
-            elif self.delay_second == 0:
-                print("Regress started: " + str(self.convert_seconds_left_to_time(self.delay_second)),end='\r' )
-                self.after(1000, self.runRegress)
-                return
-            else:
-                print("Regress start in: " + str(self.convert_seconds_left_to_time(self.delay_second)), end='\r')
-            self.countdown_timer.config(text=str(self.convert_seconds_left_to_time(self.delay_second)), font='ariel 14', background='black', foreground='red', anchor=CENTER)
-            self.countdown_timer.update_idletasks()
+            # Update the countdown display
+            self.countdown_label.config(text="Regress start in:")
+            self.countdown_timer.config(text=time_display, font=('Arial', 12), background='black', foreground='red',
+                                        anchor=CENTER)
+
+            # Force immediate update of the display
+            self.countdown_timer.update()
+            self.update_idletasks()
+
             if self.stop_regress:
-                defaultbg = self.cget("background")
-                self.countdown_timer.config(text="Idling ", width=10, background=defaultbg, anchor=W)
+                self.countdown_label.config(text="Idling time:")
+                self.processRun_start_time = time.time()
+                self.countdown_timer.config(text="")
+                self.update_idletasks()
                 return
             self.after(1000, self.start_countdown_timer)
 
-            #time.sleep(1)
-            #self.update_idletasks()
-            #self.after(1000)
+        elif self.delay_second == 0:
+            print("Regress started!")
+            self.countdown_label.config(text="Total Run Time:")
+            self.countdown_timer.config(text="00:00:00")
+            self.update_idletasks()
 
+            # Start the actual regression and runtime timer
+            self.is_regression_started = True
+            self.processRun_start_time = time.time()  # Reset the start time
+
+            # **FIX: Actually start the regression here**
+            self.after(100, self.runRegress)  # Start the regression
+            self.after(1000, self.updateRunTime)  # Start the runtime updater
 
     def convert_seconds_left_to_time(self, delay_second):
         return datetime.timedelta(seconds=delay_second)
 
     def saveGuiOutput(self):
         if self.offical_aubload.get():
-            if self.aubload_release_version.get() == None:
-                messagebox.showwarning("Aubload version is not selected!", "Please check if the AubLoad Version is set correctly")
+            if self.aubload_release_version.get() is None or self.aubload_release_version.get().strip() == "":
+                messagebox.showwarning("Aubload version is not selected!",
+                                       "Please check if the AubLoad Version is set correctly")
                 return
         if self.offical_grits.get():
-            if self.grits_release_version.get() == None:
-                messagebox.showwarning("Grits version is not selected!", "Please check if the Grits Version is set correctly")
+            if self.grits_release_version.get() is None or self.grits_release_version.get().strip() == "":
+                messagebox.showwarning("Grits version is not selected!",
+                                       "Please check if the Grits Version is set correctly")
                 return
 
         self.project_name = self.entry_project_name.get()
@@ -1838,6 +1880,11 @@ class FulsimRegress(Tk):
         self.regress_test_base = Path(os.path.join(self.regress_base, "tests"))
         self.regress_test_base = str( self.regress_test_base).replace("\\", "/")
         regress_name = self.entry_regress_name.get()
+
+        if self.entry_random_times.get() != '':
+            self.random_times = int(self.entry_random_times.get())
+        else:
+            self.random_times = 0
 
         if self.entry_delay_hours.get() != '':
             self.delay_min = float(self.entry_delay_hours.get()) * 60
@@ -1892,10 +1939,11 @@ class FulsimRegress(Tk):
         for axe_config in self.axe_execution_method_list:
             axe_config_line =axe_config_line+ "'"+ axe_config.name +"'" + ","
         f.write(axe_config_line + "\n")
-        if self.test_list_file_path !=None:
+        if self.test_list_file_path != None:
             f.write("TestListFilePath:" + self.test_list_file_path +"\n")
-        f.write("TestExclusiveListFilePath:" + self.exclusive_test_list_file_path + "\n")
-        f.write("SingleTestPath:" + self.full_path_tests + "\n")
+        if self.exclusive_test_list_file_path != None:
+            f.write("TestExclusiveListFilePath:" + self.exclusive_test_list_file_path + "\n")
+        #f.write("SingleTestPath:" + self.full_path_tests + "\n")
         f.write("UnitNames:" + self.unit_names + "\n")
         f.write("UnitTestNames:" + self.json_tests + "\n")
         f.write("OfficalAubLoad:" + str(self.offical_aubload.get()) +"\n")
@@ -1928,15 +1976,8 @@ class FulsimRegress(Tk):
         self.updateStatusLabel(status_str)
         self.updateProgressBar(0, 0)
 
-    def loadConfigure(self):
-        file_path = tkinter.filedialog.askopenfilename(initialdir=self.config_folder, title="Select a configure file", filetypes=(
-        ("configure files", "*.cfg"), ("txt files", "*.txt"), ("all files", "*")))
-
-        file_path = Path(str(file_path))
-        self.config_folder = Path(os.path.dirname(file_path))
-        #print("file_path:", file_path)
-        #print("file_path.is_file:", file_path)
-        if file_path == "." or not file_path.is_file():
+    def loadConfigureFile(self,file_path):
+        if file_path == "." or not Path(file_path).is_file():
             return
         self.entry_list.delete(0, 'end')
         self.entry_exclusive_list.delete(0, 'end')
@@ -2112,7 +2153,9 @@ class FulsimRegress(Tk):
         #self.saveGuiOutput()
         status_str = "Loaded  configure file:  " + str(os.path.basename(file_path))
         self.updateStatusLabel(status_str)
-        self.win_release_web_response = 0 # reset to ok
+        self.updateOutputBox(status_str)
+
+        self.win_release_web_response = 0  # reset to ok
         self.updateGui()
         self.saveGuiOutput()
         self.updateDeviceOption()
@@ -2123,6 +2166,17 @@ class FulsimRegress(Tk):
             print(e)
 
         self.reset()
+    def loadConfigure(self):
+        file_path = tkinter.filedialog.askopenfilename(initialdir=self.config_folder, title="Select a configure file", filetypes=(
+        ("configure files", "*.cfg"), ("txt files", "*.txt"), ("all files", "*")))
+
+        file_path = Path(str(file_path))
+        self.config_folder = Path(os.path.dirname(file_path))
+        #print("file_path:", file_path)
+        #print("file_path.is_file:", file_path)
+        if file_path == "." or not file_path.is_file():
+            return
+        self.loadConfigureFile(file_path)
 
     def reset(self):
         self.if_copy_required_folder  = "no"
@@ -2353,7 +2407,7 @@ class FulsimRegress(Tk):
 
     def validateRegress(self):
         if not self.is_win_os:
-            if self.entry_project_name.get() == "xe4":
+            if self.entry_project_name.get() == "cri" or self.entry_project_name.get() == "ttl" or self.entry_project_name.get() == "hml":
                 if not self.util.is_sles15():
                     messagebox.showwarning("Wrong linux server", "Please run the regression in a Sles 15 server")
                     return
@@ -2418,29 +2472,38 @@ class FulsimRegress(Tk):
         self.output_info.delete("1.0","end")
 
         if self.offical_aubload.get():
+            if self.aubload_release_version.get() is None or self.aubload_release_version.get().strip() == "":
+                messagebox.showerror("Release Version Error", "Please select an AubLoad release version")
+                return
             if self.is_win_os:
                 status_str = "Downloading cobalt release  " + str(self.aubload_release_version.get()) + "..."
                 self.updateStatusLabel(status_str)
                 self.updateOutputBox(status_str)
                 self.updateProgressBar(1, 0)
-                self.aubload_path = self.release_tool.downLoadNunzipRelease(self.aubload_release_version.get(), self.regress_base)
+                self.aubload_path = self.release_tool.download_and_unzip_release(self.aubload_release_version.get(),
+                                                                            self.regress_base)
                 self.updateProgressBar(1, 1)
                 status_str = "Downloading cobalt release  " + str(self.aubload_release_version.get()) + "... done"
                 self.updateOutputBox(status_str)
             else:
-                self.aubload_path = self.release_tool.getLinuxAubLoadPath(self.aubload_release_version.get())
+                self.aubload_path = self.release_tool.get_linux_aubload_path(self.aubload_release_version.get())
         if self.offical_grits.get():
+            if self.grits_release_version.get() is None or self.grits_release_version.get().strip() == "":
+                messagebox.showerror("Release Version Error", "Please select a Grits release version")
+                return
             if self.is_win_os:
-                status_str = "Downloading cobalt release  " + str(self.aubload_release_version.get())
+                status_str = "Downloading cobalt release  " + str(self.grits_release_version.get())
                 self.updateStatusLabel(status_str)
                 self.updateOutputBox(status_str)
                 self.updateProgressBar(1, 0)
-                self.grits_path = os.path.join(self.release_tool.downLoadNunzipRelease(self.grits_release_version.get(), self.regress_base),"grits")
+                self.grits_path = os.path.join(
+                    self.release_tool.download_and_unzip_release(self.grits_release_version.get(), self.regress_base),
+                    "grits")
                 self.updateProgressBar(1, 1)
-                status_str = "Downloading cobalt release  " + str(self.aubload_release_version.get()) + "... done"
+                status_str = "Downloading cobalt release  " + str(self.grits_release_version.get()) + "... done"
                 self.updateOutputBox(status_str)
             else:
-                self.grits_path = self.release_tool.getLinuxGritsPath(self.aubload_release_version.get())
+                self.grits_path = self.release_tool.get_linux_grits_path(self.grits_release_version.get())
 
         self.run_cancel_button.config(text='Cancel/Pause', command=self.stopRegress, state = "normal")
         #self.request_one_report_button.config(state="normal")
@@ -2456,11 +2519,14 @@ class FulsimRegress(Tk):
 
     def forceStop(self):
         self.stop_regress = True
+        self.is_regression_started = False
         self.enableAllGuiItem(self)
         self.resetRegression()
-        defaultbg = self.cget("background")
-        self.countdown_label.config(text="Idiling time: ")
-        self.countdown_timer.config(text="", width=10,background=defaultbg, anchor=W)
+        self.countdown_label.config(text="Idling time:")
+        self.processRun_start_time = time.time()
+        self.countdown_timer.config(text="")
+        self.update_idletasks()
+
         self.run_cancel_button.config(text='Start', command=self.runGuiRegress, state="normal")
 
     def windowsKill(self):
@@ -2506,41 +2572,175 @@ class FulsimRegress(Tk):
         reply = messagebox.askyesno("Cancel Regression", "Are you sure to cancel regression?")
         if reply:
             self.stop_regress = True
-            #self.enableAllGuiItem(self)
-            #self.resetRegression()
-            defaultbg = self.cget("background")
-            self.countdown_label.config(text="Idiling time: ")
-            self.countdown_timer.config(text="", width=10,background=defaultbg, anchor=W)
+            self.is_regression_started = False
+
+            # Reset the display
+            self.countdown_label.config(text="Idling time:")
+            self.processRun_start_time = time.time()
+            self.countdown_timer.config(text="")
+            self.update_idletasks()
+
             self.run_cancel_button.config(text='Start', command=self.runGuiRegress, state="normal")
 
-            if self.use_incredibuild:
-                if self.is_win_os:
-                    incredibuild_exe = r"c:\Program Files (x86)\IncrediBuild\IbConsole.exe"
-                    if Path(incredibuild_exe).is_file():
-                        incredibuild_exe = '"'+ incredibuild_exe + '"'
+            if self.subprocess is not None:
+                try:
+                    if self.is_win_os:
+                        self._kill_process_tree_windows(self.subprocess.pid)
                     else:
-                        incredibuild_exe = "xgConsole.exe"
-                    command_line  = incredibuild_exe + " " +  "/StopAll"
-                    print("cmmand line:", command_line)
-                    os.system(command_line)
-                else: #linux netbatch
-                    pass
-            if self.is_regression_started:
-                if self.subprocess != None:
+                        self._kill_process_tree_linux(self.subprocess.pid)
+                except Exception as e:
+                    print(f"Error killing process tree: {e}")
+                finally:
                     try:
-                       self.subprocess.terminate()
-                    except:
-                       print("An exception occurred from run tests python script")
-                    time.sleep(2)
-                    if self.subprocess.poll() != None:
-                        print("Terminated all the test runs")
+                        self.subprocess.terminate()
+                        time.sleep(1)
+                        if self.subprocess.poll() is None:
+                            self.subprocess.kill()
+                    except Exception as e:
+                        print(f"Error in final subprocess termination: {e}")
                     self.subprocess = None
-                #if self.is_win_os:
-                #    self.windowsKill()
-                #else:
-                #    self.linuxkill()
         else:
             self.saveGuiOutput()
+
+    def _get_child_pids_linux(self, parent_pid):
+        """
+        Safely get direct child PIDs of parent_pid on Linux.
+        Uses /proc/<pid>/status which has a clearly labeled 'PPid:' field,
+        avoiding the parsing pitfalls of /proc/<pid>/stat where process
+        names with spaces/brackets cause field index errors.
+        """
+        children = []
+        try:
+            for entry in os.listdir('/proc'):
+                if not entry.isdigit():
+                    continue
+                try:
+                    status_path = f'/proc/{entry}/status'
+                    with open(status_path, 'r') as f:
+                        for line in f:
+                            if line.startswith('PPid:'):
+                                ppid = int(line.split(':')[1].strip())
+                                if ppid == parent_pid:
+                                    children.append(int(entry))
+                                break  # No need to read further lines
+                except (IOError, OSError, ValueError):
+                    # Process may have exited while we were reading
+                    pass
+        except Exception as e:
+            print(f"Error scanning /proc for children of {parent_pid}: {e}")
+        return children
+
+    def _kill_process_tree_linux(self, pid):
+        """
+        Kill a process and its entire descendant tree on Linux.
+
+        Strategy (in order):
+        1. Try killing the process group (pgid) with SIGKILL — this is the
+           most reliable way to kill grits/aubload and all their children
+           in one shot, since subprocess.Popen launches them in the same
+           process group by default.
+        2. Walk /proc to find and kill any remaining descendants that may
+           have changed their process group.
+        3. Kill the root pid itself as a final safety net.
+        """
+
+        # --- Step 1: Kill by process group ---
+        try:
+            pgid = os.getpgid(pid)
+            # Only kill the group if it's not our own process group,
+            # to avoid accidentally killing the GUI itself.
+            if pgid != os.getpgid(os.getpid()):
+                print(f"Killing process group: {pgid}")
+                os.killpg(pgid, signal.SIGKILL)
+                time.sleep(0.5)  # Brief pause to let OS clean up
+            else:
+                print(f"Subprocess shares our process group ({pgid}), "
+                      f"skipping killpg — falling back to tree walk.")
+        except ProcessLookupError:
+            print(f"Process group for PID {pid} already gone.")
+        except Exception as e:
+            print(f"killpg failed for PID {pid}: {e}, falling back to tree walk.")
+
+        # --- Step 2: Walk /proc and kill any surviving descendants ---
+        def kill_tree_recursive(parent_pid):
+            """
+            Post-order traversal: kill children before parent to avoid
+            orphaning grandchildren.
+            """
+            children = self._get_child_pids_linux(parent_pid)
+            for child_pid in children:
+                kill_tree_recursive(child_pid)
+
+            try:
+                os.kill(parent_pid, signal.SIGKILL)
+                print(f"Killed PID: {parent_pid}")
+            except ProcessLookupError:
+                pass  # Already dead — this is fine
+            except PermissionError:
+                print(f"Permission denied killing PID {parent_pid} "
+                      f"(not owned by {self.user_id})")
+            except Exception as e:
+                print(f"Unexpected error killing PID {parent_pid}: {e}")
+
+        try:
+            kill_tree_recursive(pid)
+        except Exception as e:
+            print(f"Error in kill_tree_recursive for PID {pid}: {e}")
+
+        # --- Step 3: Final check — confirm root pid is dead ---
+        try:
+            os.kill(pid, 0)  # Signal 0 = check existence only, no actual kill
+            # If we reach here the process still exists
+            print(f"PID {pid} still alive after tree kill, sending SIGKILL directly.")
+            os.kill(pid, signal.SIGKILL)
+        except ProcessLookupError:
+            print(f"PID {pid} confirmed dead.")
+        except Exception as e:
+            print(f"Error in final PID {pid} check: {e}")
+
+    def _kill_process_tree_windows(self, pid):
+        """
+        Kill a process and all its descendants on Windows using psutil,
+        which IS available on Windows per the import guard at the top of
+        the file: if re.search("windows", platform.system()): import psutil
+        """
+        try:
+            parent = psutil.Process(pid)
+            children = parent.children(recursive=True)
+
+            # Kill children first to avoid orphans
+            for child in children:
+                try:
+                    print(f"Killing child: {child.pid} ({child.name()})")
+                    child.kill()
+                except psutil.NoSuchProcess:
+                    pass
+                except Exception as e:
+                    print(f"Error killing child {child.pid}: {e}")
+
+            # Kill the parent
+            try:
+                print(f"Killing parent: {parent.pid} ({parent.name()})")
+                parent.kill()
+            except psutil.NoSuchProcess:
+                pass
+            except Exception as e:
+                print(f"Error killing parent {pid}: {e}")
+
+            # Wait and force-kill any survivors
+            all_procs = children + [parent]
+            gone, alive = psutil.wait_procs(all_procs, timeout=3)
+            for proc in alive:
+                try:
+                    print(f"Force killing survivor: {proc.pid}")
+                    proc.kill()
+                except Exception:
+                    pass
+
+        except psutil.NoSuchProcess:
+            print(f"PID {pid} already terminated.")
+        except Exception as e:
+            print(f"Error in _kill_process_tree_windows: {e}")
 
 
     def requestOneReport(self):
@@ -2556,7 +2756,7 @@ class FulsimRegress(Tk):
     def runRegress(self):
         print("Starting regression ...")
         self.validateRegress()
-        self.updateRunTime()
+        #self.updateRunTime()
         self.total_done_list.clear()
         self.total_fail_list.clear()
         self.total_pass_list.clear()
@@ -2641,6 +2841,9 @@ class FulsimRegress(Tk):
 
         if self.run_unit_tests:
             json_list = self.convertToJasonList(self.json_test_list)
+            # Guard against None return value
+            if json_list is None:
+                json_list = []
             total = len(json_list)
             processed = 0
             while len(json_list) > 0:
@@ -2664,7 +2867,7 @@ class FulsimRegress(Tk):
             self.removeExclusiveTest(self.exclusive_test_run_list, self.test_run_list)
         print("total run tests: ", len(self.test_run_list))
         self.processRun()
-        #self.perRunReset()
+        self.perRunReset()
 
         if self.stop_regress:
             defaultbg = self.cget("background")
@@ -2674,13 +2877,16 @@ class FulsimRegress(Tk):
             self.focessRegressonDone()
 
     def focessRegressonDone(self):
-        messagebox.showinfo("Regression Done!", self.regress_name + " regression is done, please check " + self.summary_html_report_path)
+        messagebox.showinfo("Regression Done!",
+                            self.regress_name + " regression is done, please check " + self.summary_html_report_path)
         self.resetRegression()
+        self.is_regression_started = False  # Stop the runtime updater
 
-        #self.enableAllGuiItem(self)
-        defaultbg = self.cget("background")
-        self.countdown_label.config(text="Idiling time: ")
-        self.countdown_timer.config(text="", width=10, background=defaultbg, anchor=W)
+        # Reset the display
+        self.countdown_label.config(text="Idling time:")
+        self.processRun_start_time = time.time()
+        self.countdown_timer.config(text="")
+        self.update_idletasks()
         self.run_cancel_button.config(text='Start', command=self.runGuiRegress, state="normal")
         self.stop_regress = False
         self.done_regress = False
@@ -2757,9 +2963,7 @@ class FulsimRegress(Tk):
         if test_revision == None:
             test_revision = 0
 
-        if int(self.best_test_revision) < int(test_revision) and int(test_revision) !=0:
-            self.best_test_revision = test_revision
-        test_read.jason_name = re.sub(r"@(\d+)","@"+ str( self.best_test_revision), test_read.jason_name)
+
 
         test_read.unit_name = unit_name
         test_read.test_name = test_name
@@ -2780,7 +2984,10 @@ class FulsimRegress(Tk):
             if not pre_dir_name in self.p4client.p4_branches:
                 self.p4_repo_base = self.p4client.p4_repo_base + "/main"
             else:
-                self.p4_repo_base = self.p4client.p4_repo_base + "/branches"
+                if pre_dir_name != "branches":
+                    self.p4_repo_base = self.p4client.p4_repo_base + "/branches"
+                else:
+                    self.p4_repo_base = self.p4client.p4_repo_base
             test_src_path = Path(os.path.join(self.p4_repo_base, unit_name))
         else:
             test_src_path = Path(os.path.join(self.src_path_or_testrevsion, unit_name))
@@ -2814,7 +3021,7 @@ class FulsimRegress(Tk):
                 info = self.p4client.copyOnefolder(test_read.test_path, target_path, test_revision)
                 print(info)
                 self.updateOutputBox(info)
-                if self.util.DirHasFiles(target_path):
+                if self.util.has_files(target_path):
                     test_read.cfg_path = os.path.join(target_path, test_read.cfg_name)
                     test_read.gsf_path = os.path.join(target_path, test_read.gsf_name)
                     test_read.yaml_path = os.path.join(target_path, test_read.yaml_name)
@@ -2841,6 +3048,10 @@ class FulsimRegress(Tk):
             test_read.test_src_file_paths = self.util.GetAllFilePathsFromCurrentDir(Path(test_src_path))
             test_read.test_file_relative_path_list = self.util.GetAllFileRelativePathsFromDir(Path(test_src_path))
 
+        if test_revision == 0 or test_revision == '0':
+            # update test rewvision with headChange reversion
+            test_read.test_revision = self.p4client.getHeadChangeRevision(test_read.p4_test_path)
+            test_read.jason_name = re.sub(r"@(\d+)", "@" + str(test_read.test_revision), test_read.jason_name)
 
         if test_read.type == 'cfg':
             self.AddDisplayToolsPath()
@@ -2864,9 +3075,9 @@ class FulsimRegress(Tk):
     def excuteRegress(self):
         self.start_time = time.time()
         self.processRun_start_time = time.time()
-        #self.regress_day_mark = datetime.datetime.now().strftime("%b-%d-%Y_%H-%M")
         self.run_time = 0
-        ##self.updateRunTime() # to display the initial value
+        self.is_regression_started = False  # Will be set to True when regression actually starts
+
         Path(self.regress_test_base).mkdir(parents=True, exist_ok=True)
         #Path(self.temp_folder_path ).mkdir(parents=True, exist_ok=True)
 
@@ -2875,18 +3086,21 @@ class FulsimRegress(Tk):
         self.style.configure('text.Horizontal.TProgressbar', text='')  # update label
 
         if self.delay_min > 0:
-            self.is_regression_started = False
             self.delay_second = int(self.delay_min * 60)
             print("Delay time: " + str(self.convert_seconds_left_to_time(self.delay_second)))
-            self.countdown_label.config(text="Regress start in")
-            self.countdown_label.update_idletasks()
+            self.countdown_label.config(text="Regress start in:")
+            self.countdown_timer.config(text=str(self.convert_seconds_left_to_time(self.delay_second)))
+            self.update_idletasks()
             self.start_countdown_timer()
-            #t = threading.Thread(target=self.start_countdown_timer)
-            #t.start()
-            #t.join()
         else:
+            # No delay, start immediately
             self.is_regression_started = True
-            self.runRegress()
+            self.countdown_label.config(text="Total Run Time:")
+            self.countdown_timer.config(text="00:00:00")
+            self.update_idletasks()
+            # Start both the regression and the runtime updater
+            self.after(100, self.runRegress)
+            self.after(1000, self.updateRunTime)
 
     def convertUnittestsToJasonList(self, testList: list):
         new_list = list()
@@ -2966,7 +3180,7 @@ class FulsimRegress(Tk):
         new_line = '"' + json_test + "/" + test_name + ".gsf#" + config + "@" + str(revison) + '"'
         return new_line
     def convertToJasonList(self, testList: list):
-        # check the first line
+        new_list = list()# check the first line
         if len(testList) ==0:
             print("not test in the list: ", testList)
             return
@@ -3032,8 +3246,11 @@ class FulsimRegress(Tk):
             processed = processed + 1
             #skip test with #
             json_test = json_test.strip()
+            if "--" in json_test:
+                print("Skipped invalid test: ", json_test)
+                continue
             if json_test =='' or json_test==None:
-                print ("Skipped...")
+                print("Skipped invalid test: ", json_test)
                 continue
             x = re.search("^#", json_test)
             info_str = "(" + str(processed) + "/" + str(total) + ")" + "Reading Json test  " + str(json_test)
@@ -3187,6 +3404,8 @@ class FulsimRegress(Tk):
         display_tools_path = str(display_tools_path).replace("\\", "/")
         self.addUniqueRequiredFolder(self.required_folders, display_tools_path)
     def CheckRequiredFolder(self, path_file_path, required_folder_list:list, for_gold=False):
+        dir_path = os.path.dirname(path_file_path)
+        os.chdir(dir_path)
         if Path(path_file_path).is_file():
             dir_path = os.path.dirname(path_file_path)
             os.chdir(dir_path)
@@ -3207,6 +3426,14 @@ class FulsimRegress(Tk):
                             include_folder_path = str(include_folder_path).replace("\\", "/")
                             #print("include_folder_path to be added: ",include_folder_path)
                             self.addUniqueRequiredFolder(required_folder_list, include_folder_path)
+        else:  # add "../../../include"'
+            include_folder = "../../../include"
+            include_folder_path = abspath(include_folder)
+            include_folder_path = str(include_folder_path).replace("\\", "/")
+
+            self.addUniqueRequiredFolder(required_folder_list, include_folder_path)
+
+
 
     def CheckRequiredFiles(self, gsf_path):
         required_file_list = list()
@@ -3279,7 +3506,7 @@ class FulsimRegress(Tk):
         required_folders = self.required_folders
         if forGold == True:
             required_folders = self.gold_required_folders
-        print("forGold = ",forGold)
+
         total = len(required_folders)
         if (total<1):
             print("skipped")
@@ -3314,19 +3541,22 @@ class FulsimRegress(Tk):
                     info_str = ("(" + str(total_done) + "/" + str(total) + ")" + "Copying " + str(
                         src_path) + " to " + str(dest_path) + "...")
                     self.updateProgressBar(total, total_done)
-                    try:
-                        if self.util.has_files(dest_path):
-                            if self.is_win_os:
-                                info_str = info_str + "skipped"
-                                self.updateOutputBox(info_str)
-                            else:
-                                self.updateOutputBox(info_str)
-                                info_str = self.p4client.copyOnefolder(src_path, dest_path, self.best_test_revision)
-                        elif self:
+                    if self.util.DirHasFiles(dest_path):
+                        if self.is_win_os:
+                            info_str = info_str + "skipped"
                             self.updateOutputBox(info_str)
+                        else:
+                            self.updateOutputBox(info_str)
+                            try:
+                                info_str = self.p4client.copyOnefolder(src_path, dest_path, self.best_test_revision)
+                            except Exception as e:
+                                info_str = (f'Error copying file {src_path}: {e}')
+                    elif self:
+                        self.updateOutputBox(info_str)
+                        try:
                             info_str = self.p4client.copyOnefolder(src_path, dest_path, self.best_test_revision)
-                    except:
-                        print("can not access : ", dest_path)
+                        except Exception as e:
+                            info_str = (f'Error copying file {src_path}: {e}')
                     print(info_str)
 
                 else:
@@ -3382,7 +3612,8 @@ class FulsimRegress(Tk):
             self.updateOutputBox(info_str)
 
             self.copyOneTest(test_run)
-            test_run.fileResolve()
+            #if not self.use_p4:
+                #test_run.fileResolve()
 
 
             status_str = "Copying tests: " + str(processed) + "/" + str(total)
@@ -3412,6 +3643,12 @@ class FulsimRegress(Tk):
         else:
             print(" ==> skipped")
 
+        if self.use_p4:
+            testRun.repopath_path = self.p4client.createRepopath(testRun.p4test_src_path, testRun.test_run_path, testRun.test_revision)
+            testRun.test_src_file_paths.append(testRun.repopath_path)
+        else:
+            testRun.repopath_path = self.createRepopath(testRun.test_src_path,testRun.test_run_path)
+            testRun.test_src_file_paths.append(testRun.repopath_path)
         #testRun.test_src_file_paths = self.util.GetAllFilePathsFromCurrentDir(Path(dst_path))
         #testRun.test_file_relative_path_list = self.util.GetAllFileRelativePathsFromDir(Path(dst_path))
 
@@ -3433,10 +3670,7 @@ class FulsimRegress(Tk):
         test_run.run_aubload = self.run_aubload
         test_run.run_lily = self.run_lily
         test_run.time_stamp = "_" + self.regress_day_mark
-        if self.use_p4:
-            test_run.test_src_path = testRead.test_dist_path
-        else:
-            test_run.test_src_path = testRead.test_path
+
         test_run.p4test_src_path = testRead.p4_test_path
         test_run.gsf_src_path = testRead.gsf_path
         test_run.cfg_src_path = testRead.cfg_path
@@ -3452,6 +3686,7 @@ class FulsimRegress(Tk):
         test_run.cfg_name = testRead.cfg_name
         test_run.test_src_file_paths = testRead.test_src_file_paths
         test_run.test_file_relative_path_list = testRead.test_file_relative_path_list
+        test_run.test_revision = testRead.test_revision
 
         if test_confg != None:
             test_run.config_id = test_confg.Name
@@ -3477,7 +3712,7 @@ class FulsimRegress(Tk):
         if not testRead.has_own_folder:
             dst_path = Path(os.path.join(self.regress_test_base, test_run.unit_name))
             test_run.unit_run_path = dst_path
-            if test_run.config_id =="0":
+            if test_run.config_id =="0" and int(test_run.seed,0) == 1:
                 dst_path = str(dst_path) + "_" + test_run.default_name
             else:
                 dst_path = str(dst_path) + "_" + test_run.test_name
@@ -3488,7 +3723,7 @@ class FulsimRegress(Tk):
         else:
             dst_path = Path(os.path.join(self.regress_test_base, test_run.unit_name))
             test_run.unit_run_path = dst_path
-            if test_run.config_id == "0":
+            if test_run.config_id == "0" and int(test_run.seed,0) == 1:
                 dst_path = Path(os.path.join(dst_path, test_run.default_name))
             else:
                 dst_path = Path(os.path.join(dst_path, test_run.test_name))
@@ -3572,9 +3807,11 @@ class FulsimRegress(Tk):
             else:
                 grits_option = "-s " + str(testRun.seed)
 
-            if suit_grits_seed != None:
-                grits_option = re.sub(r'-s\s*\S+', '', grits_option)
-
+            if self.random_times == 0:
+                if suit_grits_seed != None:
+                    grits_option = re.sub(r'-s\s*\S+', '', grits_option)
+            else:
+                grits_option = re.sub(r'-s\s*\S+', '-s '+  str(testRun.seed), grits_option)
 
             # test_run.yaml_cmdline = str(testRead.ymal_config.DefaultTestConfig.CommandLine).replace('"','') + " " + str(testConfig.CommandLine).replace('"','')
             test_run.yaml_cmdline = str(test_run.yaml_cmdline).replace('"', '')
@@ -3666,11 +3903,32 @@ class FulsimRegress(Tk):
                 for test_confg in testRead.ymal_config.test_config_list:
                     if testRead.config_id == test_confg.Name:
                         self.configTestRun(test_run, testRead, testRunList, test_confg)
-
+                        if self.random_times  > 0:
+                            test_name = testRead.test_name
+                            for i in range(self.random_times):
+                                seed = random.randint(2, 0xffffffff)
+                                seed_hex = hex(seed)
+                                testRead.seed = seed_hex
+                                testRead.test_name = test_name + "_s" + str(seed_hex)
+                                new_test_run = copy.deepcopy(test_run)
+                                print(" ==> done")
+                                self.configTestRun(new_test_run, testRead, testRunList, test_confg)
             else:
                 for test_confg in testRead.ymal_config.test_config_list:
                     new_test_run = copy.deepcopy(test_run)
                     self.configTestRun(new_test_run, testRead, testRunList, test_confg)
+                    if self.random_times  > 0:
+                        test_name = testRead.test_name
+                        for i in range(self.random_times):
+                            seed = random.randint(2, 0xffffffff)
+                            seed_hex = hex(seed)
+                            testRead.seed = seed_hex
+                            testRead.test_name = test_name + "_s" + str(seed_hex)
+                            new_test_run = copy.deepcopy(test_run)
+                            print(" ==> done")
+                            self.configTestRun(new_test_run, testRead, testRunList, test_confg)
+                            # replace -s option
+
 
 
     def retrieveTestRunObjects(self, total_test, testrun_object_folder_path, regress_name):
@@ -3798,7 +4056,10 @@ class FulsimRegress(Tk):
 
         self.previous_not_done_tests =  self.total = len(testRunList)
         ## generate total test list file
-        self.generateTestListFile(testRunList,self.regress_name,"total_test.lst")
+        list_name = str(self.regress_name) + "_" + self.regress_day_mark + "_" + "total_test.lst"
+        self.regress_settings.total_test_list_path = os.path.join(self.regress_result_base, list_name)
+        self.populatelistfile(testRunList,self.regress_settings.total_test_list_path)
+       # self.generateTestListFile(testRunList,self.regress_name,"total_test.lst")
 
         if len(self.axe_execution_method_list) <=1:
             html_report_name =  str(self.axe_execution_method_list[0].name).replace(" ","_") + "_" + self.regress_day_mark + "_regress_report.html"
@@ -3812,23 +4073,32 @@ class FulsimRegress(Tk):
 
 
     def updateRunTime(self):
-        if self.delay_second > 0:
-            runtime = 0
-            self.processRun_start_time  = time.time()
-        else:
+        # Only update if regression is actually running and not stopped
+        if hasattr(self, 'processRun_start_time'):
             runtime = time.time() - self.processRun_start_time
-        self.run_time = self.util.convertSecToHourMinSec(runtime)
+            self.run_time = self.util.convertSecToHourMinSec(runtime)
 
-        if runtime >= 0 and self.delay_second <=0:
-            self.countdown_timer.config(text=str(self.run_time), font='ariel 14',
-                                        background='black', foreground='red', anchor=CENTER)
-            self.countdown_timer.update_idletasks()
-        self.after(1000, self.updateRunTime)
+            #self.countdown_label.config(text="Total Run Time:")
+            self.countdown_timer.config(
+                text=str(self.run_time),
+                font=('Arial', 12),
+                background='black',
+                foreground='red',
+                anchor=CENTER
+            )
+            # Force immediate update
+            self.countdown_timer.update()
+            self.update_idletasks()
+
+            # Continue updating if regression is still running
+            self.after(1000, self.updateRunTime)
+
     def generateCsvReport(self,testDoneList, unitName):
         #csv_report_name = self.regress_name + "_" + unitName + "_"+ self.regress_day_mark + "_runinfo.csv"
         csv_report_name = self.regress_name + "_" + self.regress_day_mark + "_runinfo.csv"
-        csv_report_path = os.path.join(self.regress_result_base, csv_report_name)
-        status_str = "Writing passing test information to " + str(csv_report_path)
+        self.regress_settings.testrun_info_path = os.path.join(self.regress_result_base, csv_report_name)
+
+        status_str = "Writing passing test information to " + str(self.regress_settings.testrun_info_path)
         print(status_str)
         self.updateOutputBox(status_str)
         aub_pass_test_suite_list = list()
@@ -3837,11 +4107,11 @@ class FulsimRegress(Tk):
                 fulsim_status = test_suite.test_result.fulsim_compile_status
                 if fulsim_status == "PASS":
                     aub_pass_test_suite_list.append(test_suite)
-        self.util.writeDataToCsvFile(csv_report_path,aub_pass_test_suite_list)
+        self.util.writeDataToCsvFile(self.regress_settings.testrun_info_path,aub_pass_test_suite_list)
 
     def generateHtmlReport(self,testDoneList ):
         title = os.path.basename(self.html_report_path)
-        status = self.util.writeDataNaxeConfigToHtmlFile(title, self.html_report_path, self.regress_summary,testDoneList,False, True, self.regress_settings,self.axe_execution_method_list)
+        status = self.util.writeDataNaxeConfigToHtmlFile(title, self.html_report_path, self.regress_summary,testDoneList,False, False, self.regress_settings,self.axe_execution_method_list)
         self.updateOutputBox(status)
 
     def generateSuiteFailList(self,regress_name):
@@ -3868,6 +4138,13 @@ class FulsimRegress(Tk):
         print(status_str)
         self.updateOutputBox(status_str)
         self.util.writeDataToFile(list_path, test_list)
+
+    def populatelistfile(self, test_list, file_path):
+        status_str = "Writing test names  to " + str(file_path)
+        print(status_str)
+        self.updateOutputBox(status_str)
+        self.util.writeDataToFile(file_path, test_list)
+
 
     def updateObjectRegressStatus(self, total_run, done_list, regress_name):
         sorted_done_list = self.generateSummary(total_run, done_list, regress_name)
@@ -3921,20 +4198,36 @@ class FulsimRegress(Tk):
                        "fail_tests": total_fail, "invalid_tests": total_invalid, "invalid_test_list": self.total_invalid_list,
                        "goldnize_tests": 0}
         if total_not_done < self.previous_not_done_tests:
-            self.generateTestListFile(testNotDoneList,unit_name,"not_done_test.lst")
+            list_name = str(self.regress_name) + "_" + self.regress_day_mark + "_" + "not_done_test.lst"
+            self.regress_settings.notdone_test_list_path = os.path.join(self.regress_result_base, list_name)
+            self.populatelistfile(testNotDoneList, self.regress_settings.notdone_test_list_path)
+            #self.generateTestListFile(testNotDoneList,unit_name,"not_done_test.lst")
             self.previous_not_done_tests = total_not_done
         if total_done > self.previous_done_tests:
-            self.generateTestListFile(testDoneList,unit_name,"done_test.lst")
+            list_name = str(self.regress_name) + "_" + self.regress_day_mark + "_" + "done_test.lst"
+            self.regress_settings.done_test_list_path = os.path.join(self.regress_result_base, list_name)
+            self.populatelistfile(testDoneList, self.regress_settings.done_test_list_path)
+            #self.generateTestListFile(testDoneList,unit_name,"done_test.lst")
+
             self.previous_done_tests = total_done
 
         if total_pass > self.previous_pass_tests:
-            self.generateTestListFile(self.total_pass_list,  unit_name, "pass_test.lst", True)
+            list_name = str(self.regress_name) + "_" + self.regress_day_mark + "_" + "pass_test.lst"
+            self.regress_settings.pass_test_list_path = os.path.join(self.regress_result_base, list_name)
+            self.populatelistfile(self.total_pass_list, self.regress_settings.pass_test_list_path)
+            #self.generateTestListFile(self.total_pass_list,  unit_name, "pass_test.lst", True)
             self.generateCsvReport(self.total_pass_list,unit_name)
 
         if total_fail > self.previous_fail_tests:
-            self.generateTestListFile(self.total_fail_list, unit_name, "fail_test.lst", True)
+            list_name = str(self.regress_name) + "_" + self.regress_day_mark + "_" + "fail_test.lst"
+            self.regress_settings.fail_test_list_path = os.path.join(self.regress_result_base, list_name)
+            self.populatelistfile(self.total_fail_list, self.regress_settings.fail_test_list_path)
+            #self.generateTestListFile(self.total_fail_list, unit_name, "fail_test.lst", True)
         if total_invalid > self.previous_invalid_tests:
-            self. generateTestListFile(self.total_invalid_list, unit_name, "invalid_test.lst", True)
+            list_name = str(self.regress_name) + "_" + self.regress_day_mark + "_" + "invalid_test.lst"
+            self.regress_settings.invalid_test_list_path = os.path.join(self.regress_result_base, list_name)
+            self.populatelistfile(self.total_invalid_list, self.regress_settings.invalid_test_list_path)
+            #self. generateTestListFile(self.total_invalid_list, unit_name, "invalid_test.lst", True)
         print("\nOverall status: total = ", total_tests, "pass = ", total_pass, "fail = ", total_fail, "invalid = ", total_invalid)
         return sorted_done_test_list
     def perRunReset(self):
@@ -3964,6 +4257,9 @@ class FulsimRegress(Tk):
         self.previous_fail_tests = 0
         self.previous_invalid_tests = 0
         self.best_test_revision = 0
+        self.run_units = False
+        self.run_test_lists = False
+        self.run_unit_tests = False
 
 
 
@@ -3984,7 +4280,18 @@ class FulsimRegress(Tk):
         if ans:
             FulsimRegress.destroy(self)
 
-
+    def createRepopath(self, folderPath, targetPath):
+        print("create local  createRepopath start ...")
+        repopath = os.path.join(targetPath, "repopath.txt")
+        if Path(repopath).is_file():
+            return repopath
+        os.makedirs(os.path.dirname(repopath), exist_ok=True)
+        with open(repopath, 'w') as f:
+            fPath = str(folderPath).replace("\\", "/")
+            fPath = "local=\"" + fPath + "\""
+            print("write to repopath.txt: " + fPath)
+            f.write(fPath)
+        return repopath
 def main():
     fulsim_regress = FulsimRegress()
     fulsim_regress.protocol("WM_DELETE_WINDOW",fulsim_regress.confirm)
