@@ -853,18 +853,18 @@ class FulsimRegress(Tk):
         regress_option_frame.grid(row=rf_row, column=1, columnspan=1)
 
         rf_row += 1
-        ttk.Label(self.regress_frame, text="Copy Required Include Files:", width=30, anchor=CENTER).grid(row=rf_row, column=0)
+        #ttk.Label(self.regress_frame, text="Copy Required Include Files:", width=30, anchor=CENTER).grid(row=rf_row, column=0)
         #ttk.Label(self.regress_frame, text="Realtime Report:", width=40, anchor=CENTER).grid(row=3, column=0)
-        copy_testfile_frame = ttk.Frame(self.regress_frame)
+       # copy_testfile_frame = ttk.Frame(self.regress_frame)
 
-        ttk.Radiobutton(copy_testfile_frame, text="yes", value="yes", variable=self.entry_copytest,command=self.addOrRemoveTestSoureFrame).grid(row=0, column=1)
+        #ttk.Radiobutton(copy_testfile_frame, text="yes", value="yes", variable=self.entry_copytest,command=self.addOrRemoveTestSoureFrame).grid(row=0, column=1)
 
-        ttk.Radiobutton(copy_testfile_frame, text="no", value="no", variable=self.entry_copytest,command=self.addOrRemoveTestSoureFrame).grid(row=0, column=2)
+       # ttk.Radiobutton(copy_testfile_frame, text="no", value="no", variable=self.entry_copytest,command=self.addOrRemoveTestSoureFrame).grid(row=0, column=2)
         #report_frame = ttk.Frame(self.regress_frame)
         #ttk.Radiobutton(report_frame, text="yes", value="yes", variable=self.entry_realtime_report).grid(row=0, column=1)
 
         #ttk.Radiobutton(report_frame, text="no", value="no", variable=self.entry_realtime_report,).grid(row=0, column=2)
-        copy_testfile_frame.grid(row=rf_row, column=1)
+        #copy_testfile_frame.grid(row=rf_row, column=1)
 
 
         #report_frame.grid(row=3, column=1)

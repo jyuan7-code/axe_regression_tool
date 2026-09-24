@@ -243,6 +243,18 @@ class TestRun:
         else:
             self.is_win_os = False
 
+    def printInfo(self):
+        print("test info:")
+        print(" type = ", self.type)
+        print(" config_id = ", self.config_id)
+        print(" unit_name = ", self.unit_name)
+        print(" test_name = ", self.test_name)
+        print(" run_aubload = ", self.run_aubload)
+        print(" run_grits = ", self.run_grits)
+        print(" run_lily = ", self.run_lily)
+        print(" yaml_name = ", self.yaml_name)
+        print(" test_run_path = ", self.test_run_path)
+
     def getGritsOption(self, yamlCmdLine):
         line = str(yamlCmdLine)
         line = line.replace("'", "")
