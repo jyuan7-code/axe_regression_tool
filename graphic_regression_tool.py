@@ -1481,6 +1481,21 @@ class FulsimRegress(Tk):
 
         if self.use_p4:
             self.updateProgressBar(1, 0)
+            dir_name = os.path.dirname(unitName)
+            pre_dir_name = dir_name
+            while dir_name != '':
+                pre_dir_name = dir_name
+                dir_name = os.path.dirname(dir_name)
+
+            if not pre_dir_name in self.p4client.p4_branches:
+                self.p4_repo_base = self.p4client.p4_repo_base + "/main"
+            else:
+                if pre_dir_name != "branches":
+                    self.p4_repo_base = self.p4client.p4_repo_base + "/branches"
+                else:
+                    self.p4_repo_base = self.p4client.p4_repo_base
+            unit_src_path = Path(os.path.join(self.p4_repo_base, unitName))
+
             unit_target_path = os.path.join(self.regress_test_base, unitName)
             unit_target_path = str(unit_target_path).replace("\\", "/")
             if self.util.has_files(unit_target_path):
@@ -1489,7 +1504,7 @@ class FulsimRegress(Tk):
                 if self.p4_test_revision == None:
                     self.p4_test_revision = 0
                 print(" P4 is  copying unit", unitName, "to ", unit_target_path)
-                self.p4client.copyUnitFolder(unitName,self.regress_test_base,self.p4_test_revision)
+                self.p4client.copyOnefolder(unit_src_path,unit_target_path,self.p4_test_revision)
                 print(" P4 is  copying unit", unitName, "to ", unit_target_path, "==> done")
 
             unit_path = Path(os.path.join(self.regress_test_base, unitName))

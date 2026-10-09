@@ -75,7 +75,7 @@ class ExecutionSetting:
                 projectID = "cri"
             elif eachpath.find("ttl")!=-1:
                 projectID = "ttl"
-            elif eachpath.find("main")!=-1:
+            elif eachpath.find("main")!=-1 or eachpath.find("hml")!=-1:
                 projectID = "hml"
             elif eachpath.find("fcs") != -1:
                 projectID = "fcs"
@@ -83,6 +83,7 @@ class ExecutionSetting:
                 projectID = "cls"
             else:
                 print("warning! project not supported: ", eachpath)
+
 
             self.readAxeExecutionMethodFromJsonFile(eachpath, self.all_execution_method_list, isUTP, projectID)
         print("=====================")
@@ -195,6 +196,7 @@ class ExecutionSetting:
             new_method = ExecutionMethod()
             new_method.project_id = projectID
             print("-------------------")
+            print("project_id:", new_method.project_id)
             print("name:", method['name'])
             # print("software:", method['software'])
             # print("agentCommandLine:", method['agentCommandLine'])
