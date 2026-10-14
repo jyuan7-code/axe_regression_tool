@@ -1649,8 +1649,6 @@ class FulsimRegress(Tk):
             if self.util.has_files(unit_target_path):
                 print("Skipped copying unit over as the target folder is not empty: ",unit_target_path )
             else:
-                if self.p4_test_revision == None:
-                    self.p4_test_revision = 0
                 print(" P4 is  copying unit", unitName, "to ", unit_target_path)
                 self.p4client.copyUnitFolder(unitName,self.regress_test_base,self.p4_test_revision)
                 print(" P4 is  copying unit", unitName, "to ", unit_target_path, "==> done")
@@ -2043,6 +2041,8 @@ class FulsimRegress(Tk):
             else:
                 self.p4_test_revision = None
 
+            if self.p4_test_revision == 0:
+                self.p4_test_revision = self.p4client.getHeadChangeRevision(self.p4client.p4_repo_base)
 
         self.regress_base = self.entry_regress_base.get()
         self.regress_base = str(self.regress_base).strip()
@@ -3146,7 +3146,7 @@ class FulsimRegress(Tk):
         self.done_regress = False
 
 
-    def readOneJsonTest(self,json_test, readTestList: list, exclusive=False, p4checkedoutdone=False):
+    def readOneJsonTest(self,json_test, readTestList: list, exclusive=False, p4checkedoutdone=False, rtl_grits_opt=None, rtl_fulsim_opt=None):
         if json_test.count("#") > 1:
             print("\t==> invalid")
             return
@@ -3306,9 +3306,9 @@ class FulsimRegress(Tk):
 
         print ("\t\tSetting up test: " + str(test_read.unit_name + '/' + test_read.test_name), "...")
         if exclusive:
-            self.setupOneTest(test_read, self.exclusive_test_run_list)
+            self.setupOneTest(test_read, self.exclusive_test_run_list, rtl_grits_opt, rtl_fulsim_opt)
         else:
-            self.setupOneTest(test_read, self.test_run_list)
+            self.setupOneTest(test_read, self.test_run_list, rtl_grits_opt, rtl_fulsim_opt)
         readTestList.append(test_read)
 
     def excuteRegress(self):
@@ -3394,15 +3394,18 @@ class FulsimRegress(Tk):
             new_list.append(new_line)
         return new_list
 
-    def convertRtlTestToJsonTest(self, line):
+    def convertRtlTestToJsonTest(self, line, testReadList, exclusive):
+
         json_test = None
         config = "0"
         revison = 0
         test_name = None
 
-        search_result = re.search(r'-fid\s+"(.+)"', line)
+        search_result = re.search(r'-fid\s+(\S+)', line)
         if search_result:
             json_test = search_result.group(1)
+            json_test = json_test.replace('"',"")
+            json_test = json_test.replace("'", "")
 
         search_result = re.search(r'#(\w+) ', line)
         if search_result:
@@ -3415,8 +3418,27 @@ class FulsimRegress(Tk):
         search_result = re.search(r'([a-zA-Z0-9-_.]*)#', line)
         if search_result:
             test_name = search_result.group(1)
-        new_line = '"' + json_test + "/" + test_name + ".gsf#" + config + "@" + str(revison) + '"'
-        return new_line
+        if json_test == None or test_name == None or  config == None or revison == None:
+            print("Invalid test, skipped... ")
+            return
+        json_test = '"' + json_test + "/" + test_name + ".gsf#" + config + "@" + str(revison) + '"'
+        #check if there are any grits options and fulsim options
+        grits_opt = ""
+        search_result = re.search(r'-grits_opt\s+"(.+)"', line)
+        if search_result:
+            grits_opt = search_result.group(1)
+
+        fulsim_opt = ""
+        search_result = re.search(r'-fulsim_opt\s+"(.+)"', line)
+        if search_result:
+            fulsim_opt = search_result.group(1)
+
+        status_str = "Converted to json test:  " + json_test
+        print(status_str)
+        self.updateStatusLabel(status_str)
+        self.readOneJsonTest(json_test, testReadList, exclusive, False,grits_opt, fulsim_opt)
+
+
     def convertToJasonList(self, testList: list):
         new_list = list()# check the first line
         if len(testList) ==0:
@@ -3527,11 +3549,7 @@ class FulsimRegress(Tk):
                         self.updateOutputBox(info_str)
                         self.updateProgressBar(total, processed)
                     else:
-                        json_test = self.convertRtlTestToJsonTest(json_test)
-                        status_str = "Converted to json test:  " + json_test
-                        print(status_str)
-                        self.updateStatusLabel(status_str)
-                        self.readOneJsonTest(json_test, testReadList, exclusive)
+                        self.convertRtlTestToJsonTest(json_test,testReadList, exclusive)
                         status_str = "Reading rtl tests: " + str(processed) + "/" + str(total)
                         print(status_str)
                         self.updateStatusLabel(status_str)
@@ -3981,7 +3999,7 @@ class FulsimRegress(Tk):
                 self.p4client.copyOnefolder(test_run.gold_src_path,test_run.gold_work_path,self.p4_test_revision)
 
         print("gold_work_path by setupTestGoldFolder: ", test_run.gold_work_path)
-    def configTestRun(self, testRun:Test.TestRun,testRead:Test.TestRead, testRunList, testConfig):
+    def configTestRun(self, testRun:Test.TestRun,testRead:Test.TestRead, testRunList, testConfig,rtl_grits_opt=None, rtl_fulsim_opt=None):
         test_run = testRun
 
         test_confg = testConfig
@@ -4139,6 +4157,11 @@ class FulsimRegress(Tk):
             test_run.yaml_cmdline = str(test_run.yaml_cmdline).replace('"', '')
             test_run.yaml_cmdline =  str(test_run.yaml_cmdline).replace("'",'')
 
+            if rtl_grits_opt !=None and rtl_grits_opt !="":
+                grits_option = grits_option + " " + rtl_grits_opt
+            if rtl_fulsim_opt !=None and rtl_fulsim_opt !="":
+                aubload_options = aubload_options + " " + rtl_fulsim_opt
+
             grits_option = grits_option + " " + suite_grits_option
             aubload_options = aubload_options + " " + suite_aubload_option
             test_run.grits_option = grits_option + " -device " + test_run.axe_execution_method.device_option
@@ -4174,7 +4197,7 @@ class FulsimRegress(Tk):
         #print("default_aubload_option = ", default_aubload_option)
         #print("test_aubload_option = ", test_aubload_option)
 
-    def setupOneTest(self,testRead,testRunList):
+    def setupOneTest(self,testRead,testRunList, rtl_grits_opt=None, rtl_fulsim_opt=None):
 
         if  Path(testRead.yaml_path).is_file():
             print("\t\tReading test yaml file", testRead.yaml_path, "...")
@@ -4211,7 +4234,7 @@ class FulsimRegress(Tk):
             if not (testRead.config_id == None or testRead.config_id == "" or testRead.config_id == "-1"):
                 for test_confg in testRead.ymal_config.test_config_list:
                     if testRead.config_id == test_confg.Name:
-                        self.configTestRun(test_run, testRead, testRunList, test_confg)
+                        self.configTestRun(test_run, testRead, testRunList, test_confg,rtl_grits_opt,rtl_fulsim_opt)
                         if self.random_times  > 0:
                             test_name = testRead.test_name
                             for i in range(self.random_times):
@@ -4221,7 +4244,7 @@ class FulsimRegress(Tk):
                                 testRead.test_name = test_name + "_s" + str(seed_hex)
                                 new_test_run = copy.deepcopy(test_run)
                                 print(" ==> done")
-                                self.configTestRun(new_test_run, testRead, testRunList, test_confg)
+                                self.configTestRun(new_test_run, testRead, testRunList, test_confg, rtl_grits_opt,rtl_fulsim_opt)
             else:
                 for test_confg in testRead.ymal_config.test_config_list:
                     new_test_run = copy.deepcopy(test_run)
@@ -4237,7 +4260,7 @@ class FulsimRegress(Tk):
                             testRead.test_name = test_name + "_s" + str(seed_hex)
                             new_test_run = copy.deepcopy(test_run)
                             print(" ==> done")
-                            self.configTestRun(new_test_run, testRead, testRunList, test_confg)
+                            self.configTestRun(new_test_run, testRead, testRunList, test_confg,rtl_grits_opt, rtl_fulsim_opt)
                             # replace -s option
 
 

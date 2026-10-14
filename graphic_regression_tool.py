@@ -1889,6 +1889,8 @@ class FulsimRegress(Tk):
             else:
                 self.p4_test_revision = None
 
+            if self.p4_test_revision == 0:
+                self.p4_test_revision = self.p4client.getHeadChangeRevision(self.p4client.p4_repo_base)
 
         self.regress_base = self.entry_regress_base.get()
         self.regress_base = str(self.regress_base).strip()

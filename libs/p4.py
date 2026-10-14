@@ -218,8 +218,9 @@ class P4Wrapper:
 
     def getHeadChangeRevision(self, folderPath):
         p4_path = '"' + str(os.path.join(folderPath, "...")) + '"'
-        cmd = self.p4_exe + ' fstat -m 1 -T headChange ' + p4_path
+        cmd = self.p4_exe + '  changes -m 1 ' + p4_path
         cmd = cmd.replace("\\", "/")
+        print("p4 command: ", cmd)
         result = os.popen(cmd)
         print("print the head change revision ...")
         allines = result.readlines()
