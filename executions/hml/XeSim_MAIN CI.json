@@ -3015,6 +3015,80 @@
 			"deleted": false
 		},
 		{
+			"id": 4728,
+			"name": "3D XeSim Xe5HPC.4x5x2x4.a0 EXI Fused 1x1x2x4 Cobalt_map",
+			"software": "XeSim_MAIN",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "XE5.HPC:1tx4x5x2x4:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/xe5hpc.1tx4x5x2x4.a0.v1.exi.fused_1tx1x1x2x4.gt.map.xml"
+				}
+			],
+			"executionMethodHistoryId": 21219,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Pass",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Pass",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [],
+			"deleted": false
+		},
+		{
+			"id": 4729,
+			"name": "3D XeSim Xe5HPC.4x5x2x4.a0 EXI Fused 1x1x2x4 Cobalt_map MPU",
+			"software": "XeSim_MAIN",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type fulsimagent",
+			"productConfig": "XE5.HPC:1tx4x5x2x4:A0",
+			"attributes": [
+				{
+					"name": "DeviceOption",
+					"value": ":devices/xe5hpc.1tx4x5x2x4.a0.v1.exi.fused_1tx1x1x2x4.gt.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": "-sim_mode perf_mpu"
+				}
+			],
+			"executionMethodHistoryId": 21220,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Pass",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Pass",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [],
+			"deleted": false
+		},
+		{
 			"id": 4695,
 			"name": "3D XeSim Xe5LPG.4x8x4.a0 Cobalt_map",
 			"software": "XeSim_MAIN",
@@ -3479,10 +3553,10 @@
 				},
 				{
 					"name": "GritsOptions",
-					"value": "-disableFeature psXe3SingleCompile -attr GRITS_ATTR_ENABLE_SIMD32_PACKFORMAT 0 -disableFeature :removeHeapRelatedArchFeature -target=Fulsim:cobaltPerformance -DmodelDevice=xe3pv4lpg.1x2x8.a0 -DdesiredClocks=200000"
+					"value": "-disableFeature psXe3SingleCompile -attr GRITS_ATTR_ENABLE_SIMD32_PACKFORMAT 0 -enablefeature tagMissingStateComputeModeFields -target=Fulsim:cobaltPerformance -DmodelDevice=xe3pv4lpg.1x2x8.a0 -DdesiredClocks=200000"
 				}
 			],
-			"executionMethodHistoryId": 21134,
+			"executionMethodHistoryId": 21221,
 			"exitCodeExecutionStatusRemap": [
 				{
 					"exitCode": 11,
@@ -3536,10 +3610,10 @@
 				},
 				{
 					"name": "GritsOptions",
-					"value": "-disableFeature psXe3SingleCompile -attr GRITS_ATTR_ENABLE_SIMD32_PACKFORMAT 0 -disableFeature :removeHeapRelatedArchFeature -target=Fulsim:cobaltPerformance -DmodelDevice=xe3pv4lpg.1x2x8.a0 -DdesiredClocks=200000"
+					"value": "-disableFeature psXe3SingleCompile -attr GRITS_ATTR_ENABLE_SIMD32_PACKFORMAT 0 -enablefeature tagMissingStateComputeModeFields -target=Fulsim:cobaltPerformance -DmodelDevice=xe3pv4lpg.1x2x8.a0 -DdesiredClocks=200000"
 				}
 			],
-			"executionMethodHistoryId": 21135,
+			"executionMethodHistoryId": 21222,
 			"exitCodeExecutionStatusRemap": [
 				{
 					"exitCode": 11,
@@ -3593,10 +3667,10 @@
 				},
 				{
 					"name": "GritsOptions",
-					"value": "-disableFeature psXe3SingleCompile -attr GRITS_ATTR_ENABLE_SIMD32_PACKFORMAT 0 -disableFeature :removeHeapRelatedArchFeature -target=Fulsim:cobaltPerformance -DmodelDevice=xe3pv4lpg.2x4x8.a0 -DdesiredClocks=200000"
+					"value": "-disableFeature psXe3SingleCompile -attr GRITS_ATTR_ENABLE_SIMD32_PACKFORMAT 0 -enablefeature tagMissingStateComputeModeFields -target=Fulsim:cobaltPerformance -DmodelDevice=xe3pv4lpg.2x4x8.a0 -DdesiredClocks=200000"
 				}
 			],
-			"executionMethodHistoryId": 21136,
+			"executionMethodHistoryId": 21223,
 			"exitCodeExecutionStatusRemap": [
 				{
 					"exitCode": 11,
@@ -3650,10 +3724,10 @@
 				},
 				{
 					"name": "GritsOptions",
-					"value": "-disableFeature psXe3SingleCompile -attr GRITS_ATTR_ENABLE_SIMD32_PACKFORMAT 0 -disableFeature :removeHeapRelatedArchFeature -target=Fulsim:cobaltPerformance -DmodelDevice=xe3pv4lpg.2x4x8.a0 -DdesiredClocks=50000"
+					"value": "-disableFeature psXe3SingleCompile -attr GRITS_ATTR_ENABLE_SIMD32_PACKFORMAT 0 -enablefeature tagMissingStateComputeModeFields -target=Fulsim:cobaltPerformance -DmodelDevice=xe3pv4lpg.2x4x8.a0 -DdesiredClocks=50000"
 				}
 			],
-			"executionMethodHistoryId": 21137,
+			"executionMethodHistoryId": 21224,
 			"exitCodeExecutionStatusRemap": [
 				{
 					"exitCode": 11,
@@ -3703,10 +3777,10 @@
 				},
 				{
 					"name": "GritsOptions",
-					"value": "-disableFeature psXe3SingleCompile -attr GRITS_ATTR_ENABLE_SIMD32_PACKFORMAT 0 -disableFeature :removeHeapRelatedArchFeature -target=Fulsim:cobaltPerformance -DmodelDevice=xe3pv4lpg.2x4x8.a0 -DdesiredClocks=50000"
+					"value": "-disableFeature psXe3SingleCompile -attr GRITS_ATTR_ENABLE_SIMD32_PACKFORMAT 0 -enablefeature tagMissingStateComputeModeFields -target=Fulsim:cobaltPerformance -DmodelDevice=xe3pv4lpg.2x4x8.a0 -DdesiredClocks=50000"
 				}
 			],
-			"executionMethodHistoryId": 21138,
+			"executionMethodHistoryId": 21226,
 			"exitCodeExecutionStatusRemap": [
 				{
 					"exitCode": 11,
@@ -3760,10 +3834,10 @@
 				},
 				{
 					"name": "GritsOptions",
-					"value": "-disableFeature psXe3SingleCompile -attr GRITS_ATTR_ENABLE_SIMD32_PACKFORMAT 0 -disableFeature :removeHeapRelatedArchFeature -target=Fulsim:cobaltPerformance -DmodelDevice=xe3pv4lpg.4x4x8.a0 -DdesiredClocks=200000"
+					"value": "-disableFeature psXe3SingleCompile -attr GRITS_ATTR_ENABLE_SIMD32_PACKFORMAT 0 -enablefeature tagMissingStateComputeModeFields -target=Fulsim:cobaltPerformance -DmodelDevice=xe3pv4lpg.4x4x8.a0 -DdesiredClocks=200000"
 				}
 			],
-			"executionMethodHistoryId": 21139,
+			"executionMethodHistoryId": 21225,
 			"exitCodeExecutionStatusRemap": [
 				{
 					"exitCode": 11,
@@ -3817,10 +3891,10 @@
 				},
 				{
 					"name": "GritsOptions",
-					"value": "-disableFeature psXe3SingleCompile -attr GRITS_ATTR_ENABLE_SIMD32_PACKFORMAT 0 -disableFeature :removeHeapRelatedArchFeature -target=Fulsim:cobaltPerformance -DmodelDevice=xe3pv4lpg.4x4x8.a0 -DdesiredClocks=50000"
+					"value": "-disableFeature psXe3SingleCompile -attr GRITS_ATTR_ENABLE_SIMD32_PACKFORMAT 0 -enablefeature tagMissingStateComputeModeFields -target=Fulsim:cobaltPerformance -DmodelDevice=xe3pv4lpg.4x4x8.a0 -DdesiredClocks=50000"
 				}
 			],
-			"executionMethodHistoryId": 21140,
+			"executionMethodHistoryId": 21227,
 			"exitCodeExecutionStatusRemap": [
 				{
 					"exitCode": 11,
@@ -3874,10 +3948,10 @@
 				},
 				{
 					"name": "GritsOptions",
-					"value": "-disableFeature psXe3SingleCompile -attr GRITS_ATTR_ENABLE_SIMD32_PACKFORMAT 0 -disableFeature :removeHeapRelatedArchFeature -target=Fulsim:cobaltPerformance -DmodelDevice=xe3pv4lpg.4x4x8.a0 -DdesiredClocks=200000"
+					"value": "-disableFeature psXe3SingleCompile -attr GRITS_ATTR_ENABLE_SIMD32_PACKFORMAT 0 -enablefeature tagMissingStateComputeModeFields -target=Fulsim:cobaltPerformance -DmodelDevice=xe3pv4lpg.4x4x8.a0 -DdesiredClocks=200000"
 				}
 			],
-			"executionMethodHistoryId": 21141,
+			"executionMethodHistoryId": 21228,
 			"exitCodeExecutionStatusRemap": [
 				{
 					"exitCode": 11,
@@ -3931,10 +4005,67 @@
 				},
 				{
 					"name": "GritsOptions",
-					"value": "-disableFeature psXe3SingleCompile -attr GRITS_ATTR_ENABLE_SIMD32_PACKFORMAT 0 -disableFeature :removeHeapRelatedArchFeature -target=Fulsim:cobaltPerformance -DmodelDevice=xe3pv5lpg.16x4x8.a0  -DdesiredClocks=200000"
+					"value": "-disableFeature psXe3SingleCompile -attr GRITS_ATTR_ENABLE_SIMD32_PACKFORMAT 0 -enablefeature tagMissingStateComputeModeFields -target=Fulsim:cobaltPerformance -DmodelDevice=xe3pv5lpg.16x4x8.a0  -DdesiredClocks=200000"
 				}
 			],
-			"executionMethodHistoryId": 21142,
+			"executionMethodHistoryId": 21229,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 4726,
+			"name": "ATDB XeSim Xe3pV5LPG.16x4.a0 Cobalt_map Perf_MPU_DTM TgEval",
+			"software": "XeSim_MAIN",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "XE3PV5.LPG:16x4x8:A0",
+			"attributes": [
+				{
+					"name": "AubloadOptions",
+					"value": "-attr EU.XESIM 2 -enableFeature XeSimMpu  -sim_mode perf_mpu  -cb_cfg multithread_mode tbb max_worker_threads 8 hang_detect_enable true hang_analysis_period 100000 hang_threshold 10 hang_activation_threshold 1000 hang_max_hang_cycles 10 stats_enable true tg_cfg_filename TG_ArchTarget.txt -enableDcGpgpuPrintMessage -commandLine :config/devicexml/xe3.lpg.feature.xesim.atdb.txt -attr CO_ATTR_GTI_LOOPBACK_ENABLE 0"
+				},
+				{
+					"name": "BondOptions",
+					"value": "-hooks :./cobalt_scripts/ArchTarget/micros_perf_hook_tgeval.py"
+				},
+				{
+					"name": "DeviceOption",
+					"value": ":devices/xe3pLPG.1tx16x4x8.a0.v5.gt.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": ""
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-disableFeature psXe3SingleCompile -attr GRITS_ATTR_ENABLE_SIMD32_PACKFORMAT 0 -enablefeature tagMissingStateComputeModeFields -target=Fulsim:cobaltPerformance -DmodelDevice=xe3pv5lpg.16x4x8.a0  -DdesiredClocks=200000"
+				}
+			],
+			"executionMethodHistoryId": 21230,
 			"exitCodeExecutionStatusRemap": [
 				{
 					"exitCode": 11,
@@ -5866,6 +5997,63 @@
 			"deleted": false
 		},
 		{
+			"id": 4722,
+			"name": "ATDB XeSim Xe5V3LPG.2x4.a0 Cobalt_map Perf_MPU_DTM CI",
+			"software": "XeSim_MAIN",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "XE5V2.LPG:2X2X4:A0",
+			"attributes": [
+				{
+					"name": "AubloadOptions",
+					"value": "-attr EU.XESIM 4 -enableFeature XeSimMpu  -sim_mode perf_mpu  -cb_cfg multithread_mode tbb max_worker_threads 8 hang_detect_enable true hang_analysis_period 100000 hang_threshold 10 hang_activation_threshold 1000 hang_max_hang_cycles 10 stats_enable true tg_cfg_filename TG_ArchTarget_xe4.txt -enableDcGpgpuPrintMessage -commandLine :config/devicexml/xe3.lpg.feature.xesim.atdb.txt -attr CO_ATTR_GTI_LOOPBACK_ENABLE 0"
+				},
+				{
+					"name": "BondOptions",
+					"value": "-hooks :./cobalt_scripts/ArchTarget/micros_perf_hook.py"
+				},
+				{
+					"name": "DeviceOption",
+					"value": ":devices/xe5LPG.1tx2x8x4.CopyConfig_EU2_TTLHP_Xe4HpcEU2.v3.gt.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": ""
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=Fulsim:cobaltPerformance -DmodelDevice=xe5v3lpg.2x4.a0 -DdesiredClocks=50000"
+				}
+			],
+			"executionMethodHistoryId": 21205,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
 			"id": 4720,
 			"name": "ATDB XeSim Xe5V3LPG.4x4.a0 Cobalt_map Perf_MPU_DTM",
 			"software": "XeSim_MAIN",
@@ -5896,6 +6084,63 @@
 				}
 			],
 			"executionMethodHistoryId": 21194,
+			"exitCodeExecutionStatusRemap": [
+				{
+					"exitCode": 11,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 154,
+					"status": "Warn",
+					"excludeTestCi": false
+				},
+				{
+					"exitCode": 155,
+					"status": "Warn",
+					"excludeTestCi": true
+				}
+			],
+			"exitCodeTestListStatusRemap": [
+				{
+					"exitCode": 155,
+					"status": "Waived",
+					"excludeTestCi": true
+				}
+			],
+			"deleted": false
+		},
+		{
+			"id": 4727,
+			"name": "ATDB XeSim Xe5V3LPG.4x4.a0 Cobalt_map Perf_MPU_DTM TgEval",
+			"software": "XeSim_MAIN",
+			"platformSoftware": null,
+			"agentSoftware": "AxeAgent",
+			"agentCommandLine": "execute -type LilyAgent",
+			"productConfig": "XE5V2.LPG:2X2X4:A0",
+			"attributes": [
+				{
+					"name": "AubloadOptions",
+					"value": "-attr EU.XESIM 4 -enableFeature XeSimMpu  -sim_mode perf_mpu  -cb_cfg multithread_mode tbb max_worker_threads 8 hang_detect_enable true hang_analysis_period 100000 hang_threshold 10 hang_activation_threshold 1000 hang_max_hang_cycles 10 stats_enable true tg_cfg_filename TG_ArchTarget_xe4.txt -enableDcGpgpuPrintMessage -commandLine :config/devicexml/xe3.lpg.feature.xesim.atdb.txt -attr CO_ATTR_GTI_LOOPBACK_ENABLE 0"
+				},
+				{
+					"name": "BondOptions",
+					"value": "-hooks :./cobalt_scripts/ArchTarget/micros_perf_hook_tgeval.py"
+				},
+				{
+					"name": "DeviceOption",
+					"value": ":devices/xe5LPG_pf1.1tx4x4x2x4.a0.v3.gt.map.xml"
+				},
+				{
+					"name": "FulsimOptions",
+					"value": ""
+				},
+				{
+					"name": "GritsOptions",
+					"value": "-target=Fulsim:cobaltPerformance -DmodelDevice=xe5v3lpg.4x4.a0 -DdesiredClocks=200000"
+				}
+			],
+			"executionMethodHistoryId": 21214,
 			"exitCodeExecutionStatusRemap": [
 				{
 					"exitCode": 11,

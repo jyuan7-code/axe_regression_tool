@@ -50,7 +50,8 @@ class FulsimRelease:
         'NVL': '/nfs/site/disks/xesim_xe3p_v2_release/ReleaseBinaries/XeSim/XE3P_V2',
         'CRI': '/nfs/site/disks/xesim_xe3p_v2_release/ReleaseBinaries/XeSim/XE3P_V2_SLES15',
         'TTL': '/nfs/site/disks/xesim_release/XeSim/MAIN',
-        'HML': '/nfs/site/disks/xesim_release/XeSim/MAIN'
+        'HML': '/nfs/site/disks/xesim_release/XeSim/MAIN',
+        'EXI': '/nfs/site/disks/xesim_release/XeSim/MAIN'
     }
 
     #for Windows https://gfx-assets.fm.intel.com/artifactory/gfx-cobalt-assets-fm/XeSim/Windows/
@@ -59,7 +60,8 @@ class FulsimRelease:
         'XE3P_V2': 'XE3P_V2',
         'CRI': 'XE3P_V2_SLES15',
         'TTL': 'MAIN',
-        'HML': 'MAIN'
+        'HML': 'MAIN',
+        'EXI': 'MAIN'
     }
 
     MIN_REVISION_OVERRIDES = {

@@ -81,6 +81,8 @@ class ExecutionSetting:
                 projectID = "fcs"
             elif eachpath.find("cls") != -1:
                 projectID = "cls"
+            elif eachpath.find("main") != -1 or eachpath.find("exi") != -1:
+                projectID = "exi"
             else:
                 print("warning! project not supported: ", eachpath)
 
@@ -182,9 +184,15 @@ class ExecutionSetting:
                 break
         return method
 
+    def contains_substring(self, string_a: str, string_b: str) -> bool:
+        """
+        Checks if string_a contains string_b, case-insensitive.
+        """
+        return string_b.lower() in string_a.lower()
     def readAxeExecutionMethodFromJsonFile(self, jsonFilePath, executonMethodList: list, forUTP, projectID):
         print("Reading axe execution methods from ", jsonFilePath)
         print("for UTP:",forUTP)
+
         if not Path(jsonFilePath).is_file():
             return executonMethodList
         with open(jsonFilePath, 'r') as f_in:
@@ -196,11 +204,30 @@ class ExecutionSetting:
             new_method = ExecutionMethod()
             new_method.project_id = projectID
             print("-------------------")
+            print("project ID:", projectID)
             print("project_id:", new_method.project_id)
             print("name:", method['name'])
             # print("software:", method['software'])
             # print("agentCommandLine:", method['agentCommandLine'])
             new_method.name = method['name']
+            if projectID == "hml":
+                if self.contains_substring(method['name'],"xe4") and self.contains_substring(method['name'],"v2"):
+                     print("Adding ",method['name'])
+                else:
+                    print("skipped ", method['name'])
+                    continue
+            if projectID == "ttl":
+                if self.contains_substring(method['name'],"xe4") and (not self.contains_substring(method['name'],"v2")):
+                    print("Adding ",method['name'])
+                else:
+                    print("skipped ", method['name'])
+                    continue
+            if projectID == "exi":
+                if self.contains_substring(method['name'],"xe5"):
+                    print("Adding ",method['name'])
+                else:
+                    print("skipped ", method['name'])
+                    continue
 
 
             new_method.test_software = method['software']

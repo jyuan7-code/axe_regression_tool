@@ -450,7 +450,7 @@ class FulsimRegress(Tk):
             self.intel_icon = ImageTk.PhotoImage(resized_image)
             self.iconphoto(True, self.intel_icon)
         # Gui
-        self.title("Cobalt Regression & Goldenization Tool Version 10.5  by jin.yuan@intel.com 2020. Welcome:  " + str(self.user_id ) + " !")
+        self.title("Cobalt Regression & Goldenization Tool Version 11.0  by jin.yuan@intel.com 2020. Welcome:  " + str(self.user_id ) + " !")
 
         self.minsize(500,600)
         if self.is_win_os:
@@ -1430,9 +1430,9 @@ class FulsimRegress(Tk):
 
         self.project_option_lbe = ttk.Label(self.project_frame,foreground='#f00',  text="Projects:", width=40, anchor=CENTER)
         self.project_option_lbe.grid(row=num_row, column=num_col)
-        num_col = num_col + 1
-        ttk.Radiobutton(self.project_option_frame, text="MTL", value="mtl", variable=self.entry_project_name,
-                        command=self.getReleaseSet).grid(row=0, column=num_col)
+        #num_col = num_col + 1
+        #ttk.Radiobutton(self.project_option_frame, text="MTL", value="mtl", variable=self.entry_project_name,
+                        #command=self.getReleaseSet).grid(row=0, column=num_col)
         num_col = num_col + 1
         ttk.Radiobutton(self.project_option_frame, text="ELG", value="elg", variable=self.entry_project_name, command=self.getReleaseSet).grid(row=0,
                                                                                                             column=num_col)
@@ -1466,6 +1466,10 @@ class FulsimRegress(Tk):
         self.project_option_frame.grid(row=num_row, column=1)
         num_col = num_col + 1
         ttk.Radiobutton(self.project_option_frame, text="HML/Xe4_v2", value="hml", variable=self.entry_project_name,
+                        command=self.getReleaseSet).grid(row=0, column=num_col)
+        self.project_option_frame.grid(row=num_row, column=1)
+        num_col = num_col + 1
+        ttk.Radiobutton(self.project_option_frame, text="EXI/Xe5", value="exi", variable=self.entry_project_name,
                         command=self.getReleaseSet).grid(row=0, column=num_col)
         self.project_option_frame.grid(row=num_row, column=1)
         num_row = num_row + 1
@@ -2636,7 +2640,7 @@ class FulsimRegress(Tk):
 
     def validateRegress(self):
         if not self.is_win_os:
-            if self.entry_project_name.get() == "cri" or self.entry_project_name.get() == "ttl" or self.entry_project_name.get() == "hml":
+            if self.entry_project_name.get() == "cri" or self.entry_project_name.get() == "ttl" or self.entry_project_name.get() == "hml" or self.entry_project_name.get() == "exi":
                 if not self.util.is_sles15():
                     messagebox.showwarning("Wrong linux server", "Please run the regression in a Sles 15 server")
                     return
