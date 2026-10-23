@@ -46,7 +46,6 @@ Source: "D:\fulsimsrc\axe_regression_tool\release\runTestRunList.py"; DestDir: "
 Source: "D:\fulsimsrc\axe_regression_tool\release\icon\intel.ico";DestDir: "{app}"; Flags: ignoreversion
 Source: "D:\fulsimsrc\axe_regression_tool\release\libs\*"; DestDir: "{app}/libs"; Flags: ignoreversion recursesubdirs createallsubdirs
 Source: "D:\fulsimsrc\axe_regression_tool\release\icon\*"; DestDir: "{app}/icon"; Flags: ignoreversion recursesubdirs createallsubdirs
-Source: "D:\fulsimsrc\axe_regression_tool\release\temp\*"; DestDir: "{app}/temp"; Flags: ignoreversion recursesubdirs createallsubdirs
 Source: "D:\fulsimsrc\axe_regression_tool\release\executions\*"; DestDir: "{app}/executions"; Flags: ignoreversion recursesubdirs createallsubdirs
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
