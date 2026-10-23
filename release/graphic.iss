@@ -27,7 +27,7 @@ DisableProgramGroupPage=yes
 LicenseFile=D:\fulsimsrc\axe_regression_tool\release\license.txt
 ; Uncomment the following line to run in non administrative install mode (install for current user only.)
 ;PrivilegesRequired=lowest
-OutputDir=D:\fulsimsrc\regesion_tool
+OutputDir=D:\fulsimsrc\axe_regression_tool\release
 OutputBaseFilename=graphic_regression_tool_261022_setup
 SetupIconFile=D:\fulsimsrc\axe_regression_tool\release\setup.ico
 Compression=lzma
