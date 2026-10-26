@@ -3,6 +3,7 @@ from pathlib import Path
 import subprocess
 import libs.utility as Util
 import re
+import time
 import glob
 from decimal import Decimal
 import filecmp
@@ -561,8 +562,14 @@ class TestRunner:
             if testRun.run_cfg:
                 self.runCFG(testRun)
             if testRun.run_grits and testRun.valid_test:
+                while (self.util.get_memory_usage_percent() > 80):
+                    print("Waiting for 1 second to run grits... ")
+                    time.sleep(1)
                 self.runGrits(testRun)
             if testRun.run_aubload and testRun.valid_test:
+                while (self.util.get_memory_usage_percent() > 80):
+                    print("Waiting for 2 second to run aubload... ")
+                    time.sleep(2)
                 self.runAubLoad(testRun)
             if testRun.run_lily and testRun.valid_test:
                 self.runLily(testRun)

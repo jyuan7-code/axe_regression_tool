@@ -301,6 +301,7 @@ def main():
         while len(run_test_list) > 0:
             test_run = run_test_list.pop()
             while (get_memory_usage_percent() > 80):
+                print("Warning: memory usage percentage is high (",get_memory_usage_percent(),"%)")
                 print("Waiting for 5 second... ")
                 time.sleep(5)
             processed = processed + 1
@@ -312,8 +313,7 @@ def main():
                 active_tasks[result] = (time.time(), f"{test_run.unit_name}/{test_run.test_name}")
             signal.signal(signal.SIGTERM,stopAllRun)
 
-            print("Waiting for 2 second... ")
-            time.sleep(2)
+            time.sleep(1)
         pool.close()
     #self.after(500, self.updateRegress)
         pool.join()

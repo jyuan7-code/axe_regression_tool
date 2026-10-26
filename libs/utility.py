@@ -4,12 +4,15 @@ import os
 import stat
 from pathlib import Path
 import re
+import platform
+if re.search("windows", platform.system(), re.IGNORECASE):
+    import psutil
 import html
 import libs.test as Test
 import libs.HTML as HTML
 #import HTML
 import csv
-import platform
+
 #from os import walk
 import subprocess
 import libs.executionSetting  as AxeExecution
@@ -1640,3 +1643,39 @@ function copyCompareCmd(btn, evt) {
                 return "Windows 10"
         else:
             return "Unknown Windows version"
+
+    def linuxMemoryUsage(self):
+        result = os.popen('free -t -g')
+        lines = result.readlines()
+        result.close()
+        memory_info = {}
+        for line in lines:
+
+            if str(line).find("Total:") != -1:
+                print("line:", line)
+                search_result = re.search(r"Total:\s+(\d+)\s+(\d+)\s+(\d+)", str(line))
+                if search_result:
+                    total_memory = search_result.group(1)
+                    used_memory = search_result.group(2)
+                    free_memory = search_result.group(3)
+                    memory_info = {"total_memory": total_memory, "used_memory": used_memory, "free_memory": free_memory}
+
+        return memory_info
+
+    def get_memory_usage_percent(self) -> float:
+        """
+            Checks the current system virtual memory usage.
+
+            Returns:
+            float: Total system memory usage as a percentage (0.0 to 100.0).
+            """
+        if self.is_win_os:
+            # psutil.virtual_memory() returns a named tuple containing total, available, percent, used, and free memory.
+            memory_info = psutil.virtual_memory()
+            return memory_info.percent
+        else:
+            memory_info = self.linuxMemoryUsage()
+            total_memory = memory_info["total_memory"]
+            used_memory = memory_info["used_memory"]
+            percent = round(int(used_memory) / int(total_memory) * 100, 2)
+            return percent

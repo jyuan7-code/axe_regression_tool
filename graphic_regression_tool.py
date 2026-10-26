@@ -1513,6 +1513,19 @@ class FulsimRegress(Tk):
 
             unit_path = Path(os.path.join(self.regress_test_base, unitName))
         else:
+            dir_name = os.path.dirname(unitName)
+            pre_dir_name = dir_name
+            while dir_name != '':
+                pre_dir_name = dir_name
+                dir_name = os.path.dirname(dir_name)
+
+            if not pre_dir_name in self.p4client.p4_branches:
+                self.src_path_or_testrevsion = self.src_path_or_testrevsion + "/main"
+            else:
+                if pre_dir_name != "branches":
+                    self.src_path_or_testrevsion = self.src_path_or_testrevsion + "/branches"
+                else:
+                    self.src_path_or_testrevsion = self.src_path_or_testrevsion
             unit_path = Path(os.path.join(self.src_path_or_testrevsion, unitName))
 
         #self.suite_name = unitName
@@ -3011,6 +3024,20 @@ class FulsimRegress(Tk):
                     self.p4_repo_base = self.p4client.p4_repo_base
             test_src_path = Path(os.path.join(self.p4_repo_base, unit_name))
         else:
+            dir_name = os.path.dirname(unit_name)
+            pre_dir_name = dir_name
+            while dir_name != '':
+                pre_dir_name = dir_name
+                dir_name = os.path.dirname(dir_name)
+
+            if not pre_dir_name in self.p4client.p4_branches:
+                self.src_path_or_testrevsion = self.src_path_or_testrevsion + "/main"
+            else:
+                if pre_dir_name != "branches" and (not "branches" in self.src_path_or_testrevsion) :
+                    self.src_path_or_testrevsion = self.src_path_or_testrevsion + "/branches"
+                else:
+                    self.src_path_or_testrevsion = self.src_path_or_testrevsion
+
             test_src_path = Path(os.path.join(self.src_path_or_testrevsion, unit_name))
 
 
